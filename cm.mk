@@ -23,12 +23,15 @@ $(call inherit-product, device/moto/griffin/device.mk)
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
+# Time Zone data for recovery
+PRODUCT_COPY_FILES += \
+    bionic/libc/zoneinfo/tzdata:root/system/usr/share/zoneinfo/tzdata
+
 PRODUCT_NAME := cm_griffin
 PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := griffin
 PRODUCT_MODEL := XT1650
 PRODUCT_MANUFACTURER := motorola
-
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
