@@ -21,4 +21,4 @@
 
 
 /sdcard1        auto       /dev/block/mmcblk0p    /dev/block/mmcblk0p1           flags=display="Micro SDCard";storage;wipeingui;removable
-/usb-otg        auto       /dev/block/sdg1        /dev/block/sdg                 flags=display="USB OTG";storage;wipeingui;removable
+/usb-otg        auto       /dev/block/sde1        /dev/block/sde                 flags=display="USB OTG";storage;wipeingui;removable
