@@ -8,17 +8,17 @@
 /data           f2fs       /dev/block/bootdevice/by-name/userdata                flags=encryptable=/dev/block/bootdevice/by-name/metadata
 /cache          ext4       /dev/block/bootdevice/by-name/cache
 /recovery       emmc       /dev/block/bootdevice/by-name/recovery
+/recovery_bak   emmc       /dev/block/bootdevice/by-name/recovery                 flags=display="Recovery";backup=1
 /boot           emmc       /dev/block/bootdevice/by-name/boot
 /misc           emmc       /dev/block/bootdevice/by-name/misc
 /firmware       ext4       /dev/block/bootdevice/by-name/modem                   flags=fsflags="ro,nosuid,nodev";display="Firmware"
 /persist        ext4       /dev/block/bootdevice/by-name/persist                 flags=fsflags="noatime,nosuid,nodev";mounttodecrypt;display="Persist";backup=1
-/fsg           ext4       /dev/block/bootdevice/by-name/fsg                      flags=backup=1;display="Fsg"
+/fsg            ext4       /dev/block/bootdevice/by-name/fsg                     flags=backup=1;display="Fsg"
 /efs1           emmc       /dev/block/bootdevice/by-name/modemst1                flags=backup=1;display=EFS
 /efs2           emmc       /dev/block/bootdevice/by-name/modemst2                flags=backup=1;subpartitionof=/efs1
 /bt_firmware    ext4       /dev/block/bootdevice/by-name/bluetooth               flags=backup=1;display="Bluetooth"
-/oem            ext4       /dev/block/bootdevice/by-name/oem                     flags=backup=1;display="Oem";wipeingui
+/oem            ext4       /dev/block/bootdevice/by-name/oem                     flags=backup=1;display="Oem"
 /dsp            ext4       /dev/block/bootdevice/by-name/dsp                     flags=backup=1;display="Dsp"
 
-
-/sdcard1        auto       /dev/block/mmcblk0p    /dev/block/mmcblk0p1           flags=display="Micro SDCard";storage;wipeingui;removable
+/external_sd    auto       /dev/block/mmcblk0p    /dev/block/mmcblk0p1           flags=display="Micro SDCard";storage;wipeingui;removable
 /usb-otg        auto       /dev/block/sde1        /dev/block/sde                 flags=display="USB OTG";storage;wipeingui;removable
