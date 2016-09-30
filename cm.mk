@@ -18,10 +18,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # for specific
-$(call inherit-product, device/moto/griffin/device.mk)
+$(call inherit-product, device/motorola/griffin/device.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
+
+$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
 # Time Zone data for recovery
 PRODUCT_COPY_FILES += \
@@ -32,7 +34,6 @@ PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := griffin
 PRODUCT_MODEL := XT1650
 PRODUCT_MANUFACTURER := motorola
-
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 TARGET_VENDOR_PRODUCT_NAME := griffin

@@ -21,75 +21,103 @@
 # definition file).
 #
 
-# Bootloader
-TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := MSM8996
 
-# Platform
-TARGET_BOARD_PLATFORM := msm8996
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno530
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
+DEVICE_PATH := device/motorola/griffin
 
-# Architecture
+# Arch
+BOARD_VENDOR := motorola-qcom
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
+TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := kryo
-
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
+TARGET_NO_BOOTLOADER := true
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
-# Prebuilts
-TARGET_PREBUILT_KERNEL := device/moto/griffin/zImage
-BOARD_CUSTOM_BOOTIMG_MK := device/moto/griffin/mkbootimg.mk
+# Partitions
+BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x002000000
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_CACHEIMAGE_PARTITION_SIZE    := 0x010000000
+BOARD_FLASH_BLOCK_SIZE := 262144
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x002000000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 0x154000000
+# BOARD_USERDATAIMAGE_PARTITION_SIZE := 0xD5B07B000
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+
+# Graphics
+HAVE_ADRENO_SOURCE:= false
+TARGET_USES_C2D_COMPOSITION := true
+TARGET_USES_ION := true
+USE_OPENGL_RENDERER := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff cnsscore.pcie_link_down_panic=1 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff cnsscore.pcie_link_down_panic=1
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_MKBOOTIMG_ARGS :=  --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --second_offset 0x00f00000 --tags_offset 0x00000100  --dt device/moto/griffin/dt.img
+BOARD_KERNEL_SEPARATED_DT := true
+BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+BOARD_RAMDISK_OFFSET     := 0x01000000
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_CONFIG := griffin_defconfig
+TARGET_KERNEL_HAVE_EXFAT := true
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_SOURCE := kernel/motorola/msm8996
+TARGET_USES_UNCOMPRESSED_KERNEL := true
 
-# Partitions
-BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x002000000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x002000000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 0x154000000
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 0xD5B07B000
-BOARD_CACHEIMAGE_PARTITION_SIZE    := 0x010000000
-BOARD_FLASH_BLOCK_SIZE := 262144
+# Platform
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_BOARD_PLATFORM := msm8996
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno530
+TARGET_BOOTLOADER_BOARD_NAME := griffin
+TARGET_NO_RADIOIMAGE := true
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc/ #### THIS SEEMS WRONG
+TARGET_USES_64_BIT_BINDER := true
+#BOARD_USES_QC_TIME_SERVICES := true
 
-# Disable secure discard because it's SLOW
-BOARD_SUPPRESS_SECURE_ERASE := true
+# Power
+TARGET_POWERHAL_VARIANT := qcom
+
+# Protobuf-c is supported in this build
+PROTOBUF_SUPPORTED := true
 
 # Recovery
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_HAS_LARGE_FILESYSTEM := true
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.qcom
+
+# Ril
+TARGET_RIL_VARIANT := caf
+
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+
+# Wat
 TARGET_USES_MOTOROLA_LOG := true
 
-# TWRP
-RECOVERY_VARIANT := twrp
-TW_THEME := portrait_hdpi
-RECOVERY_SDCARD_ON_DATA := true
-TW_SCREEN_BLANK_ON_BOOT := true
-TARGET_RECOVERY_QCOM_RTC_FIX := true
-TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
-TW_DEFAULT_BRIGHTNESS := 80
-TW_INCLUDE_NTFS_3G := true
-TW_INCLUDE_CRYPTO := true
-TW_NO_USB_STORAGE := true
-#TW_USE_TOOLBOX    := true
 
-# Asian region languages
-TW_EXTRA_LANGUAGES := true
+###### BELOW IS WRONG ###########
 
-# Debug flags
-#TWRP_INCLUDE_LOGCAT := true
-#TARGET_USES_LOGD := true
+# Platform
+
+# Architecture
+
+# Prebuilts
+# TARGET_PREBUILT_KERNEL := device/moto/griffin/zImage
+# BOARD_CUSTOM_BOOTIMG_MK := device/moto/griffin/mkbootimg.mk
+
+# BOARD_MKBOOTIMG_ARGS :=  --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --second_offset 0x00f00000 
+# --tags_offset 0x00000100
+
+# Disable secure discard because it's SLOW
+# BOARD_SUPPRESS_SECURE_ERASE := true
+
+# Recovery
+# BOARD_HAS_NO_SELECT_BUTTON := true
+# BOARD_HAS_LARGE_FILESYSTEM := true
