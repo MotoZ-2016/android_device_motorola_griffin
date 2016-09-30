@@ -101,23 +101,6 @@ include device/qcom/sepolicy/sepolicy.mk
 # Wat
 TARGET_USES_MOTOROLA_LOG := true
 
-
-###### BELOW IS WRONG ###########
-
-# Platform
-
-# Architecture
-
-# Prebuilts
-# TARGET_PREBUILT_KERNEL := device/moto/griffin/zImage
-# BOARD_CUSTOM_BOOTIMG_MK := device/moto/griffin/mkbootimg.mk
-
-# BOARD_MKBOOTIMG_ARGS :=  --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --second_offset 0x00f00000 
-# --tags_offset 0x00000100
-
-# Disable secure discard because it's SLOW
-# BOARD_SUPPRESS_SECURE_ERASE := true
-
 # Recovery
-# BOARD_HAS_NO_SELECT_BUTTON := true
-# BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_HAS_LARGE_FILESYSTEM := true
