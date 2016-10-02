@@ -27,6 +27,7 @@ ifneq ($(filter griffin,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 
+include device/motorola/griffin/expat.mk
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 endif

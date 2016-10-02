@@ -1,3 +1,10 @@
+# VFS
+etc/vhw.xml
+
+# Keystore
+vendor/lib/hw/keystore.msm8996.so
+vendor/lib64/hw/keystore.msm8996.so
+
 # Adreno GPU
 etc/firmware/a530_gpmu.fw2
 etc/firmware/a530_pfp.fw
@@ -49,4 +56,3 @@ vendor/lib/egl/libq3dtools_esx.so
 vendor/lib64/egl/libq3dtools_esx.so
 vendor/lib/egl/libQTapGLES.so
 vendor/lib64/egl/libQTapGLES.so
-

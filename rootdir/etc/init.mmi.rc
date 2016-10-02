@@ -53,6 +53,7 @@ on fs
     symlink /persist /pds
 
     wait /dev/block/bootdevice/by-name/hw
+
     start oem-hw-sh
 
 on post-fs
@@ -254,7 +255,7 @@ service init_wifi /system/bin/wlan_carrier_bin.sh
     disabled
 
 service mmi-block-perm /init.mmi.block_perm.sh
-    seclabel u:r:init_block_perm:s0
+    # seclabel u:r:init_block_perm:s0
     class main
     user root
     oneshot
@@ -450,28 +451,28 @@ service mmi-touch-sh /system/bin/init.mmi.touch.sh
     oneshot
 
 service oem-hw-sh /init.oem.hw.sh
-    seclabel u:r:init_hw:s0
+    # seclabel u:r:init_hw:s0
     class core
     user root
     oneshot
     disabled
 
 service touch-dead-sh /init.oem.hw.sh -f
-    seclabel u:r:init_hw:s0
+    # seclabel u:r:init_hw:s0
     class main
     user root
     oneshot
     disabled
 
 service touch-ready-sh /init.oem.hw.sh -r
-    seclabel u:r:init_hw:s0
+    # seclabel u:r:init_hw:s0
     class main
     user root
     oneshot
     disabled
 
 service oem-hw-config-sh /init.oem.hw.sh -p
-    seclabel u:r:init_hw:s0
+    # seclabel u:r:init_hw:s0
     class main
     user root
     oneshot
@@ -525,13 +526,13 @@ service adspd /system/bin/adspd
    group audio input diag
 
 service qe /xbin/qe /system
-    seclabel u:r:qe:s0
+    # seclabel u:r:qe:s0
     class main
     oneshot
     disabled
 
 service qe_broadcast /xbin/qe /system -b
-    seclabel u:r:qe:s0
+    # seclabel u:r:qe:s0
     class main
     oneshot
     disabled

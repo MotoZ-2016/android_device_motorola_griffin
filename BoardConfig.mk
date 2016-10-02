@@ -67,9 +67,14 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CONFIG := griffin_defconfig
-TARGET_KERNEL_HAVE_EXFAT := true
+# TARGET_KERNEL_HAVE_EXFAT := true
 TARGET_KERNEL_HEADER_ARCH := arm64
+
+#TARGET_PREBUILT_KERNEL := device/motorola/griffin/zImage
+#BOARD_CUSTOM_BOOTIMG_MK := device/motorola/griffin/mkbootimg.mk
+#BOARD_MKBOOTIMG_ARGS :=  --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --second_offset 0x00f00000 --tags_offset 0x00000100  --dt device/motorola/griffin/dt.img
+# TARGET_CUSTOM_DTBTOOL := dtbTool_moto
+TARGET_KERNEL_CONFIG := griffin_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8996
 # TARGET_USES_UNCOMPRESSED_KERNEL := true
 
@@ -83,6 +88,11 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc/ #### THIS SEEMS WRONG
 TARGET_USES_64_BIT_BINDER := true
 #BOARD_USES_QC_TIME_SERVICES := true
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_griffin
+TARGET_RECOVERY_DEVICE_MODULES := libinit_griffin
+TARGET_UNIFIED_DEVICE := true
+
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
@@ -91,6 +101,9 @@ PROTOBUF_SUPPORTED := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+
+# Keystore
+TARGET_PROVIDES_KEYMASTER := true
 
 # Ril
 TARGET_RIL_VARIANT := caf
