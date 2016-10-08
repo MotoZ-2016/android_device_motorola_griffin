@@ -52,9 +52,8 @@ on fs
     # use /persist as phony PDS partition
     symlink /persist /pds
 
-    wait /dev/block/bootdevice/by-name/hw
-
-    start oem-hw-sh
+    # wait /dev/block/bootdevice/by-name/hw
+    # start oem-hw-sh
 
 on post-fs
     mkdir /persist/camera 0755 mot_tcmd mot_tcmd
