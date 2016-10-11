@@ -29,6 +29,8 @@ $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 PRODUCT_COPY_FILES += \
     bionic/libc/zoneinfo/tzdata:root/system/usr/share/zoneinfo/tzdata
 
+DEVICE_PACKAGE_OVERLAYS += device/motorola/griffin/overlay
+
 PRODUCT_NAME := cm_griffin
 PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := griffin
