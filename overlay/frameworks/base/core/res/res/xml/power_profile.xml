@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<device name="Android">
+    <item name="none">0</item>
+    <item name="screen.on">160</item>
+    <item name="screen.full">460</item>
+    <item name="bluetooth.active">30</item>
+    <item name="bluetooth.on">3</item>
+    <item name="camera.avg">256</item>
+    <item name="camera.flashlight">109</item>
+    <item name="wifi.on">1</item>
+    <item name="wifi.active">90</item>
+    <item name="wifi.scan">20</item>
+    <item name="gps.on">70</item>
+    <item name="radio.active">350</item>
+    <item name="radio.scanning">10</item>
+    <array name="radio.on">
+        <value>30</value>
+        <value>30</value>
+        <value>25</value>
+        <value>15</value>
+        <value>10</value>
+        <value>5</value>
+        <value>5</value>
+    </array>
+    <array name="cpu.speeds">
+        <value>384000</value>
+        <value>460800</value>
+        <value>480000</value>
+        <value>600000</value>
+        <value>633600</value>
+        <value>672000</value>
+        <value>768000</value>
+        <value>787200</value>
+        <value>864000</value>
+        <value>960000</value>
+        <value>1248000</value>
+        <value>1344000</value>
+        <value>1440000</value>
+        <value>1536000</value>
+        <value>1632000</value>
+        <value>1689600</value>
+        <value>1824000</value>
+    </array>
+    <item name="cpu.idle">6</item>
+    <item name="cpu.awake">34</item>
+    <array name="cpu.active">
+        <value>49</value>
+        <value>56</value>
+        <value>134</value>
+        <value>61</value>
+        <value>164</value>
+        <value>72</value>
+        <value>201</value>
+        <value>78</value>
+        <value>90</value>
+        <value>104</value>
+        <value>144</value>
+        <value>362</value>
+        <value>178</value>
+        <value>444</value>
+        <value>490</value>
+        <value>518</value>
+        <value>674</value>
+    </array>
+    <item name="battery.capacity">3000</item>
+</device>

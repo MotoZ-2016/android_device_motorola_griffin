@@ -47,13 +47,13 @@ on init
 on fs
     # Mount modem FSG partition
     wait /dev/block/bootdevice/by-name/fsg
-    mount ext4 /dev/block/bootdevice/by-name/fsg /fsg ro nosuid nodev context=u:object_r:fsg_file:s0
+    mount ext4 /dev/block/bootdevice/by-name/fsg /fsg ro nosuid nodev
 
     # use /persist as phony PDS partition
     symlink /persist /pds
 
     # wait /dev/block/bootdevice/by-name/hw
-    # start oem-hw-sh
+    start oem-hw-sh
 
 on post-fs
     mkdir /persist/camera 0755 mot_tcmd mot_tcmd
