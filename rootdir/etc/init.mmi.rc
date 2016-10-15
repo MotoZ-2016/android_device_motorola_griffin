@@ -395,7 +395,7 @@ service aplogd /system/bin/aplogd
     disabled
 
 service mmi-boot-sh /init.mmi.boot.sh
-    seclabel u:r:mmi_boot:s0
+    # seclabel u:r:mmi_boot:s0
     class core
     user root
     oneshot
@@ -439,7 +439,7 @@ service hw_revs /system/bin/hardware_revisions.sh
     oneshot
 
 service mmi-laser-sh /init.mmi.laser.sh
-    seclabel u:r:mmi_laser:s0
+    #seclabel u:r:mmi_laser:s0
     class core
     user root
     oneshot
@@ -484,7 +484,7 @@ on property:hw.touch.status="ready"
     start touch-ready-sh
 
 service mmi-audio-sh /init.mmi.audio.sh
-    seclabel u:r:init_hw:s0
+    # seclabel u:r:init_hw:s0
     class core
     user root
     oneshot
@@ -498,7 +498,7 @@ service mods_camd /system/bin/mods_camd
     ioprio rt 4
 
 service gbmodinstall /init.gbmods.sh
-    seclabel u:r:init_mods:s0
+    # seclabel u:r:init_mods:s0
     user root
     oneshot
     disabled

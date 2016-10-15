@@ -28,6 +28,18 @@ ifneq ($(filter griffin,$(TARGET_DEVICE)),)
 LOCAL_PATH := $(call my-dir)
 
 include device/motorola/griffin/expat.mk
+include device/motorola/griffin/tftp.mk
+
+
+# Create links for audcal data files
+$(shell mkdir -p $(TARGET_OUT)/etc/firmware/wcd9320; \
+	ln -sf /data/misc/audio/wcd9320_anc.bin \
+		$(TARGET_OUT)/etc/firmware/wcd9320/wcd9320_anc.bin;\
+	ln -sf /data/misc/audio/mbhc.bin \
+		$(TARGET_OUT)/etc/firmware/wcd9320/wcd9320_mbhc.bin; \
+	ln -sf /data/misc/audio/wcd9320_mad_audio.bin \
+		$(TARGET_OUT)/etc/firmware/wcd9320/wcd9320_mad_audio.bin)
+
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 endif

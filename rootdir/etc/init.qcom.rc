@@ -394,14 +394,14 @@ service qcom-c_core-sh /system/bin/sh /init.qcom.class_core.sh
     user root
     oneshot
 
-service qcom-c_main-sh /system/bin/sh /init.class_main.sh
-    class main
-    user radio
-    group radio
-    oneshot
+#service qcom-c_main-sh /system/bin/sh /init.class_main.sh
+#    class main
+#    user radio
+#    group radio
+#    oneshot
 
 on property:vold.decrypt=trigger_restart_framework
-    start qcom-c_main-sh
+    # start qcom-c_main-sh
     start config_bluetooth
 
 on property:persist.env.fastdorm.enabled=true
@@ -503,42 +503,36 @@ service port-bridge /system/bin/port-bridge
     class main
     user radio system
     group radio system inet
-    disabled
     oneshot
 
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /system/bin/qmuxd
-    class main
+    class core
     user root
-    group radio audio bluetooth gps nfc qcom_diag
-    disabled
+    group radio audio bluetooth gps nfc diag qcom_diag
 
 service netmgrd /system/bin/netmgrd
     class main
-    disabled
 
 service ipacm-diag /system/bin/ipacm-diag
     class main
     user system
     socket ipacm_log_file dgram 660 system net_admin
     group net_admin qcom_diag
-    disabled
 
 service ipacm /system/bin/ipacm
     class main
     user net_admin
     group net_admin inet
-    disabled
 
 service qti /system/vendor/bin/qti
     class main
     user radio
     group radio net_raw qcom_diag usb net_admin
-    disabled
 
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
-    stop netmgrd
+    # stop netmgrd
 
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth
 # but only if ro.data.large_tcp_window_size property is set.
@@ -738,7 +732,7 @@ on property:sys.boot_completed=1
 
 service atfwd /system/bin/ATFWD-daemon
     class late_start
-    user system
+    user root
     group system radio
 
 service hostapd /system/bin/hostapd -dd /data/misc/wifi/hostapd.conf

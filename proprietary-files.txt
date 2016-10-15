@@ -1,8 +1,51 @@
+# ADSP
+bin/adsprpcd
+vendor/lib/libadsprpc.so
+vendor/lib/libadsp_hvx_callback_skel.so
+vendor/lib/libadsp_hvx_stub.so
+vendor/lib/libfastcvadsp_stub.so
+vendor/lib/libfastcvopt.so
+vendor/lib64/libadsprpc.so
+vendor/lib64/libadsp_default_listener.so
+
+# ADSP modules
+vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libvpp_frc.so
+vendor/lib/rfsa/adsp/libvpp_svc_skel.so
+
+# Audio
+vendor/lib/libacdb-fts.so
+vendor/lib/libacdbloader.so
+vendor/lib/libacdbrtac.so
+vendor/lib/libadiertac.so
+vendor/lib/libaudcal.so
+vendor/lib64/libacdb-fts.so
+vendor/lib64/libacdbloader.so
+vendor/lib64/libacdbrtac.so
+vendor/lib64/libadiertac.so
+vendor/lib64/libaudcal.so
+
+etc/firmware/florida-dsp2-aov-frontend.wmfw
+etc/firmware/florida-dsp3-aov-control.wmfw
+etc/firmware/florida-dsp4-speaker-protect-calibration.bin
+etc/firmware/florida-dsp4-speaker-protect-sheridan-calibration.bin
+etc/firmware/florida-dsp4-speaker-protect-sheridan-voice.bin
+etc/firmware/florida-dsp4-speaker-protect-sheridan.bin
+etc/firmware/florida-dsp4-speaker-protect-voice.bin
+etc/firmware/florida-dsp4-speaker-protect.bin
+etc/firmware/florida-dsp4-speaker-protect.wmfw
+
+
 # VFS #TODO FIGURE OUT WHY
 etc/vhw.xml
 
 # ???
 vendor/lib64/libsdmextension.so
+lib/libwpa_client.so
+lib64/libwpa_client.so
 
 # Keystore
 vendor/lib/hw/keystore.msm8996.so
@@ -92,6 +135,63 @@ vendor/lib64/egl/libq3dtools_esx.so
 vendor/lib/egl/libQTapGLES.so
 vendor/lib64/egl/libQTapGLES.so
 
+
+# Radio
+-priv-app/atfwd/atfwd.apk
+-app/datastatusnotification/datastatusnotification.apk
+-app/embms/embms.apk
+bin/ipacm-diag
+bin/netmgrd
+bin/qmuxd
+bin/radish
+bin/rmt_storage
+bin/tftp_server
+etc/data/dsi_config.xml
+etc/data/netmgr_config.xml
+etc/data/qmi_config.xml
+etc/permissions/embms.xml
+etc/permissions/qcnvitems.xml
+etc/permissions/qcrilhook.xml
+framework/embmslibrary.jar
+-framework/qcnvitems.jar
+-framework/qcrilhook.jar
+-framework/qti-telephony-common.jar
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+vendor/bin/qti
+vendor/lib64/libconfigdb.so
+vendor/lib64/liblqe.so
+vendor/lib64/libmdmdetect.so
+vendor/lib64/libnetmgr.so
+vendor/lib64/libqcmaputils.so
+vendor/lib64/libril-qc-qmi-1.so
+vendor/lib64/libril-qc-radioconfig.so
+vendor/lib64/libril-qcril-hook-oem.so
+vendor/lib64/libsystem_health_mon.so
+vendor/qcril.db
+
+# MOTO RIL
+bin/qmi_motext_hook
+lib64/libmotext_inf.so
+lib/libmotext_inf.so
+lib64/libmotext_inf.so
+lib/libmotext_inf.so
+lib/libmdmcutback.so
+lib64/libmdmcutback.so
+lib/libqmimotext.so
+lib64/libqmimotext.so
+lib64/libadropbox.so
+
+# THINGS
+bin/ftmipcd
+bin/ATFWD-daemon
+bin/port-bridge
+
+# Peripheral manager
+bin/pm-proxy
+bin/pm-service
+vendor/lib/libperipheral_client.so
+vendor/lib64/libperipheral_client.so
+
 # CNE
 bin/cnd
 etc/cne/SwimConfig.xml
@@ -106,7 +206,7 @@ etc/permissions/com.quicinc.cne.xml
 framework/ConnectivityExt.jar
 framework/cneapiclient.jar
 framework/com.quicinc.cne.jar
--priv-app/CNEService/CNEService.apk
+#-priv-app/CNEService/CNEService.apk
 vendor/lib/libNimsWrap.so
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
