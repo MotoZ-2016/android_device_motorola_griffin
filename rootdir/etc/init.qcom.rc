@@ -437,7 +437,7 @@ on property:wc_transport.start_hci=false
 service start_hci_filter /system/bin/wcnss_filter
     class late_start
     user root
-    group bluetooth qcom_diag diag log
+    group bluetooth qcom_diag
     disabled
 
 on property:wc_transport.start_root=true
@@ -448,7 +448,7 @@ on property:wc_transport.start_root=false
 
 service hci_filter_root /system/bin/wcnss_filter
     class late_start
-    user bluetooth
+    user root
     group bluetooth qcom_diag system
     disabled
 

@@ -1,3 +1,9 @@
+# Fingerprint
+lib/lib_fpc_tac_shared.so
+lib/hw/fingerprint.msm8996.so
+lib64/lib_fpc_tac_shared.so
+lib64/hw/fingerprint.msm8996.so
+
 # ADSP
 bin/adspd
 bin/adsprpcd
@@ -300,3 +306,19 @@ vendor/lib64/libqmiservices.so
 vendor/lib64/libquipc_os_api.so
 vendor/lib64/libsmemlog.so
 
+# Bluetooth
+bin/btnvtool
+bin/hci_qcomm_init
+bin/wcnss_filter
+etc/firmware/nvm_tlv_1.3.bin
+etc/firmware/nvm_tlv_2.1.bin
+etc/firmware/nvm_tlv_3.0.bin
+etc/firmware/nvm_tlv_3.2.bin
+etc/firmware/nvm_tlv.bin
+etc/firmware/rampatch_tlv_1.3.tlv
+etc/firmware/rampatch_tlv_2.1.tlv
+etc/firmware/rampatch_tlv_3.0.tlv
+etc/firmware/rampatch_tlv_3.2.tlv
+etc/firmware/rampatch_tlv.img
+vendor/lib64/libbtnv.so
+vendor/lib/libbtnv.so

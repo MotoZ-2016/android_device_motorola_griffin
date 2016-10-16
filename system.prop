@@ -49,5 +49,17 @@ persist.data.df.mux_count=8
 persist.data.df.iwlan_mux=9
 persist.data.df.dev_name=rmnet_usb0
 
+# Bluetooth
+bluetooth.hfp.client=1
+qcom.bluetooth.soc=rome
+qcom.bt.le_dev_pwr_class=1
+ro.bluetooth.hfp.ver=1.6
 
+## NOTE: without offload cap set
+we crash bluetooth due to a NPE in
+the actuall bluetooth app. We should most likely
+fix this in the real app so other people don't 
+deal with this in the future. with this set to 
+false, you will also encounter this issue.
 
+persist.bt.a2dp_offload_cap=true
