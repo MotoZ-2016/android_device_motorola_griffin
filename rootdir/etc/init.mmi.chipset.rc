@@ -32,7 +32,7 @@ on post-fs-data
 on moto-charger
     setprop ro.board.platform msm8996
     trigger firmware_mounts_complete
-    start  qcom-post-boot
+    start qcom-post-boot
     start gbmodinstall
     start charge_only_mode
     start batt_health

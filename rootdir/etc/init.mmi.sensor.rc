@@ -25,7 +25,6 @@ on boot
 
 # Start Sensor daemon
 service motosh /system/bin/motosh boot
-
     class late_start
     user compass
     group compass misc input

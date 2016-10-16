@@ -21,7 +21,14 @@
 # definition file).
 #
 
+# Motorola
+TARGET_USES_MOTOROLA_LOG := true
 
+# Recovery
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_HAS_LARGE_FILESYSTEM := true
+
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 DEVICE_PATH := device/motorola/griffin
 
 # Arch
@@ -123,6 +130,9 @@ AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
 AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := true
 AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 
+# GPS
+TARGET_NO_RPC := true
+USE_DEVICE_SPECIFIC_GPS := true
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
@@ -141,14 +151,6 @@ TARGET_RIL_VARIANT := caf
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-
-TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
-
-# Wat
-TARGET_USES_MOTOROLA_LOG := true
-
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_HAS_LARGE_FILESYSTEM := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
@@ -171,3 +173,6 @@ BOARD_HAS_QCA_BT_ROME := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 QCOM_BT_USE_BTNV := true
 QCOM_BT_USE_SMD_TTY := true
+
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
