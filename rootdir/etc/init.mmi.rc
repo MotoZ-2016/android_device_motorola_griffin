@@ -517,24 +517,6 @@ service adspd /system/bin/adspd
    user audio
    group audio input diag
 
-service qe /xbin/qe /system
-    # seclabel u:r:qe:s0
-    class main
-    oneshot
-    disabled
-
-service qe_broadcast /xbin/qe /system -b
-    # seclabel u:r:qe:s0
-    class main
-    oneshot
-    disabled
-
-on property:sys.boot_completed=1
-    start qe
-
-on property:persist.qe.trigger=1
-    start qe_broadcast
-
 # Set RPS Mask for Wifi Hotspot
 on property:sys.wifi.tethering=true
     write /sys/class/net/rmnet_data0/queues/rx-0/rps_cpus ${sys.usb.rps_mask}

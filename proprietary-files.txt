@@ -383,4 +383,3 @@ bin/time_daemon
 vendor/lib64/libTimeService.so
 -vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
-
