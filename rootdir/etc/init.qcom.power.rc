@@ -10,13 +10,12 @@ on boot
     chmod 0644 /sys/devices/system/cpu/present
     chmod 0644 /sys/devices/system/cpu/online
 
-    # update cpuset for each cgroup
-    # reserve cpu2 for top app
-    write /dev/cpuset/top-app/cpus "0-3"
-    write /dev/cpuset/foreground/cpus "0-1,3"
-    write /dev/cpuset/foreground/boost/cpus 3
-    write /dev/cpuset/background/cpus 0
-    write /dev/cpuset/system-background/cpus "0-1"
+    # Update foreground and background cpusets
+    write /dev/cpuset/foreground/cpus 0-3
+    write /dev/cpuset/foreground/boost/cpus 0-3
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/top-app/cpus 0-3
 
     # Add a cpuset for the camera daemon
     # we want all cores for camera
