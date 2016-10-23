@@ -10,7 +10,6 @@ import init.mmi.debug.rc
 # Moto diag_mdlog configuration
 import init.mmi.diag_mdlog.rc
 
-import init.oem.rc
 import init.mmi.common.rc
 
 # Moto sensors configuration
@@ -239,7 +238,7 @@ on boot
 on property:ro.carrier=*
     start init_wifi
 
-service init_wifi /system/bin/wlan_carrier_bin.sh
+service init_wifi /wlan_carrier_bin.sh
     class main
     user root
     group root
