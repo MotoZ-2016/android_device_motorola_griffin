@@ -63,3 +63,11 @@ deal with this in the future. with this set to
 false, you will also encounter this issue.
 
 persist.bt.a2dp_offload_cap=true
+
+# Camera
+# persist.camera.hal.debug=true
+# persist.camera.global.debug=true
+camera.disable_zsl_mode=1
+persist.camera.HAL3.enabled=1
+
+

@@ -37,7 +37,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ## UNTESTED ITEMS BELOW
 # Camera
 PRODUCT_PACKAGES += \
-    Snap \
+    Camera2 \
     libshim_camera \
     libcamera_shim
 
