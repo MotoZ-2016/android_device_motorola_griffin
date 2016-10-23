@@ -8,15 +8,12 @@ PRODUCT_PACKAGES += \
     init.mmi.block_perm.sh \
     init.mmi.boot.sh \
     init.mmi.chipset.rc \
-    init.mmi.common.rc \
-    init.mmi.diag_mdlog.rc \
     init.mmi.laser.sh \
     init.mmi.rc \
     init.mmi.sensor.rc \
     init.mmi.usb.rc \
     init.mmi.usb.sh \
     init.oem.hw.sh \
-    init.oem.rc \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
     init.qcom.rc \
@@ -25,3 +22,4 @@ PRODUCT_PACKAGES += \
     init.qcom.syspart_fixup.sh \
     init.target.rc \
     ueventd.qcom.rc \
+    wlan_carrier_bin.sh \

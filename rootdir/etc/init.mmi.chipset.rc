@@ -1,20 +1,9 @@
-#init setting for particular chipset
-on early-init
-    # Mount point for Digital Personalization partition
-    mkdir /customize 0500 root root
-
-on fs
-    #Mount customize partion
-    wait /dev/block/bootdevice/by-name/customize
-    mount ext4 /dev/block/bootdevice/by-name/customize /customize ro discard nosuid nodev noatime nodiratime noexec defcontext=u:object_r:user_config_file:s0
-
 on boot
-
-    # update cpuset for each cgroup
-    write /dev/cpuset/foreground/cpus 0-3
-    write /dev/cpuset/foreground/boost/cpus 2-3
-    write /dev/cpuset/background/cpus 0
-    write /dev/cpuset/system-background/cpus 0-1
+   # update cpuset for each cgroup
+   write /dev/cpuset/foreground/cpus 0-3
+   write /dev/cpuset/foreground/boost/cpus 2-3
+   write /dev/cpuset/background/cpus 0
+   write /dev/cpuset/system-background/cpus 0-1
 
    # Change permission for type C params
    chown root mot_tcmd /sys/devices/soc/75b5000.i2c/i2c-7/7-0022/CC_state

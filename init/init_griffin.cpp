@@ -75,8 +75,8 @@ void vendor_load_properties()
     property_set("ro.hw.device", device_boot.c_str());
 	
     sku = property_get("ro.boot.hardware.sku");
-    //property_get("ro.boot.carrier", carrier.c_str());
-	
+    property_set("ro.product.model", sku.c_str());
+
     radio = property_get("ro.boot.radio");
     property_set("ro.hw.radio", radio.c_str());
 	
@@ -94,6 +94,5 @@ void vendor_load_properties()
     }
 	
     device = property_get("ro.product.device");
-    //strlcpy(devicename, device, sizeof(devicename));
     INFO("Found sku id: %s setting build properties for %s device\n", sku.c_str(), device.c_str());
 }

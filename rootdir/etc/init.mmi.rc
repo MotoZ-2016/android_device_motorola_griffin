@@ -4,14 +4,6 @@ import init.mmi.chipset.rc
 # Moto USB configuration
 import init.mmi.usb.rc
 
-# Moto debugging
-import init.mmi.debug.rc
-
-# Moto diag_mdlog configuration
-import init.mmi.diag_mdlog.rc
-
-import init.mmi.common.rc
-
 # Moto sensors configuration
 import init.mmi.sensor.rc
 

@@ -465,12 +465,12 @@ vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqomx_jpegenc.so
 
-# MOTO CAMERA
-vendor/lib/libois_rumba_s4.so
 
+# MOTO CAMERA
+-priv-app/ImagerTuning/ImagerTuning.apk
+vendor/lib/libois_rumba_s4.so
 vendor/lib/libmmcamera_ov5693_eeprom.so
 vendor/lib/libmmcamera_sony_rumba_eeprom.so
-
 etc/camera/imx338_chromatix.xml
 etc/camera/mot_imx214_chromatix.xml
 etc/camera/msm8996_mot_camera.xml
