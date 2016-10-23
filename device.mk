@@ -34,13 +34,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.first_api_level=23
 
-
-## WIP items
-# Fingerprint sensor
-PRODUCT_PACKAGES += \
-    fingerprintd
-
 ## UNTESTED ITEMS BELOW
+# Camera
+PRODUCT_PACKAGES += \
+    Snap \
+    libshim_camera \
+    libcamera_shim
+
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
