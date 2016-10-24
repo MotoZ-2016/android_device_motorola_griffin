@@ -651,3 +651,13 @@ vendor/lib/libmmcamera_isp_sce40.so
 vendor/lib/libmmcamera_isp_snr47.so
 vendor/lib/libmmcamera_isp_sub_module.so
 
+# Media
+lib/libOmxVpp.so
+lib/libvpplibrary.so
+vendor/lib/libI420colorconvert.so
+vendor/lib/libmm-color-convertor.so
+vendor/lib/libmmosal.so
+vendor/lib/libOmxAacDec.so
+vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libvpphvx.so
