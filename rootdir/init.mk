@@ -3,14 +3,11 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.class_main.sh \
     init.gbmods.sh \
-    init.mdm.sh \
+    init.griffin.rc \
     init.mmi.audio.sh \
     init.mmi.block_perm.sh \
     init.mmi.boot.sh \
-    init.mmi.chipset.rc \
     init.mmi.laser.sh \
-    init.mmi.rc \
-    init.mmi.sensor.rc \
     init.mmi.usb.rc \
     init.mmi.usb.sh \
     init.oem.hw.sh \

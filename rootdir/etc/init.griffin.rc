@@ -1,11 +1,5 @@
-# Chipset-specific file
-import init.mmi.chipset.rc
-
 # Moto USB configuration
 import init.mmi.usb.rc
-
-# Moto sensors configuration
-import init.mmi.sensor.rc
 
 on early-boot
     write /sys/module/subsystem_restart/parameters/disable_restart_work 0x0
@@ -79,6 +73,8 @@ on post-fs
     verity_update_state
 
 on post-fs-data
+    #setup folder for WLAN WAPI
+    chmod 0770 /data/wapi_certificate
 
     # Setup folders for security
     mkdir /persist/security 02770 drmrpc drmrpc
@@ -174,7 +170,56 @@ on post-fs-data
     # Imager tuning data for camera subsystem
     mkdir /data/misc/imager 0770 camera camera
 
+on moto-charger
+    setprop ro.board.platform msm8996
+    trigger firmware_mounts_complete
+    start qcom-post-boot
+    start gbmodinstall
+    start charge_only_mode
+    start batt_health
+    start thermal-com
+
 on boot
+   # update cpuset for each cgroup
+   write /dev/cpuset/foreground/cpus 0-3
+   write /dev/cpuset/foreground/boost/cpus 0-3
+   write /dev/cpuset/background/cpus 0-3
+   write /dev/cpuset/system-background/cpus 0-3
+   write /dev/cpuset/top-app/cpus 0-3
+
+   # STML4 driver parameter permissions
+   chown root mot_tcmd /sys/module/motosh/parameters/irq_disable
+   chmod 0660 /sys/module/motosh/parameters/irq_disable
+
+   #STML4 device permissions
+   chown system compass /dev/motosh
+   chmod 0660 /dev/motosh
+   chown compass compass /dev/motosh_as
+   chmod 0660 /dev/motosh_as
+   chown compass compass /dev/motosh_ms
+   chmod 0660 /dev/motosh_ms
+   chown compass compass /sys/devices/virtual/motosh/motosh_as/timestamp_time_ns
+   chmod 0440 /sys/devices/virtual/motosh/motosh_as/timestamp_time_ns
+   chown compass compass /sys/devices/virtual/motosh/motosh_as/rv_6axis_update_rate
+   chmod 0660 /sys/devices/virtual/motosh/motosh_as/rv_6axis_update_rate
+   chown compass compass /sys/devices/virtual/motosh/motosh_as/rv_9axis_update_rate
+   chmod 0660 /sys/devices/virtual/motosh/motosh_as/rv_9axis_update_rate
+   chown compass compass /sys/devices/virtual/motosh/motosh_as/game_rv_update_rate
+   chmod 0660 /sys/devices/virtual/motosh/motosh_as/game_rv_update_rate
+   chown compass compass /sys/devices/virtual/motosh/motosh_as/gravity_update_rate
+   chmod 0660 /sys/devices/virtual/motosh/motosh_as/gravity_update_rate
+   chown compass compass /sys/devices/virtual/motosh/motosh_as/linear_accel_update_rate
+   chmod 0660 /sys/devices/virtual/motosh/motosh_as/linear_accel_update_rate
+
+   # Change permission for type C params
+   chown root mot_tcmd /sys/devices/soc/75b5000.i2c/i2c-7/7-0022/CC_state
+   chown root mot_tcmd /sys/devices/soc/75b5000.i2c/i2c-7/7-0022/enable_vconn
+   # Change ownership and permission for AMPS factory testing
+   chown root mot_tcmd /sys/class/i2c-adapter/i2c-7/7-002d/enable
+   chmod 0660 /sys/class/i2c-adapter/i2c-7/7-002d/enable
+   chown root mot_tcmd /sys/class/i2c-adapter/i2c-7/7-002d/hsic_vdd
+   chmod 0660 /sys/class/i2c-adapter/i2c-7/7-002d/hsic_vdd
+
    # restore default console_loglevel to KERN_DEBUG
    # restore default_message_loglevel to KERN_WARNING
    write /proc/sys/kernel/printk "7 4 1 7"
@@ -225,6 +270,22 @@ on boot
 
    # Quiet binder logs
    write /sys/module/binder/parameters/debug_mask 0x5
+
+# Start Sensor daemon
+service motosh /system/bin/motosh boot
+    class late_start
+    user compass
+    group compass misc input
+    oneshot
+
+service ufs_ffu /system/bin/ufs_ffu.sh
+    user root
+    class core
+    oneshot
+    disabled
+
+on property:sys.boot_completed=1
+    start ufs_ffu
 
 # Pass carrier to wlan
 on property:ro.carrier=*

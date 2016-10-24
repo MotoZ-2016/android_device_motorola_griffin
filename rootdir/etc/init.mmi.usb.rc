@@ -59,7 +59,7 @@ on fs
     write /sys/class/android_usb/android0/f_ffs/aliases adb
 
 service mmi-usb-sh /init.mmi.usb.sh
-    seclabel u:r:init_usb:s0
+    # seclabel u:r:init_usb:s0
     class core
     user root
     group system

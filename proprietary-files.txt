@@ -1,6 +1,10 @@
 # ModService
 # -priv-app/ModService/ModService.apk
 
+# MDM Helper
+bin/mdm_helper
+vendor/lib64/libmdmimgload.so
+
 # Sensors
 bin/motosh
 lib/hw/sensors.msm8996.so
