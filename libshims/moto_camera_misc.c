@@ -21,3 +21,6 @@ void _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEEPKcbPii() {}
 
 //libjscore.so
 void _ZN7android11AudioSourceC1E14audio_source_tRKNS_8String16Ejjj() {}
+
+// libmot_gpu_mapper.so
+void _ZN7android13GraphicBufferC1Ejjij() {}

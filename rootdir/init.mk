@@ -9,7 +9,6 @@ PRODUCT_PACKAGES += \
     init.mmi.boot.sh \
     init.mmi.laser.sh \
     init.mmi.usb.rc \
-    init.mmi.usb.sh \
     init.oem.hw.sh \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
