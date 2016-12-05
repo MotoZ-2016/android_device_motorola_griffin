@@ -80,7 +80,7 @@ USE_OPENGL_RENDERER := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-#BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 
+#BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff
 BOARD_KERNEL_CMDLINE += cnsscore.pcie_link_down_panic=1
 
@@ -103,7 +103,7 @@ TARGET_BOOTLOADER_BOARD_NAME := griffin
 TARGET_NO_RADIOIMAGE := true
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/ #### THIS SEEMS WRONG
 TARGET_USES_64_BIT_BINDER := true
-#BOARD_USES_QC_TIME_SERVICES := true
+BOARD_USES_QC_TIME_SERVICES := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_griffin
@@ -149,6 +149,10 @@ TARGET_PROVIDES_KEYMASTER := true
 # Ril
 TARGET_RIL_VARIANT := caf
 
+# NFC
+TARGET_USES_NQ_NFC := true
+BOARD_NFC_CHIPSET := pn547
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
@@ -182,7 +186,7 @@ BOARD_QTI_CAMERA_32BIT_ONLY := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_CAMERA_APP := Camera2
 
-# TWRP 
+# TWRP
 # RECOVERY_VARIANT := twrp
 # TW_THEME := portrait_hdpi
 # RECOVERY_SDCARD_ON_DATA := true
@@ -196,4 +200,4 @@ TARGET_CAMERA_APP := Camera2
 # TW_USE_TOOLBOX    := true
 
 # Sensors
-# USE_SENSOR_MULTI_HAL := true
+USE_SENSOR_MULTI_HAL := true
