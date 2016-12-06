@@ -151,7 +151,7 @@ TARGET_RIL_VARIANT := caf
 
 # NFC
 TARGET_USES_NQ_NFC := true
-BOARD_NFC_CHIPSET := pn547
+BOARD_NFC_CHIPSET := pn548
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
