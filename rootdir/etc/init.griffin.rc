@@ -285,10 +285,10 @@ service ufs_ffu /system/bin/ufs_ffu.sh
     disabled
 
 on property:sys.boot_completed=1
-    start motosh
+    /system/bin/motosh boot
     start ufs_ffu
     #temporary fix WIFI on TurboZ and Stock Kernels
-    insmod /system/lib/modules/wlan.ko
+    insmod /system/lib/modules/qca_cld/qca_cld_wlan.ko
 
 # Pass carrier to wlan
 on property:ro.carrier=*
