@@ -155,7 +155,7 @@ on post-fs-data
     # SD card encryption metadata
     mkdir /data/misc/sds 0750 root root
 
-    # Required by FingerPrint Cards (FPC) via init so we don't need to give qseecomd or fingerprintd permissions to create them
+    # Required by FingerPrint Cards (FPC) via init so we dont need to give qseecomd or fingerprintd permissions to create them
     mkdir /data/.fps 0770 system system
 
     #Folder for hardware properties
@@ -285,7 +285,10 @@ service ufs_ffu /system/bin/ufs_ffu.sh
     disabled
 
 on property:sys.boot_completed=1
+    start motosh
     start ufs_ffu
+    #temporary fix WIFI on TurboZ and Stock Kernels
+    insmod /system/lib/modules/wlan.ko
 
 # Pass carrier to wlan
 on property:ro.carrier=*
