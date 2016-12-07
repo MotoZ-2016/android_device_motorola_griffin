@@ -2,7 +2,7 @@
 Device Tree for Moto Z (Griffin)
 ===========================================
 
-The Motorola Moto Z Play (codenamed _"griffin"_) is a high-range smartphone from Motorola mobility.
+The Motorola Moto Z (codenamed _"griffin"_) is a high-range smartphone from Motorola mobility.
 It was announced on September 2016.
 
 Basic   | Spec Sheet
