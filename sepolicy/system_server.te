@@ -1,1 +1,3 @@
 allow system_server persist_file:dir { read write };
+allow system_server rild:binder transfer;
+allow system_server unlabeled:file unlink;

@@ -18,3 +18,6 @@ allow init debugfs:file write;
 allow init dnsproxyd_socket:sock_file write;
 allow init netd:unix_stream_socket connectto;
 allow init self:netlink_socket { read write getattr connect };
+
+allow rild unlabeled:dir { getattr open read };
+allow rild unlabeled:file { getattr open read };

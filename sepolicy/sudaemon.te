@@ -1,0 +1,17 @@
+allow sudaemon adbsecure_prop:file { getattr open };
+allow sudaemon adbtcp_prop:file { getattr open };
+allow sudaemon boot_mode_prop:file { getattr open };
+allow sudaemon device_logging_prop:file { getattr open };
+allow sudaemon logpersistd_logging_prop:file { getattr open };
+allow sudaemon mmc_prop:file { getattr open };
+allow sudaemon motosh_prop:file { getattr open };
+allow sudaemon mpdecision_prop:file { getattr open };
+allow sudaemon recovery_prop:file { getattr open };
+allow sudaemon rmt_storage_prop:file { getattr open };
+allow sudaemon safemode_prop:file { getattr open };
+allow sudaemon spcomlib_prop:file { getattr open };
+allow sudaemon sys_usb_configfs_prop:file { getattr open };
+allow sudaemon sys_usb_controller_prop:file { getattr open };
+allow sudaemon sys_usb_tethering_prop:file { getattr open };
+allow sudaemon touch_prop:file { getattr open };
+allow sudaemon userinit_prop:file { getattr open };
