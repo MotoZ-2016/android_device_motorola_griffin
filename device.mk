@@ -48,8 +48,12 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
+	libnfc \
+	libnfc_jni \
+	nfc_nci.pn54x.default \
     com.android.nfc_extras \
     com.nxp.nfc.nq \
+    libnqnfc-nci \
     nfc_nci.nqx.default \
     NQNfcNci \
     nqnfcee_access.xml \
@@ -78,3 +82,25 @@ PRODUCT_COPY_FILES += \
 # Memory
 $(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-dalvik-heap.mk)
 $(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-hwui-memory.mk)
+
+#GreyBus
+PRODUCT_PACKAGES += \
+    greybus
+
+#V4L2_HAL
+PRODUCT_PACKAGES += \
+    v4l2_hal
+
+# CMActions
+PRODUCT_PACKAGES += \
+    CMActions
+
+# DRM
+PRODUCT_PACKAGES += \
+	libprotobuf-cpp-lite
+
+# Ebtables
+PRODUCT_PACKAGES += \
+   ebtables \
+   ethertypes \
+   libebtc

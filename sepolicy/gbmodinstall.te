@@ -1,0 +1,8 @@
+type gbmodinstall, domain, domain_deprecated;
+type gbmodinstall_exec, exec_type, file_type;
+init_daemon_domain(gbmodinstall)
+
+allow gbmodinstall shell_exec:file rx_file_perms;
+
+# Logs to /dev/kmsg
+allow gbmodinstall kmsg_device:chr_file w_file_perms;

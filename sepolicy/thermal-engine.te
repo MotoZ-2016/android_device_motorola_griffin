@@ -1,0 +1,8 @@
+allow thermal-engine self:capability { dac_override sys_boot };
+allow thermal-engine { sysfs sysfs_devices_system_cpu }:file { getattr read write open };
+allow thermal-engine { sysfs_thermal sysfs_usb_supply }:dir search;
+allow thermal-engine { sysfs_thermal sysfs_kgsl }:{ lnk_file file } { rw_file_perms open getattr};
+allow thermal-engine sysfs_battery_supply:dir search;
+allow thermal-engine sysfs_battery_supply:file rw_file_perms;
+allow thermal-engine sysfs_usb_supply:file rw_file_perms;
+

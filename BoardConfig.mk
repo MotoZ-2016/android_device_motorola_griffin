@@ -94,6 +94,7 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CONFIG := griffin_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8996
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-androidkernel-
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
@@ -155,6 +156,7 @@ BOARD_NFC_CHIPSET := pn548
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
@@ -169,6 +171,8 @@ TARGET_USES_WCNSS_MAC_ADDR_REV   := true
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
+WIFI_DRIVER_MODULE_PATH 		     := "/system/lib/modules/qca_cld/qca_cld_wlan.ko"
+WIFI_DRIVER_MODULE_NAME 	       := "qca_cld_wlan"
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
@@ -201,3 +205,14 @@ TARGET_CAMERA_APP := Camera2
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
+
+# CMHW
+BOARD_USES_CYANOGEN_HARDWARE := true
+BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
+
+# FM
+TARGET_QCOM_NO_FM_FIRMWARE := true
+
+# Radio
+BOARD_PROVIDES_LIBRIL := true
+BOARD_PROVIDES_RILD := true

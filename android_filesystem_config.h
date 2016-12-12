@@ -31,8 +31,7 @@
 ** and will allow partial matches.
 */
 static const struct fs_path_config android_device_files[] = {
-    { 00700, AID_RADIO,     AID_SHELL,     (1ULL << CAP_BLOCK_SUSPEND), "system/bin/qmuxd" },
-    { 00700, AID_CAMERA,    AID_SHELL,     (1ULL << CAP_SYS_NICE), "system/bin/mm-qcamera-daemon" },
+    { 00755, AID_RADIO,     AID_SHELL,     (1ULL << CAP_BLOCK_SUSPEND), "system/bin/qmuxd" },
     { 00755, AID_SYSTEM,    AID_SYSTEM,    (1ULL << CAP_NET_BIND_SERVICE), "system/bin/pm-service"},
     { 00755, AID_SYSTEM,    AID_SYSTEM,    (1ULL << CAP_NET_BIND_SERVICE), "system/bin/imsdatadaemon" },
     { 00755, AID_SYSTEM,    AID_RADIO,     (1ULL << CAP_NET_BIND_SERVICE), "system/bin/ims_rtp_daemon" },

@@ -1,0 +1,3 @@
+allow qmuxd socket_device:dir { write add_name };
+allow qmuxd socket_device:sock_file { create setattr };
+allow qmuxd diag_device:chr_file { read write open ioctl };

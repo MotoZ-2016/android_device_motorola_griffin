@@ -4,6 +4,14 @@
    "target_path": "device/qcom/common"
  },
  {
+   "repository": "android_motorola_external_greybus",
+   "target_path": "motorola/external/greybus"
+ },
+ {
+   "repository": "android_motorola_external_v4l2_hal",
+   "target_path": "motorola/external/v4l2_hal"
+ },
+ {
    "repository": "android_vendor_nxp-nfc_opensource_frameworks",
    "target_path": "vendor/nxp-nfc/opensource/frameworks"
  },
@@ -14,5 +22,9 @@
  {
    "repository": "android_vendor_nxp-nfc_opensource_Nfc",
    "target_path": "vendor/nxp-nfc/opensource/Nfc"
+ },
+ {
+   "repository": "android_packages_resources_devicesettings",
+   "target_path": "packages/resources/devicesettings"
  }
 ]

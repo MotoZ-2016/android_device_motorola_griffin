@@ -1,0 +1,3 @@
+allow ueventd sysfs_mmi_touch:file w_file_perms;
+allow ueventd sysfs_mmi_touch:dir search;
+allow ueventd self:netlink_kobject_uevent_socket { read };

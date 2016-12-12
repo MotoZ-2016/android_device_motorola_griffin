@@ -1,0 +1,8 @@
+type mmi-laser-sh, domain, domain_deprecated;
+type mmi-laser-sh_exec, exec_type, file_type;
+init_daemon_domain(mmi-laser-sh)
+
+allow mmi-laser-sh shell_exec:file rx_file_perms;
+
+# Logs to /dev/kmsg
+allow mmi-laser-sh kmsg_device:chr_file w_file_perms;
