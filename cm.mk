@@ -23,6 +23,9 @@ $(call inherit-product, device/motorola/griffin/device.mk)
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
+# Enhanced NFC
+$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
+
 # Time Zone data for recovery
 PRODUCT_COPY_FILES += \
     bionic/libc/zoneinfo/tzdata:root/system/usr/share/zoneinfo/tzdata

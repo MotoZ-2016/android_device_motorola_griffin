@@ -160,7 +160,8 @@ persist.mot.gps.conf.from.sim=true
 persist.mot.gps.smart_battery=1
 
 # NFC
-#ro.nfc.port=I2C
+ro.nfc.port=I2C
+persist.nfc.smartcard.config=SIM1,SIM2,eSE1
 
 # Timeservice
 persist.timed.enable=true
