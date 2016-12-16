@@ -152,7 +152,7 @@ TARGET_RIL_VARIANT := caf
 
 # NFC
 TARGET_USES_NQ_NFC := true
-BOARD_NFC_CHIPSET := pn544
+BOARD_NFC_CHIPSET := pn548
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -171,8 +171,8 @@ TARGET_USES_WCNSS_MAC_ADDR_REV   := true
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
-WIFI_DRIVER_MODULE_PATH 		     := "/system/lib/modules/qca_cld/qca_cld_wlan.ko"
-WIFI_DRIVER_MODULE_NAME 	       := "qca_cld_wlan"
+WIFI_DRIVER_MODULE_PATH 		 := "/system/lib/modules/wlan.ko"
+WIFI_DRIVER_MODULE_NAME			 := "wlan"
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth

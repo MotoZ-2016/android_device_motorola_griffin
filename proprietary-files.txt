@@ -26,15 +26,6 @@ vendor/lib64/libsensor_reg.so
 vendor/lib/libsensor_reg.so
 lib/lib_motsensorlistener.so
 bin/sensors.qcom
-vendor/lib/hw/activity_recognition.msm8996.so
-vendor/lib/libsensor_thresh.so
-vendor/lib/libsensor_user_cal.so
-vendor/lib/sensors.oem.so
-vendor/lib64/hw/activity_recognition.msm8996.so
-vendor/lib64/libsensor_thresh.so
-vendor/lib64/libsensor_user_cal.so
-vendor/lib64/sensors.oem.so
-
 
 # Fingerprint
 lib/lib_fpc_tac_shared.so
