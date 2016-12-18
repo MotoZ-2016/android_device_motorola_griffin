@@ -5,3 +5,4 @@ allow fingerprintd fingerprintd_data_file:sock_file { create unlink getattr writ
 allow fingerprintd tee_device:chr_file { ioctl open read write getattr };
 allow fingerprintd sysfs:file write;
 allow fingerprintd unlabeled:file { getattr open read };
+allow fingerprintd system_data_file:sock_file unlink;

@@ -404,7 +404,7 @@ service aplogd /system/bin/aplogd
     # for kernel logging.
     disabled
 
-service mmi-boot-sh /init.mmi.boot.sh
+service mmi-boot-sh /system/bin/sh /init.mmi.boot.sh
     # seclabel u:r:mmi_boot:s0
     class core
     user root
@@ -448,39 +448,39 @@ service hw_revs /system/bin/hardware_revisions.sh
     group system
     oneshot
 
-service mmi-laser-sh /init.mmi.laser.sh
+service mmi-laser-sh /system/bin/sh /init.mmi.laser.sh
     #seclabel u:r:mmi_laser:s0
     class core
     user root
     oneshot
 
-service mmi-touch-sh /system/bin/init.mmi.touch.sh
+service mmi-touch-sh /system/bin/sh /system/bin/init.mmi.touch.sh
     class core
     user root
     oneshot
 
-service oem-hw-sh /init.oem.hw.sh
+service oem-hw-sh /system/bin/sh /init.oem.hw.sh
     # seclabel u:r:init_hw:s0
     class core
     user root
     oneshot
     disabled
 
-service touch-dead-sh /init.oem.hw.sh -f
+service touch-dead-sh /system/bin/sh /init.oem.hw.sh -f
     # seclabel u:r:init_hw:s0
     class main
     user root
     oneshot
     disabled
 
-service touch-ready-sh /init.oem.hw.sh -r
+service touch-ready-sh /system/bin/sh /init.oem.hw.sh -r
     # seclabel u:r:init_hw:s0
     class main
     user root
     oneshot
     disabled
 
-service oem-hw-config-sh /init.oem.hw.sh -p
+service oem-hw-config-sh /system/bin/sh /init.oem.hw.sh -p
     # seclabel u:r:init_hw:s0
     class main
     user root
@@ -507,7 +507,7 @@ service mods_camd /system/bin/mods_camd
     rlimit 14 4 4
     ioprio rt 4
 
-service gbmodinstall /init.gbmods.sh
+service gbmodinstall /system/bin/sh /init.gbmods.sh
     # seclabel u:r:init_mods:s0
     user root
     oneshot

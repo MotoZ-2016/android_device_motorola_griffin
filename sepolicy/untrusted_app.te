@@ -1,2 +1,5 @@
 allow untrusted_app sysfs_zram:dir search;
 allow untrusted_app sysfs_zram:file { getattr open read };
+allow untrusted_app proc_iomem:file getattr;
+allow untrusted_app proc_sysrq:file getattr;
+allow untrusted_app sysfs:file { getattr open read };

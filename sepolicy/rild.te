@@ -15,3 +15,4 @@ allow rild system_server:binder { transfer call };
 allow rild system_server:unix_stream_socket { read getopt write };
 allow rmt_storage fsg_file:file { read open getattr };
 allow rmt_storage firmware_file:file { read open getattr };
+allow rild unlabeled:lnk_file read;

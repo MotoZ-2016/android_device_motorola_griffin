@@ -57,13 +57,15 @@ PRODUCT_PACKAGES += \
 	libp61-jcop-kit \
     nfc_nci.nqx.default \
     NQNfcNci \
+	NfcNci \
     nqnfcee_access.xml \
     nqnfcse_access.xml \
     Tag
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
+    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+	$(LOCAL_PATH)/configs/nfc/libnfc-nxp_ds.conf:system/etc/libnfc-nxp_ds.conf
 
 
 # Keylayouts

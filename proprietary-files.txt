@@ -1,6 +1,3 @@
-# ModService
-# -priv-app/ModService/ModService.apk
-
 # MDM Helper
 bin/mdm_helper
 vendor/lib64/libmdmimgload.so
@@ -522,8 +519,6 @@ vendor/lib/libmmcamera_mot_imx214.so
 vendor/lib/libmmcamera_ov5693.so
 vendor/lib64/libc2d30_bltlib.so
 vendor/lib/libc2d30_bltlib.so
-lib/libmodmanager.so
-lib64/libmodmanager.so
 
 # Chromatix
 vendor/lib/libchromatix_mot_imx214_cpp_video.so
@@ -677,3 +672,12 @@ vendor/lib64/libvpphvx.so
 # Griffin Media
 lib64/libmm-omxcore.so
 lib/libmm-omxcore.so
+
+# NFC firmware
+vendor/firmware/libpn548ad_fw.so
+
+# Mods
+priv-app/ModService/ModService.apk
+bin/mods_camd
+lib/libmodmanager.so
+lib64/libmodmanager.so
