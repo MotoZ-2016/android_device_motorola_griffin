@@ -116,6 +116,9 @@ audio.dolby.ds2.hardbypass=false
 audio.offload.passthrough=false
 audio.offload.multiple.enabled=false
 
+# Media
+media.aac_51_output_enabled=true
+
 # RmNet Data
 persist.rmnet.data.enable=true
 persist.data.wda.enable=true
@@ -183,3 +186,6 @@ persist.net.doxlat=true
 # Wifi
 wifi.interface=wlan0
 wifi.fccutild.load.qcacld=true
+
+# Vendor Extension
+ro.vendor.extension_library=libqti-perfd-client.so
