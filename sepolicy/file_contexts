@@ -4,6 +4,7 @@
 /init\.mmi\.boot\.sh                                     u:object_r:mmi-boot-sh_exec:s0
 /init\.mmi\.laser\.sh                                    u:object_r:mmi-laser-sh_exec:s0
 /init\.oem\.hw\.sh                                       u:object_r:oem-hw-sh_exec:s0
+/system/bin/adspd                                        u:object_r:adspd_exec:s0
 
 # CMActions
 /sys/homebutton/enable                                   u:object_r:sysfs_homebutton:s0

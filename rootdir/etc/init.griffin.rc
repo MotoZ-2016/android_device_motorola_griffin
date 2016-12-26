@@ -1,5 +1,7 @@
 # Moto USB configuration
 import init.mmi.usb.rc
+import init.mmi.volte.rc
+
 
 on early-boot
     write /sys/module/subsystem_restart/parameters/disable_restart_work 0x0

@@ -151,8 +151,7 @@ TARGET_PROVIDES_KEYMASTER := true
 TARGET_RIL_VARIANT := caf
 
 # NFC
-TARGET_USES_NQ_NFC := true
-BOARD_NFC_CHIPSET := pn548
+BOARD_NFC_CHIPSET := pn547
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -212,7 +211,3 @@ BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
 
 # FM
 TARGET_QCOM_NO_FM_FIRMWARE := true
-
-# Radio
-BOARD_PROVIDES_LIBRIL := true
-BOARD_PROVIDES_RILD := true

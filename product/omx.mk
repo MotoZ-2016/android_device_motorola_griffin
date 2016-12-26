@@ -15,4 +15,3 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw \
     libstagefright_soft_flacdec
-

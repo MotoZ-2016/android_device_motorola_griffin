@@ -20,3 +20,4 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc \
     wlan_carrier_bin.sh \
+    init.mmi.volte.rc \
