@@ -21,18 +21,23 @@
 # definition file).
 #
 
-# Motorola
-TARGET_USES_MOTOROLA_LOG := true
-
-# Recovery
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_HAS_LARGE_FILESYSTEM := true
-
+BOARD_VENDOR := motorola-qcom
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 DEVICE_PATH := device/motorola/griffin
 
+# OTA
+TARGET_OTA_ASSERT_DEVICE := griffin,griffin_cn,sheridan
+
+
+# Platform
+TARGET_BOARD_PLATFORM := msm8996
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno530
+TARGET_BOOTLOADER_BOARD_NAME := griffin
+TARGET_NO_RADIOIMAGE := true
+TARGET_USES_64_BIT_BINDER := true
+TARGET_NO_BOOTLOADER := true
+
 # Arch
-BOARD_VENDOR := motorola-qcom
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
@@ -43,7 +48,7 @@ TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
-TARGET_NO_BOOTLOADER := true
+
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
@@ -69,13 +74,16 @@ MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
-# OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
+TARGET_USES_NEW_ION_API :=true
+SF_VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
+VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 
 
 # Kernel
@@ -83,7 +91,6 @@ BOARD_KERNEL_BASE := 0x80000000
 #BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff
 BOARD_KERNEL_CMDLINE += cnsscore.pcie_link_down_panic=1
-
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DT := true
@@ -96,15 +103,7 @@ TARGET_KERNEL_CONFIG := griffin_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8996
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-androidkernel-
 
-# Platform
-BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := msm8996
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno530
-TARGET_BOOTLOADER_BOARD_NAME := griffin
-TARGET_NO_RADIOIMAGE := true
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc/ #### THIS SEEMS WRONG
-TARGET_USES_64_BIT_BINDER := true
-BOARD_USES_QC_TIME_SERVICES := true
+
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_griffin
@@ -146,6 +145,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Ril
 TARGET_RIL_VARIANT := caf
@@ -156,22 +156,6 @@ BOARD_NFC_CHIPSET := pn547
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
-
-# Wifi
-BOARD_HAS_QCOM_WLAN              := true
-BOARD_HAS_QCOM_WLAN_SDK          := true
-BOARD_HOSTAPD_DRIVER             := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_qcwcn
-BOARD_WLAN_DEVICE                := qcwcn
-BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
-TARGET_USES_QCOM_WCNSS_QMI       := true
-TARGET_USES_WCNSS_MAC_ADDR_REV   := true
-WIFI_DRIVER_FW_PATH_STA          := "sta"
-WIFI_DRIVER_FW_PATH_AP           := "ap"
-WPA_SUPPLICANT_VERSION           := VER_0_8_X
-WIFI_DRIVER_MODULE_PATH 		 := "/system/lib/modules/wlan.ko"
-WIFI_DRIVER_MODULE_NAME			 := "wlan"
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
@@ -187,27 +171,55 @@ TARGET_PROVIDES_LIBLIGHT := true
 # Camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 USE_DEVICE_SPECIFIC_CAMERA := true
-TARGET_CAMERA_APP := Camera2
+# TARGET_CAMERA_APP := Camera2
 
-# TWRP
-# RECOVERY_VARIANT := twrp
-# TW_THEME := portrait_hdpi
-# RECOVERY_SDCARD_ON_DATA := true
-# TW_SCREEN_BLANK_ON_BOOT := true
-# TARGET_RECOVERY_QCOM_RTC_FIX := true
-# TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
-# TW_DEFAULT_BRIGHTNESS := 80
-# TW_INCLUDE_NTFS_3G := true
-# TW_INCLUDE_CRYPTO := true
-# TW_NO_USB_STORAGE := true
-# TW_USE_TOOLBOX    := true
+# Recovery
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_HAS_LARGE_FILESYSTEM := true
+
+# Properties
+TARGET_SYSTEM_PROP += device/motorola/griffin/system.prop
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
+
+# Enable peripheral manager
+TARGET_PER_MGR_ENABLED := true
 
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
 
+# Media
+TARGET_USES_MEDIA_EXTENSIONS := true
+
+# SDClang
+TARGET_USE_SDCLANG := true
+
 # FM
 TARGET_QCOM_NO_FM_FIRMWARE := true
+
+# Qualcomm
+BOARD_USES_QCOM_HARDWARE := true
+BOARD_USES_QC_TIME_SERVICES := true
+
+# Wifi
+BOARD_HAS_QCOM_WLAN              := true
+BOARD_HAS_QCOM_WLAN_SDK          := true
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_qcwcn
+BOARD_WLAN_DEVICE                := qcwcn
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
+TARGET_USES_QCOM_WCNSS_QMI       := true
+TARGET_USES_WCNSS_MAC_ADDR_REV   := true
+WIFI_DRIVER_FW_PATH_STA          := "sta"
+WIFI_DRIVER_FW_PATH_AP           := "ap"
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
+WIFI_DRIVER_MODULE_NAME          := "wlan"
+
+
+
+# Motorola
+#TARGET_USES_MOTOROLA_LOG := true

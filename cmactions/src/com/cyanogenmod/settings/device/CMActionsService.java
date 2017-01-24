@@ -56,13 +56,18 @@ public class CMActionsService extends IntentService implements ScreenStateNotifi
         mScreenStateNotifiers.add(mDozePulseAction);
 
         // Actionable sensors get screen on/off notifications
-        mScreenStateNotifiers.add(new FlatUpSensor(cmActionsSettings, mSensorHelper, mDozePulseAction));
+        mScreenStateNotifiers.add(new GlanceSensor(cmActionsSettings, mSensorHelper, mDozePulseAction));
         mScreenStateNotifiers.add(new ProximitySensor(cmActionsSettings, mSensorHelper, mDozePulseAction));
         mScreenStateNotifiers.add(new StowSensor(cmActionsSettings, mSensorHelper, mDozePulseAction));
 
         // Other actions that are always enabled
         mUpdatedStateNotifiers.add(new CameraActivationSensor(cmActionsSettings, mSensorHelper));
-        mUpdatedStateNotifiers.add(new ChopChopSensor(cmActionsSettings, mSensorHelper));
+        if (!Device.isSurnia()){
+            mUpdatedStateNotifiers.add(new ChopChopSensor(cmActionsSettings, mSensorHelper));
+        } else {
+            Log.d(TAG, "No ChopChop");
+        }
+
         mUpdatedStateNotifiers.add(new ProximitySilencer(cmActionsSettings, context, mSensorHelper));
         mUpdatedStateNotifiers.add(new FlipToMute(cmActionsSettings, context, mSensorHelper));
         mUpdatedStateNotifiers.add(new LiftToSilence(cmActionsSettings, context, mSensorHelper));
