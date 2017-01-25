@@ -180,6 +180,7 @@ PRODUCT_PACKAGES += \
     init.oem.hw.sh \
     init.qcom.post_boot.sh \
     init.qcom.rc \
+    init.qcom.power.rc \
     ueventd.qcom.rc \
     wlan_carrier_bin.sh
 
