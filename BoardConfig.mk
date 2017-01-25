@@ -32,7 +32,7 @@ TARGET_OTA_ASSERT_DEVICE := griffin,griffin_cn,sheridan
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno530
-TARGET_BOOTLOADER_BOARD_NAME := griffin
+TARGET_BOOTLOADER_BOARD_NAME := msm8996
 TARGET_NO_RADIOIMAGE := true
 TARGET_USES_64_BIT_BINDER := true
 TARGET_NO_BOOTLOADER := true
@@ -41,7 +41,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_SMP := true
+TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := kryo
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
@@ -95,11 +95,11 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0
 BOARD_KERNEL_CMDLINE += cnsscore.pcie_link_down_panic=1
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_ARCH := arm64
-# TARGET_KERNEL_HAVE_EXFAT := true
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CONFIG := griffin_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8996
@@ -223,6 +223,10 @@ WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 WIFI_DRIVER_FW_PATH_P2P          := "p2p"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
+WIFI_DRIVER_MODULE_NAME          := "wlan"
+
+
 
 # Motorola
 #TARGET_USES_MOTOROLA_LOG := true
