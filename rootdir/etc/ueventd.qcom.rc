@@ -106,13 +106,21 @@
 /dev/mhi_pipe_14          0640   radio      radio
 /dev/mhi_pipe_16          0640   radio      radio
 /dev/mhi_pipe_32          0640   radio      radio
+/dev/at_usb0              0640   radio      radio
+/dev/at_mdm0              0640   radio      radio
 /dev/video*               0660   system     camera
 /dev/v4l2-hal-ctrl        0660   system     camera
 /dev/media*               0660   system     camera
 /dev/v4l-subdev*          0660   system     camera
-/dev/qseecom              0660   system     drmrpc
+/dev/qseecom              0660   system     mot_tpapi
+/dev/qsee_ipc_irq_spss    0660   system     drmrpc
 /dev/seemplog             0660   system     system
 /dev/pft                  0660   system     drmrpc
+/dev/spcom                0660   system     system
+/dev/sp_kernel            0660   system     system
+/dev/sp_ssr               0660   system     system
+/dev/sp_keymaster         0660   system     system
+/dev/cryptoapp            0660   system     system
 /dev/gemini0              0660   system     camera
 /dev/jpeg0                0660   system     camera
 /dev/jpeg1                0660   system     camera
@@ -121,6 +129,11 @@
 /dev/adsprpc-smd          0664   system     system
 /dev/system_health_monitor 0644  radio      system
 /dev/mdss_rotator         0664   system     system
+# wlan
+/dev/wcnss_wlan           0660   system     system
+/dev/wcnss_ctrl           0660   system     system
+/sys/devices/soc/a000000.qcom,wcnss-wlan/net/wlan0/queues/rx-* rps_cpus           0660   system     system
+/sys/devices/soc/a000000.qcom,wcnss-wlan/net/p2p0/queues/rx-* rps_cpus            0660   system     system
 /dev/msm_camera/*         0660   system     camera
 /dev/gemini/              0660   system     camera
 /dev/mercury0             0660   system     camera
@@ -133,6 +146,7 @@
 /dev/sdsprpc-smd          0660   system     system
 
 #permissions for audio
+/dev/wcd-dsp-glink        0660   system     audio
 /dev/audio_slimslave      0660   system     audio
 /dev/msm_qcelp            0660   system     audio
 /dev/msm_evrc             0660   system     audio
@@ -182,31 +196,38 @@
 /dev/tsc_mux0             0660   media       media
 /dev/tsc_ci0              0660   media       media
 
-# ultrasonic fingerprint
-/sys/devices/soc/757a000.i2c/i2c-6/*                eeprom         0440    system   system
-
 # sensors
 /sys/devices/i2c-12/12-*  pollrate_ms 0664 system system
 /sys/devices/f9925000.i2c/i2c-0/0-*                 enable         0660    input    system
 /sys/devices/f9925000.i2c/i2c-0/0-*                 poll_delay     0660    input    system
-/sys/devices/soc.0/78b6000.i2c/i2c-0/0-*            enable         0660    input    system
-/sys/devices/soc.0/78b6000.i2c/i2c-0/0-*            poll_delay     0660    input    system
-/sys/devices/soc.0/78b6000.i2c/i2c-0/0-*            enable_wakeup  0660    input    system
-/sys/devices/soc.0/78b6000.i2c/i2c-0/0-*            max_latency    0660    input    system
-/sys/devices/soc.0/78b6000.i2c/i2c-0/0-*            flush          0660    input    system
-/sys/devices/soc.0/78b6000.i2c/i2c-0/0-*            calibrate      0660    input    system
-/sys/devices/soc.0/78b5000.i2c/i2c-1/1-*            enable         0660    input    system
-/sys/devices/soc.0/78b5000.i2c/i2c-1/1-*            poll_delay     0660    input    system
-/sys/devices/soc.0/78b5000.i2c/i2c-1/1-*            enable_wakeup  0660    input    system
-/sys/devices/soc.0/78b5000.i2c/i2c-1/1-*            max_latency    0660    input    system
-/sys/devices/soc.0/78b5000.i2c/i2c-1/1-*            flush          0660    input    system
-/sys/devices/soc.0/78b5000.i2c/i2c-1/1-*            calibrate      0660    input    system
+/sys/devices/soc/78b6000.i2c/i2c-0/0-*            enable         0660    input    system
+/sys/devices/soc/78b6000.i2c/i2c-0/0-*            poll_delay     0660    input    system
+/sys/devices/soc/78b6000.i2c/i2c-0/0-*            enable_wakeup  0660    input    system
+/sys/devices/soc/78b6000.i2c/i2c-0/0-*            max_latency    0660    input    system
+/sys/devices/soc/78b6000.i2c/i2c-0/0-*            flush          0660    input    system
+/sys/devices/soc/78b6000.i2c/i2c-0/0-*            calibrate      0660    input    system
+/sys/devices/soc/78b5000.i2c/i2c-1/1-*            enable         0660    input    system
+/sys/devices/soc/78b5000.i2c/i2c-1/1-*            poll_delay     0660    input    system
+/sys/devices/soc/78b5000.i2c/i2c-1/1-*            enable_wakeup  0660    input    system
+/sys/devices/soc/78b5000.i2c/i2c-1/1-*            max_latency    0660    input    system
+/sys/devices/soc/78b5000.i2c/i2c-1/1-*            flush          0660    input    system
+/sys/devices/soc/78b5000.i2c/i2c-1/1-*            calibrate      0660    input    system
 /sys/devices/virtual/optical_sensors/proximity      ps_adc         0660    input    system
 /sys/devices/virtual/optical_sensors/proximity      ps_poll_delay  0660    input    system
 /sys/devices/virtual/optical_sensors/lightsensor    ls_auto        0660    input    system
 /sys/devices/virtual/optical_sensors/lightsensor    ls_poll_delay  0660    input    system
 /sys/devices/virtual/input/input*                   poll           0660    input    system
 /sys/devices/virtual/input/input*                   pollrate_ms    0660    input    system
+/sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input*    secure_touch         0440   system  drmrpc
+/sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input*    secure_touch_enable  0660   system  drmrpc
+/sys/devices/soc/78b7000.i2c/i2c-3/3-0038/input/input*    secure_touch         0440   system  drmrpc
+/sys/devices/soc/78b7000.i2c/i2c-3/3-0038/input/input*    secure_touch_enable  0660   system  drmrpc
+/sys/devices/soc/78b7000.i2c/i2c-3/3-004b/input/input*    secure_touch         0440   system  drmrpc
+/sys/devices/soc/78b7000.i2c/i2c-3/3-004b/input/input*    secure_touch_enable  0660   system  drmrpc
+
+# laser sensor access
+/sys/devices/virtual/input/input*                   enable_ps_sensor 0660  system   system
+/sys/devices/virtual/input/input*                   set_delay_ms     0660  system   system
 
 # vm_bms
 /dev/vm_bms               0660   system     system
@@ -216,13 +237,14 @@
 /dev/wcnss_wlan           0660   system     system
 /dev/wcnss_ctrl           0660   system     system
 /sys/devices/soc/600000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/wlan0/queues/rx-* rps_cpus 0660 system system
-/sys/devices/soc/600000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/p2p*/queues/rx-* rps_cpus 0660 system system
+/sys/devices/soc/600000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/p2p0/queues/rx-* rps_cpus 0660 system system
 
 #nfc permissions
 /dev/nfc-nci              0660    nfc         nfc
 /dev/nq-nci               0660    nfc         nfc
 /dev/assd                 0660    nfc         nfc
 /dev/pn544                0660    nfc         nfc
+/dev/bcm2079x-i2c         0660    nfc         nfc
 
 # UIO devices
 /dev/uio0                 0660   system     system
@@ -248,6 +270,11 @@
 /dev/hbtp_input           0660   system     system
 /dev/hbtp_vm              0660   system     system
 
+# Add device block for FRP
+/dev/block/platform/soc/7464900.sdhci/by-name/frp       0600   system     system
+/dev/block/platform/soc/624000.ufshc/by-name/frp        0600   system     system
+/dev/block/bootdevice/by-name/frp 0600 system system
+
 # I2C
 /dev/i2c-*                0660   system     system
 
@@ -269,6 +296,7 @@
 /sys/devices/soc/soc:muc_svc@0/mods_interfaces/* hotplug 0660 root mot_mod
 /sys/devices/soc/soc:muc_svc@0/mods_interfaces/* uevent 0660 root mot_mod
 /sys/devices/soc/soc:muc_svc@0/mods_interfaces/* current_limit 0220 root mot_mod
+/sys/devices/soc/soc:muc_svc@0/mods_interfaces/* rtc_sync 0220 root mot_mod
 /sys/devices/soc/soc:muc_svc@0 flashmode 0660 root mot_mod
 /sys/devices/soc/soc:muc_svc@0 reset 0660 root mot_mod
 /sys/devices/soc/0.muc/0.muc:muc_svc@0/mods_interfaces/* hotplug 0660 root mot_mod
@@ -293,6 +321,9 @@
 /sys/devices/platform/mods_codec.0/* uevent 0660 root mot_mod
 
 # MOD camera device
+/dev/mot_camera_ext*               0660   system     camera
+/sys/devices/virtual/video4linux/mot_camera_ext* open_mode 0660 system camera
+/sys/devices/virtual/video4linux/mot_camera_ext* uevent 0660 root mot_mod
 /sys/devices/virtual/video4linux/video* open_mode 0660 system camera
 /sys/devices/virtual/video4linux/video* uevent 0660 root mot_mod
 
@@ -302,15 +333,5 @@
 # haptic
 /dev/drv2605              0660   system     system
 
-# IIO
-/sys/devices/iio_sysfs_trigger/add_trigger          0220    system      system
-/sys/devices/iio_sysfs_trigger/remove_trigger       0220    system      system
-
-/sys/devices/iio:device* buffer/*                   0664    system      system
-/sys/devices/iio:device* scan_elements/in_*_en      0664    system      system
-/sys/devices/iio:device* trigger/current_trigger    0664    system      system
-/sys/devices/iio:device* in_sampling_frequency      0664    system      system
-/sys/devices/iio:device* max_latency_ns             0664    system      system
-/sys/devices/iio:device* flush                      0220    system      system
-
-/dev/iio:device*                                    0600    system      system
+#DTV
+/dev/isdbt                 0660 mot_dtv  mot_dtv

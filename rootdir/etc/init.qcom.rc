@@ -36,6 +36,8 @@ on early-init
     symlink /data/tombstones /tombstones
     mkdir /dsp 0771 media media
     mkdir /fsg 755 root root
+    # Mount point for Digital Personalization partition
+    mkdir /customize 0500 root root
 
 on init
     export LD_SHIM_LIBS /system/lib/libjustshoot.so|libshim_camera.so:/system/lib/hw/camera.msm8996.so|libcamera_shim.so:/system/vendor/lib/libmot_gpu_mapper.so|libshim_camera.so
@@ -134,6 +136,23 @@ on boot
 
     #Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
+
+    # update access for VR & Sustained Mode
+    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+    chmod 0660 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+    chmod 0660 /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+    chown system system /sys/class/devfreq/soc:qcom,gpubw/min_freq
+    chmod 0660 /sys/class/devfreq/soc:qcom,gpubw/min_freq
+
+    # Change permission for type C params
+    chown root mot_tcmd /sys/devices/soc/75b5000.i2c/i2c-7/7-0022/CC_state
+    chown root mot_tcmd /sys/devices/soc/75b5000.i2c/i2c-7/7-0022/enable_vconn
+    # Change ownership and permission for AMPS factory testing
+    chown root mot_tcmd /sys/class/i2c-adapter/i2c-7/7-002d/enable
+    chmod 0660 /sys/class/i2c-adapter/i2c-7/7-002d/enable
+    chown root mot_tcmd /sys/class/i2c-adapter/i2c-7/7-002d/hsic_vdd
+    chmod 0660 /sys/class/i2c-adapter/i2c-7/7-002d/hsic_vdd
 
     setprop wifi.interface wlan0
 
@@ -358,6 +377,10 @@ on fs
     # Mount modem FSG partition
     wait /dev/block/bootdevice/by-name/fsg
     mount ext4 /dev/block/bootdevice/by-name/fsg /fsg ro nosuid nodev
+
+    #Mount customize partion
+    wait /dev/block/bootdevice/by-name/customize
+    mount ext4 /dev/block/bootdevice/by-name/customize /customize ro discard nosuid nodev noatime nodiratime noexec defcontext=u:object_r:user_config_file:s0
 
     # use /persist as phony PDS partition
     symlink /persist /pds
@@ -655,6 +678,9 @@ on post-fs-data
     # Imager tuning data for camera subsystem
     mkdir /data/misc/imager 0770 camera camera
 
+    #setup folder for WLAN WAPI
+    chmod 0770 /data/wapi_certificate
+
 service perfd /system/vendor/bin/perfd
    class main
    user root
@@ -714,8 +740,6 @@ service motosh /system/bin/motosh boot
     group compass misc input
     oneshot
 
-
-
 # Pass carrier to wlan
 on property:ro.carrier=*
     start init_wifi
@@ -726,7 +750,6 @@ service init_wifi /wlan_carrier_bin.sh
     group root
     oneshot
     disabled
-
 
 on nonencrypted
     setprop ro.kick.logcopy ${ro.bootreason}
@@ -866,7 +889,7 @@ service hw_revs /system/bin/hardware_revisions.sh
     oneshot
 
 service mmi-laser-sh /system/bin/sh /init.mmi.laser.sh
-    #seclabel u:r:mmi_laser:s0
+    seclabel u:r:mmi_laser:s0
     class core
     user root
     oneshot
@@ -877,29 +900,8 @@ service mmi-touch-sh /system/bin/sh /system/bin/init.mmi.touch.sh
     oneshot
 
 service oem-hw-sh /system/bin/sh /init.oem.hw.sh
-    # seclabel u:r:init_hw:s0
+    seclabel u:r:init_hw:s0
     class core
-    user root
-    oneshot
-    disabled
-
-service touch-dead-sh /system/bin/sh /init.oem.hw.sh -f
-    # seclabel u:r:init_hw:s0
-    class main
-    user root
-    oneshot
-    disabled
-
-service touch-ready-sh /system/bin/sh /init.oem.hw.sh -r
-    # seclabel u:r:init_hw:s0
-    class main
-    user root
-    oneshot
-    disabled
-
-service oem-hw-config-sh /system/bin/sh /init.oem.hw.sh -p
-    # seclabel u:r:init_hw:s0
-    class main
     user root
     oneshot
     disabled
@@ -924,8 +926,8 @@ service mods_camd /system/bin/mods_camd
     rlimit 14 4 4
     ioprio rt 4
 
-service gbmodinstall /system/bin/sh /init.gbmods.sh
-    # seclabel u:r:init_mods:s0
+service gbmodinstall /init.gbmods.sh
+    seclabel u:r:init_mods:s0
     user root
     oneshot
     disabled
@@ -1330,26 +1332,9 @@ service energy-awareness /system/bin/energy-awareness
     group system
     oneshot
 
-on charger
-    setprop persist.sys.usb.config charging
-    write /sys/devices/system/cpu/cpu2/online 0
-    write /sys/devices/system/cpu/cpu3/online 0
-    write /sys/module/lpm_levels/parameters/sleep_disabled 0
-    wait /dev/block/bootdevice
-    trigger early-fs
-    trigger fs
-    trigger post-fs
-    trigger post-fs-data
-    trigger moto-charger
-    class_stop main
-    class_stop late_start
-    mount_all charger.fstab.qcom
-
-on moto-charger
-    setprop ro.board.platform msm8996
-    trigger firmware_mounts_complete
-    start qcom-post-boot
-    start gbmodinstall
-    start charge_only_mode
-    start batt_health
-    start thermal-com
+service iop /system/bin/iop
+   class main
+   user root
+   group root
+   disabled
+   socket iop seqpacket 0666 root system
