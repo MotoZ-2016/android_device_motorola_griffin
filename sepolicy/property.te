@@ -1,2 +1,5 @@
 type motosh_prop, property_type;
 type touch_prop, property_type;
+type atvc_prop, property_type;
+type manufacturedate_prop, property_type;
+type rmtfs_prop, property_type;

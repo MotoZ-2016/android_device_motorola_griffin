@@ -5,18 +5,31 @@
 /init\.mmi\.laser\.sh                                    u:object_r:mmi-laser-sh_exec:s0
 /init\.oem\.hw\.sh                                       u:object_r:oem-hw-sh_exec:s0
 /system/bin/adspd                                        u:object_r:adspd_exec:s0
+/system/bin/charge_only_mode                                u:object_r:charge_only_exec:s0
+/system/bin/batt_health                                     u:object_r:batt_health_exec:s0
+/system/bin/thermal-engine                                  u:object_r:thermal-engine_exec:s0
 
 # CMActions
 /sys/homebutton/enable                                   u:object_r:sysfs_homebutton:s0
 
 # Fingerprint
 /data/.fps(/.*)?                                         u:object_r:fingerprintd_data_file:s0
-/data/fpc                                                u:object_r:fingerprintd_data_file:s0
+/data/fpc(/.*)?                                             u:object_r:fpc_data_file:s0
+/data/fpc/socket                                            u:object_r:fpc_socket:s0
 
 # Partitions
 /dev/block/bootdevice/by-name/frp                        u:object_r:frp_block_device:s0
 /dev/block/bootdevice/by-name/metadata                   u:object_r:metadata_block_device:s0
 /dev/block/bootdevice/by-name/persist                    u:object_r:persist_block_device:s0
+/dev/block/bootdevice/by-name/cache                         u:object_r:cache_block_device:s0
+/dev/block/bootdevice/by-name/cid                           u:object_r:cid_block_device:s0
+/dev/block/bootdevice/by-name/clogo                         u:object_r:clogo_block_device:s0
+/dev/block/bootdevice/by-name/dhob                          u:object_r:hob_block_device:s0
+/dev/block/bootdevice/by-name/hob                           u:object_r:hob_block_device:s0
+/dev/block/bootdevice/by-name/hw                            u:object_r:hw_block_device:s0
+/dev/block/bootdevice/by-name/logs                          u:object_r:logs_block_device:s0
+/dev/block/bootdevice/by-name/utagsBackup                   u:object_r:utags_block_device:s0
+/dev/block/bootdevice/by-name/utags                         u:object_r:utags_block_device:s0
 
 # Sensors
 /dev/laser                                               u:object_r:laser_device:s0
