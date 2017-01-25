@@ -2,9 +2,73 @@
 # Moto Z
 #
 
-# Graphics
+## QCOM BUILD
+# This is the build that came with the device
+# keeping this here and incrementing it as needed
+# once we start upgrading so we can keep track of
+# things properly.
+ro.build.version.qcom=LA.HB.1.3.2-15400-8x96.0
+
+## Audio
+audio.deep_buffer.media=true
+audio.dolby.ds2.enabled=false
+audio.dolby.ds2.hardbypass=false
+audio.offload.buffer.size.kb=32
+audio.offload.gapless.enabled=true
+audio.offload.multiaac.enable=true
+audio.offload.multiple.enabled=false
+audio.offload.passthrough=false
+audio.offload.pcm.16bit.enable=true
+audio.offload.pcm.24bit.enable=true
+audio.offload.track.enable=true
+audio.offload.video=false
+audio.parser.ip.buffer.size=262144
+persist.audio.dualmic.config=endfire
+persist.audio.fluence.speaker=true
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicecomm=true
+persist.audio.fluence.voicerec=false
+qcom.hw.aac.encoder=false
+use.voice.path.for.pcm.voip=true
+ro.config.vc_call_vol_steps=8
+ro.qc.sdk.audio.fluencetype=none
+ro.qc.sdk.audio.ssr=false
+
+
+## Bluetooth
+bluetooth.hfp.client=1
+qcom.bluetooth.soc=rome
+qcom.bt.le_dev_pwr_class=1
+ro.bluetooth.hfp.ver=1.6
+
+## NOTE: without offload cap set
+we crash bluetooth due to a NPE in
+the actuall bluetooth app. We should most likely
+fix this in the real app so other people don't
+deal with this in the future. with this set to
+false, you will also encounter this issue.
+
+persist.bt.a2dp_offload_cap=true
+
+## Camera
+camera.disable_zsl_mode=1
+persist.camera.HAL3.enabled=1
+
+## FRP
+ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+## GPS
+persist.gps.qc_nlp_in_use=1
+persist.loc.nlp_name=com.qualcomm.location
+persist.mot.gps.assisted=false
+persist.mot.gps.conf.from.sim=true
+persist.mot.gps.smart_battery=1
+ro.gps.agps_provider=1
+
+## Graphics
 debug.egl.hw=1
 debug.sf.hw=1
+debug.gralloc.enable_fb_ubwc=1
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 persist.hwc.enable_vds=1
@@ -12,50 +76,42 @@ ro.hwui.texture_cache_flushrate=0.4
 ro.opengles.version=196609
 ro.sf.lcd_density=640
 
-# USB
-ro.usb.mtp=0x2e82
-ro.usb.mtp_adb=0x2e76
-ro.usb.ptp=0x2e83
-ro.usb.ptp_adb=0x2e84
-ro.usb.bpt=0x2ee5
-ro.usb.bpt_adb=0x2ee6
-ro.usb.bpteth=0x2ee7
-ro.usb.bpteth_adb=0x2ee8
 
-# QCOM
-ro.frp.pst=/dev/block/bootdevice/by-name/config
+## Media
+media.aac_51_output_enabled=true
+
+## NFC
+persist.nfc.smartcard.config=SIM1,SIM2,eSE1
+
+## Netmgr
+ro.use_data_netmgrd=true
+persist.data.netmgrd.qos.enable=true
+persist.data.mode=concurrent
+
+## Play Store
+ro.com.google.clientidbase=android-motorola
+ro.com.google.clientidbase.am=android-motorola
+ro.com.google.clientidbase.gmm=android-motorola
+ro.com.google.clientidbase.ms=android-motorola
+ro.com.google.clientidbase.yt=android-motorola
+
+## QCOM
 drm.service.enabled=true
 
-# RIL
-rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
-persist.rild.nitz_plmn=
-persist.rild.nitz_long_ons_0=
-persist.rild.nitz_long_ons_1=
-persist.rild.nitz_long_ons_2=
-persist.rild.nitz_long_ons_3=
-persist.rild.nitz_short_ons_0=
-persist.rild.nitz_short_ons_1=
-persist.rild.nitz_short_ons_2=
-persist.rild.nitz_short_ons_3=
-ril.subscription.types=NV,RUIM
-DEVICE_PROVISIONED=1
-ro.radio.imei.sv=2
-persist.volte_enalbed_by_hw=1
-persist.radio.data_ltd_sys_ind=1
-ro.telephony.default_network=10,0
-telephony.lteOnCdmaDevice=1
-ro.telephony.call_ring.multiple=false
+## IMS
+persist.ims.volte=true
+persist.ims.vt=false
+persist.ims.vt.epdg=false
+persist.ims.rcs=false
+persist.ims.disableADBLogs=2
+persist.ims.disableDebugLogs=0
+persist.ims.disableQXDMLogs=0
+persist.ims.disableIMSLogs=0
+
+## RIL
 persist.radio.apm_sim_not_pwdn=1
-persist.radio.custom_ecc=1
 persist.radio.sib16_support=1
 persist.radio.no_wait_for_card=1
-persist.data.qmi.adb_logmask=0
-persist.net.doxlat=true
-persist.oem.dump=0
-persist.radio.ignore_dom_time=5
-persist.radio.hw_mbn_update=0
-persist.radio.sw_mbn_update=0
-persist.radio.start_ota_daemon=1
 persist.radio.dfr_mode_set=1
 persist.radio.relay_oprt_change=1
 persist.radio.msgtunnel.start=true
@@ -80,47 +136,28 @@ persist.radio.VT_HYBRID_ENABLE=1
 persist.radio.ROTATION_ENABLE=1
 persist.radio.REVERSE_QMI=0
 persist.radio.RATE_ADAPT_ENABLE=1
-persist.rmnet.mux=enabled
 persist.radio.VT_USE_MDM_TIME=0
 persist.radio.videopause.mode=0
+persist.data.qmi.adb_logmask=0
+persist.net.doxlat=true
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ro.radio.imei.sv=2
+ro.telephony.default_network=10,0
+ro.telephony.call_ring.multiple=false
+ril.subscription.types=NV,RUIM
+rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
+telephony.lteOnCdmaDevice=1
+DEVICE_PROVISIONED=1
 
-# Netmgr
-ro.use_data_netmgrd=true
-persist.data.netmgrd.qos.enable=true
-persist.data.mode=concurrent
-
-##fluencetype can be "fluence" or "fluencepro" or "none"
-persist.audio.dualmic.config=endfire
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.voicecomm=true
-persist.audio.fluence.voicerec=false
-persist.audio.fluence.speaker=true
-qcom.hw.aac.encoder=false
-ro.qc.sdk.audio.fluencetype=none
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.voicerec=false
-persist.audio.fluence.speaker=false
-ro.config.vc_call_vol_steps=8
-audio.offload.buffer.size.kb=32
-audio.offload.video=true
-audio.offload.pcm.16bit.enable=true
-audio.offload.pcm.24bit.enable=true
-audio.offload.track.enable=true
-audio.deep_buffer.media=true
-use.voice.path.for.pcm.voip=true
-audio.offload.multiaac.enable=true
-audio.offload.gapless.enabled=true
-audio.parser.ip.buffer.size=262144
-audio.dolby.ds2.enabled=false
-audio.dolby.ds2.hardbypass=false
-audio.offload.passthrough=false
-audio.offload.multiple.enabled=false
-
-# Media
-media.aac_51_output_enabled=true
-
-# RmNet Data
-persist.rmnet.data.enable=true
+## RmNet Data
 persist.data.wda.enable=true
 persist.data.df.dl_mode=5
 persist.data.df.ul_mode=5
@@ -129,63 +166,32 @@ persist.data.df.agg.dl_size=4096
 persist.data.df.mux_count=8
 persist.data.df.iwlan_mux=9
 persist.data.df.dev_name=rmnet_usb0
+persist.rmnet.data.enable=true
+persist.rmnet.mux=enabled
 
-# FRP
-ro.frp.pst=/dev/block/bootdevice/by-name/frp
-
-# Bluetooth
-bluetooth.hfp.client=1
-qcom.bluetooth.soc=rome
-qcom.bt.le_dev_pwr_class=1
-ro.bluetooth.hfp.ver=1.6
-
-## NOTE: without offload cap set
-we crash bluetooth due to a NPE in
-the actuall bluetooth app. We should most likely
-fix this in the real app so other people don't
-deal with this in the future. with this set to
-false, you will also encounter this issue.
-
-persist.bt.a2dp_offload_cap=true
-
-# Camera
-# persist.camera.hal.debug=true
-# persist.camera.global.debug=true
-camera.disable_zsl_mode=1
-persist.camera.HAL3.enabled=1
-
-# GPS
-persist.gps.qc_nlp_in_use=1
-persist.loc.nlp_name=com.qualcomm.location
-ro.gps.agps_provider=1
-persist.mot.gps.assisted=false
-persist.mot.gps.conf.from.sim=true
-persist.mot.gps.smart_battery=1
-
-# NFC
-#ro.nfc.port=I2C
-persist.nfc.smartcard.config=SIM1,SIM2,eSE1
-
-# Timeservice
+## Timeservice
 persist.timed.enable=true
 
-# Play Store
-ro.com.google.clientidbase=android-motorola
-ro.com.google.clientidbase.am=android-motorola
-ro.com.google.clientidbase.gmm=android-motorola
-ro.com.google.clientidbase.ms=android-motorola
-ro.com.google.clientidbase.yt=android-motorola
+## USB
+ro.usb.mtp=0x2e82
+ro.usb.mtp_adb=0x2e76
+ro.usb.ptp=0x2e83
+ro.usb.ptp_adb=0x2e84
+ro.usb.bpt=0x2ee5
+ro.usb.bpt_adb=0x2ee6
+ro.usb.bpteth=0x2ee7
+ro.usb.bpteth_adb=0x2ee8
 
-# Wifi Display
+## Vendor Extension
+ro.vendor.extension_library=libqti-perfd-client.so
+
+## Wifi Display
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
 
-#system prop for enabling/disabling Android XLAT
-persist.net.doxlat=true
-
-# Wifi
+## Wifi
 wifi.interface=wlan0
 wifi.fccutild.load.qcacld=true
 
-# Vendor Extension
-ro.vendor.extension_library=libqti-perfd-client.so
+## XLAT
+persist.net.doxlat=true
