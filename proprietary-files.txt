@@ -1,3 +1,233 @@
+# ADSP
+bin/adspd
+bin/adsprpcd
+lib/libadspd.so
+lib64/libadspd.so
+vendor/lib/libadsprpc.so
+vendor/lib64/libadsprpc.so
+vendor/lib/libmdsprpc.so
+vendor/lib64/libmdsprpc.so
+vendor/lib/libfastcvopt.so
+vendor/lib/libscve.so
+vendor/lib/libscve_mv.so
+vendor/lib/libscve_stub.so
+vendor/lib/libfastcvadsp_stub.so
+vendor/lib64/libadsp_default_listener.so
+vendor/lib/libadsp_hvx_stub.so
+vendor/lib/libadsp_hvx_callback_skel.so
+vendor/lib/libadsp_default_listener.so
+etc/firmware/sheridan_vrgain.bin
+etc/firmware/vrgain.bin
+
+# ADSP Modules
+vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so
+vendor/lib/rfsa/adsp/libadsp_hvx_skel.so
+vendor/lib/rfsa/adsp/libadsp_hvx_stats.so
+vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_BGGR.so
+vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_RGGB.so
+vendor/lib/rfsa/adsp/libscveCleverCapture_skel.so
+vendor/lib/rfsa/adsp/libvpp_frc.so
+vendor/lib/rfsa/adsp/libvpp_svc_skel.so
+vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libscveT2T_skel.so
+vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
+vendor/lib/rfsa/adsp/libscveTextReco_skel.so
+vendor/lib/rfsa/adsp/libobjectMattingApp_skel.so
+
+# Audio
+bin/fm_qsoc_patches
+vendor/bin/audioflacapp
+lib/hw/audio.motvr.default.so
+lib/libmotaudioutils.so
+lib/libqcomfm_jni.so
+lib64/libqcomfm_jni.so
+lib/libunshorten.so
+vendor/lib/libacdb-fts.so
+vendor/lib64/libacdb-fts.so
+vendor/lib/libacdbloader.so
+vendor/lib64/libacdbloader.so
+vendor/lib/libacdbmapper.so
+vendor/lib64/libacdbmapper.so
+vendor/lib/libacdbrtac.so
+vendor/lib64/libacdbrtac.so
+vendor/lib/libadiertac.so
+vendor/lib64/libadiertac.so
+vendor/lib/libaudcal.so
+vendor/lib64/libaudcal.so
+lib/soundfx/libmmieffectswrapper.so
+etc/acdbdata/sheridan/General_cal.acdb
+etc/acdbdata/sheridan/Bluetooth_cal.acdb
+etc/acdbdata/sheridan/Global_cal.acdb
+etc/acdbdata/sheridan/Headset_cal.acdb
+etc/acdbdata/sheridan/Hdmi_cal.acdb
+etc/acdbdata/sheridan/Speaker_cal.acdb
+etc/acdbdata/griffin/General_cal.acdb
+etc/acdbdata/griffin/Bluetooth_cal.acdb
+etc/acdbdata/griffin/Global_cal.acdb
+etc/acdbdata/griffin/Headset_cal.acdb
+etc/acdbdata/griffin/Hdmi_cal.acdb
+etc/acdbdata/griffin/Speaker_cal.acdb
+etc/firmware/florida-dsp2-aov-frontend.wmfw
+etc/firmware/florida-dsp3-aov-control.wmfw
+etc/firmware/florida-dsp4-speaker-protect-calibration.bin
+etc/firmware/florida-dsp4-speaker-protect-sheridan-calibration.bin
+etc/firmware/florida-dsp4-speaker-protect-sheridan-voice.bin
+etc/firmware/florida-dsp4-speaker-protect-sheridan.bin
+etc/firmware/florida-dsp4-speaker-protect-voice.bin
+etc/firmware/florida-dsp4-speaker-protect.bin
+etc/firmware/florida-dsp4-speaker-protect.wmfw
+
+# Bluetooth
+bin/btnvtool
+bin/hci_qcomm_init
+bin/wcnss_filter
+etc/firmware/nvm_tlv_1.3.bin
+etc/firmware/nvm_tlv_2.1.bin
+etc/firmware/nvm_tlv_3.0.bin
+etc/firmware/nvm_tlv_3.2.bin
+etc/firmware/nvm_tlv.bin
+etc/firmware/rampatch_tlv_1.3.tlv
+etc/firmware/rampatch_tlv_2.1.tlv
+etc/firmware/rampatch_tlv_3.0.tlv
+etc/firmware/rampatch_tlv_3.2.tlv
+etc/firmware/rampatch_tlv.img
+vendor/lib64/libbtnv.so
+vendor/lib/libbtnv.so
+
+# CNE
+bin/cnd
+etc/cne/SwimConfig.xml
+etc/cne/andsfCne.xml
+etc/cne/wqeclient/profile1.xml
+etc/cne/wqeclient/profile2.xml
+etc/cne/wqeclient/profile3.xml
+etc/cne/wqeclient/profile5.xml
+etc/permissions/ConnectivityExt.xml
+etc/permissions/cneapiclient.xml
+etc/permissions/com.quicinc.cne.xml
+framework/ConnectivityExt.jar
+framework/cneapiclient.jar
+framework/com.quicinc.cne.jar
+-priv-app/CNEService/CNEService.apk
+vendor/lib/libNimsWrap.so
+vendor/lib/libcne.so
+vendor/lib/libcneapiclient.so
+vendor/lib/libcneconn.so
+vendor/lib/libcneqmiutils.so
+vendor/lib/libvendorconn.so
+vendor/lib/libwqe.so
+vendor/lib/libxml.so
+vendor/lib64/libNimsWrap.so
+vendor/lib64/libcne.so
+vendor/lib64/libcneapiclient.so
+vendor/lib64/libcneconn.so
+vendor/lib64/libcneqmiutils.so
+vendor/lib64/libvendorconn.so
+vendor/lib64/libwqe.so
+vendor/lib64/libxml.so
+
+# DRM
+bin/qseecomd
+vendor/bin/qseeproxydaemon
+vendor/lib/libcppf.so
+vendor/lib/libWVStreamControlAPI_L1.so
+vendor/lib/liboemcrypto.so
+vendor/lib/libwvdrm_L1.so
+vendor/lib/mediadrm/libwvdrmengine.so
+vendor/lib64/libSecureUILib.so
+
+vendor/lib/libtime_genoff.so
+vendor/lib/libQSEEComAPI.so
+vendor/lib/libdrmfs.so
+vendor/lib/libdrmtime.so
+vendor/lib/librpmb.so
+vendor/lib/libssd.so
+vendor/lib/mediadrm/libdrmclearkeyplugin.so
+vendor/lib/libsecureui_svcsock.so
+vendor/lib/libStDrvInt.so
+vendor/lib/libqisl.so
+vendor/lib/libGPreqcancel.so
+vendor/lib/libGPreqcancel_svc.so
+vendor/lib/libGPTEE.so
+vendor/lib/libmm-hdcpmgr.so
+vendor/lib/libmmQSM.so
+vendor/lib64/libtime_genoff.so
+vendor/lib64/libQSEEComAPI.so
+vendor/lib64/libdrmfs.so
+vendor/lib64/libdrmtime.so
+vendor/lib64/librpmb.so
+vendor/lib64/libssd.so
+vendor/lib64/mediadrm/libdrmclearkeyplugin.so
+vendor/lib64/libsecureui_svcsock.so
+vendor/lib64/libStDrvInt.so
+vendor/lib64/libqisl.so
+vendor/lib64/libGPreqcancel.so
+vendor/lib64/libGPreqcancel_svc.so
+vendor/lib64/libGPTEE.so
+vendor/lib64/libmm-hdcpmgr.so
+vendor/lib64/libmmQSM.so
+
+
+
+# Daydream REMOVE ONCE OPENGAPPS HAS THIS
+-app/DaydreamHome/DaydreamHome.apk
+-app/VrInputMethod/VrInputMethod.apk
+-app/VrYoutube/VrYoutube.apk
+
+# Fingerprint
+lib/lib_fpc_tac_shared.so
+lib/hw/fingerprint.msm8996.so
+lib/libcom_fingerprints_service.so
+lib64/lib_fpc_tac_shared.so
+lib64/hw/fingerprint.msm8996.so
+lib64/libcom_fingerprints_service.so
+
+# Gatekeepr
+bin/gatekeeperd
+vendor/lib/hw/gatekeeper.msm8996.so
+vendor/lib64/hw/gatekeeper.msm8996.so
+
+# GPS
+bin/loc_launcher
+etc/permissions/com.qti.location.sdk.xml
+etc/permissions/com.qualcomm.location.xml
+framework/com.qti.location.sdk.jar
+-lib64/libloc_api_v02.so
+lib64/libloc_ds_api.so
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk
+vendor/bin/slim_daemon
+vendor/lib64/hw/flp.default.so
+vendor/lib64/libalarmservice_jni.so
+vendor/lib64/libasn1cper.so
+vendor/lib64/libasn1crt.so
+vendor/lib64/libasn1crtx.so
+vendor/lib64/libdataitems.so
+vendor/lib64/libflp.so
+vendor/lib64/libgdtap.so
+vendor/lib64/libgeofence.so
+vendor/lib64/libizat_core.so
+vendor/lib64/liblbs_core.so
+vendor/lib64/libloc_ext.so
+vendor/lib64/libloc_xtra.so
+vendor/lib64/liblocationservice.so
+vendor/lib64/liblocationservice_glue.so
+vendor/lib64/liblowi_client.so
+vendor/lib64/liblowi_wifihal.so
+vendor/lib64/liblowi_wifihal_nl.so
+vendor/lib64/libquipc_os_api.so
+vendor/lib64/libulp2.so
+vendor/lib64/libxt_native.so
+vendor/lib64/libxtadapter.so
+vendor/lib64/libxtwifi_ulp_adaptor.so
+
+# Keystore
+vendor/lib/hw/keystore.msm8996.so
+vendor/lib64/hw/keystore.msm8996.so
+
 # MDM Helper
 bin/mdm_helper
 vendor/lib64/libmdmimgload.so
@@ -24,93 +254,6 @@ vendor/lib/libsensor_reg.so
 lib/lib_motsensorlistener.so
 bin/sensors.qcom
 
-# Fingerprint
-lib/lib_fpc_tac_shared.so
-lib/hw/fingerprint.msm8996.so
-lib/libcom_fingerprints_service.so
-lib64/lib_fpc_tac_shared.so
-lib64/hw/fingerprint.msm8996.so
-lib64/libcom_fingerprints_service.so
-
-# Gatekeepr
-bin/gatekeeperd
-vendor/lib/hw/gatekeeper.msm8996.so
-vendor/lib64/hw/gatekeeper.msm8996.so
-
-# ADSP
-bin/adspd
-bin/adsprpcd
-lib/libadspd.so
-lib64/libadspd.so
-vendor/lib/libadsprpc.so
-vendor/lib64/libadsprpc.so
-vendor/lib/libmdsprpc.so
-vendor/lib64/libmdsprpc.so
-vendor/lib/libfastcvopt.so
-vendor/lib/libscve.so
-vendor/lib/libscve_mv.so
-vendor/lib/libscve_stub.so
-vendor/lib/rfsa/adsp/libapps_mem_heap.so
-vendor/lib/rfsa/adsp/libdspCV_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
-vendor/lib/rfsa/adsp/libscveT2T_skel.so
-vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
-vendor/lib/rfsa/adsp/libscveTextReco_skel.so
-vendor/lib/rfsa/adsp/libobjectMattingApp_skel.so
-vendor/lib/libadsp_default_listener.so
-vendor/lib64/libadsp_default_listener.so
-etc/firmware/sheridan_vrgain.bin
-etc/firmware/vrgain.bin
-
-
-# Audio
-bin/fm_qsoc_patches
-vendor/bin/audioflacapp
-lib/hw/audio.motvr.default.so
-lib/libmotaudioutils.so
-lib/libqcomfm_jni.so
-lib64/libqcomfm_jni.so
-lib/libunshorten.so
-vendor/lib/libacdb-fts.so
-vendor/lib64/libacdb-fts.so
-vendor/lib/libacdbloader.so
-vendor/lib64/libacdbloader.so
-vendor/lib/libacdbmapper.so
-vendor/lib64/libacdbmapper.so
-vendor/lib/libacdbrtac.so
-vendor/lib64/libacdbrtac.so
-vendor/lib/libadiertac.so
-vendor/lib64/libadiertac.so
-vendor/lib/libaudcal.so
-vendor/lib64/libaudcal.so
-lib/soundfx/libmmieffectswrapper.so
-
-etc/acdbdata/sheridan/General_cal.acdb
-etc/acdbdata/sheridan/Bluetooth_cal.acdb
-etc/acdbdata/sheridan/Global_cal.acdb
-etc/acdbdata/sheridan/Headset_cal.acdb
-etc/acdbdata/sheridan/Hdmi_cal.acdb
-etc/acdbdata/sheridan/Speaker_cal.acdb
-
-etc/acdbdata/griffin/General_cal.acdb
-etc/acdbdata/griffin/Bluetooth_cal.acdb
-etc/acdbdata/griffin/Global_cal.acdb
-etc/acdbdata/griffin/Headset_cal.acdb
-etc/acdbdata/griffin/Hdmi_cal.acdb
-etc/acdbdata/griffin/Speaker_cal.acdb
-etc/firmware/florida-dsp2-aov-frontend.wmfw
-etc/firmware/florida-dsp3-aov-control.wmfw
-etc/firmware/florida-dsp4-speaker-protect-calibration.bin
-etc/firmware/florida-dsp4-speaker-protect-sheridan-calibration.bin
-etc/firmware/florida-dsp4-speaker-protect-sheridan-voice.bin
-etc/firmware/florida-dsp4-speaker-protect-sheridan.bin
-etc/firmware/florida-dsp4-speaker-protect-voice.bin
-etc/firmware/florida-dsp4-speaker-protect.bin
-etc/firmware/florida-dsp4-speaker-protect.wmfw
-
-
 # VFS #TODO FIGURE OUT WHY
 etc/vhw.xml
 
@@ -118,10 +261,6 @@ etc/vhw.xml
 vendor/lib64/libsdmextension.so
 lib/libwpa_client.so
 lib64/libwpa_client.so
-
-# Keystore
-vendor/lib/hw/keystore.msm8996.so
-vendor/lib64/hw/keystore.msm8996.so
 
 # WiFi
 bin/cnss-daemon
@@ -132,38 +271,7 @@ lib64/libqti-iop.so
 vendor/lib/libqti-iop-client.so
 vendor/lib64/libqti-iop-client.so
 
-# DRM
-bin/qseecomd
-vendor/lib/libQSEEComAPI.so
-vendor/lib/libWVStreamControlAPI_L1.so
-vendor/lib/libdrmfs.so
-vendor/lib/libdrmtime.so
-vendor/lib/liboemcrypto.so
-vendor/lib/librpmb.so
-vendor/lib/libssd.so
-vendor/lib/libwvdrm_L1.so
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
-vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib/libdiag.so
-vendor/lib/libtime_genoff.so
-vendor/lib64/libtime_genoff.so
-vendor/lib64/libdiag.so
-vendor/lib64/libQSEEComAPI.so
-vendor/lib64/libdrmfs.so
-vendor/lib64/libdrmtime.so
-vendor/lib64/librpmb.so
-vendor/lib64/libssd.so
-vendor/lib64/mediadrm/libdrmclearkeyplugin.so
-
-vendor/lib/libcppf.so
-vendor/lib/libGPreqcancel.so
-vendor/lib/libGPreqcancel_svc.so
-vendor/lib/libGPTEE.so
-vendor/lib/libmm-hdcpmgr.so
-vendor/lib/libmmQSM.so
-
-
-# Adreno GPU
+# GPU
 etc/firmware/a530_gpmu.fw2
 etc/firmware/a530_pfp.fw
 etc/firmware/a530_pm4.fw
@@ -219,12 +327,10 @@ vendor/lib64/egl/libq3dtools_esx.so
 vendor/lib/egl/libQTapGLES.so
 vendor/lib64/egl/libQTapGLES.so
 
-
 # Radio
 -priv-app/atfwd/atfwd.apk
 -app/datastatusnotification/datastatusnotification.apk
 -app/embms/embms.apk
-#bin/ipacm-diag
 bin/netmgrd
 bin/qmuxd
 bin/radish
@@ -246,7 +352,6 @@ vendor/lib64/libconfigdb.so
 vendor/lib64/liblqe.so
 vendor/lib64/libmdmdetect.so
 vendor/lib64/libnetmgr.so
-vendor/lib64/libqcmaputils.so
 vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
@@ -255,8 +360,6 @@ vendor/qcril.db
 
 # MOTO RIL
 bin/qmi_motext_hook
-lib64/libmotext_inf.so
-lib/libmotext_inf.so
 lib64/libmotext_inf.so
 lib/libmotext_inf.so
 lib/libmdmcutback.so
@@ -276,44 +379,14 @@ bin/pm-service
 vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
-# CNE
-bin/cnd
-etc/cne/SwimConfig.xml
-etc/cne/andsfCne.xml
-etc/cne/wqeclient/profile1.xml
-etc/cne/wqeclient/profile2.xml
-etc/cne/wqeclient/profile3.xml
-etc/cne/wqeclient/profile5.xml
-etc/permissions/ConnectivityExt.xml
-etc/permissions/cneapiclient.xml
-etc/permissions/com.quicinc.cne.xml
-framework/ConnectivityExt.jar
-framework/cneapiclient.jar
-framework/com.quicinc.cne.jar
-#-priv-app/CNEService/CNEService.apk
-vendor/lib/libNimsWrap.so
-vendor/lib/libcne.so
-vendor/lib/libcneapiclient.so
-vendor/lib/libcneconn.so
-vendor/lib/libcneqmiutils.so
-vendor/lib/libvendorconn.so
-vendor/lib/libwqe.so
-vendor/lib/libxml.so
-vendor/lib64/libNimsWrap.so
-vendor/lib64/libcne.so
-vendor/lib64/libcneapiclient.so
-vendor/lib64/libcneconn.so
-vendor/lib64/libcneqmiutils.so
-vendor/lib64/libvendorconn.so
-vendor/lib64/libwqe.so
-vendor/lib64/libxml.so
-
 # Radio - IMS
 bin/ims_rtp_daemon
 bin/imscmservice
 bin/imsdatadaemon
 bin/imsqmidaemon
 -vendor/app/ims/ims.apk
+-vendor/app/imssettings/imssettings.apk
+
 vendor/lib64/lib-dplmedia.so
 vendor/lib64/lib-ims-rcscmjni.so
 vendor/lib64/lib-imsSDP.so
@@ -376,64 +449,7 @@ vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmiservices.so
-vendor/lib64/libquipc_os_api.so
 vendor/lib64/libsmemlog.so
-
-# Bluetooth
-bin/btnvtool
-bin/hci_qcomm_init
-bin/wcnss_filter
-etc/firmware/nvm_tlv_1.3.bin
-etc/firmware/nvm_tlv_2.1.bin
-etc/firmware/nvm_tlv_3.0.bin
-etc/firmware/nvm_tlv_3.2.bin
-etc/firmware/nvm_tlv.bin
-etc/firmware/rampatch_tlv_1.3.tlv
-etc/firmware/rampatch_tlv_2.1.tlv
-etc/firmware/rampatch_tlv_3.0.tlv
-etc/firmware/rampatch_tlv_3.2.tlv
-etc/firmware/rampatch_tlv.img
-vendor/lib64/libbtnv.so
-vendor/lib/libbtnv.so
-
-# GPS
-bin/loc_launcher
-etc/permissions/com.qti.location.sdk.xml
-etc/permissions/com.qualcomm.location.xml
-framework/com.qti.location.sdk.jar
--lib64/libloc_api_v02.so
-lib64/libloc_ds_api.so
-#-priv-app/com.qualcomm.location/com.qualcomm.location.apk
-lib64/libloc_core.so
-lib/libloc_core.so
-lib/libloc_eng.so
-lib64/libloc_eng.so
-vendor/bin/slim_daemon
-vendor/lib64/hw/flp.default.so
-vendor/lib64/libalarmservice_jni.so
-vendor/lib64/libasn1cper.so
-vendor/lib64/libasn1crt.so
-vendor/lib64/libasn1crtx.so
-vendor/lib64/libdataitems.so
-vendor/lib64/libflp.so
-vendor/lib64/libgdtap.so
-vendor/lib64/libgeofence.so
-vendor/lib64/libizat_core.so
-vendor/lib64/liblbs_core.so
-vendor/lib64/libloc_ext.so
-vendor/lib64/libloc_xtra.so
-vendor/lib64/liblocationservice.so
-vendor/lib64/liblocationservice_glue.so
-vendor/lib64/liblowi_client.so
-vendor/lib64/libquipc_os_api.so
-vendor/lib64/libulp2.so
-vendor/lib64/libxt_native.so
-vendor/lib64/libxtadapter.so
-vendor/lib64/libxtwifi_ulp_adaptor.so
-
-# GPS MOTO
-vendor/lib/libsensor1.so
-vendor/lib64/libsensor1.so
 
 # Perf
 bin/energy-awareness
@@ -509,7 +525,6 @@ vendor/lib/libqomx_jpegenc.so
 
 
 # MOTO CAMERA
--priv-app/ImagerTuning/ImagerTuning.apk
 vendor/lib/libois_rumba_s4.so
 vendor/lib/libmmcamera_ov5693_eeprom.so
 vendor/lib/libmmcamera_sony_rumba_eeprom.so
@@ -532,7 +547,6 @@ lib/libcamerabgproc-jni.so
 lib64/libcamerabgproc-jni.so
 vendor/lib/libmmcamera_vstab_module.so
 lib/libjustshoot.so
-lib/lib_motsensorlistener.so
 lib/libAlAisWrap.so
 lib/libbson.so
 lib64/libbson.so
@@ -630,8 +644,16 @@ vendor/lib/libchromatix_mot_imx214_postproc.so
 # PERF
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
-
-
+vendor/bin/perfd
+vendor/etc/perf-profile0.conf
+vendor/etc/perf-profile1.conf
+vendor/etc/perf-profile2.conf
+vendor/etc/perf-profile3.conf
+vendor/etc/perf-profile4.conf
+vendor/etc/perf-profile5.conf
+vendor/etc/perf-profile6.conf
+vendor/lib/libqc-opt.so
+vendor/lib64/libqc-opt.so
 
 # Camera firmware
 etc/firmware/cpp_firmware_v1_10_0.fw
@@ -712,7 +734,15 @@ lib/libmm-omxcore.so
 vendor/firmware/libpn548ad_fw.so
 
 # Mods
-priv-app/ModService/ModService.apk
+#priv-app/ModService/ModService.apk
 bin/mods_camd
 lib/libmodmanager.so
 lib64/libmodmanager.so
+
+# Post Processing
+etc/permissions/com.qti.snapdragon.sdk.display.xml
+framework/com.qti.snapdragon.sdk.display.jar
+-vendor/app/colorservice/colorservice.apk
+vendor/bin/mm-pp-dpps
+vendor/lib64/libdisp-aba.so
+vendor/lib/libdisp-aba.so
