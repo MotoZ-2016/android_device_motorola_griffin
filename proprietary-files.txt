@@ -198,7 +198,6 @@ etc/permissions/com.qualcomm.location.xml
 framework/com.qti.location.sdk.jar
 -lib64/libloc_api_v02.so
 lib64/libloc_ds_api.so
--priv-app/com.qualcomm.location/com.qualcomm.location.apk
 vendor/bin/slim_daemon
 vendor/lib64/hw/flp.default.so
 vendor/lib64/libalarmservice_jni.so
@@ -340,12 +339,9 @@ etc/data/dsi_config.xml
 etc/data/netmgr_config.xml
 etc/data/qmi_config.xml
 etc/permissions/embms.xml
-etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
 framework/embmslibrary.jar
--framework/qcnvitems.jar
 -framework/qcrilhook.jar
--framework/qti-telephony-common.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/qti
 vendor/lib64/libconfigdb.so
