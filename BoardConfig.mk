@@ -22,8 +22,8 @@
 #
 
 BOARD_VENDOR := motorola-qcom
-TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 DEVICE_PATH := device/motorola/griffin
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # OTA
 TARGET_OTA_ASSERT_DEVICE := griffin,griffin_cn,sheridan
