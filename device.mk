@@ -16,8 +16,8 @@
 
 
 # Memory
-$(call inherit-product, frameworks/native/build/phone-xxxhdpi-3072-dalvik-heap.mk)
-$(call inherit-product, frameworks/native/build/phone-xxxhdpi-3072-hwui-memory.mk)
+$(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-hwui-memory.mk)
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -51,13 +51,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-	frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
+    frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
 
-# For android_filesystem_config.h
-PRODUCT_PACKAGES += \
-    fs_config_files
-
-## UNTESTED ITEMS BELOW
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
@@ -209,12 +204,12 @@ PRODUCT_PACKAGES += \
     dhcpcd.conf \
     wpa_supplicant \
     wpa_supplicant.conf \
-	wifi_symlinks
+    wifi_symlinks
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
-	$(LOCAL_PATH)/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
-	$(LOCAL_PATH)/wifi/hostapd.deny:system/etc/hostapd/hostapd.deny \
+    $(LOCAL_PATH)/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
+    $(LOCAL_PATH)/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+    $(LOCAL_PATH)/wifi/hostapd.deny:system/etc/hostapd/hostapd.deny \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
