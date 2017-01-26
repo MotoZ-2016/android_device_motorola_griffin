@@ -40,8 +40,6 @@ on early-init
     mkdir /customize 0500 root root
 
 on init
-    export LD_SHIM_LIBS /system/lib/libjustshoot.so|libshim_camera.so:/system/lib/hw/camera.msm8996.so|libcamera_shim.so:/system/vendor/lib/libmot_gpu_mapper.so|libshim_camera.so
-
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
@@ -389,7 +387,6 @@ on fs
     start oem-hw-sh
 
 on post-fs
-    export LD_PRELOAD libNimsWrap.so
     mkdir /persist/camera 0755 mot_tcmd mot_tcmd
     mkdir /persist/camera/focus 0775 camera mot_tcmd
     mkdir /persist/camera/ledcal 0775 camera mot_tcmd
