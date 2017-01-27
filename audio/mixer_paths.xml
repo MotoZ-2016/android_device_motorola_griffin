@@ -154,6 +154,11 @@
 	<ctl name="EQ1 Input 1" value="None" />
 	<ctl name="EQ1 Input 1 Volume" value="0" />
 	<ctl name="ISRC1INT1 Input" value="None" />
+	<!-- QDSP loopback, sidetone default to off -->
+	<ctl name="SLIMBUS_0_RX Port Mixer SLIM_0_TX" value="0" />
+	<ctl name="SLIM0 LOOPBACK Volume" value="0" />
+	<ctl name="AFE Sidetone AFE_RX" value="SLIM_RX" />
+	<ctl name="AFE Sidetone Enable" value="Off" />
 
 	<!-- AOV default settings -->
 	<!-- AOV default sample rate settings -->
@@ -334,6 +339,14 @@
 	<!-- afe-proxy -->
 	<ctl name="AFE_PCM_RX Audio Mixer MultiMedia2" value="0" />
 	<!-- afe-proxy end-->
+
+	<path name="set-capture-format-default">
+		<ctl name="SLIM_1_TX Format" value="S16_LE" />
+	</path>
+
+	<path name="set-capture-format-24le">
+		<ctl name="SLIM_1_TX Format" value="S24_LE" />
+	</path>
 
 	<!-- These are audio route (FE to BE) specific mixer settings -->
 	<path name="deep-buffer-playback">
@@ -619,106 +632,6 @@
 	<path name="afe-proxy-record afe-proxy">
 	</path>
 
-        <path name="voice-call">
-                <ctl name="SLIM_0_RX_Voice Mixer VoiceMMode1" value="1" />
-                <ctl name="VoiceMMode1_Tx Mixer SLIM_0_TX_MMode1" value="1" />
-        </path>
-
-        <path name="voice-call speaker">
-                <ctl name="SLIM_1_TX Channels" value="One" />
-                <ctl name="SLIMTX5 Input 1" value="DSP4.1" />
-                <ctl name="VOC_EXT_EC MUX" value="SLIM_1_TX" />
-                <path name="voice-call" />
-        </path>
-
-        <path name="voice-call hdmi">
-                <ctl name="HDMI_RX_Voice Mixer VoiceMMode1" value="1" />
-                <ctl name="VoiceMMode1_Tx Mixer SLIM_0_TX_MMode1" value="1" />
-        </path>
-
-        <path name="voice-call bt-sco">
-                <ctl name="AUX_PCM_RX_Voice Mixer VoiceMMode1" value="1" />
-                <ctl name="VoiceMMode1_Tx Mixer AUX_PCM_TX_MMode1" value="1" />
-        </path>
-
-        <path name="voice-call bt-sco-wb">
-                <ctl name="AUX PCM SampleRate" value="16000" />
-                <path name="voice-call bt-sco" />
-        </path>
-
-
-        <path name="voice-call afe-proxy">
-                <ctl name="AFE_PCM_RX_Voice Mixer VoiceMMode1" value="1" />
-                <ctl name="VoiceMMode1_Tx Mixer AFE_PCM_TX_MMode1" value="1" />
-        </path>
-
-        <path name="voice-call mod">
-                <ctl name="TERT_MI2S_RX_Voice Mixer VoiceMMode1" value="1" />
-                <ctl name="VoiceMMode1_Tx Mixer TERT_MI2S_TX_MMode1" value="1" />
-        </path>
-
-        <path name="voice-call mod-int">
-                <ctl name="TERT_MI2S_RX_Voice Mixer VoiceMMode1" value="1" />
-                <ctl name="VoiceMMode1_Tx Mixer SLIM_0_TX_MMode1" value="1" />
-        </path>
-
-        <path name="voice-call mod-ref">
-                <ctl name="VOC_EXT_EC MUX" value="TERT_MI2S_TX" />
-                <!-- GB_AUDIO_DEVICE_IN_EC_REF -->
-                <ctl name="Mods Enable Input Devices" value="8" />
-                <path name="voice-call mod-int" />
-        </path>
-
-        <path name="voice2-call">
-                <ctl name="SLIM_0_RX_Voice Mixer VoiceMMode2" value="1" />
-                <ctl name="VoiceMMode2_Tx Mixer SLIM_0_TX_MMode2" value="1" />
-        </path>
-
-        <path name="voice2-call speaker">
-                <ctl name="SLIM_1_TX Channels" value="One" />
-                <ctl name="SLIMTX5 Input 1" value="DSP4.1" />
-                <ctl name="VOC_EXT_EC MUX" value="SLIM_1_TX" />
-                <path name="voice2-call" />
-        </path>
-
-        <path name="voice2-call hdmi">
-                <ctl name="HDMI_RX_Voice Mixer VoiceMMode2" value="1" />
-                <ctl name="VoiceMMode2_Tx Mixer SLIM_0_TX_MMode2" value="1" />
-        </path>
-
-        <path name="voice2-call bt-sco">
-                <ctl name="AUX_PCM_RX_Voice Mixer VoiceMMode2" value="1" />
-                <ctl name="VoiceMMode2_Tx Mixer AUX_PCM_TX_MMode2" value="1" />
-        </path>
-
-        <path name="voice2-call bt-sco-wb">
-                <ctl name="AUX PCM SampleRate" value="16000" />
-                <path name="voice2-call bt-sco" />
-        </path>
-
-        <path name="voice2-call afe-proxy">
-                <ctl name="AFE_PCM_RX_Voice Mixer VoiceMMode2" value="1" />
-                <ctl name="VoiceMMode2_Tx Mixer AFE_PCM_TX_MMode2" value="1" />
-        </path>
-
-        <path name="voice2-call mod">
-                <ctl name="TERT_MI2S_RX_Voice Mixer VoiceMMode2" value="1" />
-                <ctl name="VoiceMMode2_Tx Mixer TERT_MI2S_TX_MMode2" value="1" />
-        </path>
-
-        <path name="voice2-call mod-int">
-                <ctl name="TERT_MI2S_RX_Voice Mixer VoiceMMode2" value="1" />
-                <ctl name="VoiceMMode2_Tx Mixer SLIM_0_TX_MMode2" value="1" />
-        </path>
-
-        <path name="voice2-call mod-ref">
-                <ctl name="VOC_EXT_EC MUX" value="TERT_MI2S_TX" />
-                <!-- GB_AUDIO_DEVICE_IN_EC_REF -->
-                <ctl name="Mods Enable Input Devices" value="8" />
-                <path name="voice2-call mod-int" />
-        </path>
-
-
 	<path name="voicemmode1-call">
 		<ctl name="SLIM_0_RX_Voice Mixer VoiceMMode1" value="1" />
 		<ctl name="VoiceMMode1_Tx Mixer SLIM_0_TX_MMode1" value="1" />
@@ -728,7 +641,7 @@
 		<ctl name="SLIM_1_TX Channels" value="One" />
 		<ctl name="SLIMTX5 Input 1" value="DSP4.1" />
 		<ctl name="VOC_EXT_EC MUX" value="SLIM_1_TX" />
-		<path name="voice-call" />
+		<path name="voicemmode1-call" />
 	</path>
 
 	<path name="voicemmode1-call hdmi">
@@ -743,7 +656,7 @@
 
 	<path name="voicemmode1-call bt-sco-wb">
 		<ctl name="AUX PCM SampleRate" value="16000" />
-		<path name="voice-call bt-sco" />
+		<path name="voicemmode1-call bt-sco" />
 	</path>
 
 	<path name="voicemmode1-call afe-proxy">
@@ -761,11 +674,11 @@
 		<ctl name="VoiceMMode1_Tx Mixer SLIM_0_TX_MMode1" value="1" />
 	</path>
 
-	<path name="vvoicemmode1-call mod-ref">
+	<path name="voicemmode1-call mod-ref">
 		<ctl name="VOC_EXT_EC MUX" value="TERT_MI2S_TX" />
 		<!-- GB_AUDIO_DEVICE_IN_EC_REF -->
 		<ctl name="Mods Enable Input Devices" value="8" />
-		<path name="voice-call mod-int" />
+		<path name="voicemmode1-call mod-int" />
 	</path>
 
 	<path name="voicemmode2-call">
@@ -777,7 +690,7 @@
 		<ctl name="SLIM_1_TX Channels" value="One" />
 		<ctl name="SLIMTX5 Input 1" value="DSP4.1" />
 		<ctl name="VOC_EXT_EC MUX" value="SLIM_1_TX" />
-		<path name="voice2-call" />
+		<path name="voicemmode2-call" />
 	</path>
 
 	<path name="voicemmode2-call hdmi">
@@ -792,7 +705,7 @@
 
 	<path name="voicemmode2-call bt-sco-wb">
 		<ctl name="AUX PCM SampleRate" value="16000" />
-		<path name="voice2-call bt-sco" />
+		<path name="voicemmode2-call bt-sco" />
 	</path>
 
 	<path name="voicemmode2-call afe-proxy">
@@ -814,7 +727,7 @@
 		<ctl name="VOC_EXT_EC MUX" value="TERT_MI2S_TX" />
 		<!-- GB_AUDIO_DEVICE_IN_EC_REF -->
 		<ctl name="Mods Enable Input Devices" value="8" />
-		<path name="voice2-call mod-int" />
+		<path name="voicemmode2-call mod-int" />
 	</path>
 
 	<path name="play-fm">
@@ -933,18 +846,6 @@
 		<ctl name="SLIMTX1 Input 1" value="IN2R" />
 	</path>
 
-	<path name="primary-mic">
-		<path name="mic1" />
-	</path>
-
-	<path name="secondary-mic">
-		<path name="mic2" />
-	</path>
-
-	<path name="tertiary-mic">
-		<path name="mic3" />
-	</path>
-
 	<path name="speaker">
 		<ctl name="SLIM_0_RX Channels" value="Two" />
 		<ctl name="DSP4 Firmware" value="Speaker Protect" />
@@ -1009,18 +910,15 @@
 	</path>
 
 	<path name="sidetone-handset">
-		<ctl name="ISRC1DEC1 Input" value="IN3L" />
-		<ctl name="EQ1 Input 1" value="ISRC1DEC1" />
-		<ctl name="EQ1 Input 1 Volume" value="26" />
-		<ctl name="ISRC1INT1 Input" value="EQ1" />
-		<ctl name="AIF1TX1 Input 3" value="ISRC1INT1" />
-		<ctl name="AIF1TX1 Input 3 Volume" value="0" />
-		<ctl name="AIF1TX2 Input 3" value="ISRC1INT1" />
-		<ctl name="AIF1TX2 Input 3 Volume" value="0" />
+		<ctl name="AFE Sidetone AFE_RX" value="SLIM_RX" /> 
+		<ctl name="AFE Sidetone Enable" value="On" />
+	</path>
+
+	<path name="sidetone-hac-handset">
+		<path name="sidetone-handset" />
 	</path>
 
 	<path name="voice-handset">
-		<path name="sidetone-handset" />
 		<path name="handset" />
 	</path>
 
@@ -1033,9 +931,11 @@
 	</path>
 
 	<path name="voice-speaker">
-		<!-- Audio Mode first before powering up DSP4 from "speaker" -->
-		<ctl name="DSP4 Audio Mode" value="VOICE" />
 		<path name="speaker" />
+	</path>
+
+	<path name="voice-speaker-hfp">
+		<path name="voice-speaker" />
 	</path>
 
 	<path name="voice-speaker-mic">
@@ -1125,7 +1025,7 @@
 		<path name="voice-dmic-ef" />
 	</path>
 
-	<path name="speaker-dmic-endfire">
+	<path name="voice-speaker-dmic-ef">
 		<path name="AOV" />
 		<ctl name="SLIM_0_TX Channels" value="Two" />
 		<ctl name="SLIMTX1 Input 1" value="IN3L" />
@@ -1136,16 +1036,20 @@
 		<path name="voice-dmic-ef" />
 	</path>
 
-	<path name="voice-speaker-dmic-ef">
-		<path name="speaker-dmic-endfire" />
+	<path name="speaker-dmic-endfire">
+		<path name="voice-speaker-dmic-ef" />
+	</path>
+
+	<path name="voice-speaker-mic-hfp">
+		<path name="voice-speaker-dmic-ef" />
 	</path>
 
 	<path name="voice-rec-dmic-ef">
-		<path name="voice-dmic-ef" />
+		<path name="voice-speaker-dmic-ef" />
 	</path>
 
 	<path name="voice-rec-dmic-ef-fluence">
-		<path name="voice-dmic-ef" />
+		<path name="voice-rec-dmic-ef" />
 	</path>
 
 	<path name="camcorder-mic-bf">
@@ -1157,26 +1061,44 @@
 		<ctl name="IN3R Volume" value="12" />
 	</path>
 
-	<path name="stereo-mic12">
+	<path name="three-mic">
+		<path name="AOV" />
+		<ctl name="SLIM_0_TX Channels" value="Three" />
+		<ctl name="SLIMTX1 Input 1" value="IN3L" />
+		<ctl name="SLIMTX2 Input 1" value="IN2L" />
+		<ctl name="SLIMTX3 Input 1" value="IN3R" />
+	</path>
+
+	<path name="quad-mic">
+		<path name="AOV" />
+		<ctl name="SLIM_0_TX Channels" value="Four" />
+		<ctl name="SLIMTX1 Input 1" value="IN3L" />
+		<ctl name="SLIMTX2 Input 1" value="IN2L" />
+		<ctl name="SLIMTX3 Input 1" value="IN3R" />
+		<ctl name="SLIMTX4 Input 1" value="IN2R" />
+	</path>
+
+	<path name="unprocessed-mic">
+		<path name="mic1" />
+	</path>
+
+	<path name="unprocessed-stereo-mic">
 		<path name="AOV" />
 		<ctl name="SLIM_0_TX Channels" value="Two" />
 		<ctl name="SLIMTX1 Input 1" value="IN3L" />
 		<ctl name="SLIMTX2 Input 1" value="IN2L" />
-		<ctl name="IN3L Volume" value="12" />
-		<ctl name="IN2L Volume" value="12" />
 	</path>
 
-	<path name="stereo-mic13">
-		<path name="AOV" />
-		<ctl name="SLIM_0_TX Channels" value="Two" />
-		<ctl name="SLIMTX1 Input 1" value="IN3L" />
-		<ctl name="SLIMTX2 Input 1" value="IN3R" />
-		<ctl name="IN3L Volume" value="12" />
-		<ctl name="IN3R Volume" value="12" />
+	<path name="unprocessed-three-mic">
+		<path name="three-mic" />
 	</path>
 
-	<path name="stereo-mic23">
-		<path name="camcorder-mic-bf" />
+	<path name="unprocessed-quad-mic">
+		<path name="quad-mic" />
+	</path>
+
+	<path name="unprocessed-headset-mic">
+		<path name="headset-mic" />
 	</path>
 
 	<!-- TTY devices -->
