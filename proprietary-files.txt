@@ -267,7 +267,10 @@ vendor/lib64/libmdmimgload.so
 bin/motosh
 lib/hw/sensors.griffin.so
 lib64/hw/sensors.griffin.so
-lib64/hw/sensorhub.iio.so
+lib64/hw/sensors.iio.so
+lib64/hw/sensorhub.msm8996.so
+lib/hw/sensors.griffin.so
+lib/hw/sensors.iio.so
 lib/libsensorhub.so
 lib64/libsensorhub.so
 etc/firmware/sensorhubfw.bin
@@ -298,8 +301,8 @@ bin/cnss-daemon
 
 # IO Prefetcher
 bin/iop
-lib64/libqti-iop.so
-lib/libqti-iop.so
+vendor/lib64/libqti-iop.so
+vendor/lib/libqti-iop.so
 vendor/lib/libqti-iop-client.so
 vendor/lib64/libqti-iop-client.so
 
@@ -581,7 +584,7 @@ lib/libAisAdapterGlue.so
 lib/libmot_afd.so
 lib/libmot_lux_standardization.so
 lib/libcamerabgprocservice.so
-lib/libcamerabgproc-jni.so
+vendor/lib/libcamerabgproc-jni.so
 lib/lib_mottof.so
 lib/libmotimager_utils.so
 vendor/lib/libmmcamera_vstab_module.so
@@ -691,8 +694,6 @@ vendor/etc/perf-profile3.conf
 vendor/etc/perf-profile4.conf
 vendor/etc/perf-profile5.conf
 vendor/etc/perf-profile6.conf
-vendor/lib/libqc-opt.so
-vendor/lib64/libqc-opt.so
 
 # Camera firmware
 etc/firmware/cpp_firmware_v1_10_0.fw
@@ -817,7 +818,6 @@ lib64/libwifi-hal-qcom.so
 bin/batt_health
 bin/charge_only_mode
 bin/qcom-system-daemon
-bin/ssr-setup
 bin/subsystem_ramdump
 
 etc/init.qcom.bt.sh
@@ -839,7 +839,7 @@ etc/firmware/synaptics-s3528g2-16030302-2308cb-griffin.tdat
 etc/firmware/synaptics-s3528so1-15121701-1e29b4-sheridan.tdat
 etc/firmware/upd-00000126-00001001-fed70128-fffe0001-02.tftf
 
-vendor/lib/flp.default.so
+vendor/lib/hw/flp.default.so
 
 
 vendor/lib/libAlacSwDec.so
