@@ -1,0 +1,2 @@
+allow kernel hw_block_device:blk_file { open read write };
+allow kernel utags_block_device:blk_file { open read write };

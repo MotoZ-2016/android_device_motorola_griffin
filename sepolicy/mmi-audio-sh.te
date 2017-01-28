@@ -1,0 +1,11 @@
+type mmi-audio-sh, domain;
+type mmi-audio-sh_exec, exec_type, file_type;
+init_daemon_domain(mmi-audio-sh)
+
+allow mmi-audio-sh audio_prop:property_service set;
+allow mmi-audio-sh init:unix_stream_socket connectto;
+allow mmi-audio-sh property_socket:sock_file write;
+allow mmi-audio-sh rootfs:file { entrypoint open read };
+allow mmi-audio-sh shell_exec:file { getattr read };
+allow mmi-audio-sh system_file:dir { open read };
+allow mmi-audio-sh toolbox_exec:file { execute execute_no_trans getattr open read };

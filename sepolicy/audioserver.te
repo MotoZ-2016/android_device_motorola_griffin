@@ -1,1 +1,3 @@
+allow audioserver adspd:unix_stream_socket connectto;
+allow audioserver socket_device:sock_file write;
 allow audioserver rootfs:lnk_file getattr;

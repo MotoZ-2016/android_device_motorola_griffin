@@ -21,3 +21,6 @@ allow init self:netlink_socket { read write getattr connect };
 
 allow rild unlabeled:dir { getattr open read };
 allow rild unlabeled:file { getattr open read };
+
+allow init socket_device:sock_file unlink;
+allow init sysfs:dir write;

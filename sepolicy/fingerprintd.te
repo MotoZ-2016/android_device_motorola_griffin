@@ -2,6 +2,8 @@ allow fingerprintd firmware_file:file { getattr open read };
 allow fingerprintd fingerprintd_data_file:dir { add_name getattr remove_name write };
 allow fingerprintd fingerprintd_data_file:file { append create getattr open setattr unlink write };
 allow fingerprintd fingerprintd_data_file:sock_file { create unlink getattr write };
+allow fingerprintd fpc_data_file:dir { add_name remove_name write };
+allow fingerprintd fpc_data_file:sock_file { create unlink };
 allow fingerprintd tee_device:chr_file { ioctl open read write getattr };
 allow fingerprintd sysfs:file write;
 allow fingerprintd unlabeled:file { getattr open read };
