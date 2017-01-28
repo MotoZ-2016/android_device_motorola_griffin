@@ -110,7 +110,7 @@ if [ $month -le 12 -a $day -le 31 -a $year -ge 12 ]; then
 else
 	notice "Corrupt FTI data"
 fi
-setprop ro.manufacturedate $mdate
+# setprop ro.manufacturedate $mdate
 unset fti y m d year month day utag_fti pds_fti fti_utag mdate
 
 t=$(getprop ro.build.tags)
