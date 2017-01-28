@@ -59,7 +59,9 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
-    libbson
+    libbson \
+    libshim_camera \
+    libcamera_shim
 
 
 # Audio
@@ -123,9 +125,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/sap.conf:system/etc/sap.conf \
     $(LOCAL_PATH)/gps/etc/xtwifi.conf:system/etc/xtwifi.conf
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml \
-    $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml \
+#PRODUCT_COPY_FILES += \
+ #   $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml \
+#    $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml \
 
 # Lights
 PRODUCT_PACKAGES += \
