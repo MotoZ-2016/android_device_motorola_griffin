@@ -31,13 +31,12 @@ on enable-low-power
      write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 90
      write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
      write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 960000
-     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 0
+     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 1
      write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 80
      write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 19000
      write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 79000
-     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
+     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 652800
      write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 1
-     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction 1
 
      # Online CPU2
      write /sys/devices/system/cpu/cpu2/online 1
@@ -54,7 +53,7 @@ on enable-low-power
      write /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads "85 1500000:90 1800000:70 2100000:95"
      write /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time 19000
      write /sys/devices/system/cpu/cpu2/cpufreq/interactive/max_freq_hysteresis 79000
-     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 300000
+     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 652800
      write /sys/devices/system/cpu/cpu2/cpufreq/interactive/ignore_hispeed_on_notif 1
      write /sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction 1
 
@@ -72,6 +71,7 @@ on enable-low-power
      # Setting b.L scheduler parameters
      write /proc/sys/kernel/sched_boost 0
      write /proc/sys/kernel/sched_downmigrate 45
+     write /proc/sys/kernel/sched_migration_fixup 1
      write /proc/sys/kernel/sched_upmigrate 45
      write /proc/sys/kernel/sched_freq_inc_notify 400000
      write /proc/sys/kernel/sched_freq_dec_notify 400000
