@@ -130,8 +130,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/xtwifi.conf:system/etc/xtwifi.conf
 
 #PRODUCT_COPY_FILES += \
- #   $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml \
-#    $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml \
+    $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml \
+    $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml \
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -182,13 +182,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger.fstab.qcom \
     fstab.qcom \
-    init.gbmods.sh \
-    init.mmi.audio.sh \
     init.mmi.boot.sh \
     init.mmi.laser.sh \
     init.mmi.usb.rc \
+    init.mmi.touch.sh \
     init.oem.hw.sh \
-    init.qcom.post_boot.sh \
     init.qcom.rc \
     init.qcom.power.rc \
     ueventd.qcom.rc \

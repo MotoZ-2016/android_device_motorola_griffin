@@ -754,41 +754,9 @@ service init_wifi /wlan_carrier_bin.sh
 
 on nonencrypted
     setprop ro.kick.logcopy ${ro.bootreason}
-
+'
 on property:vold.decrypt=trigger_restart_framework
     setprop ro.kick.logcopy ${ro.bootreason}
-
-service apanic_copy /system/bin/apanic_copy.sh
-    class late_start
-    group log
-    oneshot
-    disabled
-
-service pstore_annotate /system/bin/pstore_annotate.sh build
-    class main
-    group log
-    oneshot
-
-service apanic_annotate /system/bin/apanic_save.sh build
-    class late_start
-    group log
-    oneshot
-    disabled
-
-service ftmipcd /system/bin/ftmipcd
-    user radio
-    group radio net_raw inet qcom_diag
-    disabled
-    oneshot
-
-on property:ro.bootmode=factory
-    start ftmipcd
-
-on property:ro.bootmode=mot-factory
-    start ftmipcd
-
-on property:tcmd.start_ftmdaemon=1
-    start ftmd
 
 service batt_health /system/bin/batt_health
     class late_start
@@ -889,7 +857,7 @@ service mmi-laser-sh /system/bin/sh /init.mmi.laser.sh
     user root
     oneshot
 
-service mmi-touch-sh /system/bin/sh /system/bin/init.mmi.touch.sh
+service mmi-touch-sh /system/bin/sh /init.mmi.touch.sh
     class core
     user root
     oneshot
@@ -906,12 +874,6 @@ on property:hw.touch.status="dead"
 
 on property:hw.touch.status="ready"
     start touch-ready-sh
-
-service mmi-audio-sh /init.mmi.audio.sh
-    seclabel u:r:mmi-audio-sh:s0
-    class core
-    user root
-    oneshot
 
 service mods_camd /system/bin/mods_camd
     class late_start
@@ -1167,32 +1129,6 @@ service loc_launcher /system/bin/loc_launcher
 on property:crypto.driver.load=1
      insmod /system/lib/modules/qce.ko
      insmod /system/lib/modules/qcedev.ko
-
-service qcom-sh /system/bin/sh /init.qcom.sh
-    class late_start
-    user root
-    oneshot
-
-service sensor-sh /system/bin/sh /init.qcom.sensors.sh
-    class core
-    user root
-    oneshot
-
-service qcom-post-boot /system/bin/sh /init.qcom.post_boot.sh
-    class late_start
-    user root
-    disabled
-    oneshot
-
-#service config-zram /system/bin/sh /system/etc/init.qcom.zram.sh
-#    class late_start
-#    user root
-#    disabled
-#    oneshot
-
-on property:sys.boot_completed=1
-    start qcom-post-boot
-    #start config-zram
 
 on property:persist.radio.atfwd.start=false
     stop atfwd
