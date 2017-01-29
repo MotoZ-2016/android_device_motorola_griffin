@@ -32,8 +32,6 @@
 #include "log.h"
 #include "util.h"
 
-#define ISMATCH(a,b)    (a == b)
-
 /* Target-Specific Dalvik Heap & HWUI Configuration */
 void target_ram() {
     std::string ram;
@@ -49,7 +47,7 @@ void num_sims() {
     dualsim = property_get("ro.boot.dualsim");
     property_set("ro.hw.dualsim", dualsim.c_str());
 
-    if (ISMATCH(dualsim, "true")) {
+    if (dualsim == "true") {
         property_set("persist.radio.multisim.config", "dsds");
     } else {
         property_set("persist.radio.multisim.config", "");
@@ -58,8 +56,8 @@ void num_sims() {
 
 void vendor_load_properties()
 {
-    char carrier[PROP_VALUE_MAX];
-    char devicename[PROP_VALUE_MAX];
+    std::string carrier;
+    std::string devicename;
 
     std::string platform;
     std::string device_boot;
@@ -68,7 +66,7 @@ void vendor_load_properties()
     std::string device;
 
     platform = property_get("ro.board.platform");
-    if (!ISMATCH(platform, ANDROID_TARGET))
+    if (platform != ANDROID_TARGET)
         return;
 
     device_boot = property_get("ro.boot.device");
@@ -88,15 +86,30 @@ void vendor_load_properties()
     property_set("ro.build.fingerprint", "motorola/griffin/griffin:7.0/NPL25.86-17-3/3:user/release-keys");
     property_set("ro.build.display.id", "griffin-user 7.0 NPL25.86-17-3 3 release-keys");
 
-    if (ISMATCH(device_boot, "sheridan")) {
-       // Do things?
+    if (device_boot == "sheridan") {
+       property_set("persist.audio.calfile0", "/etc/acdbdata/sheridan/Bluetooth_cal.acdb");
+       property_set("persist.audio.calfile1", "/etc/acdbdata/sheridan/General_cal.acdb");
+       property_set("persist.audio.calfile2", "/etc/acdbdata/sheridan/Global_cal.acdb");
+       property_set("persist.audio.calfile3", "/etc/acdbdata/sheridan/Handset_cal.acdb");
+       property_set("persist.audio.calfile4", "/etc/acdbdata/sheridan/Hdmi_cal.acdb");
+       property_set("persist.audio.calfile5", "/etc/acdbdata/sheridan/Headset_cal.acdb");
+       property_set("persist.audio.calfile6", "/etc/acdbdata/sheridan/Speaker_cal.acdb");
+    }
+    else {
+       property_set("persist.audio.calfile0", "/etc/acdbdata/griffin/Bluetooth_cal.acdb");
+       property_set("persist.audio.calfile1", "/etc/acdbdata/griffin/General_cal.acdb");
+       property_set("persist.audio.calfile2", "/etc/acdbdata/griffin/Global_cal.acdb");
+       property_set("persist.audio.calfile3", "/etc/acdbdata/griffin/Handset_cal.acdb");
+       property_set("persist.audio.calfile4", "/etc/acdbdata/griffin/Hdmi_cal.acdb");
+       property_set("persist.audio.calfile5", "/etc/acdbdata/griffin/Headset_cal.acdb");
+       property_set("persist.audio.calfile6", "/etc/acdbdata/griffin/Speaker_cal.acdb");
     }
 
-    if (ISMATCH(sku, "XT1650-03")) {
+    if (sku == "XT1650-03") {
        // TODO
     }
 
-    if (ISMATCH(sku, "XT1650-05")) {
+    if (sku == "XT1650-05") {
        property_set("persist.radio.custom_ecc", "1");
        property_set("persist.radio.data_ltd_sys_ind", "1");
        property_set("persist.radio.hw_mbn_update", "0");
