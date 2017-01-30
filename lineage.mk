@@ -54,7 +54,7 @@ TARGET_VENDOR_DEVICE_NAME := griffin
 PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=griffin PRODUCT_NAME=griffin
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=motorola/griffin/griffin:6.0.1/MPL24.246-20/21:user/release-keys \
-    PRIVATE_BUILD_DESC="griffin-user 6.0.1 MPL24.246-20 21 release-keys"
+    BUILD_FINGERPRINT=motorola/griffin/griffin:7.0/NPL25.86-17-3/3:user/release-keys \
+    PRIVATE_BUILD_DESC="griffin-user 7.0 NPL25.86-17-3 3 release-keys"
 
 TARGET_VENDOR := motorola
