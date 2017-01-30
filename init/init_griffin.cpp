@@ -64,6 +64,7 @@ void vendor_load_properties()
     std::string sku;
     std::string radio;
     std::string device;
+    std::string dualsim;
 
     platform = property_get("ro.board.platform");
     if (platform != ANDROID_TARGET)
@@ -75,50 +76,89 @@ void vendor_load_properties()
     sku = property_get("ro.boot.hardware.sku");
     property_set("ro.product.model", sku.c_str());
 
+    carrier = property_get("ro.boot.carrier");
+    property_set("ro.carrie", carrier.c_str());
+
     radio = property_get("ro.boot.radio");
     property_set("ro.hw.radio", radio.c_str());
+
+    dualsim = property_get("ro.boot.dualsim");
 
     /* Common for all models */
     property_set("ro.build.product", "griffin");
     target_ram();
     num_sims();
 
-    property_set("ro.build.fingerprint", "motorola/griffin/griffin:7.0/NPL25.86-17-3/3:user/release-keys");
-    property_set("ro.build.display.id", "griffin-user 7.0 NPL25.86-17-3 3 release-keys");
-
     if (device_boot == "sheridan") {
-       property_set("persist.audio.calfile0", "/etc/acdbdata/sheridan/Bluetooth_cal.acdb");
-       property_set("persist.audio.calfile1", "/etc/acdbdata/sheridan/General_cal.acdb");
-       property_set("persist.audio.calfile2", "/etc/acdbdata/sheridan/Global_cal.acdb");
-       property_set("persist.audio.calfile3", "/etc/acdbdata/sheridan/Handset_cal.acdb");
-       property_set("persist.audio.calfile4", "/etc/acdbdata/sheridan/Hdmi_cal.acdb");
-       property_set("persist.audio.calfile5", "/etc/acdbdata/sheridan/Headset_cal.acdb");
-       property_set("persist.audio.calfile6", "/etc/acdbdata/sheridan/Speaker_cal.acdb");
+        property_set("persist.audio.calfile0", "/etc/acdbdata/sheridan/Bluetooth_cal.acdb");
+        property_set("persist.audio.calfile1", "/etc/acdbdata/sheridan/General_cal.acdb");
+        property_set("persist.audio.calfile2", "/etc/acdbdata/sheridan/Global_cal.acdb");
+        property_set("persist.audio.calfile3", "/etc/acdbdata/sheridan/Handset_cal.acdb");
+        property_set("persist.audio.calfile4", "/etc/acdbdata/sheridan/Hdmi_cal.acdb");
+        property_set("persist.audio.calfile5", "/etc/acdbdata/sheridan/Headset_cal.acdb");
+        property_set("persist.audio.calfile6", "/etc/acdbdata/sheridan/Speaker_cal.acdb");
     }
     else {
-       property_set("persist.audio.calfile0", "/etc/acdbdata/griffin/Bluetooth_cal.acdb");
-       property_set("persist.audio.calfile1", "/etc/acdbdata/griffin/General_cal.acdb");
-       property_set("persist.audio.calfile2", "/etc/acdbdata/griffin/Global_cal.acdb");
-       property_set("persist.audio.calfile3", "/etc/acdbdata/griffin/Handset_cal.acdb");
-       property_set("persist.audio.calfile4", "/etc/acdbdata/griffin/Hdmi_cal.acdb");
-       property_set("persist.audio.calfile5", "/etc/acdbdata/griffin/Headset_cal.acdb");
-       property_set("persist.audio.calfile6", "/etc/acdbdata/griffin/Speaker_cal.acdb");
+        property_set("persist.audio.calfile0", "/etc/acdbdata/griffin/Bluetooth_cal.acdb");
+        property_set("persist.audio.calfile1", "/etc/acdbdata/griffin/General_cal.acdb");
+        property_set("persist.audio.calfile2", "/etc/acdbdata/griffin/Global_cal.acdb");
+        property_set("persist.audio.calfile3", "/etc/acdbdata/griffin/Handset_cal.acdb");
+        property_set("persist.audio.calfile4", "/etc/acdbdata/griffin/Hdmi_cal.acdb");
+        property_set("persist.audio.calfile5", "/etc/acdbdata/griffin/Headset_cal.acdb");
+        property_set("persist.audio.calfile6", "/etc/acdbdata/griffin/Speaker_cal.acdb");
     }
 
     if (sku == "XT1650-03") {
-       // TODO
+
+        if (carrier == "retmx" || carrier == "retbr") {
+            property_set("persist.radio.pb.max.match", "10");
+            property_set("persist.radio.pb.min.match", "7");
+        }
+
+        property_set("persist.ims.volte", "true");
+        property_set("persist.ims.vt", "false");
+        property_set("persist.ims.vt.epdg", "false");
+        property_set("persist.ims.rcs", "false");
+        property_set("ro.radio.imei.sv", "4");
+        property_set("persist.radio.call.audio.output", "0");
+        property_set("persist.radio.videopause.mode", "0");
+        property_set("persist.vt.supported", "0");
+        property_set("persist.eab.supported", "0");
+        property_set("persist.rcs.supported", "0");
+        property_set("persist.rcs.presence.provision", "0");
+
+        if (dualsim == "true") {
+            property_set("ro.telephony.default_network", "10,10");
+        }
+        else {
+            property_set("ro.telephony.default_network", "10,0");
+        }
     }
 
     if (sku == "XT1650-05") {
-       property_set("persist.radio.custom_ecc", "1");
-       property_set("persist.radio.data_ltd_sys_ind", "1");
-       property_set("persist.radio.hw_mbn_update", "0");
-       property_set("persist.radio.ignore_dom_time", "5");
-       property_set("persist.radio.start_ota_daemon", "1");
-       property_set("persist.radio.sw_mbn_update", "0");
-       property_set("ro.telephony.call_ring.multiple", "false");
-       property_set("persist.oem.dump", "0");
-       property_set("persist.volte_enalbed_by_hw", "1");
+        property_set("persist.radio.data_ltd_sys_ind", "1");
+        property_set("persist.radio.hw_mbn_update", "0");
+        property_set("persist.radio.ignore_dom_time", "5");
+        property_set("persist.radio.start_ota_daemon", "1");
+        property_set("persist.radio.sw_mbn_update", "0");
+        property_set("persist.oem.dump", "0");
+        property_set("persist.volte_enalbed_by_hw", "1");
+        property_set("ro.telephony.default_network", "22,20");
+        property_set("persist.radio.flexmap_type", "nw_mode");
+        property_set("persist.radio.rat_on", "combine");
+        property_set("persist.netmon.linger", "1");
+        property_set("ro.lenovo.dialergain", "80");
+        property_set("persist.radio.pb.min.match", "11");
+        property_set("ro.mot.NfcEnabled", "false");
+        property_set("ro.com.android.mobiledata", "true");
+        property_set("ro.prc.GcastEnabled", "false");
+        property_set("ro.prc.MiracastEnabled", "false");
+        property_set("persist.radio.force_on_dc", "true");
+        property_set("wifi.open.delay", "false");
+        property_set("persist.radio.mot_ecc_custid", "china");
+        property_set("persist.sys.backgrounddata", "false");
+        property_set("persist.sys.lenovo.ltetype", "VOLTE");
+        property_set("fmradio.driver.enable", "0");
     }
 
     device = property_get("ro.product.device");
