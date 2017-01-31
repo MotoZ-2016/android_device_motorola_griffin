@@ -7,7 +7,7 @@
 # keeping this here and incrementing it as needed
 # once we start upgrading so we can keep track of
 # things properly.
-ro.build.version.qcom=LA.HB.1.3.2-15400-8x96.0
+ro.build.version.qcom=LA.UM.5.5.r1-01300-8x96.0
 
 ## Audio
 audio_hal.period_size=240
@@ -122,6 +122,9 @@ persist.mm.enable.prefetch=true
 vidc.debug.perf.mode=2
 vidc.enc.dcvs.extra-buff-count=2
 vidc.enc.disable.pq=true
+
+## Mods
+sys.mod.platformsdkversion=105
 
 ## NFC
 persist.nfc.smartcard.config=SIM1,SIM2,eSE1
