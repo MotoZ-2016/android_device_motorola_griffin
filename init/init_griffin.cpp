@@ -115,18 +115,6 @@ void vendor_load_properties()
             property_set("persist.radio.pb.min.match", "7");
         }
 
-        property_set("persist.ims.volte", "true");
-        property_set("persist.ims.vt", "false");
-        property_set("persist.ims.vt.epdg", "false");
-        property_set("persist.ims.rcs", "false");
-        property_set("ro.radio.imei.sv", "4");
-        property_set("persist.radio.call.audio.output", "0");
-        property_set("persist.radio.videopause.mode", "0");
-        property_set("persist.vt.supported", "0");
-        property_set("persist.eab.supported", "0");
-        property_set("persist.rcs.supported", "0");
-        property_set("persist.rcs.presence.provision", "0");
-
         if (dualsim == "true") {
             property_set("ro.telephony.default_network", "10,10");
         }
@@ -160,6 +148,18 @@ void vendor_load_properties()
         property_set("persist.sys.lenovo.ltetype", "VOLTE");
         property_set("fmradio.driver.enable", "0");
     }
+
+    property_set("persist.ims.volte", "true");
+    property_set("persist.ims.vt", "false");
+    property_set("persist.ims.vt.epdg", "false");
+    property_set("persist.ims.rcs", "false");
+    property_set("ro.radio.imei.sv", "4");
+    property_set("persist.radio.call.audio.output", "0");
+    property_set("persist.radio.videopause.mode", "0");
+    property_set("persist.vt.supported", "0");
+    property_set("persist.eab.supported", "0");
+    property_set("persist.rcs.supported", "0");
+    property_set("persist.rcs.presence.provision", "0");
 
     device = property_get("ro.product.device");
     INFO("Found sku id: %s setting build properties for %s device\n", sku.c_str(), device.c_str());
