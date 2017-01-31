@@ -51,7 +51,7 @@ public class GlanceSensor implements ScreenStateNotifier {
 
     @Override
     public void screenTurnedOff() {
-        if (mCMActionsSettings.isPickUpEnabled() && !mEnabled) {
+        if (mCMActionsSettings.isIrWakeupEnabled() && !mEnabled) {
             Log.d(TAG, "Enabling");
             mSensorHelper.requestTriggerSensor(mSensor, mGlanceListener);
             mEnabled = true;
