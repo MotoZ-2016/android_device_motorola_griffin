@@ -66,7 +66,7 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio_policy.msm8996 \
+    audiod \
     audio.a2dp.default \
     audio.primary.msm8996 \
     audio.r_submix.default \
