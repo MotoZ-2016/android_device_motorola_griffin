@@ -72,14 +72,14 @@ persist.ts.postmakeup=false
 persist.ts.rtmakeup=false
 
 ## CNE
-ersist.cne.feature=1
+persist.cne.feature=1
 persist.cne.logging.qxdm=3974
 persist.cne.rat.wlan.chip.oem=WCN
 persist.dpm.feature=0
 persist.sys.cnd.iwlan=1
 
 ## CoreSight
-ersist.debug.coresight.config=stm-events
+persist.debug.coresight.config=stm-events
 
 ## FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
@@ -109,9 +109,12 @@ ro.sf.lcd_density=640
 media.aac_51_output_enabled=true
 media.stagefright.enable-aac=true
 media.stagefright.enable-fma2dp=true
+media.stagefright.enable-meta=true
 media.stagefright.enable-http=true
 media.stagefright.enable-player=true
 media.stagefright.enable-qcp=true
+media.stagefright.enable-record=true
+media.stagefright.enable-rtsp=true
 media.stagefright.enable-scan=true
 media.stagefright.log-uri=
 mm.enable.qcom_parser=135715
@@ -173,13 +176,7 @@ persist.radio.mt_sms_ack=30
 persist.radio.force_get_pref=1
 persist.radio.is_wps_enabled=true
 persist.radio.sar_sensor=1
-persist.radio.mcfg_enabled=1
-persist.radio.mcfg_refresh=1
-persist.radio.mcfg_noerase=1
-persist.radio.hw_mcfg_used=1
 persist.radio.apn_delay=5000
-persist.radio.mot_ecc_enabled=1
-persist.radio.mot_ecc_custid=common
 persist.radio.calls.on.ims=true
 persist.radio.jbims=1
 persist.radio.domain.ps=0

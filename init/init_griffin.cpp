@@ -113,14 +113,10 @@ void vendor_load_properties()
         if (carrier == "retmx" || carrier == "retbr") {
             property_set("persist.radio.pb.max.match", "10");
             property_set("persist.radio.pb.min.match", "7");
+            property_set("ro.ril.power_collapse", "1");
         }
-
-        if (dualsim == "true") {
-            property_set("ro.telephony.default_network", "10,10");
-        }
-        else {
-            property_set("ro.telephony.default_network", "10,0");
-        }
+        
+        property_set("ro.telephony.default_network", "10,0");
     }
 
     if (sku == "XT1650-05") {
