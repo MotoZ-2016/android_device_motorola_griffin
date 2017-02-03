@@ -106,8 +106,6 @@ TARGET_KERNEL_CONFIG := griffin_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8996
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
-
-
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_griffin
 TARGET_RECOVERY_DEVICE_MODULES := libinit_griffin
@@ -160,8 +158,9 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
 
-# Ril
-TARGET_RIL_VARIANT := caf
+# RIL
+BOARD_PROVIDES_RILD := true
+BOARD_PROVIDES_LIBRIL := true
 
 # NFC
 BOARD_NFC_CHIPSET := pn544
