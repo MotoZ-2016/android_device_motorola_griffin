@@ -6,6 +6,7 @@ allow mmi-boot-sh init:unix_stream_socket connectto;
 allow mmi-boot-sh kmsg_device:chr_file {open write };
 allow mmi-boot-sh manufacturedate_prop:property_service set;
 allow mmi-boot-sh persist_file:file { open read };
+allow mmi-boot-sh persist_file:dir search;
 allow mmi-boot-sh proc:file { write open read };
 allow mmi-boot-sh property_socket:sock_file write;
 allow mmi-boot-sh rootfs:file { entrypoint open read };

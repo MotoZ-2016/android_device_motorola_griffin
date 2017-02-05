@@ -1,6 +1,9 @@
 # rmt_storage - rmt_storage daemon
 type rmt_storage_prop, property_type;
 
+allow rmt_storage fsg_file:dir r_dir_perms;
+allow rmt_storage fsg_file:file r_file_perms;
+
 allow rmt_storage {
     modem_efs_partition_device
     root_block_device
