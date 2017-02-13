@@ -114,7 +114,7 @@ PRODUCT_PACKAGES += \
 
 # Gello
 PRODUCT_PACKAGES += \
-Gello
+    Gello
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -132,7 +132,7 @@ PRODUCT_COPY_FILES += \
 
 #PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml \
-    $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml \
+    $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -146,7 +146,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles_rc.xml
+    $(LOCAL_PATH)/configs/media_profiles_rc.xml:system/etc/media_profiles_rc.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
@@ -266,6 +266,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/msm8996-florida-snd-card_Button_Jack.kl:system/usr/keylayout/msm8996-florida-snd-card_Button_Jack.kl
 
 # IDC
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/fpc1020.idc:system/usr/idc/fpc1020.idc
 
 # IRSC
