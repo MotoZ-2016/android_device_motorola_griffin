@@ -845,8 +845,6 @@ vendor/lib/hw/flp.default.so
 vendor/lib/libAlacSwDec.so
 vendor/lib/libalarmservice_jni.so
 vendor/lib/libApeSwDec.so
-vendor/lib/libaptX-1.0.0-rel-Android21-ARMv7A.so
-vendor/lib/libaptXScheduler.so
 vendor/lib/libasn1cper.so
 vendor/lib/libasn1crt.so
 vendor/lib/libasn1crtx.so
