@@ -184,7 +184,6 @@ vendor/lib/libGPreqcancel.so
 vendor/lib/libGPreqcancel_svc.so
 vendor/lib/libGPTEE.so
 vendor/lib/libmm-hdcpmgr.so
-vendor/lib/libmmQSM.so
 vendor/lib64/libtime_genoff.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/libdrmfs.so
@@ -199,7 +198,6 @@ vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libGPTEE.so
 vendor/lib64/libmm-hdcpmgr.so
-vendor/lib64/libmmQSM.so
 
 # Daydream REMOVE ONCE OPENGAPPS HAS THIS
 -app/DaydreamHome/DaydreamHome.apk
@@ -292,7 +290,6 @@ bin/sensors.qcom
 etc/vhw.xml
 
 # ???
-vendor/lib64/libsdmextension.so
 lib/libwpa_client.so
 lib64/libwpa_client.so
 
@@ -327,48 +324,7 @@ etc/firmware/a530v3_gpmu.fw2
 etc/firmware/a530v3_seq.fw2
 etc/firmware/leia_pfp_470.fw
 etc/firmware/leia_pm4_470.fw
-vendor/lib/libC2D2.so
-vendor/lib64/libC2D2.so
-vendor/lib/libadreno_utils.so
-vendor/lib64/libadreno_utils.so
-vendor/lib/libbccQTI.so
-vendor/lib64/libbccQTI.so
-vendor/lib/libc2d30-a3xx.so
-vendor/lib64/libc2d30-a3xx.so
-vendor/lib/libc2d30-a4xx.so
-vendor/lib64/libc2d30-a4xx.so
-vendor/lib/libc2d30-a5xx.so
-vendor/lib64/libc2d30-a5xx.so
-vendor/lib/libCB.so
-vendor/lib64/libCB.so
-vendor/lib/libgsl.so
-vendor/lib64/libgsl.so
-vendor/lib/libllvm-glnext.so
-vendor/lib64/libllvm-glnext.so
-vendor/lib/libllvm-qcom.so
-vendor/lib64/libllvm-qcom.so
-vendor/lib/libOpenCL.so
-vendor/lib64/libOpenCL.so
-vendor/lib/librs_adreno_sha1.so
-vendor/lib64/librs_adreno_sha1.so
-vendor/lib/librs_adreno.so
-vendor/lib64/librs_adreno.so
-vendor/lib/libRSDriver_adreno.so
-vendor/lib64/libRSDriver_adreno.so
-vendor/lib/egl/eglSubDriverAndroid.so
-vendor/lib64/egl/eglSubDriverAndroid.so
-vendor/lib/egl/libEGL_adreno.so
-vendor/lib64/egl/libEGL_adreno.so
-vendor/lib/egl/libGLESv1_CM_adreno.so
-vendor/lib64/egl/libGLESv1_CM_adreno.so
-vendor/lib/egl/libGLESv2_adreno.so
-vendor/lib64/egl/libGLESv2_adreno.so
-vendor/lib/egl/libq3dtools_adreno.so
-vendor/lib64/egl/libq3dtools_adreno.so
-vendor/lib/egl/libq3dtools_esx.so
-vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib/egl/libQTapGLES.so
-vendor/lib64/egl/libQTapGLES.so
+
 
 # Radio
 -priv-app/atfwd/atfwd.apk
@@ -608,8 +564,6 @@ lib/hw/camera.rc.so
 vendor/lib/libmmcamera_imx338.so
 vendor/lib/libmmcamera_mot_imx214.so
 vendor/lib/libmmcamera_ov5693.so
-vendor/lib64/libc2d30_bltlib.so
-vendor/lib/libc2d30_bltlib.so
 
 # Chromatix
 vendor/lib/libchromatix_mot_imx214_cpp_video.so
@@ -945,7 +899,6 @@ vendor/lib/libmmipstreamutils.so
 vendor/lib/libmmi.so
 vendor/lib/libmmparser_lite.so
 vendor/lib/libmmparser.so
-vendor/lib/libmm-qdcm.so
 vendor/lib/libmmrtpdecoder.so
 vendor/lib/libmmrtpencoder.so
 vendor/lib/libmodalityservice_jni.so
@@ -975,7 +928,6 @@ vendor/lib/lib-rtpdaemoninterface.so
 vendor/lib/lib-rtpsl.so
 vendor/lib/libSampleAuthJNI.so
 vendor/lib/libSampleExtAuthJNI.so
-vendor/lib/libscalar.so
 vendor/lib/libscale.so
 vendor/lib/libscveBlobDescriptor.so
 vendor/lib/libscveBlobDescriptor_stub.so
@@ -1000,11 +952,6 @@ vendor/lib/libscvePanorama.so
 vendor/lib/libscveTextRecoPostProcessing.so
 vendor/lib/libscveTextReco.so
 vendor/lib/libscveTextReco_stub.so
-vendor/lib/libsdm-color.so
-vendor/lib/libsdm-diag.so
-vendor/lib/libsdm-disp-apis.so
-vendor/lib/libsdmextension.so
-vendor/lib/libsd_sdk_display.so
 vendor/lib/libsensorhubservice_jni.so
 vendor/lib/libsettings.so
 vendor/lib/libslimclient.so
@@ -1092,7 +1039,6 @@ vendor/lib64/libmmi.so
 vendor/lib64/libmmosal.so
 vendor/lib64/libmmparser_lite.so
 vendor/lib64/libmmparser.so
-vendor/lib64/libmm-qdcm.so
 vendor/lib64/libmmrtpdecoder.so
 vendor/lib64/libmmrtpencoder.so
 vendor/lib64/libmodalityservice_jni.so
@@ -1110,7 +1056,6 @@ vendor/lib64/libQtiTether.so
 vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libSampleAuthJNI.so
 vendor/lib64/libSampleExtAuthJNI.so
-vendor/lib64/libscalar.so
 vendor/lib64/libscale.so
 vendor/lib64/libscveBlobDescriptor.so
 vendor/lib64/libscveBlobDescriptor_stub.so
@@ -1135,10 +1080,6 @@ vendor/lib64/libscvePanorama.so
 vendor/lib64/libscveTextRecoPostProcessing.so
 vendor/lib64/libscveTextReco.so
 vendor/lib64/libscveTextReco_stub.so
-vendor/lib64/libsdm-color.so
-vendor/lib64/libsdm-diag.so
-vendor/lib64/libsdm-disp-apis.so
-vendor/lib64/libsd_sdk_display.so
 vendor/lib64/libsensorhubservice_jni.so
 vendor/lib64/libsettings.so
 vendor/lib64/libslimclient.so
