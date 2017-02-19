@@ -1,2 +1,3 @@
 allow system_app fingerprintd:binder call;
+allow system_app mods_service:service_manager { add find };
 allow system_app sysfs_homebutton:file rw_file_perms;
