@@ -1,1 +1,2 @@
+allow subsystem_ramdump storage_file:dir search;
 allow subsystem_ramdump system_data_file:dir { open read };
