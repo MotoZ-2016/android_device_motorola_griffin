@@ -73,6 +73,8 @@ void vendor_load_properties()
     device_boot = property_get("ro.boot.device");
     property_set("ro.hw.device", device_boot.c_str());
 
+    property_set("ro.product.device", "griffin");
+
     sku = property_get("ro.boot.hardware.sku");
     property_set("ro.product.model", sku.c_str());
 
