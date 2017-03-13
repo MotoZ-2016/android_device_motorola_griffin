@@ -17,10 +17,6 @@
         <item>SUPL_ES=0</item>
         <item>GPS_LOCK=4</item>
     </string-array>
-    <string-array name="config_mobile_hotspot_provision_app">
-        <item>com.motorola.entitlement</item>
-        <item>com.motorola.entitlement.EntitlementDialogActivity</item>
-    </string-array>
     <integer-array name="config_cdma_international_roaming_indicators">
         <item>2</item>
         <item>74</item>
