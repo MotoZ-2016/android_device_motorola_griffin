@@ -17,10 +17,6 @@
         <item>SUPL_ES=0</item>
         <item>GPS_LOCK=2</item>
     </string-array>
-    <string-array name="config_mobile_hotspot_provision_app">
-        <item>com.motorola.entitlement</item>
-        <item>com.motorola.entitlement.EntitlementDialogActivity</item>
-    </string-array>
     <string-array name="config_twoDigitNumberPattern">
         <item>0</item>
         <item>00</item>
