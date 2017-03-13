@@ -12,3 +12,5 @@ allow adspd property_socket:sock_file write;
 allow adspd sysfs:file { open read write };
 allow adspd system_prop:property_service set;
 allow adspd system_data_file:dir { add_name remove_name write };
+allow adspd adspd_file:dir create_dir_perms;
+allow adspd adspd_file:file create_file_perms;

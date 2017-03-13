@@ -49,6 +49,7 @@
 
 /sys/module/cpu_boost(/.*)?                     u:object_r:sysfs_devices_system_cpu:s0
 
+# Greybus (Mods)
 /sys/bus/greybus(/.*)?                     u:object_r:sysfs_greybus:s0
 /sys/class/i2c-adapter/i2c-7/7-002d/enable                     u:object_r:sysfs_greybus:s0
 /sys/class/power_supply/usb/usb_priority                     u:object_r:sysfs_greybus:s0
@@ -58,3 +59,7 @@
 /sys/module/qpnp_smbcharger_mmi/parameters(/.*)?                     u:object_r:sysfs_greybus:s0
 /sys/devices/platform/mods_codec.0(/.*)?                     u:object_r:sysfs_greybus:s0
 /sys/devices/virtual/video4linux                     u:object_r:sysfs_greybus:s0
+/data/gbfirmware(/.*)?                               u:object_r:gbfirmware_file:s0
+
+# adspd
+/data/adspd(/.*)?                                    u:object_r:adspd_file:s0
