@@ -1,5 +1,6 @@
 allow cameraserver default_android_service:service_manager find;
-allow cameraserver self:netlink_kobject_uevent_socket { read bind create setopt };
+allow cameraserver mods_service:service_manager find;
 allow cameraserver rootfs:lnk_file getattr;
+allow cameraserver self:netlink_kobject_uevent_socket { read bind create setopt };
 allow cameraserver sysfs_greybus:dir search;
 allow cameraserver sysfs_greybus:file read;
