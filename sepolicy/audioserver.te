@@ -1,5 +1,7 @@
 allow audioserver adspd:unix_stream_socket connectto;
 allow audioserver persist_file:dir search;
-allow audioserver persist_file:file { open read };
+allow audioserver persist_file:file r_file_perms;
 allow audioserver socket_device:sock_file write;
 allow audioserver rootfs:lnk_file getattr;
+allow audioserver sysfs_greybus:dir r_dir_perms;
+allow audioserver sysfs_greybus:file rw_file_perms;
