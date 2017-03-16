@@ -3,4 +3,6 @@ allow cameraserver self:netlink_kobject_uevent_socket { read bind create setopt 
 allow cameraserver rootfs:lnk_file getattr;
 allow cameraserver sysfs_greybus:dir search;
 allow cameraserver sysfs_greybus:file read;
+allow cameraserver sysfs_mods_camd:file rw_file_perms;
+allow cameraserver sysfs_mods_camd:dir rw_dir_perms;
 allow cameraserver mods_service:service_manager find;
