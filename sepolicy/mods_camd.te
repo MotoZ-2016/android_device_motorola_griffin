@@ -1,0 +1,3 @@
+type mods_camd, domain;
+type mods_camd_exec, exec_type, file_type;
+init_daemon_domain(mods_camd)
