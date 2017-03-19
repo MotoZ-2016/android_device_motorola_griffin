@@ -1,0 +1,7 @@
+allow platform_app adbsecure_prop:file { getattr open read };
+allow platform_app default_android_service:service_manager find;
+allow platform_app self:netlink_kobject_uevent_socket { bind create read setopt };
+allow platform_app sysfs_greybus:dir { open read search };
+allow platform_app sysfs_greybus:file { getattr open read };
+allow platform_app sysfs_greybus:file write;
+allow platform_app sysfs_greybus:lnk_file { getattr read };

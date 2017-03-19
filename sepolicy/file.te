@@ -21,6 +21,9 @@ type cutback_data_file, file_type, data_file_type;
 # CMHW
 type vibeamp_sysfs, fs_type, sysfs_type;
 
+# Greybus
+type sysfs_greybus, fs_type, sysfs_type;
+
 type chr_file, file_type, data_file_type;
 type fpc_data_file, file_type, data_file_type;
 type fps_data_file, file_type, data_file_type;
