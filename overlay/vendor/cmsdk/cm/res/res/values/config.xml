@@ -17,6 +17,12 @@
 
 <resources>
 
+    <!-- Default value for proximity check on screen wake
+     NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
+    <bool name="config_proximityCheckOnWake">true</bool>
+    <integer name="config_proximityCheckTimeout">200</integer>
+    <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
+
     <!-- All the capabilities of the LEDs on this device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
          of the following capabilities present:
@@ -31,5 +37,26 @@
          For example, a device support pulsating, RGB notification and
          battery LEDs would set this config to 11. -->
     <integer name="config_deviceLightCapabilities">0</integer>
+
+    <!-- Disable this by default, since it's actually using the QC FOSS algorithm for
+         OLED displays and can cause a bit of discoloration. Reinvestigate after tuning -->
+    <bool name="config_defaultCABC">false</bool>
+
+    <!-- Turn on LiveDisplay auto mode by default -->
+    <integer name="config_defaultLiveDisplayMode">1</integer>
+
+    <!-- Display mode remapping table.
+         If the mode names returned by the backend do not match
+         the predefined and translated strings in the Settings
+         app, they can be remapped here. The format is
+         "oldname:newname", one per entry. -->
+    <string-array name="config_displayModeMappings" translatable="false">
+        <item>Comfort:Comfort</item>
+        <item>Vibrant:Vibrant</item>
+        <item>sRGB:sRGB</item>
+    </string-array>
+
+    <!-- Should we filter any display modes which are unampped? -->
+    <bool name="config_filterDisplayModes">true</bool>
 
 </resources>
