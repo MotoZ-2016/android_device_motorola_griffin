@@ -40,7 +40,6 @@ vendor/lib/rfsa/adsp/libscveFaceRecognition_skel.so
 # Audio
 bin/fm_qsoc_patches
 vendor/bin/audioflacapp
-lib/hw/audio.primary.msm8996.so
 lib/hw/audio.motvr.default.so
 lib/libmotaudioutils.so
 lib/libqcomfm_jni.so
