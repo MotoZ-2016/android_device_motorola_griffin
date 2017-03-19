@@ -347,5 +347,9 @@
         <item>"/system/framework/oat/arm64/services.odex"</item>
         <item>"/system/framework/arm64/boot.oat"</item>
         <item>"/system/framework/arm64/boot-core-libart.oat"</item>
-   </string-array>
+    </string-array>
+
+    <!-- Enable blur support -->
+    <bool name="config_uiBlurEnabled">true</bool>
+
 </resources>
