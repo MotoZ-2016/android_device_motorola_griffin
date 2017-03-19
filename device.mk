@@ -138,6 +138,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     lights.msm8996
 
+# LiveDisplay native
+PRODUCT_PACKAGES += \
+    libjni_livedisplay
+
 # Media
 PRODUCT_PACKAGES += \
     libc2dcolorconvert
