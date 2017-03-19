@@ -81,9 +81,6 @@ persist.sys.cnd.iwlan=1
 ## CoreSight
 persist.debug.coresight.config=stm-events
 
-## FRP
-ro.frp.pst=/dev/block/bootdevice/by-name/frp
-
 ## GPS
 persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.location
