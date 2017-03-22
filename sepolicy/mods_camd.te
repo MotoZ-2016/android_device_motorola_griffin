@@ -8,4 +8,7 @@ allow mods_camd video_device:chr_file rw_file_perms;
 allow mods_camd self:netlink_kobject_uevent_socket { bind create read setopt };
 allow mods_camd sysfs_mods_camd:file rw_file_perms;
 allow mods_camd sysfs_mods_camd:dir rw_dir_perms;
+allow mods_camd sysfs:file { getattr read write };
+allow mods_camd sysfs:file { getattr open read write };
 
+allow mods_camd mods_camd_device:chr_file {getattr ioctl open read write };
