@@ -3,6 +3,7 @@ allow platform_app default_android_service:service_manager find;
 allow platform_app gbfirmware_file:dir create_dir_perms;
 allow platform_app gbfirmware_file:file create_file_perms;
 allow platform_app greybus_raw_device:chr_file rw_file_perms;
+allow platform_app input_device:chr_file getattr;
 allow platform_app input_device:dir search;
 allow platform_app mods_service:service_manager find;
 allow platform_app self:netlink_kobject_uevent_socket { bind create read setopt };
