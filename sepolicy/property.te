@@ -3,3 +3,5 @@ type touch_prop, property_type;
 type atvc_prop, property_type;
 type manufacturedate_prop, property_type;
 type rmtfs_prop, property_type;
+type ctl_mods_camd_prop, property_type;
+type moto_init_prop, property_type;
