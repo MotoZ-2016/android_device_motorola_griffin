@@ -888,7 +888,6 @@ service mods_camd /system/bin/mods_camd
     group camera system inet input graphics
     rlimit 14 4 4
     ioprio rt 4
-    disabled
 
 service charge_only_mode /system/bin/charge_only_mode
     user root
