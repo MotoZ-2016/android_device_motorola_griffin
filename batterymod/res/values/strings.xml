@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Battery Mod Percentage</string>
+
+    <string name="battery_mod_text">Battery Mod :</string>
+    <string name="developed_by">Developed By Erfan Abdi</string>
+    <string name="percent">%</string>
+    <string name="refresh">Refresh</string>
+</resources>
