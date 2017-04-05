@@ -26,7 +26,11 @@ $(call inherit-product, vendor/aokp/configs/common_full_phone.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
+# Overlays
 DEVICE_PACKAGE_OVERLAYS += device/motorola/griffin/overlay
+
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2560
