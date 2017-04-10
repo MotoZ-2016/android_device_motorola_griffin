@@ -43,7 +43,7 @@
     <bool name="config_defaultCABC">false</bool>
 
     <!-- Turn on LiveDisplay auto mode by default -->
-    <integer name="config_defaultLiveDisplayMode">1</integer>
+    <integer name="config_defaultLiveDisplayMode">0</integer>
 
     <!-- Display mode remapping table.
          If the mode names returned by the backend do not match
