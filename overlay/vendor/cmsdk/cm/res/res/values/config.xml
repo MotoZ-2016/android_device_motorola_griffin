@@ -51,9 +51,9 @@
          app, they can be remapped here. The format is
          "oldname:newname", one per entry. -->
     <string-array name="config_displayModeMappings" translatable="false">
-        <item>Comfort:Comfort</item>
-        <item>Vibrant:Vibrant</item>
-        <item>sRGB:sRGB</item>
+        <item>Comfort:astronomy</item>
+        <item>Vibrant:dynamic</item>
+        <item>sRGB:srgb</item>
     </string-array>
 
     <!-- Should we filter any display modes which are unampped? -->
