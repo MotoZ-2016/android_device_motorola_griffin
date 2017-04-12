@@ -1,4 +1,7 @@
+allow ueventd adspd_file:dir search;
 allow ueventd device:chr_file { relabelfrom relabelto };
+allow ueventd gbfirmware_file:dir search;
+allow ueventd gbfirmware_file:file { getattr open read };
 allow ueventd input_device:chr_file { relabelfrom relabelto };
 allow ueventd video_device:chr_file { relabelfrom relabelto };
 allow ueventd sysfs_greybus:file { open write };
