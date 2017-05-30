@@ -7,3 +7,5 @@ allow mm-qcamerad laser_device:chr_file { ioctl open read write };
 allow mm-qcamerad sysfs_mods_camd:file rw_file_perms;
 allow mm-qcamerad sysfs_mods_camd:dir rw_dir_perms;
 allow mm-qcamerad system_data_file:dir read;
+
+unix_socket_connect(mm-qcamerad, mpctl, perfd);
