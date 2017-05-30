@@ -145,9 +145,6 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
 
-# Power
-TARGET_POWERHAL_VARIANT := qcom
-
 # Recovery
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 
