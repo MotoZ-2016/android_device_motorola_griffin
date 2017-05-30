@@ -1,4 +1,9 @@
 on boot
+
+    # Set permissions by node reads by dumpstate
+    chmod 0644 /sys/devices/system/cpu/present
+    chmod 0644 /sys/devices/system/cpu/online
+
     # update cpuset for each cgroup
     # reserve cpu2 for top app
     write /dev/cpuset/top-app/cpus 0-3
