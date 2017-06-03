@@ -365,6 +365,7 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
+    libshim_ril \
     libqsap_shim
 
 # TextClassifier smart selection model files
