@@ -207,6 +207,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2 \
+    libshim_ril \
     libprotobuf-cpp-full
 
 # Sensors
