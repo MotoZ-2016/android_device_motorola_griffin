@@ -4,6 +4,8 @@ init_daemon_domain(adspd)
 
 unix_socket_connect(adspd, property, init)
 
+allow adspd adspd_file:dir create_dir_perms;
+allow adspd adspd_file:file create_file_perms;
 allow adspd audio_device:chr_file { ioctl open read write };
 allow adspd audio_device:dir search;
 allow adspd input_device:chr_file r_file_perms;
