@@ -257,6 +257,7 @@ on boot
     chown system graphics /sys/class/graphics/fb0/mode
     chown system graphics /sys/class/graphics/fb0/msm_cmd_autorefresh_en
     chown system graphics /sys/class/graphics/fb1/res_info
+    chown system graphics /sys/class/graphics/fb2/res_info
     chmod 0664 /sys/class/graphics/fb0/mdp/bw_mode_bitmap
     chmod 0664 /sys/class/graphics/fb0/idle_time
     chmod 0664 /sys/class/graphics/fb0/dynamic_fps
@@ -265,6 +266,7 @@ on boot
     chmod 0664 /sys/class/graphics/fb0/mode
     chmod 0664 /sys/class/graphics/fb0/msm_cmd_autorefresh_en
     chmod 0664 /sys/class/graphics/fb1/res_info
+    chmod 0664 /sys/class/graphics/fb2/res_info
 
    # update cpuset for each cgroup
    write /dev/cpuset/foreground/cpus 0-3
