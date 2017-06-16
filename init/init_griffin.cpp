@@ -86,10 +86,10 @@ void vendor_load_properties()
     device_boot = property_get("ro.boot.device");
     property_set("ro.hw.device", device_boot.c_str());
 
-    property_set("ro.product.device", "griffin");
+    property_override("ro.product.device", "griffin");
 
     sku = property_get("ro.boot.hardware.sku");
-    property_set("ro.product.model", sku.c_str());
+    property_override("ro.product.model", sku.c_str());
 
     carrier = property_get("ro.boot.carrier");
     property_set("ro.carrie", carrier.c_str());
@@ -100,7 +100,7 @@ void vendor_load_properties()
     dualsim = property_get("ro.boot.dualsim");
 
     /* Common for all models */
-    property_set("ro.build.product", "griffin");
+    property_override("ro.build.product", "griffin");
     target_ram();
     num_sims();
 
