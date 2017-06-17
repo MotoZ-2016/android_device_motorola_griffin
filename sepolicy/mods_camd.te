@@ -12,3 +12,9 @@ allow mods_camd sysfs:file { getattr read write };
 allow mods_camd sysfs:file { getattr open read write };
 
 allow mods_camd mods_camd_device:chr_file {getattr ioctl open read write };
+
+allow mods_camd sysfs_greybus:file rw_file_perms;
+allow mods_camd sysfs_greybus:dir rw_dir_perms;
+
+allow mods_camd sysfs_v4l2_openmode:file rw_file_perms;
+allow mods_camd sysfs_v4l2_openmode:dir rw_dir_perms;
