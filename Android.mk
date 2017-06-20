@@ -124,7 +124,7 @@ $(CPE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(CPE_SYMLINKS)
 
-CPPF_IMAGES := cppf.b00 cppf.b01 cppf.b02 cppf.b03 cppf.b04 cppf.b05 cppf.b06 a530_zap.mdt
+CPPF_IMAGES := cppf.b00 cppf.b01 cppf.b02 cppf.b03 cppf.b04 cppf.b05 cppf.b06 cppf.mdt
 CPPF_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(CPPF_IMAGES)))
 $(CPPF_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "ZAP firmware link: $@"
@@ -133,6 +133,16 @@ $(CPPF_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(CPPF_SYMLINKS)
+
+BDWLAN_IMAGES := bdwlan30.b0a bdwlan30.b0b bdwlan30.b0c bdwlan30.b0d bdwlan30.b0e bdwlan30.b01 bdwlan30.b02 bdwlan30.b03 bdwlan30.b04 bdwlan30.b05 bdwlan30.b06 bdwlan30.b07 bdwlan30.b08 bdwlan30.b09 bdwlan30.b11 bdwlan30.b15 bdwlan30.b18 bdwlan30.bin bdwlan30_arg.bin bdwlan30_bra.bin bdwlan30_ind.bin
+BDWLAN_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(BDWLAN_IMAGES)))
+$(BDWLAN_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "WLAN firmware link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /firmware/image/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(BDWLAN_SYMLINKS)
 
 WIDEVINE_IMAGES := widevine.b00 widevine.b01 widevine.b02 widevine.b03 widevine.b04 widevine.b05 widevine.b06 widevine.mdt
 WIDEVINE_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(WIDEVINE_IMAGES)))
