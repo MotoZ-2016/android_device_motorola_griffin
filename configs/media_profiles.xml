@@ -280,9 +280,9 @@
             frameRate="240" />
         <!-- audio setting is ignored -->
         <Audio codec="aac"
-            bitRate="96000"
+            bitRate="128000"
             sampleRate="48000"
-            channels="1" />
+            channels="2" />
     </EncoderProfile>
 
     <!-- CAMCORDER_QUALITY_HIGH_SPEED_HIGH/1080P : 1080p@120fps; 42.0 Mbps -->
@@ -294,9 +294,9 @@
             frameRate="120" />
         <!-- audio setting is ignored -->
         <Audio codec="aac"
-            bitRate="96000"
+            bitRate="128000"
             sampleRate="48000"
-            channels="1" />
+            channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="highspeed720p" fileFormat="mp4" duration="30">
@@ -307,9 +307,9 @@
             frameRate="240" />
         <!-- audio setting is ignored -->
         <Audio codec="aac"
-            bitRate="96000"
+            bitRate="128000"
             sampleRate="48000"
-            channels="1" />
+            channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="highspeed1080p" fileFormat="mp4" duration="30">
@@ -320,9 +320,9 @@
             frameRate="120" />
         <!-- audio setting is ignored -->
         <Audio codec="aac"
-            bitRate="96000"
+            bitRate="128000"
             sampleRate="48000"
-            channels="1" />
+            channels="2" />
     </EncoderProfile>
 
         <ImageEncoding quality="95" />
