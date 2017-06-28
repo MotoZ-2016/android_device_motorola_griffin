@@ -13,7 +13,7 @@
 	<device name="SND_DEVICE_OUT_MOD_SPKR_INT_HEADPHONES" acdb_id="10" />
 	<device name="SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES" acdb_id="10" />
 	<device name="SND_DEVICE_OUT_SPEAKER_SAFE_AND_HEADPHONES" acdb_id="10" />
-	<device name="SND_DEVICE_OUT_SPEAKER" acdb_id="15" />
+	<device name="SND_DEVICE_OUT_SPEAKER" acdb_id="10" />
 	<device name="SND_DEVICE_OUT_VOICE_HEADPHONES" acdb_id="15"/>
 	<device name="SND_DEVICE_OUT_VOICE_TTY_FULL_HEADPHONES" acdb_id="15"/>
 	<device name="SND_DEVICE_OUT_VOICE_TTY_VCO_HEADPHONES" acdb_id="7"/>
