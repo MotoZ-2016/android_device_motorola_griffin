@@ -7,3 +7,4 @@ allow untrusted_app rootfs:dir read;
 allow untrusted_app self:udp_socket ioctl;
 allow untrusted_app unlabeled:dir { getattr read };
 allow untrusted_app firmware_file:dir read;
+allow untrusted_app rild_socket:sock_file { execute getattr };
