@@ -18,3 +18,9 @@ allow mods_camd sysfs_greybus:dir rw_dir_perms;
 
 allow mods_camd sysfs_v4l2_openmode:file rw_file_perms;
 allow mods_camd sysfs_v4l2_openmode:dir rw_dir_perms;
+
+allow mods_camd cameraserver:fd use;
+allow mods_camd gpu_device:chr_file { ioctl open read write };
+allow mods_camd init:unix_stream_socket connectto;
+allow mods_camd property_socket:sock_file write;
+allow mods_camd surfaceflinger:fd use;
