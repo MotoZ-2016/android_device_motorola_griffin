@@ -272,7 +272,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
     $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics.kl \
     $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl \
-    $(LOCAL_PATH)/keylayout/msm8996-florida-snd-card_Button_Jack.kl:system/usr/keylayout/msm8996-florida-snd-card_Button_Jack.kl
+    $(LOCAL_PATH)/keylayout/msm8996-florida-snd-card_Button_Jack.kl:system/usr/keylayout/msm8996-florida-snd-card_Button_Jack.kl \
+    $(LOCAL_PATH)/keylayout/Vendor_22b8_Product_ffff.kl:system/usr/keylayout/Vendor_22b8_Product_ffff.kl
 
 # IDC
 PRODUCT_COPY_FILES += \
