@@ -430,6 +430,8 @@ on post-fs
     chown oem_5004 oem_5004 /persist/bt/bt_bdaddr
     chmod 0664 /persist/bt/bt_bdaddr
 
+    chmod 0660 /persist/camera/focus/offset_cal
+
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
@@ -789,6 +791,7 @@ service vendor.init_wifi /vendor/bin/wlan_carrier_bin.sh
 service vendor.mmi-boot-sh /vendor/bin/init.mmi.boot.sh
     class core
     user root
+    group root radio
     oneshot
 
 # translate to qcom property name in order to keep the consistent with
@@ -823,6 +826,7 @@ service vendor.hw_revs /vendor/bin/hardware_revisions.sh
 service vendor.mmi-laser-sh /vendor/bin/init.mmi.laser.sh
     class core
     user root
+    group root mot_tcmd
     oneshot
 
 service vendor.oem-hw-sh /vendor/bin/init.oem.hw.sh
