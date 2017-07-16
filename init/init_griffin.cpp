@@ -26,11 +26,24 @@
  */
 
 #include <stdlib.h>
+#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
+#include <sys/_system_properties.h>
 
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
+
+void property_override(char const prop[], char const value[])
+{
+    prop_info *pi;
+
+    pi = (prop_info*) __system_property_find(prop);
+    if (pi)
+        __system_property_update(pi, value, strlen(value));
+    else
+        __system_property_add(prop, strlen(prop), value, strlen(value));
+}
 
 /* Target-Specific Dalvik Heap & HWUI Configuration */
 void target_ram() {
@@ -73,10 +86,10 @@ void vendor_load_properties()
     device_boot = property_get("ro.boot.device");
     property_set("ro.hw.device", device_boot.c_str());
 
-    property_set("ro.product.device", "griffin");
+    property_override("ro.product.device", "griffin");
 
     sku = property_get("ro.boot.hardware.sku");
-    property_set("ro.product.model", sku.c_str());
+    property_override("ro.product.model", sku.c_str());
 
     carrier = property_get("ro.boot.carrier");
     property_set("ro.carrie", carrier.c_str());
@@ -87,7 +100,7 @@ void vendor_load_properties()
     dualsim = property_get("ro.boot.dualsim");
 
     /* Common for all models */
-    property_set("ro.build.product", "griffin");
+    property_override("ro.build.product", "griffin");
     target_ram();
     num_sims();
 
