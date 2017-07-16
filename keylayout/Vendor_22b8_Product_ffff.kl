@@ -16,5 +16,4 @@
 
 key 212   CAMERA
 key 528   FOCUS
-key 535   LAUNCH_CAMERA
-
+#key 535   LAUNCH_CAMERA
