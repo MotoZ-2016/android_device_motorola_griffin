@@ -160,7 +160,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/configs/media_profiles_rc.xml:system/etc/media_profiles_rc.xml
+    $(LOCAL_PATH)/configs/media_profiles_mod0.xml:system/etc/media_profiles_mod0.xml \
+    $(LOCAL_PATH)/configs/media_profiles_mod1.xml:system/etc/media_profiles_mod1.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
