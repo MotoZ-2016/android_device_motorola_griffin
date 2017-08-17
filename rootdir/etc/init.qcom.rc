@@ -767,13 +767,6 @@ service batt_health /system/bin/batt_health
     class late_start
     user mot_pwric
     group mot_pwric cache net_admin log
-    disabled
-
-on property:sys.boot_completed=1 && property:ro.boot.secure_hardware=0
-    start batt_health
-
-on property:persist.mot.demo_mode_charging=1
-    write /sys/class/power_supply/battery/device/force_demo_mode 1
 
 on property:ro.kick.logcopy=coldboot
     start apanic_copy
