@@ -111,27 +111,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_SEPARATED_DT := true
-ifeq ($(HOST_OS),linux)
 TARGET_CUSTOM_DTBTOOL := dtbTool_custom
-else
-BOARD_KERNEL_PREBUILT_DT := true
-OUT_DIR_mac := $(OUT_DIR)
-OUT_DIR_COMMON_BASE_mac := $(OUT_DIR_COMMON_BASE)
-ifeq (,$(strip $(OUT_DIR_mac)))
-ifeq (,$(strip $(OUT_DIR_COMMON_BASE_mac)))
-OUT_DIR_mac := $(TOPDIR)out
-else
-OUT_DIR_mac := $(OUT_DIR_COMMON_BASE_mac)/$(notdir `pwd`)
-endif
-endif
-DEBUG_OUT_DIR_mac := $(OUT_DIR_mac)/debug
-TARGET_OUT_ROOT_release_mac := $(OUT_DIR_mac)/target
-TARGET_OUT_ROOT_debug_mac := $(DEBUG_OUT_DIR_mac)/target
-TARGET_OUT_ROOT_mac := $(TARGET_OUT_ROOT_$(TARGET_BUILD_TYPE)_mac)
-TARGET_PRODUCT_OUT_ROOT_mac := $(TARGET_OUT_ROOT_mac)/product
-PRODUCT_OUT_mac := $(TARGET_PRODUCT_OUT_ROOT_mac)/$(TARGET_DEVICE)
-$(shell ditto $(PLATFORM_PATH)/dt.img $(PRODUCT_OUT_mac)/)
-endif
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
