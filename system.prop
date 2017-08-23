@@ -122,6 +122,7 @@ persist.mm.enable.prefetch=true
 vidc.debug.perf.mode=2
 vidc.enc.dcvs.extra-buff-count=2
 vidc.enc.disable.pq=true
+persist.media.treble_omx=false
 
 ## Mods
 sys.mod.platformsdkversion=105
