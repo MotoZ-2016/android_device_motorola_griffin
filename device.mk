@@ -300,7 +300,8 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2 \
     libprotobuf-cpp-full \
-    libprotobuf-cpp-lite
+    libprotobuf-cpp-lite \
+    rild_socket
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
