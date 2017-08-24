@@ -243,7 +243,7 @@ on boot
     chown system system /sys/kernel/debug/clk/gpu_gx_gfx3d_clk/rate_stats
     chmod 0660 /sys/kernel/debug/clk/gpu_gx_gfx3d_clk/rate_stats
     write /sys/kernel/debug/clk/gpu_gx_gfx3d_clk/rate_stats 1
-	
+
     # Set graphic node permissions
     chown system graphics /sys/class/graphics/fb0/mdp/bw_mode_bitmap
     chown system graphics /sys/class/graphics/fb0/idle_time
@@ -369,7 +369,8 @@ on fs
     # results in failure to launch late-start class.
 
     wait /dev/block/bootdevice/by-name/persist
-    mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1 defcontext=u:object_r:persist_file:s0
+    mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1
+    #defcontext=u:object_r:persist_file:s0
     restorecon_recursive /persist
     mkdir /persist/data 0700 system system
 
@@ -377,18 +378,22 @@ on fs
     mount ext4 /dev/block/bootdevice/by-name/dsp /dsp ro nosuid nodev barrier=1
 
     wait /dev/block/bootdevice/by-name/modem
-    mount ext4 /dev/block/bootdevice/by-name/modem /firmware ro nosuid nodev context=u:object_r:firmware_file:s0
+    mount ext4 /dev/block/bootdevice/by-name/modem /firmware ro nosuid nodev
+    #context=u:object_r:firmware_file:s0
 
     wait /dev/block/bootdevice/by-name/bluetooth
-    mount ext4 /dev/block/bootdevice/by-name/bluetooth /bt_firmware ro nosuid nodev context=u:object_r:bt_firmware_file:s0
+    mount ext4 /dev/block/bootdevice/by-name/bluetooth /bt_firmware ro nosuid nodev
+    #context=u:object_r:bt_firmware_file:s0
 
     # Mount modem FSG partition
     wait /dev/block/bootdevice/by-name/fsg
-    mount ext4 /dev/block/bootdevice/by-name/fsg /fsg ro nosuid nodev context=u:object_r:fsg_file:s0
+    mount ext4 /dev/block/bootdevice/by-name/fsg /fsg ro nosuid nodev
+    #context=u:object_r:fsg_file:s0
 
     #Mount customize partion
     wait /dev/block/bootdevice/by-name/customize
-    mount ext4 /dev/block/bootdevice/by-name/customize /customize ro discard nosuid nodev noatime nodiratime noexec defcontext=u:object_r:user_config_file:s0
+    mount ext4 /dev/block/bootdevice/by-name/customize /customize ro discard nosuid nodev noatime nodiratime noexec
+    #defcontext=u:object_r:user_config_file:s0
 
     # use /persist as phony PDS partition
     symlink /persist /pds
@@ -755,7 +760,7 @@ on property:ro.carrier=*
     start init_wifi
 
 service init_wifi /wlan_carrier_bin.sh
-    seclabel u:r:init_wifi:s0
+#    seclabel u:r:init_wifi:s0
     class main
     user root
     group root
@@ -811,7 +816,7 @@ service aplogd /system/bin/aplogd
     disabled
 
 service mmi-boot-sh /system/bin/sh /init.mmi.boot.sh
-    seclabel u:r:mmi-boot-sh:s0
+#    seclabel u:r:mmi-boot-sh:s0
     class core
     user root
     oneshot
@@ -855,7 +860,7 @@ service hw_revs /system/bin/hardware_revisions.sh
     oneshot
 
 service mmi-laser-sh /system/bin/sh /init.mmi.laser.sh
-    seclabel u:r:mmi-laser-sh:s0
+#    seclabel u:r:mmi-laser-sh:s0
     class core
     user root
     oneshot
@@ -866,7 +871,7 @@ service mmi-touch-sh /system/bin/sh /init.mmi.touch.sh
     oneshot
 
 service oem-hw-sh /system/bin/sh /init.oem.hw.sh
-    seclabel u:r:oem-hw-sh:s0
+#    seclabel u:r:oem-hw-sh:s0
     class core
     user root
     oneshot
