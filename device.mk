@@ -122,6 +122,10 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libtinyxml
 
+# Dumpstate HAL
+PRODUCT_PACKAGES += \
+    android.hardware.dumpstate@1.0-service.msm8996
+
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     fingerprintd
