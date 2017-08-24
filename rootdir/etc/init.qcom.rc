@@ -40,7 +40,7 @@ on early-init
     mkdir /customize 0500 root root
 
 on init
-    export LD_SHIM_LIBS /system/lib/libjustshoot.so|libshim_camera.so:/system/lib/hw/camera.msm8996.so|libcamera_shim.so:/system/vendor/lib/libmot_gpu_mapper.so|libshim_camera.so
+    export LD_SHIM_LIBS /system/lib/libjustshoot.so|libshim_camera.so:/system/lib/hw/camera.msm8996.so|libcamera_shim.so:/system/vendor/lib/libmot_gpu_mapper.so|libshim_camera.so:/system/vendor/lib64/libizat_core.so:libshims_get_process_name.so
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
@@ -354,6 +354,9 @@ on boot
 
    # Quiet binder logs
    write /sys/module/binder/parameters/debug_mask 0x5
+
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -696,7 +699,7 @@ service perfd /system/vendor/bin/perfd
 service qcomsysd /system/bin/qcom-system-daemon
     class main
     user root
-    group root qcom_diag
+    group root diag
 
 service ssr_setup /system/bin/ssr_setup
     oneshot
@@ -944,7 +947,7 @@ on property:wc_transport.start_hci=false
 service start_hci_filter /system/bin/wcnss_filter
     class late_start
     user root
-    group bluetooth qcom_diag
+    group bluetooth diag
     disabled
 
 on property:wc_transport.start_root=true
@@ -956,7 +959,7 @@ on property:wc_transport.start_root=false
 service hci_filter_root /system/bin/wcnss_filter
     class late_start
     user root
-    group bluetooth qcom_diag system
+    group bluetooth diag system
     disabled
 
 service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
@@ -1008,7 +1011,7 @@ service port-bridge /system/bin/port-bridge
 service qmuxd /system/bin/qmuxd
     class core
     user root
-    group radio audio bluetooth gps nfc diag qcom_diag
+    group radio audio bluetooth gps nfc diag diag
     writepid /dev/cpuset/system-background/tasks
 
 service netmgrd /system/bin/netmgrd
@@ -1019,7 +1022,7 @@ service ipacm-diag /system/bin/ipacm-diag
     class main
     user system
     socket ipacm_log_file dgram 660 system net_admin
-    group net_admin qcom_diag
+    group net_admin diag
 
 service ipacm /system/bin/ipacm
     class main
@@ -1030,7 +1033,7 @@ service ipacm /system/bin/ipacm
 service qti /system/vendor/bin/qti
     class main
     user radio
-    group radio net_raw qcom_diag usb net_admin
+    group radio net_raw diag usb net_admin
     writepid /dev/cpuset/system-background/tasks
 
 on property:ro.use_data_netmgrd=false
@@ -1063,7 +1066,7 @@ on property:ro.data.large_tcp_window_size=true
 on property:sys.sysctl.tcp_adv_win_scale=*
     write /proc/sys/net/ipv4/tcp_adv_win_scale ${sys.sysctl.tcp_adv_win_scale}
 
-service p2p_supplicant /system/bin/wpa_supplicant \
+service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
     -I/system/etc/wifi/p2p_supplicant_overlay.conf -N \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
@@ -1076,34 +1079,6 @@ service p2p_supplicant /system/bin/wpa_supplicant \
 #   group wifi inet keystore
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
-    disabled
-    oneshot
-
-service wpa_supplicant /system/bin/wpa_supplicant \
-    -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
-    -I/system/etc/wifi/wpa_supplicant_overlay.conf \
-    -O/data/misc/wifi/sockets -dd \
-    -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
-    #   we will start as root and wpa_supplicant will switch to user wifi
-    #   after setting up the capabilities required for WEXT
-    #   user wifi
-    #   group wifi inet keystore
-    class main
-    socket wpa_wlan0 dgram 660 wifi wifi
-    disabled
-    oneshot
-
-service wigig_supplicant /system/bin/wpa_supplicant \
-    -iwigig0 -Dnl80211 -c/data/misc/wifi/wigig_supplicant.conf \
-    -m/data/misc/wifi/wigig_p2p_supplicant.conf \
-    -O/data/misc/wifi/wigig_sockets -dd \
-    -e/data/misc/wifi/wigig_entropy.bin -g@android:wpa_wigig0
-    #   we will start as root and wpa_supplicant will switch to user wifi
-    #   after setting up the capabilities required for WEXT
-    #   user wifi
-    #   group wifi inet keystore
-    class main
-    socket wpa_wigig0 dgram 660 wifi wifi
     disabled
     oneshot
 
@@ -1123,7 +1098,7 @@ service cnss-daemon /system/bin/cnss-daemon -n
 service loc_launcher /system/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
-    group gps inet qcom_diag wifi
+    group gps inet diag wifi
     writepid /dev/cpuset/system-background/tasks
 
 on property:crypto.driver.load=1
@@ -1152,14 +1127,14 @@ service ril-daemon /system/bin/rild
     socket rild-debug stream 660 radio system
     socket cutback stream 660 media radio
     user root
-    group radio cache inet misc audio log qcom_diag net_raw diag wifi compass
+    group radio cache inet misc audio log diag net_raw diag wifi compass
 
 service ril-daemon2 /system/bin/rild -c 2
     class main
     socket rild2 stream 660 root radio
     socket rild-debug2 stream 660 radio system
     user root
-    group radio cache inet misc audio sdcard_r sdcard_rw qcom_diag diag log
+    group radio cache inet misc audio sdcard_r sdcard_rw diag diag log
 
 service ril-daemon3 /system/bin/rild -c 3
     class main
@@ -1167,7 +1142,7 @@ service ril-daemon3 /system/bin/rild -c 3
     socket rild-debug3 stream 660 radio system
     user root
     disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw qcom_diag diag log
+    group radio cache inet misc audio sdcard_r sdcard_rw diag diag log
 
 #service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
 #    class core
