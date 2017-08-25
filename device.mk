@@ -92,6 +92,7 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libtinyxml \
     libtinycompress \
+    libaudioroute \
     tinymix
 
 PRODUCT_PACKAGES += \
