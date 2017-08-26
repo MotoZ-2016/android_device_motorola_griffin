@@ -53,7 +53,7 @@ namespace init {
 void target_ram() {
     std::string ram;
 
-    ram = android::base::GetProperty("ro.boot.ram");
+    ram = android::base::GetProperty("ro.boot.ram", "");
 
     // TODO: VZW has different settings here as they have more ram
 }
@@ -61,7 +61,7 @@ void target_ram() {
 void num_sims() {
     std::string dualsim;
 
-    dualsim = android::base::GetProperty("ro.boot.dualsim");
+    dualsim = android::base::GetProperty("ro.boot.dualsim", "");
     property_set("ro.hw.dualsim", dualsim.c_str());
 
     if (dualsim == "true") {
@@ -83,25 +83,25 @@ void vendor_load_properties()
     std::string device;
     std::string dualsim;
 
-    platform = android::base::GetProperty("ro.board.platform");
+    platform = android::base::GetProperty("ro.board.platform", "");
     if (platform != ANDROID_TARGET)
         return;
 
-    device_boot = android::base::GetProperty("ro.boot.device");
+    device_boot = android::base::GetProperty("ro.boot.device", "");
     property_set("ro.hw.device", device_boot.c_str());
 
     property_override("ro.product.device", "griffin");
 
-    sku = android::base::GetProperty("ro.boot.hardware.sku");
+    sku = android::base::GetProperty("ro.boot.hardware.sku", "");
     property_override("ro.product.model", sku.c_str());
 
-    carrier = android::base::GetProperty("ro.boot.carrier");
+    carrier = android::base::GetProperty("ro.boot.carrier", "");
     property_set("ro.carrie", carrier.c_str());
 
-    radio = android::base::GetProperty("ro.boot.radio");
+    radio = android::base::GetProperty("ro.boot.radio", "");
     property_set("ro.hw.radio", radio.c_str());
 
-    dualsim = android::base::GetProperty("ro.boot.dualsim");
+    dualsim = android::base::GetProperty("ro.boot.dualsim", "");
 
     /* Common for all models */
     property_override("ro.build.product", "griffin");
@@ -176,8 +176,8 @@ void vendor_load_properties()
     property_set("persist.rcs.supported", "0");
     property_set("persist.rcs.presence.provision", "0");
 
-    device = android::base::GetProperty("ro.product.device");
-    INFO("Found sku id: %s setting build properties for %s device\n", sku.c_str(), device.c_str());
+    device = android::base::GetProperty("ro.product.device", "");
+    //INFO("Found sku id: %s setting build properties for %s device\n", sku.c_str(), device.c_str());
 }
 
 }  // namespace init
