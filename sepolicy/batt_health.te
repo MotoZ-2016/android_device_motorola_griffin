@@ -17,4 +17,4 @@ allow batt_health sysfs_batt_health:file rw_file_perms;
 allow batt_health sysfs_usb_supply:dir { search read };
 allow batt_health sysfs_usb_supply:file r_file_perms;
 allow batt_health sysfs_mods_camd:file read;
-allow batt_health system_data_file:file { append read write };
+allow batt_health system_data_file:file read;
