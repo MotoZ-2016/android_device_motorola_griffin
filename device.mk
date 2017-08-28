@@ -77,12 +77,12 @@ PRODUCT_PACKAGES += \
     Snap \
     libbson \
     libshim_camera \
-    libcamera_shim
+    libcamera_shim \
+    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
@@ -111,11 +111,24 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
     $(LOCAL_PATH)/audio/audio_ext_spkr.conf:system/etc/audio_ext_spkr.conf
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    libbt-vendor \
+    android.hardware.bluetooth@1.0-impl
+
+# CMActions
+PRODUCT_PACKAGES += \
+    CMActions
+
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
     cneapiclient \
     com.quicinc.cne \
     services-ext
+
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl \
 
 # Display
 PRODUCT_PACKAGES += \
@@ -123,28 +136,29 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl \
-    copybit.msm8996 \
+    android.hardware.memtrack@1.0-impl \
     gralloc.msm8996 \
     hwcomposer.msm8996 \
-    memtrack.msm8996 \
-    liboverlay \
-    libtinyxml
-
-# DRM
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl
-
-# keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl
+    libgenlock \
+    memtrack.msm8996
 
 # Dumpstate HAL
 PRODUCT_PACKAGES += \
     android.hardware.dumpstate@1.0-service.msm8996
 
-# Fingerprint sensor
+# Ebtables
 PRODUCT_PACKAGES += \
-    fingerprintd
+    ebtables \
+    ethertypes \
+    libebtc
+
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service
+
+# GNSS HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
 
 # Gello
 PRODUCT_PACKAGES += \
@@ -166,13 +180,42 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/xtwifi.conf:system/etc/xtwifi.conf
 
 #PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml \
-    $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml
+#    $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml \
+#    $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml
+
+# Gatekeeper HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl
+
+# HIDL
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
+
+# IDC
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/idc/fpc1020.idc:system/usr/idc/fpc1020.idc
+
+# IRSC
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config \
+    $(LOCAL_PATH)/configs/dsi_config.xml:system/etc/data/dsi_config.xml \
+    $(LOCAL_PATH)/configs/netmgr_config.xml:system/etc/data/netmgr_config.xml
+
+# Keylayouts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
+    $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics.kl \
+    $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl \
+    $(LOCAL_PATH)/keylayout/msm8996-florida-snd-card_Button_Jack.kl:system/usr/keylayout/msm8996-florida-snd-card_Button_Jack.kl
+
+# Keymaster HAL
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    lights.msm8996
+    lights.msm8996 \
+    android.hardware.light@2.0-impl
 
 # LiveDisplay native
 PRODUCT_PACKAGES += \
@@ -194,6 +237,22 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
+# NFC
+PRODUCT_PACKAGES += \
+    libnfc-nci \
+    libnfc_nci_jni \
+    com.android.nfc_extras \
+    nfc_nci.msm8996 \
+    NfcNci \
+    nqnfcee_access.xml \
+    nqnfcse_access.xml \
+    Tag \
+    android.hardware.nfc@1.0-impl
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
+
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
@@ -214,7 +273,12 @@ PRODUCT_PACKAGES += \
 
 # QMI
 PRODUCT_PACKAGES += \
-    libjson
+    libjson \
+    libtinyxml
+
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -242,7 +306,6 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl \
     sensors.msm8996
 
 PRODUCT_COPY_FILES += \
@@ -269,13 +332,14 @@ PRODUCT_PACKAGES += \
     ipacm \
     ipacm-diag \
     IPACM_cfg.xml \
+    wificond \
+    wifilogd \
     libwpa_client \
     hostapd \
     dhcpcd.conf \
     wpa_supplicant \
     wpa_supplicant.conf \
     wifi_symlinks
-#    libqsap_sdk \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
@@ -293,56 +357,3 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/mot_imx214_chromatix.xml:system/etc/camera/mot_imx214_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/ov5693_chromatix.xml:system/etc/camera/ov5693_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/msm8996_mot_camera.xml:system/etc/camera/msm8996_mot_camera.xml
-
-
-# IPv6
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes
-
-# NFC
-PRODUCT_PACKAGES += \
-    libnfc-nci \
-    libnfc_nci_jni \
-    com.android.nfc_extras \
-    nfc_nci.msm8996 \
-    NfcNci \
-    nqnfcee_access.xml \
-    nqnfcse_access.xml \
-    Tag
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
-
-# Keylayouts
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
-    $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics.kl \
-    $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl \
-    $(LOCAL_PATH)/keylayout/msm8996-florida-snd-card_Button_Jack.kl:system/usr/keylayout/msm8996-florida-snd-card_Button_Jack.kl \
-    $(LOCAL_PATH)/keylayout/Vendor_22b8_Product_ffff.kl:system/usr/keylayout/Vendor_22b8_Product_ffff.kl
-
-# IDC
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/idc/fpc1020.idc:system/usr/idc/fpc1020.idc
-
-# IRSC
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config \
-    $(LOCAL_PATH)/configs/dsi_config.xml:system/etc/data/dsi_config.xml \
-    $(LOCAL_PATH)/configs/netmgr_config.xml:system/etc/data/netmgr_config.xml
-
-# CMActions
-PRODUCT_PACKAGES += \
-    CMActions
-
-# DRM
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-lite
-
-# Ebtables
-PRODUCT_PACKAGES += \
-   ebtables \
-   ethertypes \
-   libebtc
