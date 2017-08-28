@@ -114,7 +114,7 @@ TARGET_OUT_ROOT_debug_mac := $(DEBUG_OUT_DIR_mac)/target
 TARGET_OUT_ROOT_mac := $(TARGET_OUT_ROOT_$(TARGET_BUILD_TYPE)_mac)
 TARGET_PRODUCT_OUT_ROOT_mac := $(TARGET_OUT_ROOT_mac)/product
 PRODUCT_OUT_mac := $(TARGET_PRODUCT_OUT_ROOT_mac)/$(TARGET_DEVICE)
-$(shell cp $(PLATFORM_PATH)/dt.img $(PRODUCT_OUT_mac)/dt.img)
+$(shell cp $(PLATFORM_PATH)/dt.img $(PRODUCT_OUT_mac))
 endif
 
 TARGET_KERNEL_ARCH := arm64
