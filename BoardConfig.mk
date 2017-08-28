@@ -182,6 +182,7 @@ BOARD_PROVIDES_LIBRIL := true
 
 # NFC
 BOARD_NFC_CHIPSET := pn544
+BOARD_NFC_HAL_SUFFIX := $(TARGET_BOARD_PLATFORM)
 
 # SELinux
 #include device/qcom/sepolicy/sepolicy.mk
