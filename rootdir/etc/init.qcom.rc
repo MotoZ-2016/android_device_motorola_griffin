@@ -40,7 +40,7 @@ on early-init
     mkdir /customize 0500 root root
 
 on init
-    export LD_SHIM_LIBS /system/lib/libjustshoot.so|libshim_camera.so:/system/lib/hw/camera.msm8996.so|libcamera_shim.so:/system/vendor/lib/libmot_gpu_mapper.so|libshim_camera.so:/system/vendor/lib64/libizat_core.so:libshims_get_process_name.so
+    export LD_SHIM_LIBS /system/lib/libjustshoot.so|libshim_camera.so:/system/lib/hw/camera.msm8996.so|libcamera_shim.so:/system/vendor/lib/libmot_gpu_mapper.so|libshim_camera.so:/system/vendor/lib64/libizat_core.so|libshims_get_process_name.so
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
