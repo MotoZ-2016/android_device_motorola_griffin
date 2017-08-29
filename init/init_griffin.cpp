@@ -31,8 +31,7 @@
 
 #include "vendor_init.h"
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
+#include <utils/Log.h>
 #include <android-base/properties.h>
 
 void property_override(char const prop[], char const value[])
@@ -46,14 +45,14 @@ void property_override(char const prop[], char const value[])
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
-namespace android {
-namespace init {
-        
+using android::base::GetProperty;
+using android::base::SetProperty;
+
 /* Target-Specific Dalvik Heap & HWUI Configuration */
 void target_ram() {
     std::string ram;
 
-    ram = android::base::GetProperty("ro.boot.ram", "");
+    ram = GetProperty("ro.boot.ram", "");
 
     // TODO: VZW has different settings here as they have more ram
 }
@@ -61,13 +60,13 @@ void target_ram() {
 void num_sims() {
     std::string dualsim;
 
-    dualsim = android::base::GetProperty("ro.boot.dualsim", "");
-    property_set("ro.hw.dualsim", dualsim.c_str());
+    dualsim = GetProperty("ro.boot.dualsim", "");
+    SetProperty("ro.hw.dualsim", dualsim.c_str());
 
     if (dualsim == "true") {
-        property_set("persist.radio.multisim.config", "dsds");
+        SetProperty("persist.radio.multisim.config", "dsds");
     } else {
-        property_set("persist.radio.multisim.config", "");
+        SetProperty("persist.radio.multisim.config", "");
     }
 }
 
@@ -83,25 +82,25 @@ void vendor_load_properties()
     std::string device;
     std::string dualsim;
 
-    platform = android::base::GetProperty("ro.board.platform", "");
+    platform = GetProperty("ro.board.platform", "");
     if (platform != ANDROID_TARGET)
         return;
 
-    device_boot = android::base::GetProperty("ro.boot.device", "");
-    property_set("ro.hw.device", device_boot.c_str());
+    device_boot = GetProperty("ro.boot.device", "");
+    SetProperty("ro.hw.device", device_boot.c_str());
 
     property_override("ro.product.device", "griffin");
 
     sku = android::base::GetProperty("ro.boot.hardware.sku", "");
     property_override("ro.product.model", sku.c_str());
 
-    carrier = android::base::GetProperty("ro.boot.carrier", "");
-    property_set("ro.carrie", carrier.c_str());
+    carrier = GetProperty("ro.boot.carrier", "");
+    SetProperty("ro.carrie", carrier.c_str());
 
-    radio = android::base::GetProperty("ro.boot.radio", "");
-    property_set("ro.hw.radio", radio.c_str());
+    radio = GetProperty("ro.boot.radio", "");
+    SetProperty("ro.hw.radio", radio.c_str());
 
-    dualsim = android::base::GetProperty("ro.boot.dualsim", "");
+    dualsim = GetProperty("ro.boot.dualsim", "");
 
     /* Common for all models */
     property_override("ro.build.product", "griffin");
@@ -109,76 +108,73 @@ void vendor_load_properties()
     num_sims();
 
     if (device_boot == "sheridan") {
-        property_set("persist.audio.calfile0", "/etc/acdbdata/sheridan/Bluetooth_cal.acdb");
-        property_set("persist.audio.calfile1", "/etc/acdbdata/sheridan/General_cal.acdb");
-        property_set("persist.audio.calfile2", "/etc/acdbdata/sheridan/Global_cal.acdb");
-        property_set("persist.audio.calfile3", "/etc/acdbdata/sheridan/Handset_cal.acdb");
-        property_set("persist.audio.calfile4", "/etc/acdbdata/sheridan/Hdmi_cal.acdb");
-        property_set("persist.audio.calfile5", "/etc/acdbdata/sheridan/Headset_cal.acdb");
-        property_set("persist.audio.calfile6", "/etc/acdbdata/sheridan/Speaker_cal.acdb");
+        SetProperty("persist.audio.calfile0", "/etc/acdbdata/sheridan/Bluetooth_cal.acdb");
+        SetProperty("persist.audio.calfile1", "/etc/acdbdata/sheridan/General_cal.acdb");
+        SetProperty("persist.audio.calfile2", "/etc/acdbdata/sheridan/Global_cal.acdb");
+        SetProperty("persist.audio.calfile3", "/etc/acdbdata/sheridan/Handset_cal.acdb");
+        SetProperty("persist.audio.calfile4", "/etc/acdbdata/sheridan/Hdmi_cal.acdb");
+        SetProperty("persist.audio.calfile5", "/etc/acdbdata/sheridan/Headset_cal.acdb");
+        SetProperty("persist.audio.calfile6", "/etc/acdbdata/sheridan/Speaker_cal.acdb");
     }
     else {
-        property_set("persist.audio.calfile0", "/etc/acdbdata/griffin/Bluetooth_cal.acdb");
-        property_set("persist.audio.calfile1", "/etc/acdbdata/griffin/General_cal.acdb");
-        property_set("persist.audio.calfile2", "/etc/acdbdata/griffin/Global_cal.acdb");
-        property_set("persist.audio.calfile3", "/etc/acdbdata/griffin/Handset_cal.acdb");
-        property_set("persist.audio.calfile4", "/etc/acdbdata/griffin/Hdmi_cal.acdb");
-        property_set("persist.audio.calfile5", "/etc/acdbdata/griffin/Headset_cal.acdb");
-        property_set("persist.audio.calfile6", "/etc/acdbdata/griffin/Speaker_cal.acdb");
+        SetProperty("persist.audio.calfile0", "/etc/acdbdata/griffin/Bluetooth_cal.acdb");
+        SetProperty("persist.audio.calfile1", "/etc/acdbdata/griffin/General_cal.acdb");
+        SetProperty("persist.audio.calfile2", "/etc/acdbdata/griffin/Global_cal.acdb");
+        SetProperty("persist.audio.calfile3", "/etc/acdbdata/griffin/Handset_cal.acdb");
+        SetProperty("persist.audio.calfile4", "/etc/acdbdata/griffin/Hdmi_cal.acdb");
+        SetProperty("persist.audio.calfile5", "/etc/acdbdata/griffin/Headset_cal.acdb");
+        SetProperty("persist.audio.calfile6", "/etc/acdbdata/griffin/Speaker_cal.acdb");
     }
 
     if (sku == "XT1650-03") {
 
         if (carrier == "retmx" || carrier == "retbr") {
-            property_set("persist.radio.pb.max.match", "10");
-            property_set("persist.radio.pb.min.match", "7");
-            property_set("ro.ril.power_collapse", "1");
+            SetProperty("persist.radio.pb.max.match", "10");
+            SetProperty("persist.radio.pb.min.match", "7");
+            SetProperty("ro.ril.power_collapse", "1");
         }
         
-        property_set("ro.telephony.default_network", "10,0");
+        SetProperty("ro.telephony.default_network", "10,0");
     }
 
     if (sku == "XT1650-05") {
-        property_set("persist.radio.data_ltd_sys_ind", "1");
-        property_set("persist.radio.hw_mbn_update", "0");
-        property_set("persist.radio.ignore_dom_time", "5");
-        property_set("persist.radio.start_ota_daemon", "1");
-        property_set("persist.radio.sw_mbn_update", "0");
-        property_set("persist.oem.dump", "0");
-        property_set("persist.volte_enalbed_by_hw", "1");
-        property_set("ro.telephony.default_network", "22,20");
-        property_set("persist.radio.flexmap_type", "nw_mode");
-        property_set("persist.radio.rat_on", "combine");
-        property_set("persist.netmon.linger", "1");
-        property_set("ro.lenovo.dialergain", "80");
-        property_set("persist.radio.pb.min.match", "11");
-        property_set("ro.mot.NfcEnabled", "false");
-        property_set("ro.com.android.mobiledata", "true");
-        property_set("ro.prc.GcastEnabled", "false");
-        property_set("ro.prc.MiracastEnabled", "false");
-        property_set("persist.radio.force_on_dc", "true");
-        property_set("wifi.open.delay", "false");
-        property_set("persist.radio.mot_ecc_custid", "china");
-        property_set("persist.sys.backgrounddata", "false");
-        property_set("persist.sys.lenovo.ltetype", "VOLTE");
-        property_set("fmradio.driver.enable", "0");
+        SetProperty("persist.radio.data_ltd_sys_ind", "1");
+        SetProperty("persist.radio.hw_mbn_update", "0");
+        SetProperty("persist.radio.ignore_dom_time", "5");
+        SetProperty("persist.radio.start_ota_daemon", "1");
+        SetProperty("persist.radio.sw_mbn_update", "0");
+        SetProperty("persist.oem.dump", "0");
+        SetProperty("persist.volte_enalbed_by_hw", "1");
+        SetProperty("ro.telephony.default_network", "22,20");
+        SetProperty("persist.radio.flexmap_type", "nw_mode");
+        SetProperty("persist.radio.rat_on", "combine");
+        SetProperty("persist.netmon.linger", "1");
+        SetProperty("ro.lenovo.dialergain", "80");
+        SetProperty("persist.radio.pb.min.match", "11");
+        SetProperty("ro.mot.NfcEnabled", "false");
+        SetProperty("ro.com.android.mobiledata", "true");
+        SetProperty("ro.prc.GcastEnabled", "false");
+        SetProperty("ro.prc.MiracastEnabled", "false");
+        SetProperty("persist.radio.force_on_dc", "true");
+        SetProperty("wifi.open.delay", "false");
+        SetProperty("persist.radio.mot_ecc_custid", "china");
+        SetProperty("persist.sys.backgrounddata", "false");
+        SetProperty("persist.sys.lenovo.ltetype", "VOLTE");
+        SetProperty("fmradio.driver.enable", "0");
     }
 
-    property_set("persist.ims.volte", "true");
-    property_set("persist.ims.vt", "false");
-    property_set("persist.ims.vt.epdg", "false");
-    property_set("persist.ims.rcs", "false");
-    property_set("ro.radio.imei.sv", "4");
-    property_set("persist.radio.call.audio.output", "0");
-    property_set("persist.radio.videopause.mode", "0");
-    property_set("persist.vt.supported", "0");
-    property_set("persist.eab.supported", "0");
-    property_set("persist.rcs.supported", "0");
-    property_set("persist.rcs.presence.provision", "0");
+    SetProperty("persist.ims.volte", "true");
+    SetProperty("persist.ims.vt", "false");
+    SetProperty("persist.ims.vt.epdg", "false");
+    SetProperty("persist.ims.rcs", "false");
+    SetProperty("ro.radio.imei.sv", "4");
+    SetProperty("persist.radio.call.audio.output", "0");
+    SetProperty("persist.radio.videopause.mode", "0");
+    SetProperty("persist.vt.supported", "0");
+    SetProperty("persist.eab.supported", "0");
+    SetProperty("persist.rcs.supported", "0");
+    SetProperty("persist.rcs.presence.provision", "0");
 
-    device = android::base::GetProperty("ro.product.device", "");
-    //INFO("Found sku id: %s setting build properties for %s device\n", sku.c_str(), device.c_str());
+    device = GetProperty("ro.product.device", "");
+    ALOGI("Found sku id: %s setting build properties for %s device\n", sku.c_str(), device.c_str());
 }
-
-}  // namespace init
-}  // namespace android
