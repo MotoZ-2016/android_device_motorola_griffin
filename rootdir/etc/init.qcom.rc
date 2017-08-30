@@ -254,7 +254,7 @@ on boot
     chmod 0666 /dev/p61
     chown spi spi /dev/p61
 
-    start rmt_storage
+    start vendor.rmt_storage
     # access permission for secure touch
     chmod 0660 /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch_enable
     chmod 0440 /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch
@@ -370,7 +370,7 @@ on fs
     symlink /persist /pds
 
     # wait /dev/block/bootdevice/by-name/hw
-    start oem-hw-sh
+    start vendor.oem-hw-sh
 
     # Start HW service manager early
     start hwservicemanager
@@ -381,8 +381,8 @@ on late-fs
     start surfaceflinger
     start bootanim
 
-    start configstore-hal-1-0
-    start gralloc-2-0
+    start vendor.configstore-hal-1-0
+    start vendor.gralloc-2-0
 
     # Mount RW partitions which need run fsck
     mount_all /vendor/etc/fstab.qcom --late
@@ -721,29 +721,29 @@ on post-fs-data
     chmod 0770 /data/wapi_certificate
 
     # Start Camera Mods Daemon
-    start mods_camd
+    start vendor.mods_camd
 
-service qcomsysd /vendor/bin/qcom-system-daemon
+service vendor.qcomsysd /vendor/bin/qcom-system-daemon
     class main
     user root
     group root diag
 
-service ssr_setup /vendor/bin/ssr_setup
+service vendor.ssr_setup /vendor/bin/ssr_setup
     oneshot
     disabled
 
-service ss_ramdump /vendor/bin/subsystem_ramdump
+service vendor.ss_ramdump /vendor/bin/subsystem_ramdump
     class main
     user system
     group log sdcard_rw sdcard_r diag
     disabled
 
 on property:persist.sys.ssr.restart_level=*
-    start ssr_setup
+    start vendor.ssr_setup
 
 on property:persist.sys.ssr.enable_ramdumps=1
     write /sys/module/subsystem_restart/parameters/enable_ramdumps 1
-    start ss_ramdump
+    start vendor.ss_ramdump
 
 on property:persist.sys.ssr.enable_ramdumps=0
     write /sys/module/subsystem_restart/parameters/enable_ramdumps 0
@@ -759,23 +759,22 @@ on property:init.svc.bootanim=running
 
 on property:vold.decrypt=trigger_restart_framework
     # start qcom-c_main-sh
-    start config_bluetooth
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
-service cnd /vendor/bin/cnd
+service vendor.cnd /vendor/bin/cnd
     class main
     user system
     group system wifi inet radio wakelock net_admin
 
-service sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-service
+service vendor.sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-service
     class hal
     user system
     group system input wakelock
     capabilities BLOCK_SUSPEND SYS_NICE
 
-service motosh /vendor/bin/motosh boot
+service vendor.motosh /vendor/bin/motosh boot
     class late_start
     user compass
     group compass misc input
@@ -783,61 +782,16 @@ service motosh /vendor/bin/motosh boot
 
 # Pass carrier to wlan
 on property:ro.carrier=*
-    start init_wifi
+    start vendor.init_wifi
 
-service init_wifi /vendor/bin/wlan_carrier_bin.sh
-    seclabel u:r:init_wifi:s0
+service vendor.init_wifi /vendor/bin/wlan_carrier_bin.sh
     class main
     user root
     group root
     oneshot
     disabled
 
-on nonencrypted
-    setprop ro.kick.logcopy ${ro.bootreason}
-
-on property:vold.decrypt=trigger_restart_framework
-    setprop ro.kick.logcopy ${ro.bootreason}
-
-on property:ro.kick.logcopy=coldboot
-    start apanic_copy
-
-on property:ro.bootreason=watchdog
-    stop surfaceflinger
-    stop per_mgr
-    stop zygote
-    stop zygote_secondary
-    stop sensors
-    setprop debug.sf.nobootanimation 1
-    start apanic_annotate
-
-on property:ro.bootreason=pmic_watchdog
-    stop surfaceflinger
-    stop per_mgr
-    stop zygote
-    stop zygote_secondary
-    stop sensors
-    setprop debug.sf.nobootanimation 1
-    start apanic_annotate
-
-on property:persist.log.aplogd.enable=1
-    start aplogd
-
-on property:persist.log.aplogd.enable=0
-    stop aplogd
-
-service aplogd /vendor/bin/aplogd
-    class late_start
-    #user log
-    #group log system sdcard_rw sdcard_r media_rw mount
-    # The user and group definitions above are intentionally disabled and left
-    # only as documentation. It actually starts as root and immediately drops
-    # to log plus those groups after preserving CAP_SYS_ADMIN, which is required
-    # for kernel logging.
-    disabled
-
-service mmi-boot-sh /vendor/bin/init.mmi.boot.sh
-    seclabel u:r:mmi-boot-sh:s0
+service vendor.mmi-boot-sh /vendor/bin/init.mmi.boot.sh
     class core
     user root
     oneshot
@@ -854,52 +808,35 @@ on property:ro.hw.dualsim=true
 on property:ro.hw.dualsim=false
    setprop persist.radio.multisim.config ""
 
-on property:ro.bootreason=kernel_panic
-    stop surfaceflinger
-    stop per_mgr
-    stop zygote
-    stop zygote_secondary
-    stop sensors
-    setprop debug.sf.nobootanimation 1
-    start apanic_annotate
-
-service mbm_spy /vendor/bin/mbm_spy
+service vendor.mbm_spy /vendor/bin/mbm_spy
     class late_start
     user system
     group system
     oneshot
 
-service dropboxd /vendor/bin/dropboxd
+service vendor.dropboxd /vendor/bin/dropboxd
     class late_start
     user diag
     group diag
 
-service hw_revs /vendor/bin/hardware_revisions.sh
+service vendor.hw_revs /vendor/bin/hardware_revisions.sh
     class late_start
     user system
     group system
     oneshot
 
-service mmi-laser-sh /vendor/bin/init.mmi.laser.sh
-    seclabel u:r:mmi-laser-sh:s0
+service vendor.mmi-laser-sh /vendor/bin/init.mmi.laser.sh
     class core
     user root
     oneshot
 
-service oem-hw-sh /vendor/bin/init.oem.hw.sh
-    seclabel u:r:oem-hw-sh:s0
+service vendor.oem-hw-sh /vendor/bin/init.oem.hw.sh
     class core
     user root
     oneshot
     disabled
 
-on property:hw.touch.status="dead"
-    start touch-dead-sh
-
-on property:hw.touch.status="ready"
-    start touch-ready-sh
-
-service mods_camd /vendor/bin/mods_camd
+service vendor.mods_camd /vendor/bin/mods_camd
     class late_start
     user camera
     group camera system inet input graphics
@@ -907,17 +844,17 @@ service mods_camd /vendor/bin/mods_camd
     oneshot
     disabled
 
-service charge_only_mode /vendor/bin/charge_only_mode
+service vendor.charge_only_mode /vendor/bin/charge_only_mode
     user root
     group graphics system input
     disabled
 
-service thermal-com /vendor/bin/thermal-engine --minimode
+service vendor.thermal-com /vendor/bin/thermal-engine --minimode
     class main
     user root
     disabled
 
-service adspd /vendor/bin/adspd
+service vendor.adspd /vendor/bin/adspd
    class main
    socket adspdsock stream 0660 system audio
    user audio
@@ -934,44 +871,44 @@ on property:sys.wifi.tethering=true
 on property:sys.wifi.tethering=false
     write /sys/class/net/rmnet_data0/queues/rx-0/rps_cpus ${sys.rmnet_vnd.rps_mask}
 
-service dpmd /vendor/bin/dpmd
+service vendor.dpmd /vendor/bin/dpmd
     class late_start
     socket dpmd stream 660 root system
     group system readproc
 
-service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
+service vendor.irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
     oneshot
 
-service rmt_storage /vendor/bin/rmt_storage
+service vendor.rmt_storage /vendor/bin/rmt_storage
     class core
     user root
     group root system wakelock
 
-service tftp_server /vendor/bin/tftp_server
+service vendor.tftp_server /vendor/bin/tftp_server
    class core
    user root
 
 on property:wc_transport.start_hci=true
-    start start_hci_filter
+    start vendor.start_hci_filter
 
 on property:wc_transport.start_hci=false
-    stop start_hci_filter
+    stop vendor.start_hci_filter
 
-service start_hci_filter /vendor/bin/wcnss_filter
+service vendor.start_hci_filter /vendor/bin/wcnss_filter
     class late_start
     user root
     group bluetooth diag system wakelock log
     disabled
 
-service imsqmidaemon /vendor/bin/imsqmidaemon
+service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
     group radio log diag
 
-service imsdatadaemon /vendor/bin/imsdatadaemon
+service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
@@ -979,9 +916,9 @@ service imsdatadaemon /vendor/bin/imsdatadaemon
     disabled
 
 on property:vendor.ims.QMI_DAEMON_STATUS=1
-    start imsdatadaemon
+    start vendor.imsdatadaemon
 
-service ims_rtp_daemon /vendor/bin/ims_rtp_daemon
+service vendor.ims_rtp_daemon /vendor/bin/ims_rtp_daemon
     class main
     user system
     group radio diag inet log
@@ -994,45 +931,45 @@ service vendor.imsrcsservice /vendor/bin/imsrcsd
     disabled
 
 on property:vendor.ims.DATA_DAEMON_STATUS=1
-    start ims_rtp_daemon
+    start vendor.ims_rtp_daemon
     start vendor.imsrcsservice
 
-service port-bridge /vendor/bin/port-bridge
+service vendor.port-bridge /vendor/bin/port-bridge
     class main
     user radio
     group radio system inet
     oneshot
 
 # QMUX must be in multiple groups to support external process connections
-service qmuxd /vendor/bin/qmuxd
+service vendor.qmuxd /vendor/bin/qmuxd
     class core
     user root
     group radio audio bluetooth gps nfc oem_2950
 
-service netmgrd /vendor/bin/netmgrd
+service vendor.netmgrd /vendor/bin/netmgrd
     class main
     user root
     group root wifi wakelock radio inet
 
-service ipacm-diag /vendor/bin/ipacm-diag
+service vendor.ipacm-diag /vendor/bin/ipacm-diag
     class main
     user radio
     socket ipacm_log_file dgram 660 radio radio
     group radio diag oem_2950
 
-service ipacm /vendor/bin/ipacm
+service vendor.ipacm /vendor/bin/ipacm
     class main
     user radio
     group radio inet
 
-service qti /vendor/bin/qti
+service vendor.qti /vendor/bin/qti
     class main
     user radio
     group radio net_raw oem_2950 usb net_admin
 
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
-    # stop netmgrd
+    # stop vendor.netmgrd
 
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth
 # but only if ro.data.large_tcp_window_size property is set.
@@ -1059,17 +996,17 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
 on property:wifi.fccutild.load.qcacld=true
     insmod /system/lib/modules/qca_cld/qca_cld_wlan.ko con_mode=5
 
-service wlan_logging /vendor/bin/cnss_diag -q -f
+service vendor.wlan_logging /vendor/bin/cnss_diag -q -f
     class main
     user root
     group root
     disabled
     oneshot
 
-service cnss-daemon /vendor/bin/cnss-daemon -n
+service vendor.cnss-daemon /vendor/bin/cnss-daemon -n
     class late_start
 
-service loc_launcher /vendor/bin/loc_launcher
+service vendor.loc_launcher /vendor/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
     group gps inet diag wifi
@@ -1079,12 +1016,12 @@ on property:crypto.driver.load=1
      insmod /system/lib/modules/qcedev.ko
 
 on property:persist.radio.atfwd.start=false
-    stop atfwd
+    stop vendor.atfwd
 
 on property:radio.atfwd.start=false
-    stop atfwd
+    stop vendor.atfwd
 
-service atfwd /vendor/bin/ATFWD-daemon
+service vendor.atfwd /vendor/bin/ATFWD-daemon
     class late_start
     user root
     group system radio
@@ -1093,65 +1030,65 @@ on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
-service ril-daemon2 /vendor/bin/hw/rild -c 2
+service vendor.ril-daemon2 /vendor/bin/hw/rild -c 2
     class main
     user radio
     group radio cache inet misc audio log diag net_raw wifi compass
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
-service ril-daemon3 /vendor/bin/hw/rild -c 3
+service vendor.ril-daemon3 /vendor/bin/hw/rild -c 3
     class main
     user radio
     disabled
     group radio cache inet misc audio log diag net_raw wifi compass
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
-service qseeproxydaemon /vendor/bin/qseeproxydaemon
+service vendor.qseeproxydaemon /vendor/bin/qseeproxydaemon
     class late_start
     user system
     group system
 
 #start camera server as daemon
-service qcamerasvr /vendor/bin/mm-qcamera-daemon
+service vendor.qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
 
 on property:init.svc.media=restarting
-    restart qcamerasvr
+    restart vendor.qcamerasvr
 
 on property:init.svc.servicemanager=restarting
-    restart qcamerasvr
+    restart vendor.qcamerasvr
 
 #Start up peripheral manager
-service per_mgr /vendor/bin/pm-service
+service vendor.per_mgr /vendor/bin/pm-service
     class core
     user system
     group system net_raw
     ioprio rt 4
 
-service per_proxy /vendor/bin/pm-proxy
+service vendor.per_proxy /vendor/bin/pm-proxy
     class core
     user system
     group system
     disabled
 
 on property:init.svc.per_mgr=running
-    start per_proxy
+    start vendor.per_proxy
 
 on property:sys.shutdown.requested=*
-    stop per_proxy
+    stop vendor.per_proxy
 
-service mdm_helper /vendor/bin/mdm_helper
+service vendor.mdm_helper /vendor/bin/mdm_helper
     class core
     group root system
 
-service qseecomd /vendor/bin/qseecomd
+service vendor.qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
 
-service thermal-engine /vendor/bin/thermal-engine
+service vendor.thermal-engine /vendor/bin/thermal-engine
    class main
    user root
    socket thermal-send-client stream 0666 system system
@@ -1163,23 +1100,23 @@ service thermal-engine /vendor/bin/thermal-engine
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
 
-service time_daemon /vendor/bin/time_daemon
+service vendor.time_daemon /vendor/bin/time_daemon
     class main
     user root
     group root
 
-service adsprpcd /vendor/bin/adsprpcd
+service vendor.adsprpcd /vendor/bin/adsprpcd
     class main
     user media
     group media
 
-service ppd /vendor/bin/mm-pp-dpps
+service vendor.ppd /vendor/bin/mm-pp-dpps
     class hal
     user system
     group system graphics
     socket pps stream 0660 system system
 
-service energy-awareness /vendor/bin/energy-awareness
+service vendor.energy-awareness /vendor/bin/energy-awareness
     class main
     user root
     group system

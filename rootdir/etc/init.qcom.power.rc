@@ -177,9 +177,8 @@ on charger
 on moto-charger
     setprop ro.board.platform msm8996
     trigger firmware_mounts_complete
-    start charge_only_mode
-    start batt_health
-    start thermal-com
+    start vendor.charge_only_mode
+    start vendor.thermal-com
 
 # Indicate to fw loaders that the relevant mounts are up.
 on firmware_mounts_complete
