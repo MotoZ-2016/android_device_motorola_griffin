@@ -52,7 +52,7 @@ using android::base::SetProperty;
 void target_ram() {
     std::string ram;
 
-    ram = GetProperty("ro.boot.ram", "");
+    //ram = GetProperty("ro.boot.ram", "");
 
     // TODO: VZW has different settings here as they have more ram
 }
@@ -60,7 +60,7 @@ void target_ram() {
 void num_sims() {
     std::string dualsim;
 
-    dualsim = GetProperty("ro.boot.dualsim", "");
+    dualsim = GetProperty("ro.boot.dualsim", "false");
     SetProperty("ro.hw.dualsim", dualsim.c_str());
 
     if (dualsim == "true") {
@@ -82,25 +82,23 @@ void vendor_load_properties()
     std::string device;
     std::string dualsim;
 
-    platform = GetProperty("ro.board.platform", "");
+    platform = GetProperty("ro.board.platform", "msm8996");
     if (platform != ANDROID_TARGET)
         return;
 
-    device_boot = GetProperty("ro.boot.device", "");
+    device_boot = GetProperty("ro.boot.device", "sheridan");
     SetProperty("ro.hw.device", device_boot.c_str());
 
     property_override("ro.product.device", "griffin");
 
-    sku = android::base::GetProperty("ro.boot.hardware.sku", "");
+    sku = android::base::GetProperty("ro.boot.hardware.sku", "XT1650-03");
     property_override("ro.product.model", sku.c_str());
 
-    carrier = GetProperty("ro.boot.carrier", "");
-    SetProperty("ro.carrie", carrier.c_str());
+    carrier = GetProperty("ro.boot.carrier", "reteu");
+    SetProperty("ro.carrier", carrier.c_str());
 
-    radio = GetProperty("ro.boot.radio", "");
-    SetProperty("ro.hw.radio", radio.c_str());
-
-    dualsim = GetProperty("ro.boot.dualsim", "");
+    /*radio = GetProperty("ro.boot.radio", "");
+    SetProperty("ro.hw.radio", radio.c_str());*/
 
     /* Common for all models */
     property_override("ro.build.product", "griffin");
@@ -175,6 +173,6 @@ void vendor_load_properties()
     SetProperty("persist.rcs.supported", "0");
     SetProperty("persist.rcs.presence.provision", "0");
 
-    device = GetProperty("ro.product.device", "");
+    device = GetProperty("ro.product.device", "griffin");
     ALOGI("Found sku id: %s setting build properties for %s device\n", sku.c_str(), device.c_str());
 }

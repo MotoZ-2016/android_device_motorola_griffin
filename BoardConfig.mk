@@ -132,7 +132,7 @@ TARGET_KERNEL_SOURCE := kernel/motorola/msm8996
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_griffin
+#TARGET_INIT_VENDOR_LIB := libinit_griffin
 TARGET_RECOVERY_DEVICE_MODULES := libinit_griffin
 
 # Audio
