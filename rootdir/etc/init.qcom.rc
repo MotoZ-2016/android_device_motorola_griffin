@@ -777,6 +777,7 @@ service batt_health /system/bin/batt_health
     class late_start
     user mot_pwric
     group mot_pwric cache net_admin log
+    disabled
 
 on property:ro.kick.logcopy=coldboot
     start apanic_copy
@@ -889,6 +890,7 @@ service mods_camd /system/bin/mods_camd
     group camera system inet input graphics
     rlimit 14 4 4
     ioprio rt 4
+    disabled
 
 service charge_only_mode /system/bin/charge_only_mode
     user root
