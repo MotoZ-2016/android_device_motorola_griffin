@@ -58,7 +58,6 @@ vendor/lib/libadiertac.so
 vendor/lib64/libadiertac.so
 vendor/lib/libaudcal.so
 vendor/lib64/libaudcal.so
-lib/soundfx/libmmieffectswrapper.so
 etc/acdbdata/sheridan/General_cal.acdb
 etc/acdbdata/sheridan/Bluetooth_cal.acdb
 etc/acdbdata/sheridan/Global_cal.acdb
@@ -117,7 +116,9 @@ etc/firmware/rampatch_tlv_2.1.tlv
 etc/firmware/rampatch_tlv_3.0.tlv
 etc/firmware/rampatch_tlv_3.2.tlv
 etc/firmware/rampatch_tlv.img
+vendor/lib64/libbt-vendor.so
 vendor/lib64/libbtnv.so
+vendor/lib/libbt-vendor.so
 vendor/lib/libbtnv.so
 etc/bluetooth/bt_did.conf
 etc/bluetooth/bt_stack.conf
@@ -200,11 +201,6 @@ vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libGPTEE.so
 vendor/lib64/libmm-hdcpmgr.so
 
-# Daydream REMOVE ONCE OPENGAPPS HAS THIS
--app/DaydreamHome/DaydreamHome.apk
--app/VrInputMethod/VrInputMethod.apk
--app/VrYoutube/VrYoutube.apk
-
 # Dropbox
 lib64/libadropbox.so
 
@@ -268,7 +264,6 @@ lib/hw/sensors.griffin.so
 lib64/hw/sensors.griffin.so
 lib64/hw/sensors.iio.so
 lib64/hw/sensorhub.msm8996.so
-lib/hw/sensors.griffin.so
 lib/hw/sensors.iio.so
 lib/libsensorhub.so
 lib64/libsensorhub.so
@@ -330,17 +325,13 @@ etc/firmware/leia_pm4_470.fw
 # Radio
 -priv-app/atfwd/atfwd.apk
 -app/datastatusnotification/datastatusnotification.apk
--app/embms/embms.apk
 bin/netmgrd
 bin/radish
 bin/rmt_storage
 bin/tftp_server
 etc/data/dsi_config.xml
 etc/data/netmgr_config.xml
-etc/data/qmi_config.xml
-etc/permissions/embms.xml
 etc/permissions/qcrilhook.xml
-framework/embmslibrary.jar
 -framework/qcrilhook.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/qti
@@ -357,13 +348,13 @@ vendor/qcril.db
 
 # MOTO RIL
 bin/qmi_motext_hook
+bin/rild:vendor/bin/hw/rild
 lib64/libmotext_inf.so
 lib/libmotext_inf.so
 lib/libmdmcutback.so
 lib64/libmdmcutback.so
 lib/libqmimotext.so
 lib64/libqmimotext.so
-lib64/libadropbox.so
 
 # THINGS
 bin/ftmipcd
@@ -382,7 +373,28 @@ bin/imscmservice
 bin/imsdatadaemon
 bin/imsqmidaemon
 -vendor/app/ims/ims.apk
--vendor/app/imssettings/imssettings.apk
+
+vendor/lib/libimscamera_jni.so
+vendor/lib/lib-imscamera.so
+vendor/lib/lib-imsdpl.so
+vendor/lib/libimsmedia_jni.so
+vendor/lib/lib-imsqimf.so
+vendor/lib/lib-imsrcscmclient.so
+vendor/lib/lib-ims-rcscmjni.so
+vendor/lib/lib-imsrcscmservice.so
+vendor/lib/lib-imsrcscm.so
+vendor/lib/lib-imsrcs.so
+vendor/lib/lib-imsSDP.so
+vendor/lib/lib-imss.so
+vendor/lib/lib-imsvt.so
+vendor/lib/lib-imsxml.so
+vendor/lib/lib-rcsimssjni.so
+vendor/lib/lib-rcsjni.so
+vendor/lib/lib-rtpcommon.so
+vendor/lib/lib-rtpcore.so
+vendor/lib/lib-rtpdaemoninterface.so
+vendor/lib/lib-rtpsl.so
+vendor/lib/librcc.so
 
 vendor/lib64/lib-dplmedia.so
 vendor/lib64/lib-ims-rcscmjni.so
@@ -472,6 +484,57 @@ vendor/lib64/libTimeService.so
 -vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
 
+# Graphics taken from Marlin O Drop
+# vendor/lib/egl/eglSubDriverAndroid.so
+# vendor/lib/egl/libEGL_adreno.so
+# vendor/lib/egl/libGLESv1_CM_adreno.so
+# vendor/lib/egl/libGLESv2_adreno.so
+# vendor/lib/egl/libq3dtools_adreno.so
+# vendor/lib/hw/vulkan.msm8996.so
+# vendor/lib/libC2D2.so
+# vendor/lib/libCB.so
+# vendor/lib/libRSDriver_adreno.so
+# vendor/lib/libadreno_utils.so
+# vendor/lib/libbccQTI.so
+# vendor/lib/libc2d30-a5xx.so
+# vendor/lib/libc2d30_bltlib.so
+# vendor/lib/libgsl.so
+# vendor/lib/libllvm-glnext.so
+# vendor/lib/libllvm-qcom.so
+# vendor/lib/libllvm-qgl.so
+# vendor/lib/libmm-disp-apis.so
+# vendor/lib/libmm-qdcm.so
+# vendor/lib/librs_adreno.so
+# vendor/lib/librs_adreno_sha1.so
+# vendor/lib/libsd_sdk_display.so
+# vendor/lib/libsdm-disp-apis.so
+# vendor/lib64/egl/eglSubDriverAndroid.so
+# vendor/lib64/egl/libEGL_adreno.so
+# vendor/lib64/egl/libGLESv1_CM_adreno.so
+# vendor/lib64/egl/libGLESv2_adreno.so
+# vendor/lib64/egl/libq3dtools_adreno.so
+# vendor/lib64/hw/vulkan.msm8996.so
+# vendor/lib64/libC2D2.so
+# vendor/lib64/libCB.so
+# vendor/lib64/libRSDriver_adreno.so
+# vendor/lib64/libadreno_utils.so
+# vendor/lib64/libbccQTI.so
+# vendor/lib64/libc2d30-a5xx.so
+# vendor/lib64/libc2d30_bltlib.so
+# vendor/lib64/libgsl.so
+# vendor/lib64/libllvm-glnext.so
+# vendor/lib64/libllvm-qcom.so
+# vendor/lib64/libllvm-qgl.so
+# vendor/lib64/libmm-disp-apis.so
+# vendor/lib64/libmm-qdcm.so
+# vendor/lib64/librs_adreno.so
+# vendor/lib64/librs_adreno_sha1.so
+# vendor/lib64/libscalar.so
+# vendor/lib64/libsd_sdk_display.so
+# vendor/lib64/libsdm-color.so
+# vendor/lib64/libsdm-diag.so
+# vendor/lib64/libsdm-disp-apis.so
+# vendor/lib64/libsdmextension.so
 
 # Camera
 bin/mm-qcamera-daemon
@@ -637,18 +700,31 @@ vendor/lib/libchromatix_ov5693_cpp_snapshot.so
 vendor/lib/libchromatix_imx338_ihdr_video_4k.so
 vendor/lib/libchromatix_mot_imx214_postproc.so
 
+vendor/lib/libchromatix_ov16860_4k_ihdr_video_3a.so
+vendor/lib/libchromatix_ov16860_4k_video_3a.so
+vendor/lib/libchromatix_ov16860_common.so
+vendor/lib/libchromatix_ov16860_cpp_hfr_120.so
+vendor/lib/libchromatix_ov16860_cpp_ihdr_video_4k.so
+vendor/lib/libchromatix_ov16860_cpp_ihdr_video.so
+vendor/lib/libchromatix_ov16860_cpp_liveshot_4k_ihdr.so
+vendor/lib/libchromatix_ov16860_cpp_liveshot_4k.so
+vendor/lib/libchromatix_ov16860_cpp_liveshot_ihdr.so
+vendor/lib/libchromatix_ov16860_cpp_liveshot.so
+vendor/lib/libchromatix_ov16860_cpp_snapshot.so
+vendor/lib/libchromatix_ov16860_cpp_video_4k.so
+vendor/lib/libchromatix_ov16860_cpp_video.so
+vendor/lib/libchromatix_ov16860_default_ihdr_video.so
+vendor/lib/libchromatix_ov16860_default_video.so
+vendor/lib/libchromatix_ov16860_hfr_120_3a.so
+vendor/lib/libchromatix_ov16860_hfr_120.so
+vendor/lib/libchromatix_ov16860_ihdr_video_3a.so
+vendor/lib/libchromatix_ov16860_ihdr_video_4k.so
+vendor/lib/libchromatix_ov16860_postproc.so
+vendor/lib/libchromatix_ov16860_snapshot.so
+vendor/lib/libchromatix_ov16860_video_4k.so
+vendor/lib/libchromatix_ov16860_zsl_preview_3a.so
+vendor/lib/libchromatix_ov16860_zsl_video_3a.so
 
-# PERF
-vendor/lib64/libqti-perfd-client.so
-vendor/lib/libqti-perfd-client.so
-vendor/bin/perfd
-vendor/etc/perf-profile0.conf
-vendor/etc/perf-profile1.conf
-vendor/etc/perf-profile2.conf
-vendor/etc/perf-profile3.conf
-vendor/etc/perf-profile4.conf
-vendor/etc/perf-profile5.conf
-vendor/etc/perf-profile6.conf
 
 # Camera firmware
 etc/firmware/cpp_firmware_v1_10_0.fw
@@ -742,8 +818,22 @@ vendor/bin/mm-pp-dpps
 vendor/lib64/libdisp-aba.so
 vendor/lib/libdisp-aba.so
 
+vendor/lib64/libqti-perfd-client.so
+vendor/lib/libqti-perfd-client.so
+vendor/bin/perfd
+vendor/etc/perf-profile0.conf
+vendor/etc/perf-profile1.conf
+vendor/etc/perf-profile2.conf
+vendor/etc/perf-profile3.conf
+vendor/etc/perf-profile4.conf
+vendor/etc/perf-profile5.conf
+vendor/etc/perf-profile6.conf
+
+vendor/lib/libqti-at.so
+vendor/lib/libqti_performance.so
+vendor/lib/libQtiTether.so
+
 # Misc
-lib/libadvalgcore.so
 lib64/libcce-socketjni.so
 lib/libcce-socketjni.so
 lib/libdmengine.so
@@ -757,8 +847,8 @@ lib/libpanelmode.so
 lib64/libpanelmode.so
 lib/libpkip.so
 lib/libprovlib.so
-lib/librilqmiservices.so
-lib64/librilqmiservices.so
+vendor/lib/librilqmiservices.so
+vendor/lib64/librilqmiservices.so
 lib/libslpc.so
 lib64/libslpc.so
 lib/libtinyxml.so
@@ -772,30 +862,24 @@ lib64/libwifi-hal-qcom.so
 
 bin/batt_health
 bin/charge_only_mode
-bin/qcom-system-daemon
 bin/subsystem_ramdump
 
 etc/init.qcom.bt.sh
-
-# Vulkan
-vendor/lib/hw/vulkan.msm8996.so
-vendor/lib64/hw/vulkan.msm8996.so
 
 # VR
 lib/hw/vr.msm8996.so
 lib64/hw/vr.msm8996.so
 
+# Flash memory
 etc/firmware/SAMSUNG-KLUBG4G1CE-B0B1-32G.fw
 etc/firmware/SAMSUNG-KLUCG4J1CB-B0B1-64G.fw
 
+# Touchscreen
 etc/firmware/synaptics-s3508sga-16082901-255c40-griffin.tdat
 etc/firmware/synaptics-s3508sga-16090101-255c40-sheridan.tdat
 etc/firmware/synaptics-s3528g2-16030302-2308cb-griffin.tdat
 etc/firmware/synaptics-s3528so1-15121701-1e29b4-sheridan.tdat
 etc/firmware/upd-00000126-00001001-fed70128-fffe0001-02.tftf
-
-vendor/lib/hw/flp.default.so
-
 
 vendor/lib/libAlacSwDec.so
 vendor/lib/libalarmservice_jni.so
@@ -804,34 +888,90 @@ vendor/lib/libasn1cper.so
 vendor/lib/libasn1crt.so
 vendor/lib/libasn1crtx.so
 
+
+#audio
 vendor/lib/libaudioalsa.so
 vendor/lib/libavenhancements.so
-vendor/lib/libbt-vendor.so
+vendor/lib64/libaudioalsa.so
+
+
+#Motorola drivers
+vendor/lib/libmmi.so
+vendor/lib/mmi_audio.so
+vendor/lib/mmi_battery.so
+vendor/lib/mmi_bluetooth.so
+vendor/lib/mmi_camera.so
+vendor/lib/mmi_cpu.so
+vendor/lib/mmi_flashlight.so
+vendor/lib/mmi_fm.so
+vendor/lib/mmi_gps.so
+vendor/lib/mmi_headset.so
+vendor/lib/mmi_key.so
+vendor/lib/mmi_lcd.so
+vendor/lib/mmi_light.so
+vendor/lib/mmi_memory.so
+vendor/lib/mmi_nfc.so
+vendor/lib/mmi_sensor.so
+vendor/lib/mmi_sim.so
+vendor/lib/mmi_storage.so
+vendor/lib/mmi_sysinfo.so
+vendor/lib/mmi_touch.so
+vendor/lib/mmi_vibrator.so
+vendor/lib/mmi_wifi.so
+vendor/lib/sensor_calibrate.so
+
+vendor/lib64/libmmi.so
+vendor/lib64/mmi_audio.so
+vendor/lib64/mmi_battery.so
+vendor/lib64/mmi_bluetooth.so
+vendor/lib64/mmi_cpu.so
+vendor/lib64/mmi_flashlight.so
+vendor/lib64/mmi_fm.so
+vendor/lib64/mmi_gps.so
+vendor/lib64/mmi_headset.so
+vendor/lib64/mmi_key.so
+vendor/lib64/mmi_lcd.so
+vendor/lib64/mmi_light.so
+vendor/lib64/mmi_memory.so
+vendor/lib64/mmi_nfc.so
+vendor/lib64/mmi_sensor.so
+vendor/lib64/mmi_sim.so
+vendor/lib64/mmi_storage.so
+vendor/lib64/mmi_sysinfo.so
+vendor/lib64/mmi_touch.so
+vendor/lib64/mmi_vibrator.so
+vendor/lib64/mmi_wifi.so
+vendor/lib64/sensor_calibrate.so
+
+
+#net
+vendor/lib/libmmhttpstack.so
+vendor/lib64/libmmhttpstack.so
+vendor/lib64/libmmiipstreammmihttp.so
+vendor/lib64/libmmipstreamaal.so
+vendor/lib64/libmmipstreamnetwork.so
+vendor/lib64/libmmipstreamsourcehttp.so
+vendor/lib64/libmmipstreamutils.so
+
+
+#media
+vendor/lib/libAlacSwDec.so
+
+#camera
+vendor/lib/libmmcamera_chromaflash_lib.so
+vendor/lib/libmmcamera_facedetection_lib.so
+vendor/lib/libmmcamera_llvd.so
+vendor/lib/libmmcamera_optizoom_lib.so
+vendor/lib/libmmcamera_stillmore_lib.so
+vendor/lib/libmmcamera_sw2d_lib.so
+vendor/lib/libmmcamera_trueportrait_lib.so
+vendor/lib/libmmcamera_ubifocus_lib.so
+
+#?????
 vendor/lib/libChamomilePA.so
-vendor/lib/libchromatix_ov16860_4k_ihdr_video_3a.so
-vendor/lib/libchromatix_ov16860_4k_video_3a.so
-vendor/lib/libchromatix_ov16860_common.so
-vendor/lib/libchromatix_ov16860_cpp_hfr_120.so
-vendor/lib/libchromatix_ov16860_cpp_ihdr_video_4k.so
-vendor/lib/libchromatix_ov16860_cpp_ihdr_video.so
-vendor/lib/libchromatix_ov16860_cpp_liveshot_4k_ihdr.so
-vendor/lib/libchromatix_ov16860_cpp_liveshot_4k.so
-vendor/lib/libchromatix_ov16860_cpp_liveshot_ihdr.so
-vendor/lib/libchromatix_ov16860_cpp_liveshot.so
-vendor/lib/libchromatix_ov16860_cpp_snapshot.so
-vendor/lib/libchromatix_ov16860_cpp_video_4k.so
-vendor/lib/libchromatix_ov16860_cpp_video.so
-vendor/lib/libchromatix_ov16860_default_ihdr_video.so
-vendor/lib/libchromatix_ov16860_default_video.so
-vendor/lib/libchromatix_ov16860_hfr_120_3a.so
-vendor/lib/libchromatix_ov16860_hfr_120.so
-vendor/lib/libchromatix_ov16860_ihdr_video_3a.so
-vendor/lib/libchromatix_ov16860_ihdr_video_4k.so
-vendor/lib/libchromatix_ov16860_postproc.so
-vendor/lib/libchromatix_ov16860_snapshot.so
-vendor/lib/libchromatix_ov16860_video_4k.so
-vendor/lib/libchromatix_ov16860_zsl_preview_3a.so
-vendor/lib/libchromatix_ov16860_zsl_video_3a.so
+
+
+
 vendor/lib/libconfigdb.so
 vendor/lib/libconnctrl.so
 vendor/lib/libdataitems.so
@@ -852,26 +992,11 @@ vendor/lib/libflp.so
 vendor/lib/libgdtap.so
 vendor/lib/libgeofence.so
 vendor/lib/libgpustats.so
-vendor/lib/libimscamera_jni.so
-vendor/lib/lib-imscamera.so
-vendor/lib/lib-imsdpl.so
-vendor/lib/libimsmedia_jni.so
-vendor/lib/lib-imsqimf.so
-vendor/lib/lib-imsrcscmclient.so
-vendor/lib/lib-ims-rcscmjni.so
-vendor/lib/lib-imsrcscmservice.so
-vendor/lib/lib-imsrcscm.so
-vendor/lib/lib-imsrcs.so
-vendor/lib/lib-imsSDP.so
-vendor/lib/lib-imss.so
-vendor/lib/lib-imsvt.so
-vendor/lib/lib-imsxml.so
 vendor/lib/libizat_client_api.so
 vendor/lib/libizat_core.so
 vendor/lib/libjni_dualcamera.so
 vendor/lib/libkeymasterprovision.so
 vendor/lib/liblbs_core.so
-vendor/lib/libllvm-qgl.so
 vendor/lib/liblocationservice_glue.so
 vendor/lib/liblocationservice.so
 vendor/lib/libloc_externalDr.so
@@ -882,22 +1007,16 @@ vendor/lib/libmare-1.1.so
 vendor/lib/libmare-cpu-1.1.so
 vendor/lib/libmdtp_crypto.so
 vendor/lib/libmdtpdemojni.so
-vendor/lib/libmmcamera_chromaflash_lib.so
-vendor/lib/libmmcamera_facedetection_lib.so
-vendor/lib/libmmcamera_llvd.so
-vendor/lib/libmmcamera_optizoom_lib.so
-vendor/lib/libmmcamera_stillmore_lib.so
-vendor/lib/libmmcamera_sw2d_lib.so
-vendor/lib/libmmcamera_trueportrait_lib.so
-vendor/lib/libmmcamera_ubifocus_lib.so
-vendor/lib/libmm-disp-apis.so
-vendor/lib/libmmhttpstack.so
+
+
+
+
 vendor/lib/libmmiipstreammmihttp.so
 vendor/lib/libmmipstreamaal.so
 vendor/lib/libmmipstreamnetwork.so
 vendor/lib/libmmipstreamsourcehttp.so
 vendor/lib/libmmipstreamutils.so
-vendor/lib/libmmi.so
+
 vendor/lib/libmmparser_lite.so
 vendor/lib/libmmparser.so
 vendor/lib/libmmrtpdecoder.so
@@ -912,21 +1031,12 @@ vendor/lib/libOmxApeDecSw.so
 vendor/lib/libomx-dts.so
 vendor/lib/libOmxWmaDec.so
 vendor/lib/libQBLAS-0.13.0.so
-vendor/lib/libqti-at.so
-vendor/lib/libqti-gt.so
-vendor/lib/libqti_performance.so
-vendor/lib/libQtiTether.so
-vendor/lib/librcc.so
-vendor/lib/lib-rcsimssjni.so
-vendor/lib/lib-rcsjni.so
+
 vendor/lib/libril-qc-ltedirectdisc.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qc-radioconfig.so
 vendor/lib/libril-qcril-hook-oem.so
-vendor/lib/lib-rtpcommon.so
-vendor/lib/lib-rtpcore.so
-vendor/lib/lib-rtpdaemoninterface.so
-vendor/lib/lib-rtpsl.so
+
 vendor/lib/libSampleAuthJNI.so
 vendor/lib/libSampleExtAuthJNI.so
 vendor/lib/libscale.so
@@ -972,33 +1082,11 @@ vendor/lib/libwms.so
 vendor/lib/libxtadapter.so
 vendor/lib/libxt_native.so
 vendor/lib/libxtwifi_ulp_adaptor.so
-vendor/lib/mmi_audio.so
-vendor/lib/mmi_battery.so
-vendor/lib/mmi_bluetooth.so
-vendor/lib/mmi_camera.so
-vendor/lib/mmi_cpu.so
-vendor/lib/mmi_flashlight.so
-vendor/lib/mmi_fm.so
-vendor/lib/mmi_gps.so
-vendor/lib/mmi_headset.so
-vendor/lib/mmi_key.so
-vendor/lib/mmi_lcd.so
-vendor/lib/mmi_light.so
-vendor/lib/mmi_memory.so
-vendor/lib/mmi_nfc.so
-vendor/lib/mmi_sensor.so
-vendor/lib/mmi_sim.so
-vendor/lib/mmi_storage.so
-vendor/lib/mmi_sysinfo.so
-vendor/lib/mmi_touch.so
-vendor/lib/mmi_vibrator.so
-vendor/lib/mmi_wifi.so
-vendor/lib/sensor_calibrate.so
+
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
-vendor/lib64/libaudioalsa.so
 vendor/lib64/libavenhancements.so
-vendor/lib64/libbt-vendor.so
+
 vendor/lib64/libcamerabgproc-jni.so
 vendor/lib64/libChamomilePA.so
 vendor/lib64/libconnctrl.so
@@ -1020,23 +1108,12 @@ vendor/lib64/libgpustats.so
 vendor/lib64/libI420colorconvert.so
 vendor/lib64/libizat_client_api.so
 vendor/lib64/libkeymasterprovision.so
-vendor/lib64/libllvm-qgl.so
 vendor/lib64/libloc_externalDr.so
 vendor/lib64/libmare-1.1.so
 vendor/lib64/libmare-cpu-1.1.so
-vendor/lib64/libizat_client_api.so
-vendor/lib64/libkeymasterprovision.so
-vendor/lib64/libllvm-qgl.so
-vendor/lib64/libloc_externalDr.so
-vendor/lib64/libmare-1.1.so
-vendor/lib64/libmare-cpu-1.1.so
-vendor/lib64/libmmhttpstack.so
-vendor/lib64/libmmiipstreammmihttp.so
-vendor/lib64/libmmipstreamaal.so
-vendor/lib64/libmmipstreamnetwork.so
-vendor/lib64/libmmipstreamsourcehttp.so
-vendor/lib64/libmmipstreamutils.so
-vendor/lib64/libmmi.so
+
+
+
 vendor/lib64/libmmosal.so
 vendor/lib64/libmmparser_lite.so
 vendor/lib64/libmmparser.so
@@ -1051,7 +1128,6 @@ vendor/lib64/libOmxApeDecSw.so
 vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libQBLAS-0.13.0.so
 vendor/lib64/libqti-at.so
-vendor/lib64/libqti-gt.so
 vendor/lib64/libqti_performance.so
 vendor/lib64/libQtiTether.so
 vendor/lib64/libril-qc-ltedirectdisc.so
@@ -1094,24 +1170,5 @@ vendor/lib64/libwfdmmsink.so
 vendor/lib64/libwfduibcsinkinterface.so
 vendor/lib64/libwfduibcsink.so
 vendor/lib64/libwms.so
-vendor/lib64/mmi_audio.so
-vendor/lib64/mmi_battery.so
-vendor/lib64/mmi_bluetooth.so
-vendor/lib64/mmi_cpu.so
-vendor/lib64/mmi_flashlight.so
-vendor/lib64/mmi_fm.so
-vendor/lib64/mmi_gps.so
-vendor/lib64/mmi_headset.so
-vendor/lib64/mmi_key.so
-vendor/lib64/mmi_lcd.so
-vendor/lib64/mmi_light.so
-vendor/lib64/mmi_memory.so
-vendor/lib64/mmi_nfc.so
-vendor/lib64/mmi_sensor.so
-vendor/lib64/mmi_sim.so
-vendor/lib64/mmi_storage.so
-vendor/lib64/mmi_sysinfo.so
-vendor/lib64/mmi_touch.so
-vendor/lib64/mmi_vibrator.so
-vendor/lib64/mmi_wifi.so
-vendor/lib64/sensor_calibrate.so
+
+
