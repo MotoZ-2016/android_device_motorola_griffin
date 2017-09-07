@@ -345,6 +345,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf \
     wifi_symlinks \
+    libqsap_sdk \
     libnfnetlink \
     libnetfilter_conntrack
 
