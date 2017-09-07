@@ -197,9 +197,6 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 # Properties
 TARGET_SYSTEM_PROP += device/motorola/griffin/system.prop
 
-# Sensors
-USE_SENSOR_MULTI_HAL := true
-
 # Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
 

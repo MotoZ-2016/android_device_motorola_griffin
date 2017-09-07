@@ -312,11 +312,11 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    sensors.msm8996
+    android.hardware.sensors@1.0-impl
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf \
-    $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf 
+    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
+    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 # USB HAL
 PRODUCT_PACKAGES += \
