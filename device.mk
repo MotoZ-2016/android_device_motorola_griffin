@@ -306,6 +306,7 @@ PRODUCT_PACKAGES += \
     libxml2 \
     libprotobuf-cpp-full \
     libprotobuf-cpp-lite \
+    libshim_ril \
     rild_socket
 
 # Seccomp policy
