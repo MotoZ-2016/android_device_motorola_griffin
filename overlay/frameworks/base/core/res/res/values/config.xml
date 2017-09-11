@@ -352,5 +352,11 @@
     <!-- Enable overlay for all location components. -->
     <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
     <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
+    
+    <!-- Controls the WiFi wakeup feature.
+     0 = Not available.
+     1 = Available.
+     -->
+    <integer translatable="false" name="config_wifi_wakeup_available">1</integer>
 
 </resources>
