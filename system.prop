@@ -125,7 +125,7 @@ vidc.enc.disable.pq=true
 persist.media.treble_omx=false
 
 ## Mods
-sys.mod.platformsdkversion=105
+sys.mod.platformsdkversion=200
 
 ## NFC
 persist.nfc.smartcard.config=SIM1,SIM2,eSE1
