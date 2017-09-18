@@ -767,6 +767,7 @@ service batt_health /system/bin/batt_health
     class late_start
     user mot_pwric
     group mot_pwric cache net_admin log
+    disabled
 
 on property:ro.kick.logcopy=coldboot
     start apanic_copy
