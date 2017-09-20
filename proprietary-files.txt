@@ -694,6 +694,8 @@ vendor/lib/egl/libQTapGLES.so
 vendor/lib/egl/libq3dtools_esx.so
 vendor/lib64/egl/libQTapGLES.so
 vendor/lib64/egl/libq3dtools_esx.so
+-vendor/lib/libgpustats.so
+-vendor/lib64/libgpustats.so
 
 # Blur
 vendor/lib64/libuiblur.so
@@ -1189,7 +1191,6 @@ vendor/lib/libFidoCrypto.so
 vendor/lib/libFIDOKeyProvisioning.so
 vendor/lib/libFidoSuiJNI.so
 vendor/lib/libFileMux.so
-vendor/lib/libgpustats.so
 vendor/lib/libmare-1.1.so
 vendor/lib/libmare-cpu-1.1.so
 
@@ -1215,7 +1216,6 @@ vendor/lib64/libFidoCrypto.so
 vendor/lib64/libFIDOKeyProvisioning.so
 vendor/lib64/libFidoSuiJNI.so
 vendor/lib64/libFileMux.so
-vendor/lib64/libgpustats.so
 vendor/lib64/libmare-1.1.so
 vendor/lib64/libmare-cpu-1.1.so
 
