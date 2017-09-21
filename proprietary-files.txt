@@ -760,6 +760,7 @@ etc/camera/mot_imx214_chromatix.xml
 etc/camera/msm8996_mot_camera.xml
 etc/camera/ov5693_chromatix.xml
 lib/libmbs.so
+lib/libfamily_photo.so
 vendor/lib/libactuator_mot_ak7371.so
 vendor/lib/libactuator_lc898217xc.so
 vendor/lib/libflash_sky81298.so
