@@ -90,3 +90,9 @@
 /sys/module/qpnp_smbcharger_mmi(/.*)?                               u:object_r:sysfs_batt_mods:s0
 # adspd
 /data/adspd(/.*)?                                    u:object_r:adspd_file:s0
+
+# Light HAL
+/system/vendor/bin/hw/android\.hardware\.light@2\.0-service.griffin        u:object_r:hal_light_default_exec:s0
+/sys/devices/soc/900000.qcom,mdss_mdp/900000.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight/brightness	u:object_r:sysfs_leds:s0
+/sys/devices/soc/leds-qpnp-9/leds/charging/brightness	u:object_r:sysfs_leds:s0
+
