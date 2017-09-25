@@ -349,6 +349,7 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service
 
 PRODUCT_PACKAGES += \
+    hostapd \
     ipacm \
     ipacm-diag \
     IPACM_cfg.xml \
