@@ -98,7 +98,7 @@ on enable-low-power
      write /proc/sys/kernel/sched_freq_inc_notify 400000
      write /proc/sys/kernel/sched_freq_dec_notify 400000
      write /proc/sys/kernel/sched_spill_nr_run 3
-     write /proc/sys/kernel/sched_init_task_load 100 
+     write /proc/sys/kernel/sched_init_task_load 100
 
      # Enable bus-dcvs
      write /sys/class/devfreq/soc:qcom,cpubw/governor "bw_hwmon"
@@ -168,7 +168,8 @@ on charger
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
-    wait /dev/block/bootdevice
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     trigger early-fs
     trigger fs
     trigger post-fs
@@ -181,8 +182,10 @@ on charger
 on moto-charger
     setprop ro.board.platform msm8996
     trigger firmware_mounts_complete
-    start  qcom-post-boot
-    start gbmodinstall
     start charge_only_mode
     start batt_health
     start thermal-com
+
+# Indicate to fw loaders that the relevant mounts are up.
+on firmware_mounts_complete
+    rm /dev/.booting

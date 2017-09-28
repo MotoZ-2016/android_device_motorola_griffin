@@ -1,4 +1,3 @@
-## CM for Moto Z
 Device Tree for Moto Z (Griffin)
 ===========================================
 
@@ -19,5 +18,6 @@ Display | 1440 x 2560 pixels (~535 ppi pixel density)
 Camera  | 13 MP, f/1.8, laser autofocus, OIS, dual-LED (dual tone) flash
 
 Copyright 2016 - The CyanogenMod Project.
+Copyright 2017 - The LineageOS Project.
 
 ![Moto Z](http://cdn2.gsmarena.com/vv/pics/motorola/motorola-moto-z-1.jpg "Moto Z")
