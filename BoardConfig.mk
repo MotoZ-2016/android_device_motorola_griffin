@@ -24,6 +24,8 @@
 
 BOARD_VENDOR := motorola-qcom
 PLATFORM_PATH := device/motorola/griffin
+DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
 TARGET_FS_CONFIG_GEN += \
     $(PLATFORM_PATH)/fs_config/file_caps.fs \
     $(PLATFORM_PATH)/fs_config/mot_aids.fs
