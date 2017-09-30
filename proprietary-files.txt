@@ -134,26 +134,26 @@ etc/firmware/florida-dsp4-speaker-protect.bin
 etc/firmware/florida-dsp4-speaker-protect.wmfw
 etc/firmware/florida-dsp4-speaker-protect-sheridan-sonification.bin
 etc/firmware/florida-dsp4-speaker-protect-sonification.bin
-lib64/soundfx/libaudiopreprocessing.so:vendor/lib64/soundfx/libaudiopreprocessing.so
-lib64/soundfx/libbundlewrapper.so:vendor/lib64/soundfx/libbundlewrapper.so
-lib64/soundfx/libdownmix.so:vendor/lib64/soundfx/libdownmix.so
-lib64/soundfx/libeffectproxy.so:vendor/lib64/soundfx/libeffectproxy.so
-lib64/soundfx/libldnhncr.so:vendor/lib64/soundfx/libldnhncr.so
-lib64/soundfx/libqcomvisualizer.so:vendor/lib64/soundfx/libqcomvisualizer.so
-lib64/soundfx/libqcomvoiceprocessing.so:vendor/lib64/soundfx/libqcomvoiceprocessing.so
-lib64/soundfx/libreverbwrapper.so:vendor/lib64/soundfx/libreverbwrapper.so
-lib64/soundfx/libvisualizer.so:vendor/lib64/soundfx/libvisualizer.so
-lib64/soundfx/libvolumelistener.so:vendor/lib64/soundfx/libvolumelistener.so
-lib/soundfx/libaudiopreprocessing.so:vendor/lib/soundfx/libaudiopreprocessing.so
-lib/soundfx/libbundlewrapper.so:vendor/lib/soundfx/libbundlewrapper.so
-lib/soundfx/libdownmix.so:vendor/lib/soundfx/libdownmix.so
-lib/soundfx/libeffectproxy.so:vendor/lib/soundfx/libeffectproxy.so
-lib/soundfx/libldnhncr.so:vendor/lib/soundfx/libldnhncr.so
-lib/soundfx/libqcomvisualizer.so:vendor/lib/soundfx/libqcomvisualizer.so
-lib/soundfx/libqcomvoiceprocessing.so:vendor/lib/soundfx/libqcomvoiceprocessing.so
-lib/soundfx/libreverbwrapper.so:vendor/lib/soundfx/libreverbwrapper.so
-lib/soundfx/libvisualizer.so:vendor/lib/soundfx/libvisualizer.so
-lib/soundfx/libvolumelistener.so:vendor/lib/soundfx/libvolumelistener.so
+lib64/soundfx/libaudiopreprocessing.so
+lib64/soundfx/libbundlewrapper.so
+lib64/soundfx/libdownmix.so
+lib64/soundfx/libeffectproxy.so
+lib64/soundfx/libldnhncr.so
+lib64/soundfx/libqcomvisualizer.so
+lib64/soundfx/libqcomvoiceprocessing.so
+lib64/soundfx/libreverbwrapper.so
+lib64/soundfx/libvisualizer.so
+lib64/soundfx/libvolumelistener.so
+lib/soundfx/libaudiopreprocessing.so
+lib/soundfx/libbundlewrapper.so
+lib/soundfx/libdownmix.so
+lib/soundfx/libeffectproxy.so
+lib/soundfx/libldnhncr.so
+lib/soundfx/libqcomvisualizer.so
+lib/soundfx/libqcomvoiceprocessing.so
+lib/soundfx/libreverbwrapper.so
+lib/soundfx/libvisualizer.so
+lib/soundfx/libvolumelistener.so
 vendor/lib/libavenhancements.so
 vendor/lib64/libavenhancements.so
 vendor/lib64/libaudioalsa.so
@@ -280,6 +280,7 @@ lib/fm_helium.so
 lib64/fm_helium.so
 
 # Gatekeepr
+bin/gatekeeperd
 vendor/lib/hw/gatekeeper.msm8996.so
 vendor/lib64/hw/gatekeeper.msm8996.so
 
@@ -369,8 +370,8 @@ lib/hw/sensors.griffin.so
 lib64/hw/sensors.griffin.so
 lib64/hw/sensors.iio.so
 lib64/hw/sensorhub.msm8996.so
-lib64/hw/sensors.msm8996.so:lib64/sensors.moto.so
-lib/hw/sensors.msm8996.so:lib/sensors.moto.so
+lib64/hw/sensors.msm8996.so
+lib/hw/sensors.msm8996.so
 lib/hw/sensors.iio.so
 lib/libsensorhub.so
 lib64/libsensorhub.so
@@ -486,8 +487,8 @@ vendor/lib/libsystem_health_mon.so
 
 # MOTO RIL
 bin/qmi_motext_hook
-#bin/rild:vendor/bin/hw/rild
-#lib/libril.so
+bin/rild
+-lib/libril.so
 lib64/libmotext_inf.so
 lib/libmotext_inf.so
 lib/libmdmcutback.so
@@ -624,7 +625,7 @@ vendor/lib64/libTimeService.so
 -vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
 
-# Graphics taken from Marlin O Drop
+# Graphics
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -1154,9 +1155,9 @@ vendor/lib64/libmodalityservice_jni.so
 
 ## Mods
 # Audio HAL ( We're doing this Onlyyy For JBL Mod :\ )
-#lib/hw/audio.primary.msm8996.so
-#lib/libtinyalsa.so
-#lib64/libtinyalsa.so
+lib/hw/audio.primary.msm8996.so
+lib/libtinyalsa.so
+lib64/libtinyalsa.so
 
 # ModService (this app need edit to work BTW)
 -priv-app/ModService/ModService.apk
