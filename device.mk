@@ -253,6 +253,10 @@ PRODUCT_PACKAGES += \
     ebtables \
     ethertypes
 
+# Mods
+PRODUCT_PACKAGES += \
+    ModFmwkProxyService
+
 # NFC
 PRODUCT_PACKAGES += \
     libnfc-nci \
