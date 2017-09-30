@@ -243,3 +243,6 @@ wifi.fccutild.load.qcacld=true
 
 ## XLAT
 persist.net.doxlat=true
+
+# Define hardware
+ro.hardware=qcom
