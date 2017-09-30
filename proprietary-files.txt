@@ -202,7 +202,7 @@ etc/permissions/com.quicinc.cne.xml
 framework/ConnectivityExt.jar
 framework/cneapiclient.jar
 framework/com.quicinc.cne.jar
-#-priv-app/CNEService/CNEService.apk
+-priv-app/CNEService/CNEService.apk
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneqmiutils.so
@@ -489,6 +489,7 @@ vendor/lib/libsystem_health_mon.so
 bin/qmi_motext_hook
 bin/rild
 -lib/libril.so
+-lib64/libril.so
 lib64/libmotext_inf.so
 lib/libmotext_inf.so
 lib/libmdmcutback.so
@@ -1234,3 +1235,11 @@ vendor/lib64/libwfdhdcpcp.so
 vendor/lib64/libwfdmmsink.so
 vendor/lib64/libwfduibcsinkinterface.so
 vendor/lib64/libwfduibcsink.so
+
+#others
+etc/sensors/hals.conf
+etc/sensors/sensor_def_qcomdev.conf
+lib64/libnetfilter_conntrack.so
+lib64/libnfnetlink.so
+vendor/lib/libbt-vendor.so
+vendor/lib64/libbt-vendor.so
