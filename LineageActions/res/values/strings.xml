@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="screen_gestures_panel_summary" translatable="false">Special device gestures</string>
+</resources>

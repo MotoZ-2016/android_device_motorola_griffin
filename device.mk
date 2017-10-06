@@ -126,9 +126,9 @@ PRODUCT_PACKAGES += \
     libbt-vendor \
     android.hardware.bluetooth@1.0-impl
 
-# CMActions
+# LineageActions
 PRODUCT_PACKAGES += \
-    CMActions
+    LineageActions
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
