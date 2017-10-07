@@ -27,7 +27,7 @@ setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
 write_headers
 
 # The blobs
-write_makefiles "$MY_DIR"/proprietary-files.txt
+write_makefiles "$MY_DIR"/proprietary-files.txt true
 
 # We are done!
 write_footers
