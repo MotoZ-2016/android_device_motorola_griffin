@@ -303,6 +303,13 @@ PRODUCT_PACKAGES += \
     power.msm8996 \
     thermal.msm8996
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+
+# Qualcomm broadcast whitelist
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
+
 # QMI
 PRODUCT_PACKAGES += \
     libjson \
