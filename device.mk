@@ -357,6 +357,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf \
     $(LOCAL_PATH)/configs/sensors/_hals.conf:system/vendor/etc/sensors/_hals.conf
 
+# Treble
+# PRODUCT_FULL_TREBLE_OVERRIDE := true
+PRODUCT_PACKAGES += \
+    vndk-sp \
+
 # USB HAL
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
