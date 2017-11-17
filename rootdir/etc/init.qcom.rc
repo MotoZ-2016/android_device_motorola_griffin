@@ -1091,7 +1091,7 @@ service port-bridge /system/bin/port-bridge
 service qmuxd /system/bin/qmuxd
     class core
     user root
-    group radio audio bluetooth gps nfc oem_2901
+    group radio audio bluetooth gps nfc oem_2950
     writepid /dev/cpuset/system-background/tasks
 
 service netmgrd /vendor/bin/netmgrd
@@ -1104,7 +1104,7 @@ service ipacm-diag /vendor/bin/ipacm-diag
     class main
     user system
     socket ipacm_log_file dgram 660 system net_admin
-    group net_admin oem_2901
+    group net_admin oem_2950
 
 service ipacm /vendor/bin/ipacm
     class main
@@ -1115,7 +1115,7 @@ service ipacm /vendor/bin/ipacm
 service qti /vendor/bin/qti
     class main
     user radio
-    group radio net_raw oem_2901 usb net_admin
+    group radio net_raw oem_2950 usb net_admin
     writepid /dev/cpuset/system-background/tasks
 
 on property:ro.use_data_netmgrd=false
