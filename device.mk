@@ -76,8 +76,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     Snap \
     libbson \
-    libshim_camera \
-    libcamera_shim \
     camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
     libshims_camera
