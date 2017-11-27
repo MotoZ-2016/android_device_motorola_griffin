@@ -25,8 +25,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.qcom.power.rc
-import init.mmi.usb.rc
+import /vendor/etc/init/hw/init.qcom.power.rc
+import /vendor/etc/init/hw/init.mmi.usb.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -369,7 +369,7 @@ on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
-    mount_all fstab.qcom
+    mount_all /vendor/etc/fstab.qcom
 
     # Keeping following partitions outside fstab file. As user may not have
     # these partition flashed on the device. Failure to mount any partition in fstab file
@@ -811,7 +811,7 @@ service motosh /system/bin/motosh boot
 on property:ro.carrier=*
     start init_wifi
 
-service init_wifi /wlan_carrier_bin.sh
+service init_wifi /vendor/bin/wlan_carrier_bin.sh
 #    seclabel u:r:init_wifi:s0
     class main
     user root
@@ -868,7 +868,7 @@ service aplogd /system/bin/aplogd
     # for kernel logging.
     disabled
 
-service mmi-boot-sh /system/bin/sh /init.mmi.boot.sh
+service mmi-boot-sh /vendor/bin/init.mmi.boot.sh
 #    seclabel u:r:mmi-boot-sh:s0
     class core
     user root
@@ -912,18 +912,19 @@ service hw_revs /system/bin/hardware_revisions.sh
     group system
     oneshot
 
-service mmi-laser-sh /system/bin/sh /init.mmi.laser.sh
+service mmi-laser-sh /vendor/bin/init.mmi.laser.sh
 #    seclabel u:r:mmi-laser-sh:s0
     class core
     user root
     oneshot
 
-service mmi-touch-sh /system/bin/sh /init.mmi.touch.sh
+service mmi-touch-sh /vendor/bin/init.mmi.touch.sh
+#    seclabel u:r:mmi-touch-sh:s0
     class core
     user root
     oneshot
 
-service oem-hw-sh /system/bin/sh /init.oem.hw.sh
+service oem-hw-sh /vendor/bin/init.oem.hw.sh
 #    seclabel u:r:oem-hw-sh:s0
     class core
     user root

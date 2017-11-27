@@ -1,9 +1,9 @@
 # Binaries
 /system/bin/motosh                                       u:object_r:sensor_hub_exec:s0
-/init\.gbmods\.sh                                        u:object_r:gbmodinstall_exec:s0
-/init\.mmi\.boot\.sh                                     u:object_r:mmi-boot-sh_exec:s0
-/init\.mmi\.laser\.sh                                    u:object_r:mmi-laser-sh_exec:s0
-/init\.oem\.hw\.sh                                       u:object_r:oem-hw-sh_exec:s0
+/(vendor|system/vendor)/bin/init\.mmi\.boot\.sh          u:object_r:mmi-boot-sh_exec:s0
+/(vendor|system/vendor)/bin/init\.mmi\.laser\.sh         u:object_r:mmi-laser-sh_exec:s0
+#/(vendor|system/vendor)/bin/init\.mmi\.touch\.sh         u:object_r:mmi-touch-sh_exec:s0
+/(vendor|system/vendor)/bin/init\.oem\.hw\.sh            u:object_r:oem-hw-sh_exec:s0
 /system/bin/adspd                                        u:object_r:adspd_exec:s0
 /system/bin/charge_only_mode                                u:object_r:charge_only_exec:s0
 /system/bin/batt_health                                     u:object_r:batt_health_exec:s0
