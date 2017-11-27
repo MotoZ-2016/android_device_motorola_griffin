@@ -85,7 +85,7 @@ $(ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(ADSP_SYMLINKS)
 
 IMS_LIBS := libimscamera_jni.so libimsmedia_jni.so
-IMS_SYMLINKS := $(addprefix $(TARGET_OUT)/app/ims/lib/arm64/,$(notdir $(IMS_LIBS)))
+IMS_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_APPS)/app/ims/lib/arm64/,$(notdir $(IMS_LIBS)))
 $(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "IMS lib link: $@"
 	@mkdir -p $(dir $@)
