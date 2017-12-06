@@ -28,7 +28,6 @@ ifneq ($(filter griffin,$(TARGET_DEVICE)),)
 LOCAL_PATH := $(call my-dir)
 
 include device/motorola/griffin/expat.mk
-include device/motorola/griffin/tftp.mk
 
 # Create links for audcal data files
 $(shell mkdir -p $(TARGET_OUT)/etc/firmware/wcd9320; \
@@ -163,5 +162,43 @@ $(BT_FIRMWARE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /bt_firmware/image/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(BT_FIRMWARE_SYMLINKS)
+
+RFS_MSM_ADSP_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/msm/adsp/
+$(RFS_MSM_ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+    @echo "Creating RFS MSM ADSP folder structure: $@"
+    @rm -rf $@/*
+    @mkdir -p $(dir $@)/readonly/vendor
+    $(hide) ln -sf /data/vendor/tombstones/rfs/lpass $@/ramdumps
+    $(hide) ln -sf /persist/rfs/msm/adsp $@/readwrite
+    $(hide) ln -sf /persist/rfs/shared $@/shared
+    $(hide) ln -sf /persist/hlos_rfs/shared $@/hlos
+    $(hide) ln -sf /firmware $@/readonly/firmware
+    $(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
+
+RFS_MSM_SLPI_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/msm/slpi/
+$(RFS_MSM_SLPI_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+    @echo "Creating RFS MSM SLPI folder structure: $@"
+    @rm -rf $@/*
+    @mkdir -p $(dir $@)/readonly/vendor
+    $(hide) ln -sf /data/vendor/tombstones/rfs/lpass $@/ramdumps
+    $(hide) ln -sf /persist/rfs/msm/slpi $@/readwrite
+    $(hide) ln -sf /persist/rfs/shared $@/shared
+    $(hide) ln -sf /persist/hlos_rfs/shared $@/hlos
+    $(hide) ln -sf /firmware $@/readonly/firmware
+    $(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
+
+RFS_MSM_MPSS_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/msm/mpss/
+$(RFS_MSM_MPSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+    @echo "Creating RFS MSM MPSS folder structure: $@"
+    @rm -rf $@/*
+    @mkdir -p $(dir $@)/readonly/vendor
+    $(hide) ln -sf /data/vendor/tombstones/rfs/modem $@/ramdumps
+    $(hide) ln -sf /persist/rfs/msm/mpss $@/readwrite
+    $(hide) ln -sf /persist/rfs/shared $@/shared
+    $(hide) ln -sf /persist/hlos_rfs/shared $@/hlos
+    $(hide) ln -sf /firmware $@/readonly/firmware
+    $(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
+
+ALL_DEFAULT_INSTALLED_MODULES += $(RFS_MSM_ADSP_SYMLINKS) $(RFS_MSM_MPSS_SYMLINKS) $(RFS_MSM_SLPI_SYMLINKS)
 
 endif
