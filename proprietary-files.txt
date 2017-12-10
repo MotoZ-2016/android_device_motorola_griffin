@@ -313,13 +313,11 @@ vendor/bin/motosh
 vendor/lib/sensors.iio.so
 vendor/lib/sensors.msm8996.so
 vendor/lib/sensors.ssc.so
-vendor/lib/libsensorndkbridge.so
 
 vendor/lib64/hw/sensorhub.msm8996.so
 vendor/lib64/sensors.iio.so
 vendor/lib64/sensors.msm8996.so
 vendor/lib64/sensors.ssc.so
-vendor/lib64/libsensorndkbridge.so
 
 vendor/lib/libsensorhub.so
 vendor/lib64/libsensorhub.so
