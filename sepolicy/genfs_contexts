@@ -14,5 +14,8 @@ genfscon sysfs /devices/soc/624000.ufshc/host0/target0:0:0/0:0:0:4    u:object_r
 genfscon sysfs /devices/soc/624000.ufshc/host0/target0:0:0/0:0:0:5    u:object_r:sysfs_scsi_devices_other:s0
 genfscon sysfs /devices/soc/624000.ufshc/health                       u:object_r:sysfs_scsi_devices_0000:s0
 
+# Real-time clock
+genfscon sysfs /devices/soc/qpnp-rtc-8/rtc                              u:object_r:sysfs_rtc:s0
+
 # debugfs
 genfscon debugfs /ufshcd0                  u:object_r:debugfs_ufs:s0
