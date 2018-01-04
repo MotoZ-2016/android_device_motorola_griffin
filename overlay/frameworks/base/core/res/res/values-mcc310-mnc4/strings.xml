@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="config_mms_user_agent">motoxt1650</string>
-    <string name="config_mms_user_agent_profile_url">http://uaprof.vtext.com/mot/motoxt1650/motoxt1650.xml</string>
-    <string name="prohibit_manual_network_selection_in_gobal_mode">true</string>
-</resources>
