@@ -469,6 +469,8 @@ vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/lib-dplmedia.so
 vendor/lib/liblqe.so
 vendor/lib/libsystem_health_mon.so
+lib/libqsap_sdk.so
+lib64/libqsap_sdk.so
 
 # MOTO RIL
 vendor/bin/qmi_motext_hook
