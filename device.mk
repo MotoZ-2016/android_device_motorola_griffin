@@ -222,6 +222,9 @@ PRODUCT_PACKAGES += \
     ims-ext-common \
     telephony-ext
 
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config 
@@ -336,6 +339,13 @@ PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     ueventd.qcom.rc \
     wlan_carrier_bin.sh
+
+# RCS
+PRODUCT_PACKAGES += \
+    rcs_service_aidl \
+    rcs_service_aidl.xml \
+    rcs_service_api \
+    rcs_service_api.xml
 
 # RIL
 PRODUCT_PACKAGES += \
