@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
-#               2017 The LineageOS Project
+#               2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -77,6 +77,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 else
 TARGET_USERIMAGES_USE_F2FS := false
 endif
+
+# Power
+TARGET_HAS_NO_WIFI_STATS := true
 
 # Display
 HAVE_ADRENO_SOURCE:= false
