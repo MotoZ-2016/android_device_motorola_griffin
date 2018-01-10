@@ -230,14 +230,13 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 
 # Properties
-TARGET_SYSTEM_PROP += device/motorola/griffin/system.prop
+TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
 
 # Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
-# CMHW
-BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
+# LINEAGEHW
+BOARD_HARDWARE_CLASS += $(PLATFORM_PATH)/lineagehw
 
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
