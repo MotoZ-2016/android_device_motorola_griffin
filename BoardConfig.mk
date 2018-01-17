@@ -179,6 +179,9 @@ BOARD_USES_QC_TIME_SERVICES := true
 # Recovery
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 
+# Root
+BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp firmware fsg persist
+
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
 
