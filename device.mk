@@ -159,10 +159,6 @@ PRODUCT_PACKAGES += \
     libgenlock \
     liboverlay
 
-# Dumpstate HAL
-PRODUCT_PACKAGES += \
-    android.hardware.dumpstate@1.0-service.msm8996
-
 # Ebtables
 PRODUCT_PACKAGES += \
     ebtables \
