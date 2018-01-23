@@ -169,7 +169,6 @@ on charger
     trigger moto-charger
     class_stop main
     class_stop late_start
-    mount_all charger.fstab.qcom
 
 on moto-charger
     setprop ro.board.platform msm8996

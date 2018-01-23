@@ -18,6 +18,33 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.bluetooth</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IBluetoothHci</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.broadcastradio</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IBroadcastRadioFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.camera.provider</name>
+        <transport>hwbinder</transport>
+        <version>2.4</version>
+        <interface>
+            <name>ICameraProvider</name>
+            <instance>legacy/0</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.biometrics.fingerprint</name>
         <transport>hwbinder</transport>
         <version>2.1</version>
@@ -47,21 +74,21 @@
     <hal format="hidl">
         <name>android.hardware.drm</name>
         <transport>hwbinder</transport>
-        <impl level="generic"></impl>
         <version>1.0</version>
         <interface>
             <name>ICryptoFactory</name>
             <instance>default</instance>
+            <instance>widevine</instance>
         </interface>
         <interface>
             <name>IDrmFactory</name>
             <instance>default</instance>
+            <instance>widevine</instance>
         </interface>
     </hal>
     <hal format="hidl">
         <name>android.hardware.gatekeeper</name>
         <transport>hwbinder</transport>
-        <impl level="generic"></impl>
         <version>1.0</version>
         <interface>
             <name>IGatekeeper</name>
@@ -105,6 +132,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.health</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IHealth</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.keymaster</name>
         <transport>hwbinder</transport>
         <impl level="generic"></impl>
@@ -142,6 +178,15 @@
         <version>1.0</version>
         <interface>
             <name>IMemtrack</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.nfc</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>INfc</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -189,6 +234,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.sensors</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISensors</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.thermal</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -230,6 +284,15 @@
         <version>1.0</version>
         <interface>
             <name>ISupplicant</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>com.motorola.mod</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IModManager</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -424,9 +487,17 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.qti.hardware.iop</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IIop</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.hardware.perf</name>
         <transport>hwbinder</transport>
-        <impl level="generic"></impl>
         <version>1.0</version>
         <interface>
             <name>IPerf</name>

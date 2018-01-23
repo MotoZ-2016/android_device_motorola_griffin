@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
+#               2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -77,9 +78,7 @@ PRODUCT_PACKAGES += \
     Snap \
     libbson \
     camera.device@3.2-impl \
-    android.hardware.camera.provider@2.4-impl \
-    libshim_camera_hal \
-    libshims_camera
+    android.hardware.camera.provider@2.4-impl
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -141,6 +140,8 @@ PRODUCT_PACKAGES += \
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.0-service.widevine
 
 # Display
 PRODUCT_PACKAGES += \
@@ -167,7 +168,6 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    fingerprint.msm8996 \
     android.hardware.biometrics.fingerprint@2.1-service
 
 # GNSS HAL
@@ -184,8 +184,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-service-qti \
     libgnss \
     libcurl \
-    libgnsspps \
-    libshims_get_process_name
+    libgnsspps
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
@@ -194,10 +193,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
     $(LOCAL_PATH)/gps/etc/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
     $(LOCAL_PATH)/gps/etc/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
-
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml \
-#    $(LOCAL_PATH)/display/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml:system/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
@@ -212,7 +207,7 @@ PRODUCT_PACKAGES += \
 
 # IDC
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/idc/fpc1020.idc:system/usr/idc/fpc1020.idc
+    $(LOCAL_PATH)/idc/fpc1020.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/fpc1020.idc
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -220,10 +215,10 @@ PRODUCT_COPY_FILES += \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
-    $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics.kl \
-    $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl \
-    $(LOCAL_PATH)/keylayout/msm8996-florida-snd-card_Button_Jack.kl:system/usr/keylayout/msm8996-florida-snd-card_Button_Jack.kl
+    $(LOCAL_PATH)/keylayout/fpc1020.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/fpc1020.kl \
+    $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/synaptics.kl \
+    $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/synaptics_dsx.kl \
+    $(LOCAL_PATH)/keylayout/msm8996-florida-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/msm8996-florida-snd-card_Button_Jack.kl
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
@@ -240,14 +235,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libjni_livedisplay
 
-# Media
-PRODUCT_PACKAGES += \
-    libc2dcolorconvert
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/configs/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
+    $(LOCAL_PATH)/configs/media_profiles_vendor.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
+    $(LOCAL_PATH)/configs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
     $(LOCAL_PATH)/configs/media_profiles_mod0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_mod0.xml \
     $(LOCAL_PATH)/configs/media_profiles_mod1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_mod1.xml
 
@@ -276,7 +270,8 @@ PRODUCT_PACKAGES += \
     nqnfcee_access.xml \
     nqnfcse_access.xml \
     Tag \
-    android.hardware.nfc@1.0-impl
+    android.hardware.nfc@1.0-impl \
+    android.hardware.nfc@1.0-service
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-brcm.conf \
@@ -300,8 +295,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service-qti \
     android.hardware.thermal@1.0-impl \
-    android.hardware.thermal@1.0-service \
-    thermal.msm8996
+    android.hardware.thermal@1.0-service
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
@@ -321,12 +315,10 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    charger.fstab.qcom \
     fstab.qcom \
     init.mmi.boot.sh \
     init.mmi.laser.sh \
     init.mmi.usb.rc \
-    init.mmi.touch.sh \
     init.oem.hw.sh \
     init.qcom.rc \
     init.qcom.power.rc \
@@ -338,9 +330,7 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2 \
     libprotobuf-cpp-full \
-    libprotobuf-cpp-lite \
-    libshim_ril \
-    rild_socket
+    libprotobuf-cpp-lite
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
@@ -350,11 +340,11 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
-    sensors.msm8996
+    android.hardware.sensors@1.0-service
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf \
-    $(LOCAL_PATH)/configs/sensors/_hals.conf:system/vendor/etc/sensors/_hals.conf
+    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
+    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 # Treble
 # PRODUCT_FULL_TREBLE_OVERRIDE := true
@@ -372,7 +362,8 @@ PRODUCT_PACKAGES += \
 
 # VR
 PRODUCT_PACKAGES += \
-    android.hardware.vr@1.0-impl
+    android.hardware.vr@1.0-impl \
+    android.hardware.vr@1.0-service
 
 # WiFi HAL
 PRODUCT_PACKAGES += \
@@ -396,15 +387,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/filter_ie:system/etc/wifi/filter_ie \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf \
-    $(LOCAL_PATH)/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    kernel/motorola/msm8996/drivers/staging/qcacld-2.0/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/qca_cld/WCNSS_cfg.dat
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/camera/imx338_chromatix.xml:system/etc/camera/imx338_chromatix.xml \
-    $(LOCAL_PATH)/configs/camera/mot_imx214_chromatix.xml:system/etc/camera/mot_imx214_chromatix.xml \
-    $(LOCAL_PATH)/configs/camera/ov5693_chromatix.xml:system/etc/camera/ov5693_chromatix.xml \
-    $(LOCAL_PATH)/configs/camera/msm8996_mot_camera.xml:system/etc/camera/msm8996_mot_camera.xml
+    $(LOCAL_PATH)/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf

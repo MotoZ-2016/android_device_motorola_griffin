@@ -1,6 +1,8 @@
 #!/vendor/bin/sh
 
-PATH=/sbin:/system/sbin:/system/bin:/system/xbin
+BASEDIR=vendor
+
+PATH=/sbin:/$BASEDIR/sbin:/$BASEDIR/bin:/$BASEDIR/xbin
 export PATH
 
 while getopts dpfr op;
@@ -20,7 +22,7 @@ config_mp=/proc/config
 reboot_utag=$config_mp/.reboot
 touch_status_prop=hw.touch.status
 hw_cfg_file=hw_config.xml
-vhw_file=/system/etc/vhw.xml
+vhw_file=/$BASEDIR/etc/vhw.xml
 bp_file=/system/build.prop
 oem_file=/oem/oem.prop
 load_error=3
@@ -376,7 +378,7 @@ fi
 notice "checking integrity"
 # check necessary components exist and just proceed
 # with RO properties setup otherwise
-if [ ! -f /system/bin/expat ] || [ ! -f $vhw_file ]; then
+if [ ! -f /$BASEDIR/bin/expat ] || [ ! -f $vhw_file ]; then
 	notice "warning: missing expat or xml"
 	set_ro_hw_properties
 	return 0
@@ -451,13 +453,15 @@ for section in $(exec_parser); do
 		;;
 	*)
 		[ "$xml_version" == "$version_fs" ] && continue
-		# create version utag if it's missing
-		[ ! -d $hw_mp/$ver_utag ] && $(echo "$ver_utag" > $hw_mp/all/new)
-		# update procfs version
-		[ -d $hw_mp/$ver_utag ] && $(echo "$xml_version" > $hw_mp/$ver_utag/ascii)
 		populate_utags $section;;
 	esac
 done
+if [ "$xml_version" != "$version_fs" ]; then
+	# create version utag if it's missing
+	[ ! -d $hw_mp/$ver_utag ] && $(echo "$ver_utag" > $hw_mp/all/new)
+	# update procfs version
+	[ -d $hw_mp/$ver_utag ] && $(echo "$xml_version" > $hw_mp/$ver_utag/ascii)
+fi
 
 set_ro_hw_properties
 

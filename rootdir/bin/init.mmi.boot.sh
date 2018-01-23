@@ -1,6 +1,6 @@
 #!/vendor/bin/sh
 
-PATH=/sbin:/system/sbin:/system/bin:/system/xbin
+PATH=/sbin:/vendor/sbin:/vendor/bin:/vendor/xbin
 export PATH
 
 scriptname=${0##*/}
@@ -12,7 +12,7 @@ notice()
 }
 
 # We take this from cpuinfo because hex "letters" are lowercase there
-set -A cinfo `cat /proc/cpuinfo | /system/bin/grep Revision`
+set -A cinfo `cat /proc/cpuinfo | sed -n "/Revision/p"`
 hw=${cinfo[2]#?}
 
 # Now "cook" the value so it can be matched against devtree names
@@ -110,7 +110,7 @@ if [ $month -le 12 -a $day -le 31 -a $year -ge 12 ]; then
 else
 	notice "Corrupt FTI data"
 fi
-# setprop ro.manufacturedate $mdate
+setprop ro.manufacturedate $mdate
 unset fti y m d year month day utag_fti pds_fti fti_utag mdate
 
 t=$(getprop ro.build.tags)
@@ -149,8 +149,4 @@ then
 	fi
 fi
 
-if [ -e /dev/vfsspi ]
-then
-	setprop ro.mot.hw.fingerprint 1
-fi
 

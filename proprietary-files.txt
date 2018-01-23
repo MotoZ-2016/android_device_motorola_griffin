@@ -1,6 +1,6 @@
 # ADSP
-bin/adspd
-bin/adsprpcd
+vendor/bin/adspd
+vendor/bin/adsprpcd
 lib/libadspd.so
 lib64/libadspd.so
 vendor/lib/libadsprpc.so
@@ -24,79 +24,47 @@ vendor/lib/rfsa/adsp/libadsp_hvx_skel.so
 vendor/lib/rfsa/adsp/libadsp_hvx_stats.so
 vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_BGGR.so
 vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_RGGB.so
-vendor/lib/rfsa/adsp/libscveCleverCapture_skel.so
 vendor/lib/rfsa/adsp/libvpp_frc.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
-vendor/lib/rfsa/adsp/libscveTextReco_skel.so
-vendor/lib/rfsa/adsp/libobjectMattingApp_skel.so
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so
-vendor/lib/rfsa/adsp/libscveFaceRecognition_skel.so
 
 ## ADSP
-vendor/lib/libscale.so
 vendor/lib/libscveBlobDescriptor.so
 vendor/lib/libscveBlobDescriptor_stub.so
-vendor/lib/libscveCleverCapture.so
-vendor/lib/libscveCleverCapture_stub.so
 vendor/lib/libscveCommon.so
 vendor/lib/libscveCommon_stub.so
-vendor/lib/libscveFaceRecognition.so
-vendor/lib/libscveFaceRecognition_stub.so
-vendor/lib/libscveImageCloning.so
 vendor/lib/libscveImageCorrection.so
-vendor/lib/libscveImageRemoval.so
-vendor/lib/libscveMotionVector.so
-vendor/lib/libscveObjectMatting.so
-vendor/lib/libscveObjectMatting_stub.so
 vendor/lib/libscveObjectSegmentation.so
-vendor/lib/libscveObjectSegmentation_stub.so
 vendor/lib/libscveObjectTracker.so
 vendor/lib/libscveObjectTracker_stub.so
 vendor/lib/libscvePanorama_lite.so
 vendor/lib/libscvePanorama.so
-vendor/lib/libscveTextRecoPostProcessing.so
-vendor/lib/libscveTextReco.so
-vendor/lib/libscveTextReco_stub.so
-vendor/lib64/libscale.so
 vendor/lib64/libscveBlobDescriptor.so
 vendor/lib64/libscveBlobDescriptor_stub.so
-vendor/lib64/libscveCleverCapture.so
-vendor/lib64/libscveCleverCapture_stub.so
 vendor/lib64/libscveCommon.so
 vendor/lib64/libscveCommon_stub.so
-vendor/lib64/libscveFaceRecognition.so
-vendor/lib64/libscveFaceRecognition_stub.so
-vendor/lib64/libscveImageCloning.so
 vendor/lib64/libscveImageCorrection.so
-vendor/lib64/libscveImageRemoval.so
-vendor/lib64/libscveMotionVector.so
-vendor/lib64/libscveObjectMatting.so
-vendor/lib64/libscveObjectMatting_stub.so
 vendor/lib64/libscveObjectSegmentation.so
-vendor/lib64/libscveObjectSegmentation_stub.so
 vendor/lib64/libscveObjectTracker.so
 vendor/lib64/libscveObjectTracker_stub.so
-vendor/lib64/libscvePanorama_lite.so
 vendor/lib64/libscvePanorama.so
-vendor/lib64/libscveTextRecoPostProcessing.so
-vendor/lib64/libscveTextReco.so
-vendor/lib64/libscveTextReco_stub.so
+vendor/lib64/libscvePanorama_lite.so
+
 
 # Audio
-bin/fm_qsoc_patches
+vendor/bin/fm_qsoc_patches
 vendor/bin/audioflacapp
-lib/hw/audio.motvr.default.so
-lib/libmotaudioutils.so
+vendor/lib/hw/audio.motvr.default.so
+vendor/lib/libmotaudioutils.so
 lib/libqcomfm_jni.so
 lib64/libqcomfm_jni.so
-lib/libunshorten.so
+vendor/lib/libunshorten.so
 vendor/lib/libacdb-fts.so
 vendor/lib64/libacdb-fts.so
 vendor/lib/libacdbloader.so
@@ -134,97 +102,100 @@ etc/firmware/florida-dsp4-speaker-protect.bin
 etc/firmware/florida-dsp4-speaker-protect.wmfw
 etc/firmware/florida-dsp4-speaker-protect-sheridan-sonification.bin
 etc/firmware/florida-dsp4-speaker-protect-sonification.bin
-lib64/soundfx/libaudiopreprocessing.so:vendor/lib64/soundfx/libaudiopreprocessing.so
-lib64/soundfx/libbundlewrapper.so:vendor/lib64/soundfx/libbundlewrapper.so
-lib64/soundfx/libdownmix.so:vendor/lib64/soundfx/libdownmix.so
-lib64/soundfx/libeffectproxy.so:vendor/lib64/soundfx/libeffectproxy.so
-lib64/soundfx/libldnhncr.so:vendor/lib64/soundfx/libldnhncr.so
-lib64/soundfx/libqcomvisualizer.so:vendor/lib64/soundfx/libqcomvisualizer.so
-lib64/soundfx/libqcomvoiceprocessing.so:vendor/lib64/soundfx/libqcomvoiceprocessing.so
-lib64/soundfx/libreverbwrapper.so:vendor/lib64/soundfx/libreverbwrapper.so
-lib64/soundfx/libvisualizer.so:vendor/lib64/soundfx/libvisualizer.so
-lib64/soundfx/libvolumelistener.so:vendor/lib64/soundfx/libvolumelistener.so
-lib/soundfx/libaudiopreprocessing.so:vendor/lib/soundfx/libaudiopreprocessing.so
-lib/soundfx/libbundlewrapper.so:vendor/lib/soundfx/libbundlewrapper.so
-lib/soundfx/libdownmix.so:vendor/lib/soundfx/libdownmix.so
-lib/soundfx/libeffectproxy.so:vendor/lib/soundfx/libeffectproxy.so
-lib/soundfx/libldnhncr.so:vendor/lib/soundfx/libldnhncr.so
-lib/soundfx/libqcomvisualizer.so:vendor/lib/soundfx/libqcomvisualizer.so
-lib/soundfx/libqcomvoiceprocessing.so:vendor/lib/soundfx/libqcomvoiceprocessing.so
-lib/soundfx/libreverbwrapper.so:vendor/lib/soundfx/libreverbwrapper.so
-lib/soundfx/libvisualizer.so:vendor/lib/soundfx/libvisualizer.so
-lib/soundfx/libvolumelistener.so:vendor/lib/soundfx/libvolumelistener.so
-vendor/lib/libavenhancements.so
-vendor/lib64/libavenhancements.so
+vendor/lib64/soundfx/libasphere.so
+vendor/lib64/soundfx/libaudiopreprocessing.so
+vendor/lib64/soundfx/libbundlewrapper.so
+vendor/lib64/soundfx/libdownmix.so
+vendor/lib64/soundfx/libeffectproxy.so
+vendor/lib64/soundfx/libldnhncr.so
+vendor/lib64/soundfx/libqcomvisualizer.so
+vendor/lib64/soundfx/libqcomvoiceprocessing.so
+vendor/lib64/soundfx/libreverbwrapper.so
+vendor/lib64/soundfx/libshoebox.so
+vendor/lib64/soundfx/libvisualizer.so
+vendor/lib64/soundfx/libvolumelistener.so
+vendor/lib/soundfx/libasphere.so
+vendor/lib/soundfx/libaudiopreprocessing.so
+vendor/lib/soundfx/libbundlewrapper.so
+vendor/lib/soundfx/libdownmix.so
+vendor/lib/soundfx/libeffectproxy.so
+vendor/lib/soundfx/libldnhncr.so
+vendor/lib/soundfx/libmmieffectswrapper.so
+vendor/lib/soundfx/libqcomvisualizer.so
+vendor/lib/soundfx/libqcomvoiceprocessing.so
+vendor/lib/soundfx/libreverbwrapper.so
+vendor/lib/soundfx/libshoebox.so
+vendor/lib/soundfx/libspeakerbundle.so
+vendor/lib/soundfx/libvisualizer.so
+vendor/lib/soundfx/libvolumelistener.so
+lib/libavenhancements.so
+lib64/libavenhancements.so
 vendor/lib64/libaudioalsa.so
 vendor/lib/libaudioalsa.so
 
 # Bluetooth
-bin/btnvtool
-bin/hci_qcomm_init
-bin/wcnss_filter
-etc/firmware/nvm_tlv_1.3.bin
-etc/firmware/nvm_tlv_2.1.bin
-etc/firmware/nvm_tlv_3.0.bin
-etc/firmware/nvm_tlv_3.2.bin
-etc/firmware/nvm_tlv.bin
-etc/firmware/rampatch_tlv_1.3.tlv
-etc/firmware/rampatch_tlv_2.1.tlv
-etc/firmware/rampatch_tlv_3.0.tlv
-etc/firmware/rampatch_tlv_3.2.tlv
-etc/firmware/rampatch_tlv.img
+vendor/bin/btnvtool
+vendor/bin/hci_qcomm_init
+vendor/bin/wcnss_filter
 vendor/lib64/libbtnv.so
 vendor/lib/libbtnv.so
 etc/bluetooth/bt_did.conf
 etc/bluetooth/bt_stack.conf
 
 # CNE
-bin/cnd
-etc/cne/SwimConfig.xml
-etc/cne/andsfCne.xml
-etc/cne/wqeclient/ATT/ATT_profile1.xml
-etc/cne/wqeclient/ATT/ATT_profile2.xml
-etc/cne/wqeclient/ATT/ATT_profile3.xml
-etc/cne/wqeclient/ATT/ATT_profile4.xml
-etc/cne/wqeclient/ROW/ROW_profile1.xml
-etc/cne/wqeclient/ROW/ROW_profile2.xml
-etc/cne/wqeclient/ROW/ROW_profile3.xml
-etc/cne/wqeclient/ROW/ROW_profile5.xml
-etc/cne/wqeclient/VZW/VZW_profile1.xml
-etc/cne/wqeclient/VZW/VZW_profile2.xml
-etc/cne/wqeclient/VZW/VZW_profile3.xml
-etc/cne/wqeclient/VZW/VZW_profile4.xml
-etc/cne/wqeclient/VZW/VZW_profile5.xml
-etc/cne/wqeclient/VZW/VZW_profile6.xml
-etc/permissions/ConnectivityExt.xml
+-vendor/lib64/com.quicinc.cne.api@1.0.so
+-vendor/lib/com.quicinc.cne.api@1.0.so
+-vendor/lib64/com.quicinc.cne.constants@1.0.so
+-vendor/lib/com.quicinc.cne.constants@1.0.so
+-vendor/lib64/com.quicinc.cne.constants@2.0.so
+-vendor/lib/com.quicinc.cne.constants@2.0.so
+-vendor/lib64/com.quicinc.cne.server@1.0.so
+-vendor/lib/com.quicinc.cne.server@1.0.so
+-vendor/lib64/com.quicinc.cne.server@2.0.so
+-vendor/lib/com.quicinc.cne.server@2.0.so
+framework/com.quicinc.cne.api-V1.0-java.jar
+vendor/bin/cnd
+vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile4.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile5.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile6.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile1.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile2.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile3.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile5.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile1.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile2.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
 etc/permissions/cneapiclient.xml
 etc/permissions/com.quicinc.cne.xml
-framework/ConnectivityExt.jar
 framework/cneapiclient.jar
 framework/com.quicinc.cne.jar
-#-priv-app/CNEService/CNEService.apk
+-priv-app/CNEService/CNEService.apk
+etc/permissions/privapp-permissions-com.quicinc.cne.CNEService.xml
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneqmiutils.so
-vendor/lib/libvendorconn.so
+lib/libvendorconn.so
 vendor/lib/libwqe.so
 vendor/lib/libxml.so
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneqmiutils.so
-vendor/lib64/libvendorconn.so
+lib64/libvendorconn.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
-# aptX Bluetooth
-vendor/lib/libaptX-1.0.0-rel-Android21-ARMv7A.so
-vendor/lib/libaptXScheduler.so
-# aptXHD kang it from somewhere
-vendor/lib/libaptXHD-1.0.0-rel-Android21-ARMv7A.so
+# aptX(HD) Bluetooth
+vendor/lib64/libaptXHD_encoder.so
+vendor/lib64/libaptX_encoder.so
 
 # DRM
-bin/qseecomd
-vendor/bin/qseeproxydaemon
+vendor/bin/qseecomd
 vendor/lib/libcppf.so
 #vendor/lib/libWVStreamControlAPI_L1.so
 vendor/lib/liboemcrypto.so
@@ -247,7 +218,6 @@ vendor/lib/libStDrvInt.so
 vendor/lib/libqisl.so
 vendor/lib/libGPreqcancel.so
 vendor/lib/libGPreqcancel_svc.so
-vendor/lib/libGPTEE.so
 vendor/lib/libmm-hdcpmgr.so
 vendor/lib64/libtime_genoff.so
 vendor/lib64/libQSEEComAPI.so
@@ -261,66 +231,62 @@ vendor/lib64/libStDrvInt.so
 vendor/lib64/libqisl.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libGPTEE.so
 vendor/lib64/libmm-hdcpmgr.so
 
 # Dropbox
-lib64/libadropbox.so
+vendor/lib64/libadropbox.so
 
 # Fingerprint
 lib/lib_fpc_tac_shared.so
-lib/hw/fingerprint.msm8996.so:vendor/lib/hw/fingerprint.vendor.msm8996.so
+vendor/lib/hw/fingerprint.msm8996.so
 lib/libcom_fingerprints_service.so
 lib64/lib_fpc_tac_shared.so
-lib64/hw/fingerprint.msm8996.so:vendor/lib64/hw/fingerprint.vendor.msm8996.so
+vendor/lib64/hw/fingerprint.msm8996.so
 lib64/libcom_fingerprints_service.so
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
 
 # FM
 lib/fm_helium.so
 lib64/fm_helium.so
 
 # Gatekeepr
-vendor/lib/hw/gatekeeper.msm8996.so
-vendor/lib64/hw/gatekeeper.msm8996.so
+-vendor/lib/hw/gatekeeper.msm8996.so
+-vendor/lib64/hw/gatekeeper.msm8996.so
 
 # GPS
-bin/loc_launcher
+vendor/bin/xtra-daemon
+vendor/bin/loc_launcher
 etc/permissions/com.qti.location.sdk.xml
 etc/permissions/com.qualcomm.location.xml
+etc/permissions/privapp-permissions-com.qualcomm.location.xml
 etc/permissions/izat.xt.srv.xml
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
 framework/com.qti.location.sdk.jar
 framework/izat.xt.srv.jar
--lib64/libloc_api_v02.so
-lib64/libloc_ds_api.so
+-vendor/lib64/libloc_api_v02.so
+vendor/lib/libloc_ds_api.so
+vendor/lib64/libloc_ds_api.so
 vendor/bin/slim_daemon
-vendor/lib/hw/flp.default.so
-vendor/lib64/hw/flp.default.so
 vendor/lib64/libalarmservice_jni.so
-vendor/lib64/libasn1cper.so
-vendor/lib64/libasn1crt.so
-vendor/lib64/libasn1crtx.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libflp.so
 vendor/lib64/libgdtap.so
 vendor/lib64/libgeofence.so
 vendor/lib64/libizat_core.so
 vendor/lib64/liblbs_core.so
-vendor/lib64/libloc_ext.so
 vendor/lib64/liblocationservice.so
 vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/libquipc_os_api.so
 vendor/lib64/libulp2.so
-vendor/lib64/libxt_native.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/libxtwifi_ulp_adaptor.so
 vendor/lib64/libloc_externalDr.so
 vendor/lib64/libizat_client_api.so
+vendor/lib64/libtinyxml2_1.so
 vendor/lib/liblocationservice_glue.so
 vendor/lib/liblocationservice.so
 vendor/lib/libloc_externalDr.so
-vendor/lib/libloc_ext.so
 vendor/lib/liblowi_client.so
 vendor/lib/libizat_client_api.so
 vendor/lib/libizat_core.so
@@ -328,7 +294,6 @@ vendor/lib/libflp.so
 vendor/lib/libgeofence.so
 vendor/lib/libizat_core.so
 vendor/lib/libxtadapter.so
-vendor/lib/libxt_native.so
 vendor/lib/libxtwifi_ulp_adaptor.so
 vendor/lib/libdataitems.so
 vendor/lib/libdrplugin_client.so
@@ -347,112 +312,126 @@ vendor/lib/libgdtap.so
 vendor/lib/libalarmservice_jni.so
 vendor/lib/libApeSwDec.so
 vendor/lib64/libApeSwDec.so
-vendor/lib/libasn1cper.so
-vendor/lib/libasn1crt.so
-vendor/lib/libasn1crtx.so
+vendor/lib/libtinyxml2_1.so
+lib/vendor.qti.gnss@1.0.so
+lib64/vendor.qti.gnss@1.0.so
+vendor/lib/vendor.qti.gnss@1.0_vendor.so
+vendor/lib/libqtigef.so
+vendor/lib64/libqtigef.so
+vendor/bin/hw/vendor.qti.gnss@1.0-service
+vendor/etc/init/vendor.qti.gnss@1.0-service.rc
+vendor/lib/hw/vendor.qti.gnss@1.0-impl.so
+vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so
+vendor/lib64/vendor.qti.gnss@1.0_vendor.so
+vendor/lib64/liblowi_wifihal.so
+vendor/lib/liblowi_wifihal.so
+
 
 # Keystore
-vendor/lib/hw/keystore.msm8996.so
-vendor/lib64/hw/keystore.msm8996.so
+-vendor/lib/hw/keystore.msm8996.so
+-vendor/lib64/hw/keystore.msm8996.so
 
 # Keymaster
 vendor/lib/libkeymasterprovision.so
 vendor/lib64/libkeymasterprovision.so
 
 # MDM Helper
-bin/mdm_helper
+vendor/bin/mdm_helper
 vendor/lib64/libmdmimgload.so
 
 # Sensors
-bin/motosh
-lib/hw/sensors.griffin.so
-lib64/hw/sensors.griffin.so
-lib64/hw/sensors.iio.so
-lib64/hw/sensorhub.msm8996.so
-lib64/hw/sensors.msm8996.so:lib64/sensors.moto.so
-lib/hw/sensors.msm8996.so:lib/sensors.moto.so
-lib/hw/sensors.iio.so
-lib/libsensorhub.so
-lib64/libsensorhub.so
-etc/firmware/sensorhubfw.bin
-etc/firmware/sensorhub-blacklist.txt
+vendor/bin/motosh
+vendor/lib/sensors.iio.so
+vendor/lib/sensors.msm8996.so
+vendor/lib/sensors.ssc.so
+
+vendor/lib64/hw/sensorhub.msm8996.so
+vendor/lib/sensors.iio.so
+vendor/lib/sensors.msm8996.so
+vendor/lib/sensors.ssc.so
+
+vendor/lib/libsensorhub.so
+vendor/lib64/libsensorhub.so
+vendor/etc/firmware/sensorhubfw.bin
+
 lib/libiio.so
 lib64/libiio.so
-vendor/lib/sensors.ssc.so
-vendor/lib64/sensors.ssc.so
+
 vendor/lib64/libsensor1.so
 vendor/lib/libsensor1.so
 vendor/lib64/libsensor_reg.so
 vendor/lib/libsensor_reg.so
 lib/lib_motsensorlistener.so
-bin/sensors.qcom
+vendor/bin/sensors.qcom
 vendor/lib/libsensorhubservice_jni.so
 vendor/lib64/libsensorhubservice_jni.so
 
 # VFS (used init.oem.hw.sh)
-etc/vhw.xml
+vendor/etc/vhw.xml
 
 # ???
-lib/libwpa_client.so
-lib64/libwpa_client.so
+vendor/lib/libwpa_client.so
+vendor/lib64/libwpa_client.so
 
 # WiFi
-bin/cnss-daemon
+vendor/bin/cnss-daemon
+vendor/lib/libwifi-hal-qcom.so
+vendor/lib64/libwifi-hal-qcom.so
 
 # IO Prefetcher
-bin/iop
-vendor/lib64/libqti-iop.so
-vendor/lib/libqti-iop.so
-vendor/lib/libqti-iop-client.so
-vendor/lib64/libqti-iop-client.so
+vendor/bin/hw/vendor.qti.hardware.iop@1.0-service
+vendor/etc/init/vendor.qti.hardware.iop@1.0-service.rc
+vendor/lib/hw/vendor.qti.hardware.iop@1.0-impl.so
+vendor/lib/libqti-iopd-client.so
+vendor/lib/libqti-iopd.so
+vendor/lib/vendor.qti.hardware.iop@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.iop@2.0_vendor.so
+vendor/lib64/hw/vendor.qti.hardware.iop@1.0-impl.so
+vendor/lib64/libqti-iopd-client.so
+vendor/lib64/libqti-iopd.so
+vendor/lib64/vendor.qti.hardware.iop@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.iop@2.0_vendor.so
+lib/vendor.qti.hardware.iop@1.0.so
+lib/vendor.qti.hardware.iop@2.0.so
+lib64/vendor.qti.hardware.iop@1.0.so
+lib64/vendor.qti.hardware.iop@2.0.so
 
 # GPU
-etc/firmware/a225_pfp.fw
-etc/firmware/a225_pm4.fw
-etc/firmware/a225p5_pm4.fw
-etc/firmware/a300_pfp.fw
-etc/firmware/a300_pm4.fw
-etc/firmware/a330_pfp.fw
-etc/firmware/a330_pm4.fw
-etc/firmware/a420_pfp.fw
-etc/firmware/a420_pm4.fw
-etc/firmware/a540_gpmu.fw2
-etc/firmware/a530_gpmu.fw2
-etc/firmware/a530_pfp.fw
-etc/firmware/a530_pm4.fw
-etc/firmware/a530v1_pfp.fw
-etc/firmware/a530v1_pm4.fw
-etc/firmware/a530v2_seq.fw2
-etc/firmware/a530v3_gpmu.fw2
-etc/firmware/a530v3_seq.fw2
-etc/firmware/leia_pfp_470.fw
-etc/firmware/leia_pm4_470.fw
+vendor/firmware/a225_pfp.fw
+vendor/firmware/a225_pm4.fw
+vendor/firmware/a225p5_pm4.fw
+vendor/firmware/a300_pfp.fw
+vendor/firmware/a300_pm4.fw
+vendor/firmware/a330_pfp.fw
+vendor/firmware/a330_pm4.fw
+vendor/firmware/a420_pfp.fw
+vendor/firmware/a420_pm4.fw
+vendor/firmware/a530_gpmu.fw2
+vendor/firmware/a530_pfp.fw
+vendor/firmware/a530_pm4.fw
+vendor/firmware/a530v1_pfp.fw
+vendor/firmware/a530v1_pm4.fw
+vendor/firmware/a530v2_seq.fw2
+vendor/firmware/a530v3_gpmu.fw2
+vendor/firmware/a530v3_seq.fw2
+vendor/firmware/a540_gpmu.fw2
+vendor/firmware/leia_pfp_470.fw
+vendor/firmware/leia_pm4_470.fw
 
 # Modem 
 vendor/lib/libwms.so
 vendor/lib64/libwms.so
 
-# Network
-vendor/lib/libmmhttpstack.so
-vendor/lib64/libmmhttpstack.so
-vendor/lib64/libmmiipstreammmihttp.so
-vendor/lib64/libmmipstreamaal.so
-vendor/lib64/libmmipstreamnetwork.so
-vendor/lib64/libmmipstreamsourcehttp.so
-vendor/lib64/libmmipstreamutils.so
-vendor/lib/libconnctrl.so
-vendor/lib64/libconnctrl.so
-vendor/lib/libnetmgr.so
-
 # Radio
+vendor/bin/ipacm-diag
+vendor/bin/netmgrd
+vendor/lib/libnetmgr.so
 -priv-app/atfwd/atfwd.apk
--app/datastatusnotification/datastatusnotification.apk
-bin/netmgrd
-bin/radish
-bin/rmt_storage
-bin/tftp_server
-etc/data/dsi_config.xml
-etc/data/netmgr_config.xml
+etc/permissions/privapp-permissions-com.qualcomm.atfwd.xml
+vendor/bin/rmt_storage
+vendor/bin/tftp_server
+vendor/etc/data/dsi_config.xml
+vendor/etc/data/netmgr_config.xml
 etc/permissions/qcrilhook.xml
 etc/permissions/qti_permissions.xml
 framework/qti-telephony-common.jar
@@ -460,6 +439,7 @@ framework/com.qti.dpmframework.jar
 framework/embmslibrary.jar
 -framework/qcrilhook.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+etc/permissions/privapp-permissions-com.qualcomm.qcrilmsgtunnel.xml
 vendor/bin/qti
 vendor/lib64/libconfigdb.so
 vendor/lib/libconfigdb.so
@@ -471,7 +451,6 @@ vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/libsystem_health_mon.so
-vendor/qcril.db
 vendor/lib64/libsettings.so
 vendor/lib/libsettings.so
 vendor/lib/libril-qc-ltedirectdisc.so
@@ -481,88 +460,81 @@ vendor/lib/libril-qc-radioconfig.so
 vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/lib-dplmedia.so
 vendor/lib/liblqe.so
-vendor/lib/libvoice-svc.so
 vendor/lib/libsystem_health_mon.so
 
 # MOTO RIL
-bin/qmi_motext_hook
-#bin/rild:vendor/bin/hw/rild
-#lib/libril.so
-lib64/libmotext_inf.so
-lib/libmotext_inf.so
-lib/libmdmcutback.so
-lib64/libmdmcutback.so
-lib/libqmimotext.so
-lib64/libqmimotext.so
+vendor/bin/qmi_motext_hook
+#vendor/bin/hw/rild
+#vendor/lib/libril.so
+vendor/lib64/libmotext_inf.so
+vendor/lib/libmotext_inf.so
+vendor/lib/libmdmcutback.so
+vendor/lib64/libmdmcutback.so
+vendor/lib/libqmimotext.so
+vendor/lib64/libqmimotext.so
 
 # THINGS
-bin/ftmipcd
-bin/ATFWD-daemon
-bin/port-bridge
+vendor/bin/ftmipcd
+vendor/bin/ATFWD-daemon
+vendor/bin/port-bridge
 
 # Peripheral manager
-bin/pm-proxy
-bin/pm-service
+vendor/bin/pm-proxy
+vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
 # Radio - IMS
-bin/ims_rtp_daemon
-bin/imscmservice
-bin/imsdatadaemon
-bin/imsqmidaemon
+lib/libdiag_system.so
+lib/libimscamera_jni.so
+lib/libimsmedia_jni.so
+lib/vendor.qti.imsrtpservice@1.0.so
+lib64/libdiag_system.so
+lib64/libimscamera_jni.so
+lib64/libimsmedia_jni.so
+lib64/vendor.qti.imsrtpservice@1.0.so
 -vendor/app/ims/ims.apk
 -vendor/app/imssettings/imssettings.apk
-
-vendor/lib/libimscamera_jni.so
-vendor/lib/lib-imscamera.so
-vendor/lib/lib-imsdpl.so
-vendor/lib/libimsmedia_jni.so
-vendor/lib/lib-imsqimf.so
-vendor/lib/lib-imsrcscmclient.so
-vendor/lib/lib-ims-rcscmjni.so
-vendor/lib/lib-imsrcscmservice.so
-vendor/lib/lib-imsrcscm.so
-vendor/lib/lib-imsrcs.so
-vendor/lib/lib-imsSDP.so
-vendor/lib/lib-imss.so
-vendor/lib/lib-imsvt.so
-vendor/lib/lib-imsxml.so
-vendor/lib/lib-rcsimssjni.so
-vendor/lib/lib-rcsjni.so
-vendor/lib/lib-rtpcommon.so
-vendor/lib/lib-rtpcore.so
-vendor/lib/lib-rtpdaemoninterface.so
-vendor/lib/lib-rtpsl.so
-vendor/lib/librcc.so
-
+vendor/bin/ims_rtp_daemon
+vendor/bin/imsdatadaemon
+vendor/bin/imsqmidaemon
+vendor/lib/vendor.qti.imsrtpservice@1.0-service-Impl.so
+vendor/lib/vendor.qti.imsrtpservice@1.0_vendor.so
 vendor/lib64/lib-dplmedia.so
-vendor/lib64/lib-ims-rcscmjni.so
 vendor/lib64/lib-imsSDP.so
-vendor/lib64/lib-imscamera.so
 vendor/lib64/lib-imsdpl.so
 vendor/lib64/lib-imsqimf.so
-vendor/lib64/lib-imsrcs.so
-vendor/lib64/lib-imsrcscm.so
-vendor/lib64/lib-imsrcscmclient.so
-vendor/lib64/lib-imsrcscmservice.so
-vendor/lib64/lib-imss.so
-vendor/lib64/lib-imsvt.so
 vendor/lib64/lib-imsxml.so
-vendor/lib64/lib-rcsimssjni.so
-vendor/lib64/lib-rcsjni.so
 vendor/lib64/lib-rtpcommon.so
 vendor/lib64/lib-rtpcore.so
 vendor/lib64/lib-rtpdaemoninterface.so
 vendor/lib64/lib-rtpsl.so
-vendor/lib64/libimscamera_jni.so
-vendor/lib64/libimsmedia_jni.so
-vendor/lib64/librcc.so
-vendor/lib64/libvoice-svc.so
+vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
+vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
+vendor/radio/qcril_database/qcril.db
+vendor/lib/vendor.qti.hardware.radio.am@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.lpa@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.uim@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.radio.am@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.radio.ims@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.radio.lpa@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.radio.uim@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
+vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
+vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
+
 
 # QMI
-bin/irsc_util
-etc/sec_config
+vendor/bin/irsc_util
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
@@ -601,11 +573,28 @@ vendor/lib64/libqmiservices.so
 vendor/lib64/libsmemlog.so
 
 # Perf
-bin/energy-awareness
-bin/msm_irqbalance
+lib/libqti_performance.so
+lib/libqti-perfd-client_system.so
+lib/vendor.qti.hardware.perf@1.0.so
+lib64/libqti_performance.so
+lib64/libqti-perfd-client_system.so
+lib64/vendor.qti.hardware.perf@1.0.so
+vendor/bin/energy-awareness
+vendor/bin/msm_irqbalance
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
+vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
+vendor/lib/libperfgluelayer.so
+vendor/lib/libqti-perfd.so
+vendor/lib/libqti-perfd-client.so
+vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so
+vendor/lib64/libperfgluelayer.so
+vendor/lib64/libqti-perfd.so
+vendor/lib64/libqti-perfd-client.so
+vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
+
 
 # Thermal
-etc/thermal-engine.conf
+vendor/etc/thermal-engine.conf
 etc/thermal-engine-griffin.conf
 etc/thermal-engine-sheridan.conf
 etc/thermal-engine-sheridan-retcn.conf
@@ -613,18 +602,16 @@ vendor/bin/thermal-engine
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 -vendor/lib/libthermalclient.so
-lib64/hw/thermal.msm8996.so
-lib/hw/thermal.msm8996.so
+vendor/lib64/hw/thermal.msm8996.so
+vendor/lib/hw/thermal.msm8996.so
 
 # Time services
--app/TimeService/TimeService.apk
-bin/time_daemon
+-vendor/app/TimeService/TimeService.apk
+vendor/bin/time_daemon
 -vendor/lib64/libtime_genoff.so
-vendor/lib64/libTimeService.so
 -vendor/lib/libtime_genoff.so
-vendor/lib/libTimeService.so
 
-# Graphics taken from Marlin O Drop
+# Graphics
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -646,8 +633,10 @@ vendor/lib/libmm-disp-apis.so
 vendor/lib/libmm-qdcm.so
 vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
-vendor/lib/libsd_sdk_display.so
--vendor/lib/libsdm-disp-apis.so
+lib/libsd_sdk_display.so:vendor/lib/libsd_sdk_display.so
+lib64/libsdm-disp-apis.so
+lib/libsdm-disp-apis.so
+-vendor/lib/libsdm-disp-vndapis.so
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
@@ -669,25 +658,19 @@ vendor/lib64/libmm-disp-apis.so
 vendor/lib64/libmm-qdcm.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/librs_adreno_sha1.so
-vendor/lib64/libscalar.so
-vendor/lib64/libsd_sdk_display.so
+lib64/libsd_sdk_display.so:vendor/lib64/libsd_sdk_display.so
 vendor/lib64/libsdm-color.so
 vendor/lib/libsdm-color.so
 vendor/lib64/libsdm-diag.so
--vendor/lib64/libsdm-disp-apis.so
+-vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libsdmextension.so
-
-# Graphics from Moto (Not sure needed)
 vendor/lib/libc2d30-a3xx.so
 vendor/lib/libc2d30-a4xx.so
 vendor/lib64/libc2d30-a3xx.so
 vendor/lib64/libc2d30-a4xx.so
-vendor/lib/libscalar.so
 vendor/lib/libsdm-color.so
 vendor/lib/libsdm-diag.so
 vendor/lib/libsdmextension.so
-vendor/lib/libmmQSM.so
-vendor/lib64/libmmQSM.so
 vendor/lib64/libOpenCL.so
 vendor/lib/libOpenCL.so
 vendor/lib/egl/libQTapGLES.so
@@ -696,17 +679,39 @@ vendor/lib64/egl/libQTapGLES.so
 vendor/lib64/egl/libq3dtools_esx.so
 -vendor/lib/libgpustats.so
 -vendor/lib64/libgpustats.so
+vendor/lib64/libhdr_tm.so
+vendor/lib/libhdr_tm.so
+vendor/bin/hw/vendor.display.color@1.0-service
+vendor/etc/init/vendor.display.color@1.0-service.rc
+vendor/lib/vendor.display.color@1.0_vendor.so
+vendor/lib/vendor.display.postproc@1.0_vendor.so
+vendor/lib64/vendor.display.color@1.0_vendor.so
+vendor/lib64/vendor.display.postproc@1.0_vendor.so
+vendor/lib/libscalar.so
+vendor/lib64/libscalar.so
+lib/vendor.display.color@1.0.so
+lib/vendor.display.postproc@1.0.so
+lib64/vendor.display.color@1.0.so
+lib64/vendor.display.postproc@1.0.so
 
-# Blur
-vendor/lib64/libuiblur.so
+lib/vendor.qti.hardware.qdutils_disp@1.0.so
+lib64/vendor.qti.hardware.qdutils_disp@1.0.so
+vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
+vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
+
+# Display
+vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml
+vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml
 
 # Camera
-bin/mm-qcamera-daemon
-lib/hw/camera.msm8996.so
-lib/libmmcamera_interface.so
-lib/libmmjpeg_interface.so
-lib/libmm-qcamera.so
-lib/libqomx_core.so
+vendor/bin/mm-qcamera-daemon
+vendor/lib/hw/camera.msm8996.so
+vendor/lib/libmmcamera_interface.so
+vendor/lib/libmmjpeg_interface.so
+vendor/lib/libmm-qcamera.so
+vendor/lib/libqomx_core.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
@@ -749,6 +754,13 @@ vendor/lib/libmmqjpegdma.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqomx_jpegenc.so
+vendor/bin/hw/motorola.hardware.camera.provider@2.4-service
+vendor/etc/init/motorola.hardware.camera.provider@2.4-service_delayed.rc
+vendor/lib/hw/motorola.hardware.camera.provider@2.4-impl.so
+vendor/lib/motorola.hardware.camera.provider@2.4_vendor.so
+vendor/lib/motorola.hardware.camera.device@1.0_vendor.so
+vendor/lib64/hw/motorola.hardware.camera.provider@2.4-impl.so
+vendor/lib64/motorola.hardware.camera.provider@2.4_vendor.so
 
 
 # MOTO CAMERA
@@ -765,8 +777,8 @@ vendor/lib/libactuator_mot_ak7371.so
 vendor/lib/libactuator_lc898217xc.so
 vendor/lib/libflash_sky81298.so
 vendor/lib/libmotocalibration.so
-lib/libAisAdapterGlue.so
-lib/libmot_afd.so
+vendor/lib/libAisAdapterGlue.so
+vendor/lib/libmot_afd.so
 lib/libmot_lux_standardization.so
 lib/libcamerabgprocservice.so
 vendor/lib/libcamerabgproc-jni.so
@@ -776,9 +788,9 @@ lib/libmotimager_utils.so
 vendor/lib/libmmcamera_vstab_module.so
 lib/libjustshoot.so
 lib/libAlAisWrap.so
-lib/libbson.so
-lib64/libbson.so
-lib/libAisAdapter.so
+vendor/lib/libbson.so
+vendor/lib64/libbson.so
+vendor/lib/libAisAdapter.so
 lib/libjscore.so
 vendor/lib/libmot_ois_data.so
 lib/libadvalgcore.so
@@ -789,8 +801,7 @@ lib/libmpbase.so
 lib/libAlAisLib.so
 lib/libarcsoft_beautyshot.so
 lib/libAlAisTune.so
-lib/libzxingcpp.so
-lib/hw/camera.rc.so
+vendor/lib/libzxingcpp.so
 vendor/lib/libmmcamera_imx338.so
 vendor/lib/libmmcamera_mot_imx214.so
 vendor/lib/libmmcamera_ov5693.so
@@ -953,24 +964,16 @@ vendor/lib/libmmcamera_stillmore_lib.so
 vendor/lib/libmmcamera_sw2d_lib.so
 vendor/lib/libmmcamera_trueportrait_lib.so
 vendor/lib/libmmcamera_ubifocus_lib.so
-vendor/lib/libChamomilePA.so
-vendor/lib64/libChamomilePA.so
-vendor/lib/libjni_dualcamera.so
-
-# Camera Needed lib (tmp)
-lib/libmemalloc.so
-lib64/libmemalloc.so
 
 # Media
-lib/libOmxVpp.so
-lib64/libOmxVpp.so
-lib/libvpplibrary.so
-lib64/libvpplibrary.so
+vendor/lib/libOmxVpp.so
+vendor/lib64/libOmxVpp.so
+vendor/lib64/libvpplibrary.so
+vendor/lib/libvpplibrary.so
+vendor/lib/libOmxAmrDec.so
 vendor/lib/libI420colorconvert.so
 vendor/lib64/libI420colorconvert.so
 vendor/lib/libmm-color-convertor.so
-vendor/lib/libmmosal.so
-vendor/lib64/libmmosal.so
 vendor/lib/libOmxAacDec.so
 vendor/lib64/libOmxAacDec.so
 vendor/lib/libOmxEvrcDec.so
@@ -996,13 +999,12 @@ vendor/lib/libAlacSwDec.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib/libFlacSwDec.so
 vendor/lib64/libFlacSwDec.so
-vendor/lib/libExtendedExtractor.so
-vendor/lib64/libExtendedExtractor.so
-
+lib/libExtendedExtractor.so
+lib64/libExtendedExtractor.so
 
 # Griffin Media
-lib64/libmm-omxcore.so
-lib/libmm-omxcore.so
+vendor/lib64/libmm-omxcore.so
+vendor/lib/libmm-omxcore.so
 
 # NFC firmware
 vendor/firmware/libpn548ad_fw.so
@@ -1014,54 +1016,27 @@ vendor/bin/mm-pp-dpps
 vendor/lib64/libdisp-aba.so
 vendor/lib/libdisp-aba.so
 
-vendor/lib64/libqti-perfd-client.so
-vendor/lib/libqti-perfd-client.so
-vendor/bin/perfd
-vendor/etc/perf-profile0.conf
-vendor/etc/perf-profile1.conf
-vendor/etc/perf-profile2.conf
-vendor/etc/perf-profile3.conf
-vendor/etc/perf-profile4.conf
-vendor/etc/perf-profile5.conf
-vendor/etc/perf-profile6.conf
-
-vendor/lib/libqti-at.so
-vendor/lib/libqti_performance.so
-vendor/lib/libQtiTether.so
-vendor/lib64/libqti-at.so
-vendor/lib64/libqti_performance.so
-vendor/lib64/libQtiTether.so
-
 # Misc
 lib64/libcce-socketjni.so
 lib/libcce-socketjni.so
 lib/libdmengine.so
 lib/libdmjavaplugin.so
-lib64/libipanat.so
 lib/libmotocare.so
 lib64/libmotocare.so
-lib/libpanelmode.so
-lib64/libpanelmode.so
 lib/libpkip.so
 lib/libprovlib.so
 vendor/lib/librilqmiservices.so
 vendor/lib64/librilqmiservices.so
-lib/libslpc.so
-lib64/libslpc.so
-lib/libtinyxml.so
-lib64/libtinyxml.so
+vendor/lib/libslpc.so
+vendor/lib64/libslpc.so
+vendor/lib/libtinyxml.so
+vendor/lib64/libtinyxml.so
 lib/libtpa.so
 lib64/libtpa.so
-lib/libtpa_core.so
-lib64/libtpa_core.so
 lib/libwbxmlparser.so
-lib64/libwifi-hal-qcom.so
 
-bin/batt_health
-bin/charge_only_mode
-bin/subsystem_ramdump
-
-etc/init.qcom.bt.sh
+vendor/bin/charge_only_mode
+vendor/bin/subsystem_ramdump
 
 # VR
 lib/hw/vr.msm8996.so
@@ -1077,13 +1052,10 @@ etc/firmware/synaptics-s3508sga-16090101-255c40-sheridan.tdat
 etc/firmware/synaptics-s3528g2-16030302-2308cb-griffin.tdat
 etc/firmware/synaptics-s3528so1-15121701-1e29b4-sheridan.tdat
 etc/firmware/upd-00000126-00001001-fed70128-fffe0001-02.tftf
-##Battery Mod Firmware (Kang From Somewhere)
-etc/firmware/upd-00000104-00006435-696e6369-00000103-03.tftf
 
 # Moto Permissions
 etc/permissions/com.motorola.aov.xml
 etc/permissions/com.motorola.cameraone.xml
-etc/permissions/com.motorola.haptic.xml
 etc/permissions/com.motorola.hw.sensorhub.xml
 etc/permissions/com.motorola.mod.protocols.xml
 etc/permissions/com.motorola.mod.xml
@@ -1138,112 +1110,89 @@ vendor/lib64/mmi_vibrator.so
 vendor/lib64/mmi_wifi.so
 vendor/lib64/sensor_calibrate.so
 
-vendor/lib/libmmiipstreammmihttp.so
-vendor/lib/libmmipstreamaal.so
-vendor/lib/libmmipstreamnetwork.so
-vendor/lib/libmmipstreamsourcehttp.so
-vendor/lib/libmmipstreamutils.so
-
-vendor/lib/libmmparser_lite.so
-vendor/lib/libmmparser.so
-vendor/lib/libmmrtpdecoder.so
-vendor/lib/libmmrtpencoder.so
 vendor/lib/libmodalityservice_jni.so
-vendor/lib64/libmmparser_lite.so
-vendor/lib64/libmmparser.so
-vendor/lib64/libmmrtpdecoder.so
-vendor/lib64/libmmrtpencoder.so
 vendor/lib64/libmodalityservice_jni.so
-
-# Dirty Hax
-lib/libprotobuf-cpp-lite.so:vendor/lib/libprotobuf-cpp-Hlit.so
-lib/libprotobuf-cpp-full.so:vendor/lib/libprotobuf-cpp-shit.so
-lib64/libprotobuf-cpp-lite.so:vendor/lib64/libprotobuf-cpp-Hlit.so
-lib64/libprotobuf-cpp-full.so:vendor/lib64/libprotobuf-cpp-shit.so
-lib/libui.so:vendor/lib/libHu.so
-lib/libgui.so:vendor/lib/libHui.so
-lib64/libui.so:vendor/lib64/libHu.so
-lib64/libgui.so:vendor/lib64/libHui.so
-
 
 ## Mods
 # Audio HAL ( We're doing this Onlyyy For JBL Mod :\ )
 #lib/hw/audio.primary.msm8996.so
 #lib/libtinyalsa.so
 #lib64/libtinyalsa.so
+#lib/motorola.hardware.audio.common@2.0.so
+#lib/motorola.hardware.audio.eqservice@1.0.so
+#lib/motorola.hardware.audio@2.0.so
+#lib64/motorola.hardware.audio.common@2.0.so
+#lib64/motorola.hardware.audio.eqservice@1.0.so
+#lib64/motorola.hardware.audio@2.0.so
+#vendor/etc/init/motorola.hardware.audio@2.0-service.rc
+#vendor/lib/hw/motorola.hardware.audio@2.0-impl.so
+#vendor/lib/motorola.hardware.audio.common@2.0_vendor.so
+#vendor/lib/motorola.hardware.audio.eqservice@1.0_vendor.so
+#vendor/lib/motorola.hardware.audio@2.0_vendor.so
+#vendor/lib64/hw/motorola.hardware.audio@2.0-impl.so
+#vendor/lib64/motorola.hardware.audio.common@2.0_vendor.so
+#vendor/lib64/motorola.hardware.audio.eqservice@1.0_vendor.so
+#vendor/lib64/motorola.hardware.audio@2.0_vendor.so
 
-# ModService (this app need edit to work BTW)
+# ModService
 -priv-app/ModService/ModService.apk
-lib/libmodmanager.so
-lib64/libmodmanager.so
+lib/libmodmanager_system.so
+lib64/libmodmanager_system.so
+vendor/lib/libmodmanager.so
+vendor/lib64/libmodmanager.so
+lib64/libmodhw.so
+etc/permissions/privapp-permissions-com.motorola.modservice.xml
+lib/com.motorola.mod@1.0.so
+lib64/com.motorola.mod@1.0.so
 
 # Camera Mod
 -app/MotCameraMod/MotCameraMod.apk
-bin/mods_camd
+vendor/bin/mods_camd
+lib/motorola.hardware.mods_camera.provider@2.4.so
+lib64/motorola.hardware.mods_camera.provider@2.4.so
+vendor/etc/init/motorola.hardware.mods_camera.provider@2.4-service.rc
 
 # Projector Mod
 -priv-app/ProjectorApp/ProjectorApp.apk
+etc/permissions/privapp-permissions-com.motorola.projectormod.xml
 
-
-#?????????????????????????????????????????????????? apps
-# No more EMBMS plz
-#-app/embms/embms.apk
+#Carrier apps
 -priv-app/ConnMO/ConnMO.apk
 -priv-app/DCMO/DCMO.apk
 -priv-app/DMService/DMService.apk
 -priv-app/SprintDM/SprintDM.apk
--priv-app/QtiTetherService/QtiTetherService.apk
 
+#????
 
-#?????????????????????????????????????????????????? 32
+lib/libFidoCryptoJNI.so
+lib/libFidoCrypto_system.so
+lib64/libFidoCryptoJNI.so
+lib64/libFidoCrypto_system.so
+vendor/lib/libFidoCrypto_vendor.so
+vendor/lib64/libFidoCrypto_vendor.so
 
-vendor/lib/libmdtpdemojni.so
-vendor/lib/libmdtp_crypto.so
-
-vendor/lib/libesepm.so
-vendor/lib/libFidoCryptoJNI.so
-vendor/lib/libFidoCrypto.so
 vendor/lib/libFIDOKeyProvisioning.so
-vendor/lib/libFidoSuiJNI.so
-vendor/lib/libFileMux.so
-vendor/lib/libmare-1.1.so
-vendor/lib/libmare-cpu-1.1.so
+vendor/lib64/libFIDOKeyProvisioning.so
 
-vendor/lib/libQBLAS-0.13.0.so
+lib/libFileMux.so
+lib64/libFileMux.so
 
-vendor/lib/libSampleAuthJNI.so
-vendor/lib/libSampleExtAuthJNI.so
+lib/libSampleAuthJNI.so
+lib/libSampleExtAuthJNI.so
 vendor/lib/libsubsystem_control.so
 vendor/lib/libSubSystemShutdown.so
-vendor/lib/libwbc_jni.so
-vendor/lib/libwfdavenhancements.so
-vendor/lib/libwfdcommonutils.so
-vendor/lib/libwfdhdcpcp.so
-vendor/lib/libwfdmmsink.so
-vendor/lib/libwfduibcsinkinterface.so
-vendor/lib/libwfduibcsink.so
+lib/libwbc_jni.so
+lib/libwfdavenhancements.so
+lib/libwfdmmsink.so
+lib/libwfduibcsinkinterface.so
+lib/libwfduibcsink.so
 
-#?????????????????????????????????????????????????? 64
-
-vendor/lib64/libesepm.so
-vendor/lib64/libFidoCryptoJNI.so
-vendor/lib64/libFidoCrypto.so
-vendor/lib64/libFIDOKeyProvisioning.so
-vendor/lib64/libFidoSuiJNI.so
-vendor/lib64/libFileMux.so
-vendor/lib64/libmare-1.1.so
-vendor/lib64/libmare-cpu-1.1.so
-
-vendor/lib64/libQBLAS-0.13.0.so
-
-vendor/lib64/libSampleAuthJNI.so
-vendor/lib64/libSampleExtAuthJNI.so
+lib64/libSampleAuthJNI.so
+lib64/libSampleExtAuthJNI.so
 vendor/lib64/libsubsystem_control.so
 vendor/lib64/libSubSystemShutdown.so
-vendor/lib64/libwbc_jni.so
-vendor/lib64/libwfdavenhancements.so
-vendor/lib64/libwfdcommonutils.so
-vendor/lib64/libwfdhdcpcp.so
-vendor/lib64/libwfdmmsink.so
-vendor/lib64/libwfduibcsinkinterface.so
-vendor/lib64/libwfduibcsink.so
+lib64/libwbc_jni.so
+lib64/libwfdavenhancements.so
+lib64/libwfdmmsink.so
+lib64/libwfduibcsinkinterface.so
+lib64/libwfduibcsink.so

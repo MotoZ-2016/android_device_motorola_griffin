@@ -206,7 +206,7 @@ BOARD_NFC_CHIPSET := pn544
 BOARD_NFC_HAL_SUFFIX := $(TARGET_BOARD_PLATFORM)
 
 # SELinux
-#include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 
 # Bluetooth
@@ -258,5 +258,3 @@ WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 WIFI_DRIVER_FW_PATH_P2P          := "p2p"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
-
-PRODUCT_VENDOR_KERNEL_HEADERS += $(PLATFORM_PATH)/kernel-headers

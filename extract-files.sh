@@ -57,35 +57,3 @@ extract "$MY_DIR"/proprietary-files.txt "$SRC"
 "$MY_DIR"/setup-makefiles.sh
 
 VENDOR_ROOT="$CM_ROOT/vendor/$VENDOR/$DEVICE/proprietary"
-
-sed -i "s/libgui.so/libHui.so/" "$VENDOR_ROOT/vendor/lib64/libHui.so"
-sed -i "s/libgui.so/libHui.so/" "$VENDOR_ROOT/vendor/lib64/lib-imsvt.so"
-sed -i "s/libui.so/libHu.so/" "$VENDOR_ROOT/vendor/lib64/libHu.so"
-sed -i "s/libui.so/libHu.so/" "$VENDOR_ROOT/vendor/lib64/libHui.so"
-sed -i "s/libui.so/libHu.so/" "$VENDOR_ROOT/vendor/lib64/lib-imsvt.so"
-sed -i "s/libgui.so/libHui.so/" "$VENDOR_ROOT/vendor/lib/lib-imsvt.so"
-sed -i "s/libui.so/libHu.so/" "$VENDOR_ROOT/vendor/lib/lib-imsvt.so"
-
-sed -i "s/libgui.so/libHui.so/" "$VENDOR_ROOT/vendor/lib/libHui.so"
-sed -i "s/libgui.so/libHui.so/" "$VENDOR_ROOT/vendor/lib/libmot_gpu_mapper.so"
-
-sed -i "s/libui.so/libHu.so/" "$VENDOR_ROOT/vendor/lib/libHu.so"
-sed -i "s/libui.so/libHu.so/" "$VENDOR_ROOT/vendor/lib/libmot_gpu_mapper.so"
-sed -i "s/libui.so/libHu.so/" "$VENDOR_ROOT/vendor/lib/libHui.so"
-
-sed -i "s/libui.so/libHu.so/" "$VENDOR_ROOT/lib/hw/camera.msm8996.so"
-sed -i "s/libgui.so/libHui.so/" "$VENDOR_ROOT/lib/hw/camera.msm8996.so"
-
-sed -i "s/libprotobuf-cpp-lite.so/libprotobuf-cpp-Hlit.so/" "$VENDOR_ROOT/vendor/lib/libprotobuf-cpp-Hlit.so"
-sed -i "s/libprotobuf-cpp-lite.so/libprotobuf-cpp-Hlit.so/" "$VENDOR_ROOT/vendor/lib/libcne.so"
-sed -i "s/libprotobuf-cpp-lite.so/libprotobuf-cpp-Hlit.so/" "$VENDOR_ROOT/vendor/lib/libcneapiclient.so"
-sed -i "s/libprotobuf-cpp-lite.so/libprotobuf-cpp-Hlit.so/" "$VENDOR_ROOT/vendor/lib64/libprotobuf-cpp-Hlit.so"
-sed -i "s/libprotobuf-cpp-lite.so/libprotobuf-cpp-Hlit.so/" "$VENDOR_ROOT/vendor/lib64/libcne.so"
-sed -i "s/libprotobuf-cpp-lite.so/libprotobuf-cpp-Hlit.so/" "$VENDOR_ROOT/vendor/lib64/libcneapiclient.so"
-sed -i "s/libprotobuf-cpp-lite.so/libprotobuf-cpp-Hlit.so/" "$VENDOR_ROOT/bin/cnd"
-
-sed -i "s/libprotobuf-cpp-full.so/libprotobuf-cpp-shit.so/" "$VENDOR_ROOT/vendor/lib/libsettings.so"
-sed -i "s/libprotobuf-cpp-full.so/libprotobuf-cpp-shit.so/" "$VENDOR_ROOT/vendor/lib/libprotobuf-cpp-shit.so"
-sed -i "s/libprotobuf-cpp-full.so/libprotobuf-cpp-shit.so/" "$VENDOR_ROOT/vendor/lib64/libsettings.so"
-sed -i "s/libprotobuf-cpp-full.so/libprotobuf-cpp-shit.so/" "$VENDOR_ROOT/vendor/lib64/libprotobuf-cpp-shit.so"
-echo "Patching libprotobuf-cpp-full.so is done But you need 2.6.1 protobuf with 3.0.0 version on external/protobuf/src/google/protobuf/stubs/common.h"
