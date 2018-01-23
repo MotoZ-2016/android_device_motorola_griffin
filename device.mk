@@ -78,7 +78,8 @@ PRODUCT_PACKAGES += \
     Snap \
     libbson \
     camera.device@3.2-impl \
-    android.hardware.camera.provider@2.4-impl
+    android.hardware.camera.provider@2.4-impl \
+    libshim_cam_YuvSkia
 
 # Audio
 PRODUCT_PACKAGES += \
