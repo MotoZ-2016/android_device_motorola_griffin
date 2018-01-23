@@ -128,6 +128,8 @@ vendor/lib/soundfx/libshoebox.so
 vendor/lib/soundfx/libspeakerbundle.so
 vendor/lib/soundfx/libvisualizer.so
 vendor/lib/soundfx/libvolumelistener.so
+vendor/lib/libeqservicebridge.so
+vendor/lib64/libeqservicebridge.so
 lib/libavenhancements.so
 lib64/libavenhancements.so
 vendor/lib64/libaudioalsa.so
@@ -344,11 +346,13 @@ vendor/bin/motosh
 vendor/lib/sensors.iio.so
 vendor/lib/sensors.msm8996.so
 vendor/lib/sensors.ssc.so
+vendor/lib/libsensorndkbridge.so
 
 vendor/lib64/hw/sensorhub.msm8996.so
-vendor/lib/sensors.iio.so
-vendor/lib/sensors.msm8996.so
-vendor/lib/sensors.ssc.so
+vendor/lib64/sensors.iio.so
+vendor/lib64/sensors.msm8996.so
+vendor/lib64/sensors.ssc.so
+vendor/lib64/libsensorndkbridge.so
 
 vendor/lib/libsensorhub.so
 vendor/lib64/libsensorhub.so
@@ -760,7 +764,17 @@ vendor/lib/hw/motorola.hardware.camera.provider@2.4-impl.so
 vendor/lib/motorola.hardware.camera.provider@2.4_vendor.so
 vendor/lib/motorola.hardware.camera.device@1.0_vendor.so
 vendor/lib64/hw/motorola.hardware.camera.provider@2.4-impl.so
+vendor/lib64/motorola.hardware.camera.device@1.0_vendor.so
 vendor/lib64/motorola.hardware.camera.provider@2.4_vendor.so
+lib64/motorola.hardware.camera.device@1.0.so
+lib64/motorola.hardware.camera.provider@2.4.so
+lib/motorola.hardware.camera.device@1.0.so
+lib/motorola.hardware.camera.provider@2.4.so
+
+vendor/lib/libgralloc1.so
+vendor/lib/motcamera.device@1.0-impl.so
+vendor/lib64/motcamera.device@1.0-impl.so
+lib/libYuvSkia.so
 
 
 # MOTO CAMERA
