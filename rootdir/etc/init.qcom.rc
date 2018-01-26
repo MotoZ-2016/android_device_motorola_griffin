@@ -98,6 +98,30 @@ on early-boot
     write /sys/module/subsystem_restart/parameters/disable_restart_work 0x0
     write /proc/sys/kernel/poweroff_cmd "/system/bin/reboot -p"
 
+    # STML4 driver parameter permissions
+    chown root oem_5004 /sys/module/motosh/parameters/irq_disable
+    chmod 0660 /sys/module/motosh/parameters/irq_disable
+
+    # STML4 device permissions
+    chown system compass /dev/motosh
+    chmod 0660 /dev/motosh
+    chown system compass /dev/motosh_as
+    chmod 0660 /dev/motosh_as
+    chown system compass /dev/motosh_ms
+    chmod 0660 /dev/motosh_ms
+    chown system compass /sys/devices/virtual/motosh/motosh_as/timestamp_time_ns
+    chmod 0440 /sys/devices/virtual/motosh/motosh_as/timestamp_time_ns
+    chown system compass /sys/devices/virtual/motosh/motosh_as/rv_6axis_update_rate
+    chmod 0660 /sys/devices/virtual/motosh/motosh_as/rv_6axis_update_rate
+    chown system compass /sys/devices/virtual/motosh/motosh_as/rv_9axis_update_rate
+    chmod 0660 /sys/devices/virtual/motosh/motosh_as/rv_9axis_update_rate
+    chown system compass /sys/devices/virtual/motosh/motosh_as/game_rv_update_rate
+    chmod 0660 /sys/devices/virtual/motosh/motosh_as/game_rv_update_rate
+    chown system compass /sys/devices/virtual/motosh/motosh_as/gravity_update_rate
+    chmod 0660 /sys/devices/virtual/motosh/motosh_as/gravity_update_rate
+    chown system compass /sys/devices/virtual/motosh/motosh_as/linear_accel_update_rate
+    chmod 0660 /sys/devices/virtual/motosh/motosh_as/linear_accel_update_rate
+
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
@@ -307,30 +331,6 @@ on boot
    write /dev/cpuset/background/cpus 0-3
    write /dev/cpuset/system-background/cpus 0-3
    write /dev/cpuset/top-app/cpus 0-3
-
-   # STML4 driver parameter permissions
-   chown root oem_5004 /sys/module/motosh/parameters/irq_disable
-   chmod 0660 /sys/module/motosh/parameters/irq_disable
-
-    # STML4 device permissions
-    chown system compass /dev/motosh
-    chmod 0660 /dev/motosh
-    chown system compass /dev/motosh_as
-    chmod 0660 /dev/motosh_as
-    chown system compass /dev/motosh_ms
-    chmod 0660 /dev/motosh_ms
-    chown system compass /sys/devices/virtual/motosh/motosh_as/timestamp_time_ns
-    chmod 0440 /sys/devices/virtual/motosh/motosh_as/timestamp_time_ns
-    chown system compass /sys/devices/virtual/motosh/motosh_as/rv_6axis_update_rate
-    chmod 0660 /sys/devices/virtual/motosh/motosh_as/rv_6axis_update_rate
-    chown system compass /sys/devices/virtual/motosh/motosh_as/rv_9axis_update_rate
-    chmod 0660 /sys/devices/virtual/motosh/motosh_as/rv_9axis_update_rate
-    chown system compass /sys/devices/virtual/motosh/motosh_as/game_rv_update_rate
-    chmod 0660 /sys/devices/virtual/motosh/motosh_as/game_rv_update_rate
-    chown system compass /sys/devices/virtual/motosh/motosh_as/gravity_update_rate
-    chmod 0660 /sys/devices/virtual/motosh/motosh_as/gravity_update_rate
-    chown system compass /sys/devices/virtual/motosh/motosh_as/linear_accel_update_rate
-    chmod 0660 /sys/devices/virtual/motosh/motosh_as/linear_accel_update_rate
 
    # Change permission for type C params
    chown root oem_5004 /sys/devices/soc/75b5000.i2c/i2c-7/7-0022/CC_state
