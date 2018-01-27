@@ -429,6 +429,8 @@ vendor/lib/libwms.so
 vendor/lib64/libwms.so
 
 # Radio
+-app/QtiTelephonyService/QtiTelephonyService.apk
+framework/QtiTelephonyServicelibrary.jar
 vendor/bin/ipacm-diag
 vendor/bin/netmgrd
 vendor/lib/libnetmgr.so
