@@ -1,0 +1,7 @@
+allow hal_bluetooth_default firmware_file:dir r_dir_perms;
+allow hal_bluetooth_default firmware_file:file r_file_perms;
+allow hal_bluetooth_default bluetooth_data_file:dir r_dir_perms;
+allow hal_bluetooth_default bluetooth_data_file:file r_file_perms;
+allow hal_bluetooth_default bluetooth_data_file:file append;
+allow hal_bluetooth_default wcnss_filter:unix_stream_socket connectto;
+allow hal_bluetooth_default bluetooth_data_file:file write;

@@ -1,37 +1,34 @@
 # Binaries
-/system/bin/motosh                                       u:object_r:sensor_hub_exec:s0
+/(vendor|system/vendor)/bin/motosh                       u:object_r:sensor_hub_exec:s0
 /(vendor|system/vendor)/bin/init\.mmi\.boot\.sh          u:object_r:mmi-boot-sh_exec:s0
 /(vendor|system/vendor)/bin/init\.mmi\.laser\.sh         u:object_r:mmi-laser-sh_exec:s0
 /(vendor|system/vendor)/bin/init\.oem\.hw\.sh            u:object_r:oem-hw-sh_exec:s0
-/system/bin/adspd                                        u:object_r:adspd_exec:s0
-/system/bin/charge_only_mode                                u:object_r:charge_only_exec:s0
-/system/bin/batt_health                                     u:object_r:batt_health_exec:s0
-/system/bin/mods_camd                                  u:object_r:mods_camd_exec:s0
-/system/bin/thermal-engine                                  u:object_r:thermal-engine_exec:s0
+/(vendor|system/vendor)/bin/adspd                        u:object_r:adspd_exec:s0
+/(vendor|system/vendor)/bin/charge_only_mode             u:object_r:charge_only_exec:s0
+/(vendor|system/vendor)/bin/batt_health                  u:object_r:batt_health_exec:s0
+/(vendor|system/vendor)/bin/mods_camd                    u:object_r:mods_camd_exec:s0
 
-# CMActions
-/sys/homebutton/enable                                      u:object_r:sysfs_homebutton:s0
-/sys/homebutton/enable_wakeup                               u:object_r:sysfs_homebutton:s0
-/sys/homebutton/key                                         u:object_r:sysfs_homebutton:s0
+# LineageActions
+/sys/homebutton/enable                                    u:object_r:sysfs_homebutton:s0
+/sys/homebutton/enable_wakeup                             u:object_r:sysfs_homebutton:s0
+/sys/homebutton/key                                       u:object_r:sysfs_homebutton:s0
 
 # Fingerprint
-/data/.fps(/.*)?                                         u:object_r:fingerprintd_data_file:s0
-/data/fpc(/.*)?                                             u:object_r:fpc_data_file:s0
-/data/fpc/socket                                            u:object_r:fpc_socket:s0
+/data/.fps(/.*)?                                          u:object_r:fingerprintd_data_file:s0
+/data/fpc(/.*)?                                           u:object_r:fpc_data_file:s0
+/data/fpc/socket                                          u:object_r:fpc_socket:s0
 
 # Partitions
-/dev/block/bootdevice/by-name/frp                        u:object_r:frp_block_device:s0
-/dev/block/bootdevice/by-name/metadata                   u:object_r:metadata_block_device:s0
-/dev/block/bootdevice/by-name/persist                    u:object_r:persist_block_device:s0
-/dev/block/bootdevice/by-name/cache                         u:object_r:cache_block_device:s0
-/dev/block/bootdevice/by-name/cid                           u:object_r:cid_block_device:s0
-/dev/block/bootdevice/by-name/clogo                         u:object_r:clogo_block_device:s0
-/dev/block/bootdevice/by-name/dhob                          u:object_r:hob_block_device:s0
-/dev/block/bootdevice/by-name/hob                           u:object_r:hob_block_device:s0
-/dev/block/bootdevice/by-name/hw                            u:object_r:hw_block_device:s0
-/dev/block/bootdevice/by-name/logs                          u:object_r:logs_block_device:s0
-/dev/block/bootdevice/by-name/utagsBackup                   u:object_r:utags_block_device:s0
-/dev/block/bootdevice/by-name/utags                         u:object_r:utags_block_device:s0
+/dev/block/platform/soc/624000.ufshc/by-name/metadata                      u:object_r:metadata_block_device:s0
+/dev/block/platform/soc/624000.ufshc/by-name/persist                       u:object_r:persist_block_device:s0
+/dev/block/platform/soc/624000.ufshc/by-name/cid                           u:object_r:cid_block_device:s0
+/dev/block/platform/soc/624000.ufshc/by-name/clogo                         u:object_r:clogo_block_device:s0
+/dev/block/platform/soc/624000.ufshc/by-name/dhob                          u:object_r:hob_block_device:s0
+/dev/block/platform/soc/624000.ufshc/by-name/hob                           u:object_r:hob_block_device:s0
+/dev/block/platform/soc/624000.ufshc/by-name/hw                            u:object_r:hw_block_device:s0
+/dev/block/platform/soc/624000.ufshc/by-name/logs                          u:object_r:logs_block_device:s0
+/dev/block/platform/soc/624000.ufshc/by-name/utagsBackup                   u:object_r:utags_block_device:s0
+/dev/block/platform/soc/624000.ufshc/by-name/utags                         u:object_r:utags_block_device:s0
 
 # Sensors
 /dev/laser                                               u:object_r:laser_device:s0
@@ -44,55 +41,62 @@
 /dev/sdc4                                                u:object_r:firmware_file:s0
 /fsg/(.*)                                                u:object_r:firmware_file:s0
 
-
 /firmware/image/(.*)                               u:object_r:firmware_file:s0
 /dev/sda16                                         u:object_r:firmware_file:s0
 
-/sys/module/cpu_boost(/.*)?                     u:object_r:sysfs_devices_system_cpu:s0
-
 # Greybus (Mods)
-/sys/bus/greybus(/.*)?                     u:object_r:sysfs_greybus:s0
-/sys/class/i2c-adapter/i2c-7/7-002d/enable                     u:object_r:sysfs_greybus:s0
-/sys/class/power_supply/usb/usb_priority                     u:object_r:sysfs_greybus:s0
-/sys/devices/soc/soc:muc_svc@0(/.*)?                     u:object_r:sysfs_greybus:s0
-/sys/devices/platform/mods_ap(/.*)?                     u:object_r:sysfs_greybus:s0
-/sys/devices/soc/0.apba_ctrl(/.*)?                     u:object_r:sysfs_greybus:s0
-/sys/module/qpnp_smbcharger_mmi/parameters(/.*)?                     u:object_r:sysfs_greybus:s0
-/sys/devices/platform/mods_codec.0(/.*)?                     u:object_r:sysfs_greybus:s0
-/sys/devices/virtual/video4linux                     u:object_r:sysfs_greybus:s0
-/sys/class/vendor/mod0(/.*)?                               u:object_r:sysfs_greybus:s0
-/sys/devices/soc/soc:muc(/.*)?                               u:object_r:sysfs_greybus:s0
-/sys/devices/soc/6a00000.*/power_supply/usb/usb_priority                               u:object_r:sysfs_greybus:s0
-/data/gbfirmware(/.*)?                               u:object_r:gbfirmware_file:s0
-/dev/gbraw[0-9]*                               u:object_r:greybus_raw_device:s0
+/sys/bus/greybus(/.*)?                                      u:object_r:sysfs_greybus:s0
+/sys/class/i2c-adapter/i2c-7/7-002d/enable                  u:object_r:sysfs_greybus:s0
+/sys/class/power_supply/usb/usb_priority                    u:object_r:sysfs_greybus:s0
+/sys/devices/soc/soc:muc_svc@0(/.*)?                        u:object_r:sysfs_greybus:s0
+/sys/devices/platform/mods_ap(/.*)?                         u:object_r:sysfs_greybus:s0
+/sys/devices/soc/0.apba_ctrl(/.*)?                          u:object_r:sysfs_greybus:s0
+/sys/module/qpnp_smbcharger_mmi/parameters(/.*)?            u:object_r:sysfs_greybus:s0
+/sys/devices/platform/mods_codec.0(/.*)?                    u:object_r:sysfs_greybus:s0
+/sys/devices/virtual/video4linux                            u:object_r:sysfs_greybus:s0
+/sys/class/vendor/mod0(/.*)?                                u:object_r:sysfs_greybus:s0
+/sys/devices/soc/soc:muc(/.*)?                              u:object_r:sysfs_greybus:s0
+/sys/devices/soc/6a00000.*/power_supply/usb/usb_priority    u:object_r:sysfs_greybus:s0
+/data/gbfirmware(/.*)?                                      u:object_r:gbfirmware_file:s0
+/dev/gbraw[0-9]*                                            u:object_r:greybus_raw_device:s0
 
-/dev/mot_camera_ext[0-9]*                                   u:object_r:mods_camd_device:s0
-/sys/devices/soc/(.+)hsusb(.+)/uevent                               u:object_r:sysfs_mods_camd:s0
-/sys/devices/soc/(.+)ssusb/power_supply/usb/type                               u:object_r:sysfs_mods_camd:s0
-/sys/devices/soc/(.+)ssusb/power_supply/usb/online                               u:object_r:sysfs_mods_camd:s0
-/sys/devices/soc/(.+)fd/video4linux/video([0-9])+/name                               u:object_r:sysfs_mods_camd:s0
-/sys/devices/soc/(.+)msm-cam/video4linux/video([0-9])+/name                               u:object_r:sysfs_mods_camd:s0
-/sys/devices/soc/(.+)cci/(.+)/video4linux/video([0-9])+/name                               u:object_r:sysfs_mods_camd:s0
-/sys/devices/soc/(.+)hsusb(.+)/video4linux/video([0-9])+/name                               u:object_r:sysfs_mods_camd:s0
+/dev/mot_camera_ext[0-9]*                                         u:object_r:mods_camd_device:s0
+/sys/devices/soc/(.+)hsusb(.+)/uevent                             u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)ssusb/power_supply/usb/type                  u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)ssusb/power_supply/usb/online                u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)fd/video4linux/video([0-9])+/name            u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)msm-cam/video4linux/video([0-9])+/name       u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)cci/(.+)/video4linux/video([0-9])+/name      u:object_r:sysfs_mods_camd:s0
+/sys/devices/soc/(.+)hsusb(.+)/video4linux/video([0-9])+/name     u:object_r:sysfs_mods_camd:s0
 
-/sys/module/usb3813_hub/parameters/ignore_typec                               u:object_r:sysfs_mods_camd:s0
+/sys/module/usb3813_hub/parameters/ignore_typec                   u:object_r:sysfs_mods_camd:s0
 
-/dev/v4l2-hal-ctrl                               u:object_r:video_device:s0
-/dev/v4l-subdev[0-9]*	u:object_r:video_device:s0
+/dev/v4l2-hal-ctrl                                                u:object_r:video_device:s0
+/dev/v4l-subdev[0-9]*	                                            u:object_r:video_device:s0
 
-/sys/devices/virtual/video4linux/mot_camera_ext([0-9])+/name	u:object_r:sysfs_mods_camd:s0
-/sys/devices/virtual/video4linux/mot_camera_ext([0-9])+/uevent	u:object_r:sysfs_greybus:s0
+/sys/devices/virtual/video4linux/mot_camera_ext([0-9])+/name	     u:object_r:sysfs_mods_camd:s0
+/sys/devices/virtual/video4linux/mot_camera_ext([0-9])+/uevent	   u:object_r:sysfs_greybus:s0
 /sys/devices/virtual/video4linux/mot_camera_ext([0-9])+/open_mode	u:object_r:sysfs_v4l2_openmode:s0
 
-/sys/devices/virtual/video4linux/video([0-9])+/name                               u:object_r:sysfs_mods_camd:s0
-/sys/devices/virtual/video4linux/video([0-9])+/uevent                               u:object_r:sysfs_greybus:s0
-/sys/devices/virtual/video4linux/video([0-9])+/open_mode                               u:object_r:sysfs_v4l2_openmode:s0
-/sys/module/qpnp_smbcharger_mmi(/.*)?                               u:object_r:sysfs_batt_mods:s0
+/sys/devices/virtual/video4linux/video([0-9])+/name               u:object_r:sysfs_mods_camd:s0
+/sys/devices/virtual/video4linux/video([0-9])+/uevent             u:object_r:sysfs_greybus:s0
+/sys/devices/virtual/video4linux/video([0-9])+/open_mode          u:object_r:sysfs_v4l2_openmode:s0
+/sys/module/qpnp_smbcharger_mmi(/.*)?                             u:object_r:sysfs_batt_mods:s0
+
 # adspd
-/data/adspd(/.*)?                                    u:object_r:adspd_file:s0
+/data/adspd(/.*)?                                                 u:object_r:adspd_file:s0
 
 # Light HAL
-/system/vendor/bin/hw/android\.hardware\.light@2\.0-service.griffin        u:object_r:hal_light_default_exec:s0
-/sys/devices/soc/900000.qcom,mdss_mdp/900000.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight/brightness	u:object_r:sysfs_leds:s0
-/sys/devices/soc/leds-qpnp-9/leds/charging/brightness	u:object_r:sysfs_leds:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service.griffin                                     u:object_r:hal_light_default_exec:s0
+/sys/devices/soc/900000.qcom,mdss_mdp/900000.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight/brightness	   u:object_r:sysfs_leds:s0
+/sys/devices/soc/leds-qpnp-9/leds/charging/brightness	                                                           u:object_r:sysfs_leds:s0
 
+# SPI
+/sys/bus/spi/devices                                                u:object_r:sysfs_spi:s0
+
+# WLAN
+/sys/module/bcmdhd/parameters/firmware_path                         u:object_r:sysfs_wlan_fwpath:s0
+
+# Camera
+/(vendor|system/vendor)/bin/hw/motorola.hardware.camera.provider@2.4-service                                     u:object_r:hal_camera_default_exec:s0
+/(vendor|system/vendor)/bin/hw/motorola.hardware.mods_camera.provider@2.4-service                                u:object_r:hal_camera_default_exec:s0

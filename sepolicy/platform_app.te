@@ -1,4 +1,3 @@
-allow platform_app adbsecure_prop:file { getattr open read };
 allow platform_app default_android_service:service_manager find;
 allow platform_app greybus_raw_device:chr_file rw_file_perms;
 allow platform_app greybus_raw_device:dir rw_dir_perms;
@@ -15,3 +14,4 @@ allow platform_app sysfs_mods_camd:file rw_file_perms;
 allow platform_app sysfs_mods_camd:dir rw_dir_perms;
 allow platform_app gbfirmware_file:dir create_dir_perms;
 allow platform_app gbfirmware_file:file create_file_perms;
+allow platform_app sysfs_usb_supply:dir search;

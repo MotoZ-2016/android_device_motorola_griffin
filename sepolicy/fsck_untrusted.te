@@ -1,0 +1,1 @@
+allow fsck_untrusted fuse_device:chr_file getattr;

@@ -1,0 +1,10 @@
+allow hal_sensors_default self:netlink_kobject_uevent_socket read;
+allow hal_sensors_default sensors_device:chr_file ioctl;
+allow hal_sensors_default sysfs:file { open write };
+allow hal_sensors_default debugfs:dir { open read };
+allow hal_sensors_default self:netlink_kobject_uevent_socket { create setopt };
+allow hal_sensors_default sensors_device:chr_file { open read };
+allow hal_sensors_default sysfs:dir { open read };
+allow hal_sensors_default sysfs:file { getattr read };
+allow hal_sensors_default system_data_file:file { getattr open read };
+allow hal_sensors_default self:netlink_kobject_uevent_socket bind;
