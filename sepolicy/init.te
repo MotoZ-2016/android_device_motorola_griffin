@@ -36,17 +36,13 @@ allow init hal_perf_hwservice:hwservice_manager find;
 allow init hidl_allocator_hwservice:hwservice_manager find;
 allow init hidl_base_hwservice:hwservice_manager add;
 allow init mm-qcamerad:unix_dgram_socket sendto;
-allow init qdisplay_service:service_manager find;
 allow init sysfs_lowmemorykiller:dir write;
 allow init thermal-engine:unix_stream_socket connectto;
 allow init thermal_socket:sock_file write;
 allow init vendor_camera_data_file:sock_file write;
 allow init video_device:chr_file ioctl;
-allow init vndbinder_device:chr_file ioctl;
 
 allow init cameraserver:binder { call transfer };
 allow init hwservicemanager:binder { call transfer };
 allow init ion_device:chr_file ioctl;
 allow init video_device:chr_file write;
-
-vndbinder_use(init)

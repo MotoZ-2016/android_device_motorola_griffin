@@ -1,5 +1,5 @@
 type mods_camd, domain;
-type mods_camd_exec, exec_type, file_type;
+type mods_camd_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(mods_camd)
 
 allow mods_camd ion_device:chr_file rw_file_perms;

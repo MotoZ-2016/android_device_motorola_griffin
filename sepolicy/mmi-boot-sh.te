@@ -9,7 +9,6 @@ allow mmi-boot-sh persist_file:file { open read };
 allow mmi-boot-sh persist_file:dir search;
 allow mmi-boot-sh proc:file { write open read };
 allow mmi-boot-sh property_socket:sock_file write;
-allow mmi-boot-sh rootfs:file { entrypoint open read };
 allow mmi-boot-sh self:capability dac_override;
 allow mmi-boot-sh vendor_shell_exec:file { entrypoint getattr read };
 allow mmi-boot-sh system_prop:property_service set;

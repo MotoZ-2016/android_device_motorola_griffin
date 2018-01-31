@@ -1,5 +1,5 @@
 type batt_health, domain;
-type batt_health_exec, exec_type, file_type;
+type batt_health_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(batt_health);
 
 allow batt_health batt_health_data_file:dir rw_dir_perms;

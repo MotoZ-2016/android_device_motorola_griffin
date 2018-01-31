@@ -1,5 +1,5 @@
 type moto_wcnss_filter, domain;
-type moto_wcnss_filter_exec, exec_type, file_type;
+type moto_wcnss_filter_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(moto_wcnss_filter)
 
 allow moto_wcnss_filter bluetooth_prop:property_service set;

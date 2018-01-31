@@ -7,3 +7,7 @@ allow mm-qcamerad laser_device:chr_file { ioctl open read write };
 allow mm-qcamerad sysfs_mods_camd:file rw_file_perms;
 allow mm-qcamerad sysfs_mods_camd:dir rw_dir_perms;
 allow mm-qcamerad system_data_file:dir read;
+
+# TODO(b/36599434): Remove this once mm-qcamerad stops using Binder services
+typeattribute mm-qcamerad binder_in_vendor_violators;
+allow mm-qcamerad binder_device:chr_file { read write };

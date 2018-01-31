@@ -1,4 +1,3 @@
-allow audioserver adspd:unix_stream_socket connectto;
 allow audioserver persist_file:dir search;
 allow audioserver persist_file:file r_file_perms;
 allow audioserver rootfs:lnk_file getattr;
