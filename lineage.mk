@@ -47,7 +47,8 @@ TARGET_VENDOR_PRODUCT_NAME := griffin_retail
 TARGET_VENDOR_DEVICE_NAME := griffin
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=motorola/griffin/griffin:7.1.1/NPL26.118-20/19:user/release-keys \
     PRIVATE_BUILD_DESC="griffin-user 7.1.1 NPL26.118-20 19 release-keys"
 
+# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
+BUILD_FINGERPRINT := motorola/griffin/griffin:7.1.1/NPL26.118-20/19:user/release-keys
 TARGET_VENDOR := motorola
