@@ -1155,6 +1155,7 @@ vendor/lib64/libmodalityservice_jni.so
 #vendor/lib64/motorola.hardware.audio@2.0_vendor.so
 
 # ModService
+-priv-app/ModFmwkProxyService/ModFmwkProxyService.apk
 -priv-app/ModService/ModService.apk
 lib/libmodmanager_system.so
 lib64/libmodmanager_system.so
