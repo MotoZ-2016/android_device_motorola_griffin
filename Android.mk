@@ -78,6 +78,16 @@ $(LOCAL_BUILT_MODULE):
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
+MODS_LIBS := libmodhw.so
+MODS_SYMLINKS := $(addprefix $(TARGET_OUT)/ModFmwkProxyService/lib/arm64/,$(notdir $(MODS_LIBS)))
+$(MODS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "MODS lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /system/lib64/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(MODS_SYMLINKS)
+
 ADSP_IMAGES := adsp.b00 adsp.b01 adsp.b02 adsp.b03 adsp.b04 adsp.b05 adsp.b06 adsp.b08 adsp.b09 adsp.mdt
 ADSP_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(ADSP_IMAGES)))
 $(ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
