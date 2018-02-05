@@ -79,7 +79,7 @@ $(LOCAL_BUILT_MODULE):
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 MODS_LIBS := libmodhw.so
-MODS_SYMLINKS := $(addprefix $(TARGET_OUT)/ModFmwkProxyService/lib/arm64/,$(notdir $(MODS_LIBS)))
+MODS_SYMLINKS := $(addprefix $(TARGET_OUT)/priv-app/ModFmwkProxyService/lib/arm64/,$(notdir $(MODS_LIBS)))
 $(MODS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "MODS lib link: $@"
 	@mkdir -p $(dir $@)
@@ -99,12 +99,12 @@ $(ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(ADSP_SYMLINKS)
 
 IMS_LIBS := libimscamera_jni.so libimsmedia_jni.so
-IMS_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_APPS)/ims/lib/arm64/,$(notdir $(IMS_LIBS)))
+IMS_SYMLINKS := $(addprefix $(TARGET_OUT)/app/ims/lib/arm64/,$(notdir $(IMS_LIBS)))
 $(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "IMS lib link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) ln -sf /vendor/lib64/$(notdir $@) $@
+	$(hide) ln -sf /system/lib64/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
 

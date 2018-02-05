@@ -191,6 +191,8 @@ vendor/lib64/libcneqmiutils.so
 lib64/libvendorconn.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
+vendor/lib/libcneoplookup.so
+vendor/lib64/libcneoplookup.so
 
 # aptX(HD) Bluetooth
 vendor/lib64/libaptXHD_encoder.so
@@ -471,6 +473,8 @@ vendor/lib/liblqe.so
 vendor/lib/libsystem_health_mon.so
 lib/libqsap_sdk.so
 lib64/libqsap_sdk.so
+etc/permissions/telephonyservice.xml
+etc/permissions/uimremoteserver.xml
 
 # MOTO RIL
 vendor/bin/qmi_motext_hook
@@ -503,8 +507,7 @@ lib64/libdiag_system.so
 lib64/libimscamera_jni.so
 lib64/libimsmedia_jni.so
 lib64/vendor.qti.imsrtpservice@1.0.so
--vendor/app/ims/ims.apk
--vendor/app/imssettings/imssettings.apk
+-app/ims/ims.apk
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
@@ -601,7 +604,10 @@ vendor/lib64/libperfgluelayer.so
 vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
-
+vendor/lib64/libfeedbackhandler.so
+vendor/lib/libqti-util.so
+vendor/lib64/libfeedbackhandler.so
+vendor/lib64/libqti-util.so
 
 # Thermal
 vendor/etc/thermal-engine.conf

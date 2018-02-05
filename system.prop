@@ -159,6 +159,10 @@ persist.ims.disableADBLogs=2
 persist.ims.disableDebugLogs=0
 persist.ims.disableQXDMLogs=0
 persist.ims.disableIMSLogs=0
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.radio.NO_STAPA=1
+persist.radio.VT_HYBRID_ENABLE=1
 
 ## RIL
 persist.vendor.radio.no_wait_for_card=1
