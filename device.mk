@@ -345,7 +345,8 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2 \
     libprotobuf-cpp-full \
-    libprotobuf-cpp-lite
+    libprotobuf-cpp-lite \
+    libqsap_sdk
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
@@ -361,6 +362,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+
+# Shims
+PRODUCT_PACKAGES += \
+    libqsap_shim
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \

@@ -434,8 +434,6 @@ vendor/lib64/libsubsystem_control.so
 vendor/lib64/libSubSystemShutdown.so
 lib/libFileMux.so
 lib64/libFileMux.so
-lib/libqsap_sdk.so
-lib64/libqsap_sdk.so
 etc/permissions/telephonyservice.xml
 vendor/lib/vendor.qti.hardware.radio.am@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so
