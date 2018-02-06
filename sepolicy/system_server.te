@@ -5,3 +5,4 @@ allow system_server sysfs_mods_camd:dir { rw_dir_perms };
 allow system_server sysfs_mods_camd:file { rw_file_perms };
 allow system_server unlabeled:file unlink;
 allow system_server rild:binder call;
+allow system_server vendor_file:file read;
