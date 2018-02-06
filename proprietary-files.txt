@@ -544,6 +544,24 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
+etc/permissions/qti-vzw-ims-internal.xml
+vendor/framework/qti-vzw-ims-internal.jar
+etc/permissions/qti_libpermissions.xml
+lib/librcc.so
+lib64/lib-imscamera.so
+lib64/lib-imsvideocodec.so
+lib64/lib-imsvt.so
+lib64/lib-imsvtextutils.so
+lib64/lib-imsvtutils.so
+lib64/librcc.so
+vendor/lib/lib-imscmservice.so
+vendor/lib/lib-uceservice.so
+vendor/lib64/lib-imscmservice.so
+vendor/lib64/lib-uceservice.so
+lib/com.qualcomm.qti.imscmservice@1.0.so
+lib64/com.qualcomm.qti.imscmservice@1.0.so
+vendor/lib/com.qualcomm.qti.imscmservice@1.0_vendor.so
+vendor/lib64/com.qualcomm.qti.imscmservice@1.0_vendor.so
 
 
 # QMI
