@@ -65,6 +65,7 @@ PRODUCT_PACKAGES += \
     Snap \
     libbson \
     camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-service.griffin
     android.hardware.camera.provider@2.4-impl
 
 # Audio
