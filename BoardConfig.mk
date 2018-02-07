@@ -80,6 +80,7 @@ endif
 
 # Power
 TARGET_HAS_NO_WIFI_STATS := true
+TARGET_USES_INTERACTION_BOOST := true
 
 # Display
 HAVE_ADRENO_SOURCE:= false
