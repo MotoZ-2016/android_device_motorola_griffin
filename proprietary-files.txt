@@ -1011,6 +1011,16 @@ vendor/lib/libmmcamera_sw2d_lib.so
 vendor/lib/libmmcamera_trueportrait_lib.so
 vendor/lib/libmmcamera_ubifocus_lib.so
 
+vendor/lib/libchromaflash.so
+vendor/lib/liboptizoom.so
+vendor/lib/libseemore.so
+vendor/lib/libtrueportrait.so
+vendor/lib/libubifocus.so
+vendor/lib64/liboptizoom.so
+vendor/lib64/libseemore.so
+vendor/lib64/libtrueportrait.so
+vendor/lib64/libubifocus.so
+
 # Media
 vendor/lib/libOmxVpp.so
 vendor/lib64/libOmxVpp.so
@@ -1159,26 +1169,28 @@ vendor/lib64/sensor_calibrate.so
 vendor/lib/libmodalityservice_jni.so
 vendor/lib64/libmodalityservice_jni.so
 
+#Moto Audio
+lib/motorola.hardware.audio.common@2.0.so
+lib/motorola.hardware.audio.eqservice@1.0.so
+lib/motorola.hardware.audio@2.0.so
+lib64/motorola.hardware.audio.common@2.0.so
+lib64/motorola.hardware.audio.eqservice@1.0.so
+lib64/motorola.hardware.audio@2.0.so
+vendor/etc/init/motorola.hardware.audio@2.0-service.rc
+vendor/lib/hw/motorola.hardware.audio@2.0-impl.so
+vendor/lib/motorola.hardware.audio.common@2.0_vendor.so
+vendor/lib/motorola.hardware.audio.eqservice@1.0_vendor.so
+vendor/lib/motorola.hardware.audio@2.0_vendor.so
+vendor/lib64/hw/motorola.hardware.audio@2.0-impl.so
+vendor/lib64/motorola.hardware.audio.common@2.0_vendor.so
+vendor/lib64/motorola.hardware.audio.eqservice@1.0_vendor.so
+vendor/lib64/motorola.hardware.audio@2.0_vendor.so
+
 ## Mods
 # Audio HAL ( We're doing this Onlyyy For JBL Mod :\ )
 #lib/hw/audio.primary.msm8996.so
 #lib/libtinyalsa.so
 #lib64/libtinyalsa.so
-#lib/motorola.hardware.audio.common@2.0.so
-#lib/motorola.hardware.audio.eqservice@1.0.so
-#lib/motorola.hardware.audio@2.0.so
-#lib64/motorola.hardware.audio.common@2.0.so
-#lib64/motorola.hardware.audio.eqservice@1.0.so
-#lib64/motorola.hardware.audio@2.0.so
-#vendor/etc/init/motorola.hardware.audio@2.0-service.rc
-#vendor/lib/hw/motorola.hardware.audio@2.0-impl.so
-#vendor/lib/motorola.hardware.audio.common@2.0_vendor.so
-#vendor/lib/motorola.hardware.audio.eqservice@1.0_vendor.so
-#vendor/lib/motorola.hardware.audio@2.0_vendor.so
-#vendor/lib64/hw/motorola.hardware.audio@2.0-impl.so
-#vendor/lib64/motorola.hardware.audio.common@2.0_vendor.so
-#vendor/lib64/motorola.hardware.audio.eqservice@1.0_vendor.so
-#vendor/lib64/motorola.hardware.audio@2.0_vendor.so
 
 # ModService
 -priv-app/ModFmwkProxyService/ModFmwkProxyService.apk
