@@ -1186,6 +1186,14 @@ vendor/lib64/motorola.hardware.audio.common@2.0_vendor.so
 vendor/lib64/motorola.hardware.audio.eqservice@1.0_vendor.so
 vendor/lib64/motorola.hardware.audio@2.0_vendor.so
 
+# Listen - from OP3
+vendor/lib/hw/sound_trigger.primary.msm8996.so|48674459b8e5dcec0231a9345c8824a248d8f537
+vendor/lib/libadpcmdec.so|cce776b6e1edac56705b155444c3f28362055442
+vendor/lib/libsmwrapper.so|2abf623b1f919e0747bfe70bc3d988521c02d14e
+vendor/lib/vendor.qti.voiceprint@1.0.so|a706a35926dde53af240cafea640ab9e607f0cf1
+vendor/lib64/hw/sound_trigger.primary.msm8996.so|d35bc552da96d2f0de10cebf39c9bb0dc0bf6ab0
+vendor/lib64/vendor.qti.voiceprint@1.0.so|e68fb38066c46a7f2b5be0f9a11300e01ec74dee
+
 ## Mods
 # Audio HAL ( We're doing this Onlyyy For JBL Mod :\ )
 #lib/hw/audio.primary.msm8996.so
