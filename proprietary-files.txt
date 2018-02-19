@@ -1169,23 +1169,6 @@ vendor/lib64/sensor_calibrate.so
 vendor/lib/libmodalityservice_jni.so
 vendor/lib64/libmodalityservice_jni.so
 
-#Moto Audio
-lib/motorola.hardware.audio.common@2.0.so
-lib/motorola.hardware.audio.eqservice@1.0.so
-lib/motorola.hardware.audio@2.0.so
-lib64/motorola.hardware.audio.common@2.0.so
-lib64/motorola.hardware.audio.eqservice@1.0.so
-lib64/motorola.hardware.audio@2.0.so
-vendor/etc/init/motorola.hardware.audio@2.0-service.rc
-vendor/lib/hw/motorola.hardware.audio@2.0-impl.so
-vendor/lib/motorola.hardware.audio.common@2.0_vendor.so
-vendor/lib/motorola.hardware.audio.eqservice@1.0_vendor.so
-vendor/lib/motorola.hardware.audio@2.0_vendor.so
-vendor/lib64/hw/motorola.hardware.audio@2.0-impl.so
-vendor/lib64/motorola.hardware.audio.common@2.0_vendor.so
-vendor/lib64/motorola.hardware.audio.eqservice@1.0_vendor.so
-vendor/lib64/motorola.hardware.audio@2.0_vendor.so
-
 # Listen - from OP3
 vendor/lib/hw/sound_trigger.primary.msm8996.so|48674459b8e5dcec0231a9345c8824a248d8f537
 vendor/lib/libadpcmdec.so|cce776b6e1edac56705b155444c3f28362055442
@@ -1199,6 +1182,21 @@ vendor/lib64/vendor.qti.voiceprint@1.0.so|e68fb38066c46a7f2b5be0f9a11300e01ec74d
 #lib/hw/audio.primary.msm8996.so
 #lib/libtinyalsa.so
 #lib64/libtinyalsa.so
+#lib/motorola.hardware.audio.common@2.0.so
+#lib/motorola.hardware.audio.eqservice@1.0.so
+#lib/motorola.hardware.audio@2.0.so
+#lib64/motorola.hardware.audio.common@2.0.so
+#lib64/motorola.hardware.audio.eqservice@1.0.so
+#lib64/motorola.hardware.audio@2.0.so
+#vendor/etc/init/motorola.hardware.audio@2.0-service.rc
+#vendor/lib/hw/motorola.hardware.audio@2.0-impl.so
+#vendor/lib/motorola.hardware.audio.common@2.0_vendor.so
+#vendor/lib/motorola.hardware.audio.eqservice@1.0_vendor.so
+#vendor/lib/motorola.hardware.audio@2.0_vendor.so
+#vendor/lib64/hw/motorola.hardware.audio@2.0-impl.so
+#vendor/lib64/motorola.hardware.audio.common@2.0_vendor.so
+#vendor/lib64/motorola.hardware.audio.eqservice@1.0_vendor.so
+#vendor/lib64/motorola.hardware.audio@2.0_vendor.so
 
 # ModService
 -priv-app/ModFmwkProxyService/ModFmwkProxyService.apk
