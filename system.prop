@@ -128,7 +128,6 @@ mm.enable.smoothstreaming=false
 mmp.enable.3g2=true
 av.offload.enable=false
 persist.mm.enable.prefetch=true
-vendor.vidc.debug.perf.mode=2
 vidc.enc.dcvs.extra-buff-count=2
 vendor.vidc.enc.disable.pq=true
 
