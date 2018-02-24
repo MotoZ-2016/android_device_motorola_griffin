@@ -231,9 +231,6 @@ TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
 # Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
-# LINEAGEHW
-BOARD_HARDWARE_CLASS += $(PLATFORM_PATH)/lineagehw
-
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
 
