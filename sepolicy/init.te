@@ -46,3 +46,5 @@ allow init cameraserver:binder { call transfer };
 allow init hwservicemanager:binder { call transfer };
 allow init ion_device:chr_file ioctl;
 allow init video_device:chr_file write;
+
+allow init vendor_file:file execute;

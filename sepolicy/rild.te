@@ -24,3 +24,5 @@ allow rild wifi_data_file:dir search;
 allow rild fsg_file:file read;
 allow rild vendor_file:file execute_no_trans;
 allow rild wifi_data_file:dir search;
+allow rild fsg_file:file { getattr open };
+allow rild fwk_sensor_hwservice:hwservice_manager find;
