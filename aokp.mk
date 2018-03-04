@@ -21,8 +21,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/motorola/griffin/griffin-vendor.mk)
 $(call inherit-product, device/motorola/griffin/device.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common AOKP stuff.
+$(call inherit-product, vendor/aokp/configs/common_full_phone.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
@@ -36,11 +36,11 @@ TARGET_SCREEN_WIDTH := 1440
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-PRODUCT_NAME := lineage_griffin
-PRODUCT_BRAND := motorola
+PRODUCT_NAME := aokp_griffin
+PRODUCT_BRAND := Motorola
 PRODUCT_DEVICE := griffin
 PRODUCT_MODEL := Moto Z
-PRODUCT_MANUFACTURER := motorola
+PRODUCT_MANUFACTURER := Motorola
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 TARGET_VENDOR_PRODUCT_NAME := griffin_retail
@@ -51,4 +51,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := motorola/griffin_retail/griffin:8.0.0/OPL27.76-51/58:user/release-keys
-TARGET_VENDOR := motorola
+TARGET_VENDOR := Motorola
