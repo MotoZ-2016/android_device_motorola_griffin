@@ -85,6 +85,7 @@ lib/libavenhancements.so
 lib64/libavenhancements.so
 vendor/lib64/libaudioalsa.so
 vendor/lib/libaudioalsa.so
+lib/libeqservice.so
 
 # Bluetooth
 vendor/bin/btnvtool
@@ -1177,10 +1178,10 @@ lib64/libSampleExtAuthJNI.so
 
 
 ## Mods
-# Audio HAL ( For Audio Mods )
-#lib/hw/audio.primary.msm8996.so
-#lib/libtinyalsa.so
-#lib64/libtinyalsa.so
+# Audio HAL ( Needed For JBL Mods )
+vendor/lib/hw/audio.primary.msm8996.so
+vendor/lib/libtinyalsa.so:lib/libtinyalsa.so
+vendor/lib64/libtinyalsa.so:lib64/libtinyalsa.so
 #lib/motorola.hardware.audio.common@2.0.so
 #lib/motorola.hardware.audio.eqservice@1.0.so
 #lib/motorola.hardware.audio@2.0.so
@@ -1188,6 +1189,7 @@ lib64/libSampleExtAuthJNI.so
 #lib64/motorola.hardware.audio.eqservice@1.0.so
 #lib64/motorola.hardware.audio@2.0.so
 #vendor/etc/init/motorola.hardware.audio@2.0-service.rc
+#vendor/bin/hw/motorola.hardware.audio@2.0-service
 #vendor/lib/hw/motorola.hardware.audio@2.0-impl.so
 #vendor/lib/motorola.hardware.audio.common@2.0_vendor.so
 #vendor/lib/motorola.hardware.audio.eqservice@1.0_vendor.so
