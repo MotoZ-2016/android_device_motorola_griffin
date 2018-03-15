@@ -131,7 +131,7 @@ on enable-low-power
     write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 81250
 
     # Set perfd properties
-    setprop sys.post_boot.parsed 1
+    setprop vendor.post_boot.parsed 1
 
     setprop sys.io.scheduler "bfq"
 
