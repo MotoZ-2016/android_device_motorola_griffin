@@ -34,29 +34,6 @@ vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so
 
-## ADSP
-vendor/lib/libscveBlobDescriptor.so
-vendor/lib/libscveBlobDescriptor_stub.so
-vendor/lib/libscveCommon.so
-vendor/lib/libscveCommon_stub.so
-vendor/lib/libscveImageCorrection.so
-vendor/lib/libscveObjectSegmentation.so
-vendor/lib/libscveObjectTracker.so
-vendor/lib/libscveObjectTracker_stub.so
-vendor/lib/libscvePanorama_lite.so
-vendor/lib/libscvePanorama.so
-vendor/lib64/libscveBlobDescriptor.so
-vendor/lib64/libscveBlobDescriptor_stub.so
-vendor/lib64/libscveCommon.so
-vendor/lib64/libscveCommon_stub.so
-vendor/lib64/libscveImageCorrection.so
-vendor/lib64/libscveObjectSegmentation.so
-vendor/lib64/libscveObjectTracker.so
-vendor/lib64/libscveObjectTracker_stub.so
-vendor/lib64/libscvePanorama.so
-vendor/lib64/libscvePanorama_lite.so
-
-
 # Audio
 vendor/bin/fm_qsoc_patches
 vendor/bin/audioflacapp
@@ -167,6 +144,8 @@ vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 vendor/lib/libcneoplookup.so
 vendor/lib64/libcneoplookup.so
+lib/libwbc_jni.so
+lib64/libwbc_jni.so
 
 # aptX(HD) Bluetooth
 vendor/lib64/libaptXHD_encoder.so
@@ -175,35 +154,32 @@ vendor/lib64/libaptX_encoder.so
 # DRM
 vendor/bin/qseecomd
 vendor/lib/libcppf.so
-#vendor/lib/libWVStreamControlAPI_L1.so
 vendor/lib/liboemcrypto.so
-#vendor/lib/libwvdrm_L1.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/libSecureUILib.so
-## Bullhead DRM libs kang them
+
 vendor/lib/libwvdrm_L3.so
 vendor/lib/libWVStreamControlAPI_L3.so
 
-vendor/lib/libtime_genoff.so
+#vendor/lib/libwvdrm_L1.so
+#vendor/lib/libWVStreamControlAPI_L1.so
+
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/libsecureui_svcsock.so
 vendor/lib/libStDrvInt.so
 vendor/lib/libqisl.so
 vendor/lib/libGPreqcancel.so
 vendor/lib/libGPreqcancel_svc.so
 vendor/lib/libmm-hdcpmgr.so
-vendor/lib64/libtime_genoff.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
 vendor/lib64/librpmb.so
 vendor/lib64/libssd.so
-vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/libqisl.so
@@ -221,7 +197,6 @@ lib/libcom_fingerprints_service.so
 lib64/lib_fpc_tac_shared.so
 vendor/lib64/hw/fingerprint.msm8996.so
 lib64/libcom_fingerprints_service.so
-vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
 
 # FM
 lib/fm_helium.so
@@ -306,7 +281,6 @@ vendor/lib64/vendor.qti.gnss@1.0_vendor.so
 vendor/lib64/liblowi_wifihal.so
 vendor/lib/liblowi_wifihal.so
 
-
 # Keystore
 -vendor/lib/hw/keystore.msm8996.so
 -vendor/lib64/hw/keystore.msm8996.so
@@ -351,14 +325,8 @@ vendor/lib64/libsensorhubservice_jni.so
 # VFS (used init.oem.hw.sh)
 vendor/etc/vhw.xml
 
-# ???
-vendor/lib/libwpa_client.so
-vendor/lib64/libwpa_client.so
-
 # WiFi
 vendor/bin/cnss-daemon
-vendor/lib/libwifi-hal-qcom.so
-vendor/lib64/libwifi-hal-qcom.so
 
 # IO Prefetcher
 vendor/bin/hw/vendor.qti.hardware.iop@1.0-service
@@ -446,6 +414,12 @@ vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/lib-dplmedia.so
 vendor/lib/liblqe.so
 vendor/lib/libsystem_health_mon.so
+vendor/lib/libsubsystem_control.so
+vendor/lib/libSubSystemShutdown.so
+vendor/lib64/libsubsystem_control.so
+vendor/lib64/libSubSystemShutdown.so
+lib/libFileMux.so
+lib64/libFileMux.so
 lib/libqsap_sdk.so
 lib64/libqsap_sdk.so
 etc/permissions/telephonyservice.xml
@@ -712,8 +686,8 @@ vendor/lib/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
 
 # Display
-vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml
-vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml
+vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml|54ab445078e33c35cae9f6490abccbb19a88d9e5
+vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml|54ab445078e33c35cae9f6490abccbb19a88d9e5
 
 # Camera
 vendor/bin/mm-qcamera-daemon
@@ -781,7 +755,6 @@ vendor/lib/libgralloc1.so
 vendor/lib/motcamera.device@1.0-impl.so
 vendor/lib64/motcamera.device@1.0-impl.so
 lib/libYuvSkia.so
-
 
 # MOTO CAMERA
 vendor/lib/libois_rumba_s4.so
@@ -922,7 +895,6 @@ vendor/lib/libchromatix_ov16860_video_4k.so
 vendor/lib/libchromatix_ov16860_zsl_preview_3a.so
 vendor/lib/libchromatix_ov16860_zsl_video_3a.so
 
-
 # Camera firmware
 etc/firmware/cpp_firmware_v1_10_0.fw
 etc/firmware/cpp_firmware_v1_1_1.fw
@@ -995,6 +967,28 @@ vendor/lib64/libseemore.so
 vendor/lib64/libtrueportrait.so
 vendor/lib64/libubifocus.so
 
+# Camera SCVE
+vendor/lib/libscveBlobDescriptor.so
+vendor/lib/libscveBlobDescriptor_stub.so
+vendor/lib/libscveCommon.so
+vendor/lib/libscveCommon_stub.so
+vendor/lib/libscveImageCorrection.so
+vendor/lib/libscveObjectSegmentation.so
+vendor/lib/libscveObjectTracker.so
+vendor/lib/libscveObjectTracker_stub.so
+vendor/lib/libscvePanorama_lite.so
+vendor/lib/libscvePanorama.so
+vendor/lib64/libscveBlobDescriptor.so
+vendor/lib64/libscveBlobDescriptor_stub.so
+vendor/lib64/libscveCommon.so
+vendor/lib64/libscveCommon_stub.so
+vendor/lib64/libscveImageCorrection.so
+vendor/lib64/libscveObjectSegmentation.so
+vendor/lib64/libscveObjectTracker.so
+vendor/lib64/libscveObjectTracker_stub.so
+vendor/lib64/libscvePanorama.so
+vendor/lib64/libscvePanorama_lite.so
+
 # Media
 vendor/lib/libOmxVpp.so
 vendor/lib64/libOmxVpp.so
@@ -1032,10 +1026,6 @@ vendor/lib64/libFlacSwDec.so
 lib/libExtendedExtractor.so
 lib64/libExtendedExtractor.so
 
-# Griffin Media
-vendor/lib64/libmm-omxcore.so
-vendor/lib/libmm-omxcore.so
-
 # NFC firmware
 vendor/firmware/libpn548ad_fw.so
 
@@ -1059,8 +1049,6 @@ vendor/lib/librilqmiservices.so
 vendor/lib64/librilqmiservices.so
 vendor/lib/libslpc.so
 vendor/lib64/libslpc.so
-vendor/lib/libtinyxml.so
-vendor/lib64/libtinyxml.so
 lib/libtpa.so
 lib64/libtpa.so
 lib/libwbxmlparser.so
@@ -1151,10 +1139,43 @@ vendor/lib/vendor.qti.voiceprint@1.0.so|a706a35926dde53af240cafea640ab9e607f0cf1
 vendor/lib64/hw/sound_trigger.primary.msm8996.so|d35bc552da96d2f0de10cebf39c9bb0dc0bf6ab0
 vendor/lib64/vendor.qti.voiceprint@1.0.so|e68fb38066c46a7f2b5be0f9a11300e01ec74dee
 
-# HotwordEnrollment
+# HotwordEnrollment - from albus
 -priv-app/HotwordEnrollmentOKGoogleCS47L35/HotwordEnrollmentOKGoogleCS47L35.apk:priv-app/HotwordEnrollmentOKGoogleCS47L35/HotwordEnrollmentOKGoogleCS47L35.apk:PRESIGNED
 -priv-app/HotwordEnrollmentTGoogleCS47L35/HotwordEnrollmentTGoogleCS47L35.apk:priv-app/HotwordEnrollmentTGoogleCS47L35/HotwordEnrollmentTGoogleCS47L35.apk:PRESIGNED
 -priv-app/HotwordEnrollmentXGoogleCS47L35/HotwordEnrollmentXGoogleCS47L35.apk:priv-app/HotwordEnrollmentXGoogleCS47L35/HotwordEnrollmentXGoogleCS47L35.apk:PRESIGNED
+
+# Fido
+lib/libFidoCryptoJNI.so
+lib/libFidoCrypto_system.so
+lib64/libFidoCryptoJNI.so
+lib64/libFidoCrypto_system.so
+vendor/lib/libFidoCrypto_vendor.so
+vendor/lib64/libFidoCrypto_vendor.so
+vendor/lib/libFIDOKeyProvisioning.so
+vendor/lib64/libFIDOKeyProvisioning.so
+
+# WFD
+lib/libwfdavenhancements.so
+lib/libwfdmmsink.so
+lib/libwfduibcsinkinterface.so
+lib/libwfduibcsink.so
+lib64/libwfdavenhancements.so
+lib64/libwfdmmsink.so
+lib64/libwfduibcsinkinterface.so
+lib64/libwfduibcsink.so
+
+# Carrier apps
+-priv-app/ConnMO/ConnMO.apk
+-priv-app/DCMO/DCMO.apk
+-priv-app/DMService/DMService.apk
+-priv-app/SprintDM/SprintDM.apk
+
+# SampleAuth
+lib/libSampleAuthJNI.so
+lib/libSampleExtAuthJNI.so
+lib64/libSampleAuthJNI.so
+lib64/libSampleExtAuthJNI.so
+
 
 ## Mods
 # Audio HAL ( We're doing this Onlyyy For JBL Mod :\ )
@@ -1203,7 +1224,6 @@ vendor/lib64/vendor.qti.voiceprint@1.0.so|e68fb38066c46a7f2b5be0f9a11300e01ec74d
 #vendor/lib/soundfx/libvisualizer.so
 #vendor/lib/soundfx/libvolumelistener.so
 
-
 # ModService
 -priv-app/ModFmwkProxyService/ModFmwkProxyService.apk
 -priv-app/ModService/ModService.apk
@@ -1226,44 +1246,3 @@ vendor/etc/init/motorola.hardware.mods_camera.provider@2.4-service.rc
 # Projector Mod
 -priv-app/ProjectorApp/ProjectorApp.apk
 etc/permissions/privapp-permissions-com.motorola.projectormod.xml
-
-#Carrier apps
--priv-app/ConnMO/ConnMO.apk
--priv-app/DCMO/DCMO.apk
--priv-app/DMService/DMService.apk
--priv-app/SprintDM/SprintDM.apk
-
-#????
-
-lib/libFidoCryptoJNI.so
-lib/libFidoCrypto_system.so
-lib64/libFidoCryptoJNI.so
-lib64/libFidoCrypto_system.so
-vendor/lib/libFidoCrypto_vendor.so
-vendor/lib64/libFidoCrypto_vendor.so
-
-vendor/lib/libFIDOKeyProvisioning.so
-vendor/lib64/libFIDOKeyProvisioning.so
-
-lib/libFileMux.so
-lib64/libFileMux.so
-
-lib/libSampleAuthJNI.so
-lib/libSampleExtAuthJNI.so
-vendor/lib/libsubsystem_control.so
-vendor/lib/libSubSystemShutdown.so
-lib/libwbc_jni.so
-lib/libwfdavenhancements.so
-lib/libwfdmmsink.so
-lib/libwfduibcsinkinterface.so
-lib/libwfduibcsink.so
-
-lib64/libSampleAuthJNI.so
-lib64/libSampleExtAuthJNI.so
-vendor/lib64/libsubsystem_control.so
-vendor/lib64/libSubSystemShutdown.so
-lib64/libwbc_jni.so
-lib64/libwfdavenhancements.so
-lib64/libwfdmmsink.so
-lib64/libwfduibcsinkinterface.so
-lib64/libwfduibcsink.so
