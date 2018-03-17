@@ -36,48 +36,68 @@
     <ctl name="LSM6 MUX" value="None" />
     <ctl name="LSM7 MUX" value="None" />
     <ctl name="LSM8 MUX" value="None" />
-    <ctl name="TERT_MI2S_TX LSM Function" value="None" />
+    <ctl name="SLIMBUS_5_TX LSM Function" value="None" />
+    <ctl name="AIF1_CAP Mixer SLIM TX1" value="0"/>
+    <ctl name="LOOPBACK Mode" value="DISABLE" />
+    <ctl name="SLIM TX1 MUX" value="ZERO" />
+    <ctl name="DEC1 MUX" value="ZERO" />
+    <ctl name="IIR1 INP1 MUX" value="ZERO" />
 
     <path name="listen-voice-wakeup-1">
-        <ctl name="TERT_MI2S_TX LSM Function" value="SWAUDIO" />
-        <ctl name="LSM1 MUX" value="TERT_MI2S_TX" />
+        <ctl name="AIF1_CAP Mixer SLIM TX1" value="1"/>
+        <ctl name="SLIM_0_TX Channels" value="One" />
+        <ctl name="LSM1 MUX" value="SLIMBUS_5_TX" />
+        <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
     </path>
 
     <path name="listen-voice-wakeup-2">
-        <ctl name="TERT_MI2S_TX LSM Function" value="SWAUDIO" />
-        <ctl name="LSM2 MUX" value="TERT_MI2S_TX" />
+        <ctl name="AIF1_CAP Mixer SLIM TX1" value="1"/>
+        <ctl name="SLIM_0_TX Channels" value="One" />
+        <ctl name="LSM2 MUX" value="SLIMBUS_5_TX" />
+        <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
     </path>
     <path name="listen-voice-wakeup-3">
-        <ctl name="TERT_MI2S_TX LSM Function" value="SWAUDIO" />
-        <ctl name="LSM3 MUX" value="TERT_MI2S_TX" />
+        <ctl name="AIF1_CAP Mixer SLIM TX1" value="1"/>
+        <ctl name="SLIM_0_TX Channels" value="One" />
+        <ctl name="LSM3 MUX" value="SLIMBUS_5_TX" />
+        <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
     </path>
     <path name="listen-voice-wakeup-4">
-        <ctl name="TERT_MI2S_TX LSM Function" value="SWAUDIO" />
-        <ctl name="LSM4 MUX" value="TERT_MI2S_TX" />
+        <ctl name="AIF1_CAP Mixer SLIM TX1" value="1"/>
+        <ctl name="SLIM_0_TX Channels" value="One" />
+        <ctl name="LSM4 MUX" value="SLIMBUS_5_TX" />
+        <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
     </path>
     <path name="listen-voice-wakeup-5">
-        <ctl name="TERT_MI2S_TX LSM Function" value="SWAUDIO" />
-        <ctl name="LSM5 MUX" value="TERT_MI2S_TX" />
+        <ctl name="AIF1_CAP Mixer SLIM TX1" value="1"/>
+        <ctl name="SLIM_0_TX Channels" value="One" />
+        <ctl name="LSM5 MUX" value="SLIMBUS_5_TX" />
+        <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
     </path>
     <path name="listen-voice-wakeup-6">
-        <ctl name="TERT_MI2S_TX LSM Function" value="SWAUDIO" />
-        <ctl name="LSM6 MUX" value="TERT_MI2S_TX" />
+        <ctl name="AIF1_CAP Mixer SLIM TX1" value="1"/>
+        <ctl name="SLIM_0_TX Channels" value="One" />
+        <ctl name="LSM6 MUX" value="SLIMBUS_5_TX" />
+        <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
     </path>
     <path name="listen-voice-wakeup-7">
-        <ctl name="TERT_MI2S_TX LSM Function" value="SWAUDIO" />
-        <ctl name="LSM7 MUX" value="TERT_MI2S_TX" />
+        <ctl name="AIF1_CAP Mixer SLIM TX1" value="1"/>
+        <ctl name="SLIM_0_TX Channels" value="One" />
+        <ctl name="LSM7 MUX" value="SLIMBUS_5_TX" />
+        <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
     </path>
     <path name="listen-voice-wakeup-8">
-        <ctl name="TERT_MI2S_TX LSM Function" value="SWAUDIO" />
-        <ctl name="LSM8 MUX" value="TERT_MI2S_TX" />
+        <ctl name="AIF1_CAP Mixer SLIM TX1" value="1"/>
+        <ctl name="SLIM_0_TX Channels" value="One" />
+        <ctl name="LSM8 MUX" value="SLIMBUS_5_TX" />
+        <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
     </path>
 
-    <path name="listen-ape-handset-mic">
-        <!-- this is to avoid codec mute when device is not enabled first -->
+    <path name="listen-handset-mic">
         <ctl name="LOOPBACK Mode" value="ENABLE" />
-        <!-- actual device ebable sequence -->
-        <ctl name="DEC1 MUX" value="ADC2" />
-        <ctl name="ADC2 MUX" value="INP3" />
+        <ctl name="SLIM TX1 MUX" value="DEC1" />
+        <ctl name="DEC1 MUX" value="ADC1" />
+        <ctl name="IIR1 INP1 MUX" value="DEC1" />
     </path>
 
 </mixer>
