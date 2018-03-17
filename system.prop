@@ -15,6 +15,8 @@ audio.offload.video=false
 
 af.fast_track_multiplier=1
 vendor.audio_hal.period_size=192
+ro.qc.sdk.audio.fluencetype=none
+persist.audio.dualmic.config=endfire
 ro.vendor.audio.sdk.fluencetype=none
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicerec=false
@@ -44,7 +46,7 @@ persist.vendor.audio.spkr.cal.duration=5
 
 audio.offload.disable=false
 audio.playback.mch.downsample=0
-persist.vendor.audio.fluence.mode=endfire
+persist.vendor.audio.fluence.mode=none
 persist.vendor.audio.endcall.delay=250
 ro.config.vc_call_vol_steps=8
 persist.vendor.audio.fluence.voicecomm=true
