@@ -128,7 +128,7 @@ vidc.enc.dcvs.extra-buff-count=2
 vidc.enc.disable.pq=true
 
 ## Mods
-sys.mod.platformsdkversion=250
+sys.mod.platformsdkversion=205
 
 ## NFC
 persist.nfc.smartcard.config=SIM1,SIM2,eSE1
