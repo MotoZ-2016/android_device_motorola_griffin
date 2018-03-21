@@ -159,9 +159,6 @@ BOARD_USES_ALSA_AUDIO := true
 USE_XML_AUDIO_POLICY_CONF := 1
 TARGET_USES_QCOM_MM_AUDIO := true
 
-# Bionic
-TARGET_LD_SHIM_LIBS := /system/lib/libYuvSkia.so|libshim_cam_YuvSkia.so
-
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true

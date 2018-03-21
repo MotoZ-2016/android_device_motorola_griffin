@@ -90,6 +90,7 @@ void vendor_load_properties()
     property_set("ro.hw.device", device_boot.c_str());
 
     property_override("ro.product.device", "griffin");
+    property_override("ro.vendor.product.device", "griffin");
 
     sku = GetProperty("ro.boot.hardware.sku", "XT1650-03");
     property_override("ro.product.model", sku.c_str());

@@ -92,8 +92,6 @@ vendor/bin/hci_qcomm_init
 vendor/bin/wcnss_filter
 vendor/lib64/libbtnv.so
 vendor/lib/libbtnv.so
-etc/bluetooth/bt_did.conf
-etc/bluetooth/bt_stack.conf
 
 # CNE
 -vendor/lib64/com.quicinc.cne.api@1.0.so
@@ -117,7 +115,10 @@ vendor/etc/cne/wqeclient/ATT/ATT_profile6.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile1.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile2.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile3.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile4.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile5.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile6.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile7.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile1.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile2.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml
@@ -129,7 +130,7 @@ etc/permissions/com.quicinc.cne.xml
 framework/cneapiclient.jar
 framework/com.quicinc.cne.jar
 -priv-app/CNEService/CNEService.apk
-etc/permissions/privapp-permissions-com.quicinc.cne.CNEService.xml
+etc/permissions/privapp-permissions-qti.xml
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneqmiutils.so
@@ -158,8 +159,8 @@ vendor/lib/liboemcrypto.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/libSecureUILib.so
 
-vendor/lib/libwvdrm_L3.so
-vendor/lib/libWVStreamControlAPI_L3.so
+vendor/lib/libwvdrm_L3.so|7e77482481197997294a834bfbc817a01b6075cd
+vendor/lib/libWVStreamControlAPI_L3.so|61673304827483d44b735a3dd08f0783d10ce92d
 
 #vendor/lib/libwvdrm_L1.so
 #vendor/lib/libWVStreamControlAPI_L1.so
@@ -385,14 +386,13 @@ vendor/bin/tftp_server
 vendor/etc/data/dsi_config.xml
 vendor/etc/data/netmgr_config.xml
 etc/permissions/qcrilhook.xml
-etc/permissions/qti_permissions.xml
-etc/permissions/qti_libpermissions.xml
+etc/permissions/qti_permissions.xml|2826b33ed8e2756cc748c80bd6c466ff8af97ac5
+etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
 framework/qti-telephony-common.jar
 framework/com.qti.dpmframework.jar
 framework/embmslibrary.jar
 -framework/qcrilhook.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-etc/permissions/privapp-permissions-com.qualcomm.qcrilmsgtunnel.xml
 vendor/bin/qti
 vendor/lib64/libconfigdb.so
 vendor/lib/libconfigdb.so
@@ -423,7 +423,6 @@ lib64/libFileMux.so
 lib/libqsap_sdk.so
 lib64/libqsap_sdk.so
 etc/permissions/telephonyservice.xml
-etc/permissions/uimremoteserver.xml
 vendor/lib/vendor.qti.hardware.radio.am@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.lpa@1.0_vendor.so
@@ -754,7 +753,6 @@ lib/motorola.hardware.camera.provider@2.4.so
 vendor/lib/libgralloc1.so
 vendor/lib/motcamera.device@1.0-impl.so
 vendor/lib64/motcamera.device@1.0-impl.so
-lib/libYuvSkia.so
 
 # MOTO CAMERA
 vendor/lib/libois_rumba_s4.so
@@ -960,11 +958,11 @@ vendor/lib/libmmcamera_ubifocus_lib.so
 vendor/lib/libchromaflash.so
 vendor/lib/liboptizoom.so
 vendor/lib/libseemore.so
-vendor/lib/libtrueportrait.so
+lib/libtrueportrait.so
 vendor/lib/libubifocus.so
 vendor/lib64/liboptizoom.so
 vendor/lib64/libseemore.so
-vendor/lib64/libtrueportrait.so
+lib64/libtrueportrait.so
 vendor/lib64/libubifocus.so
 
 # Camera SCVE
@@ -1076,7 +1074,7 @@ etc/permissions/com.motorola.aov.xml
 etc/permissions/com.motorola.cameraone.xml
 etc/permissions/com.motorola.hw.sensorhub.xml
 etc/permissions/com.motorola.mod.protocols.xml
-etc/permissions/com.motorola.mod.xml
+etc/permissions/com.motorola.mod.xml|db2815f8b5d1fa0bf973d4814f65557cf3ece6b3
 etc/permissions/com.motorola.moto.xml
 etc/permissions/com.motorola.motodisplay.xml
 
@@ -1140,9 +1138,9 @@ vendor/lib64/hw/sound_trigger.primary.msm8996.so|d35bc552da96d2f0de10cebf39c9bb0
 vendor/lib64/vendor.qti.voiceprint@1.0.so|e68fb38066c46a7f2b5be0f9a11300e01ec74dee
 
 # HotwordEnrollment - from albus
--priv-app/HotwordEnrollmentOKGoogleCS47L35/HotwordEnrollmentOKGoogleCS47L35.apk:priv-app/HotwordEnrollmentOKGoogleCS47L35/HotwordEnrollmentOKGoogleCS47L35.apk:PRESIGNED
--priv-app/HotwordEnrollmentTGoogleCS47L35/HotwordEnrollmentTGoogleCS47L35.apk:priv-app/HotwordEnrollmentTGoogleCS47L35/HotwordEnrollmentTGoogleCS47L35.apk:PRESIGNED
--priv-app/HotwordEnrollmentXGoogleCS47L35/HotwordEnrollmentXGoogleCS47L35.apk:priv-app/HotwordEnrollmentXGoogleCS47L35/HotwordEnrollmentXGoogleCS47L35.apk:PRESIGNED
+-priv-app/HotwordEnrollmentOKGoogleCS47L35/HotwordEnrollmentOKGoogleCS47L35.apk:priv-app/HotwordEnrollmentOKGoogleCS47L35/HotwordEnrollmentOKGoogleCS47L35.apk:PRESIGNED|eca5328fab577639b3d50f6bbe0d9654dc944a89
+-priv-app/HotwordEnrollmentTGoogleCS47L35/HotwordEnrollmentTGoogleCS47L35.apk:priv-app/HotwordEnrollmentTGoogleCS47L35/HotwordEnrollmentTGoogleCS47L35.apk:PRESIGNED|a54a5291d04091dc4262844c9c3274650a305f54
+-priv-app/HotwordEnrollmentXGoogleCS47L35/HotwordEnrollmentXGoogleCS47L35.apk:priv-app/HotwordEnrollmentXGoogleCS47L35/HotwordEnrollmentXGoogleCS47L35.apk:PRESIGNED|5f300e7d6b54ed786c3e621f812f18f9af35bef1
 
 # Fido
 lib/libFidoCryptoJNI.so
@@ -1178,7 +1176,7 @@ lib64/libSampleExtAuthJNI.so
 
 
 ## Mods
-# Audio HAL ( We're doing this Onlyyy For JBL Mod :\ )
+# Audio HAL ( For Audio Mods )
 #lib/hw/audio.primary.msm8996.so
 #lib/libtinyalsa.so
 #lib64/libtinyalsa.so
