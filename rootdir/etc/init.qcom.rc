@@ -117,6 +117,11 @@ on early-boot
     chown system compass /sys/devices/virtual/motosh/motosh_as/linear_accel_update_rate
     chmod 0660 /sys/devices/virtual/motosh/motosh_as/linear_accel_update_rate
 
+    # vendor.health-hal needs to be able to RW
+    chown system system /sys/devices/soc/qpnp-fg-18/cycle_counts_bins
+    # HardwareInfo needs to be able to read CC bins
+    chmod 644 /sys/devices/soc/qpnp-fg-18/cycle_counts_bins
+
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
@@ -365,6 +370,9 @@ on fs
     mkdir /persist/data 0700  system system
     mkdir /persist/bms 0700 root system
     restorecon_recursive   /persist
+
+    # for android.hardware.health@2.0-service.griffin cycle count backup
+    mkdir /persist/battery 0700 system system
 
     # use /persist as phony PDS partition
     symlink /persist /pds
