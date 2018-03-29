@@ -149,6 +149,18 @@ on enable-low-power
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-2
 
+    # UFS health
+    chmod 755 /sys/kernel/debug/ufshcd0
+    chmod 644 /sys/kernel/debug/ufshcd0/err_state
+    chmod 644 /sys/kernel/debug/ufshcd0/power_mode
+    chmod 644 /sys/kernel/debug/ufshcd0/host_regs
+    chmod 644 /sys/kernel/debug/ufshcd0/show_hba
+    chmod 644 /sys/kernel/debug/ufshcd0/dump_device_desc
+    chmod 755 /sys/kernel/debug/ufshcd0/stats
+    chmod 644 /sys/kernel/debug/ufshcd0/stats/req_stats
+    chmod 644 /sys/kernel/debug/ufshcd0/stats/query_stats
+    chmod 644 /sys/kernel/debug/ufshcd0/stats/err_stats
+
 on property:init.svc.recovery=running
     trigger enable-low-power
 

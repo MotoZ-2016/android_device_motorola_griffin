@@ -4,10 +4,15 @@ type fsg_file, fs_type, contextmount_type;
 # sysfs
 type sysfs_homebutton, fs_type, sysfs_type;
 type sysfs_mmi_touch, fs_type, sysfs_type;
+type sysfs_fpc, fs_type, sysfs_type;
+type sysfs_spi, fs_type, sysfs_type;
+type sysfs_scsi_devices_0000, sysfs_type, fs_type;
+type sysfs_scsi_devices_other, sysfs_type, fs_type;
+type sysfs_batt_health, fs_type, sysfs_type;
 
 # Battery health
 type batt_health_data_file, file_type, data_file_type;
-type sysfs_batt_health, fs_type, sysfs_type;
+type persist_battery_file, file_type;
 
 # hw_revs
 type hw_revs_data_file, file_type, data_file_type;
@@ -36,6 +41,7 @@ type chr_file, file_type, data_file_type;
 type fpc_data_file, file_type, data_file_type;
 type fps_data_file, file_type, data_file_type;
 type fpc_socket, file_type, data_file_type;
-type sysfs_fpc, fs_type, sysfs_type;
+
+# debugfs
+type debugfs_ufs, debugfs_type, fs_type;
 type debugfs_wlan, debugfs_type, fs_type;
-type sysfs_spi, fs_type, sysfs_type;

@@ -1,0 +1,18 @@
+# sysfs
+genfscon sysfs /devices/soc/6a00000.ssusb/power_supply                u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/75b5000.i2c/i2c-7/7-0022/power_supply     u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/msm-bcl-15/power_supply                   u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/soc:qcom,bcl/power_supply                 u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/qpnp-fg-18                                u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/qpnp-smbcharger-17/power_supply           u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/qpnp-smbcharger-17/power_supply/battery/system_temp_level u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/624000.ufshc/host0/target0:0:0/0:0:0:0    u:object_r:sysfs_scsi_devices_0000:s0
+genfscon sysfs /devices/soc/624000.ufshc/host0/target0:0:0/0:0:0:1    u:object_r:sysfs_scsi_devices_other:s0
+genfscon sysfs /devices/soc/624000.ufshc/host0/target0:0:0/0:0:0:2    u:object_r:sysfs_scsi_devices_other:s0
+genfscon sysfs /devices/soc/624000.ufshc/host0/target0:0:0/0:0:0:3    u:object_r:sysfs_scsi_devices_other:s0
+genfscon sysfs /devices/soc/624000.ufshc/host0/target0:0:0/0:0:0:4    u:object_r:sysfs_scsi_devices_other:s0
+genfscon sysfs /devices/soc/624000.ufshc/host0/target0:0:0/0:0:0:5    u:object_r:sysfs_scsi_devices_other:s0
+genfscon sysfs /devices/soc/624000.ufshc/health                       u:object_r:sysfs_scsi_devices_0000:s0
+
+# debugfs
+genfscon debugfs /ufshcd0                  u:object_r:debugfs_ufs:s0
