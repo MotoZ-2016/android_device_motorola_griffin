@@ -1,0 +1,9 @@
+[
+  {
+    "remote":      "github",
+    "repository":  "MotoZ-2016/android_kernel_motorola_msm8996",
+    "target_path": "kernel/motorola/msm8996",
+    "branch":      "lineage-15.1"
+  }
+]
+
