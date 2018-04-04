@@ -365,6 +365,8 @@ on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
+    # Start HW service manager early
+    start hwservicemanager
     mount_all /vendor/etc/fstab.qcom --early
 
     # Keeping following partitions outside fstab file. As user may not have
@@ -379,9 +381,6 @@ on fs
     # for android.hardware.health@2.0-service.griffin cycle count backup
     mkdir /persist/battery 0700 system system
 
-    # Start HW service manager early
-    start hwservicemanager
-
 on late-fs
     # Start services for bootanim
     start servicemanager
@@ -390,6 +389,11 @@ on late-fs
 
     start vendor.configstore-hal
     start vendor.gralloc-2-0
+
+    # Wait for hwservicemanager ready since fsck might be triggered in mount_all --late
+    # In such case, init won't responce the property_set from hwservicemanager and then
+    # cause services for bootanim not running.
+    wait_for_prop hwservicemanager.ready true
 
     # Mount RW partitions which need run fsck
     mount_all /vendor/etc/fstab.qcom --late
