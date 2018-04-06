@@ -147,7 +147,8 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     libgenlock \
     liboverlay \
-    libqdMetaData.system
+    libqdMetaData.system \
+    libvulkan
 
 # Ebtables
 PRODUCT_PACKAGES += \
@@ -374,13 +375,18 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
-# VNDK
-PRODUCT_PACKAGES += \
-    vndk-sp \
-
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-service.griffin
+
+# VNDK
+# Update this list with what each blob is actually for
+# libicuuc: vendor.qti.hardware.qteeconnector@1.0-impl
+# libstdc++: camera.msm8996
+PRODUCT_PACKAGES += \
+    libicuuc.vendor \
+    libstdc++.vendor \
+    vndk_package
 
 # VR
 PRODUCT_PACKAGES += \
