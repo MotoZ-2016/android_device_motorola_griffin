@@ -6,23 +6,22 @@ on init
     write /sys/module/lpm_levels/parameters/sleep_disabled Y
 
 on boot
-
     # Set permissions by node reads by dumpstate
     chmod 0644 /sys/devices/system/cpu/present
     chmod 0644 /sys/devices/system/cpu/online
 
     # update cpuset for each cgroup
     # reserve cpu2 for top app
-    write /dev/cpuset/top-app/cpus 0-3
-    write /dev/cpuset/foreground/cpus 0-1,3
+    write /dev/cpuset/top-app/cpus "0-3"
+    write /dev/cpuset/foreground/cpus "0-1,3"
     write /dev/cpuset/foreground/boost/cpus 3
     write /dev/cpuset/background/cpus 0
-    write /dev/cpuset/system-background/cpus 0-1
+    write /dev/cpuset/system-background/cpus "0-1"
 
     # Add a cpuset for the camera daemon
     # we want all cores for camera
     mkdir /dev/cpuset/camera-daemon
-    write /dev/cpuset/camera-daemon/cpus 0-3
+    write /dev/cpuset/camera-daemon/cpus "0-3"
     write /dev/cpuset/camera-daemon/mems 0
     chown system system /dev/cpuset/camera-daemon
     chown system system /dev/cpuset/camera-daemon/tasks
@@ -37,7 +36,6 @@ on late-fs
     write /sys/block/sda/queue/iosched/slice_idle 0
     write /sys/block/sda/queue/read_ahead_kb 2048
     write /sys/block/sda/queue/nr_requests 256
-    write /sys/block/dm-0/queue/read_ahead_kb 2048
 
 on enable-low-power
 
@@ -121,9 +119,6 @@ on enable-low-power
     write /sys/class/devfreq/soc:qcom,memlat-cpu2/governor "mem_latency"
     write /sys/class/devfreq/soc:qcom,memlat-cpu2/polling_interval 10
 
-    # Setup mincpubw
-    write /sys/class/devfreq/qcom,mincpubw/governor "cpufreq"
-
     # Enable UFS powersaving
     write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 1
     write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
@@ -145,10 +140,9 @@ on enable-low-power
 
     setprop sys.io.scheduler "bfq"
 
-    write /sys/block/sda/queue/iostats 1
-    write /sys/block/dm-0/queue/read_ahead_kb 128
+    write /sys/block/sda/queue/read_ahead_kb 1024
     write /sys/block/sda/queue/nr_requests 128
-    write /sys/block/sda/queue/read_ahead_kb 128
+    write /sys/block/sda/queue/iostats 1
 
     # Update cpusets now that boot is complete and we want better load balancing
     write /dev/cpuset/top-app/cpus 0-3
