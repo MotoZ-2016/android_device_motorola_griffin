@@ -341,8 +341,8 @@
 /sys/devices/platform/mods_ap/greybus1/*/*/leds/mod_light*::backlight brightness 0660 root oem_5020
 
 # IIO (dynamic sensors)
-/sys/devices/iio_sysfs_trigger/add_trigger          0220    system      system
-/sys/devices/iio_sysfs_trigger/remove_trigger       0220    system      system
+/sys/devices/iio_sysfs_trigger add_trigger          0220    system      system
+/sys/devices/iio_sysfs_trigger remove_trigger       0220    system      system
 
 /sys/devices/iio:device* buffer/*                   0664    system      system
 /sys/devices/iio:device* scan_elements/in_*_en      0664    system      system
