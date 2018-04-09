@@ -965,19 +965,7 @@ on property:wc_transport.start_hci=false
 service start_hci_filter /vendor/bin/wcnss_filter
     class late_start
     user root
-    group bluetooth diag
-    disabled
-
-on property:wc_transport.start_root=true
-    start hci_filter_root
-
-on property:wc_transport.start_root=false
-    stop hci_filter_root
-
-service hci_filter_root /vendor/bin/wcnss_filter
-    class late_start
-    user root
-    group bluetooth diag system
+    group bluetooth diag system wakelock log
     disabled
 
 service imsqmidaemon /vendor/bin/imsqmidaemon
