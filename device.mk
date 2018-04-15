@@ -154,7 +154,8 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8996 \
     libdisplayconfig \
     libgenlock \
-    liboverlay
+    liboverlay \
+    libqdMetaData.system
 
 # Ebtables
 PRODUCT_PACKAGES += \
