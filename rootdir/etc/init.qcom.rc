@@ -727,6 +727,9 @@ on post-fs-data
     #setup folder for WLAN WAPI
     chmod 0770 /data/wapi_certificate
 
+    # Start Camera Mods Daemon
+    start mods_camd
+
 service qcomsysd /vendor/bin/qcom-system-daemon
     class main
     user root
@@ -908,6 +911,7 @@ service mods_camd /vendor/bin/mods_camd
     user camera
     group camera system inet input graphics
     ioprio rt 4
+    oneshot
     disabled
 
 service charge_only_mode /vendor/bin/charge_only_mode
