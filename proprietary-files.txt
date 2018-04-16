@@ -986,6 +986,12 @@ vendor/lib64/libscveObjectTracker_stub.so
 vendor/lib64/libscvePanorama.so
 vendor/lib64/libscvePanorama_lite.so
 
+# Machine Learning
+-vendor/etc/lm/ReferenceFeature.xml
+vendor/lib64/liblearningmodule.so
+vendor/lib64/libmeters.so
+vendor/lib64/libreffeature.so
+
 # Media - from bardock-pro - OPM1.171019.011
 -vendor/lib/libgpustats.so|a071c887e20853c975d958fc9a20fc9060bf1c9a
 vendor/lib/libI420colorconvert.so|5ba378d86922a8aff1fe0fd326d3dcdd03e1b0e3
