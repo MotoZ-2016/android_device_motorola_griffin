@@ -147,6 +147,10 @@ vendor/lib/libcneoplookup.so
 vendor/lib64/libcneoplookup.so
 lib/libwbc_jni.so
 lib64/libwbc_jni.so
+lib/vendor.qti.hardware.data.latency@1.0.so
+lib64/vendor.qti.hardware.data.latency@1.0.so
+vendor/lib/vendor.qti.hardware.data.latency@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.data.latency@1.0_vendor.so
 
 # aptX(HD) Bluetooth
 vendor/lib64/libaptXHD_encoder.so
