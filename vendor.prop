@@ -246,7 +246,6 @@ persist.sys.ssr.restart_level=ALL_ENABLE
 
 ## Time Service
 persist.timed.enable=true
-persist.delta_time.enable=true
 
 ## Vendor Extension
 ro.vendor.extension_library=libqti-perfd-client.so
