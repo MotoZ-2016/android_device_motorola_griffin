@@ -328,6 +328,6 @@
     <bool name="config_dynamic_bind_ims">true</bool>
 
     <!-- Hardware keys on/off option -->
-    <bool name="config_hwKeysPref">true</bool>
+    <bool name="config_hwKeysPref">false</bool>
 
 </resources>
