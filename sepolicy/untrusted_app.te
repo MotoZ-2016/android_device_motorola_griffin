@@ -1,11 +1,2 @@
-allow untrusted_app sysfs_zram:dir search;
-allow untrusted_app sysfs_zram:file { getattr open read };
-allow untrusted_app proc_iomem:file getattr;
-allow untrusted_app proc_sysrq:file getattr;
-allow untrusted_app sysfs:file { getattr open read };
-allow untrusted_app rootfs:dir read;
-allow untrusted_app self:udp_socket ioctl;
-allow untrusted_app unlabeled:dir { getattr read };
-allow untrusted_app firmware_file:dir read;
 r_dir_file(untrusted_app, sysfs_usb_supply)
-allow untrusted_app camera_prop:file { getattr open read };
+get_prop(untrusted_app, camera_prop)
