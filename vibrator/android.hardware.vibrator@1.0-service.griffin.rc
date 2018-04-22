@@ -3,10 +3,12 @@ on early-boot
     chown system system /sys/devices/virtual/timed_output/vibrator/vtg_max
     chown system system /sys/devices/virtual/timed_output/vibrator/vtg_min
     chown system system /sys/devices/virtual/timed_output/vibrator/vtg_default
+    chown system system /sys/devices/virtual/motosh/motosh_as/tabletop_mode
     chmod 0644 /sys/devices/virtual/timed_output/vibrator/vtg_level
     chmod 0444 /sys/devices/virtual/timed_output/vibrator/vtg_max
     chmod 0444 /sys/devices/virtual/timed_output/vibrator/vtg_min
     chmod 0444 /sys/devices/virtual/timed_output/vibrator/vtg_default
+    chmod 0444 /sys/devices/virtual/motosh/motosh_as/tabletop_mode
 
 service vendor.vibrator-1-0 /vendor/bin/hw/android.hardware.vibrator@1.0-service.griffin
     class hal
