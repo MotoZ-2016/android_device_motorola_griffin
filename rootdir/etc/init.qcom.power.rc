@@ -60,6 +60,8 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 0
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307000    
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1593600
 
     # Online CPU2
     write /sys/devices/system/cpu/cpu2/online 1
@@ -79,6 +81,8 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 300000
     write /sys/devices/system/cpu/cpu2/cpufreq/interactive/ignore_hispeed_on_notif 0
     write /sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction 1
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 307000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2150400
 
     # Re-enable thermal hotplug
     write /sys/module/msm_thermal/core_control/enabled 1
