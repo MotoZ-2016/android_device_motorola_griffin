@@ -978,7 +978,7 @@ service vendor.ipacm /vendor/bin/ipacm
     user radio
     group radio inet
 
-service vendor.qti /vendor/bin/qti
+service vendor.dataqti /vendor/bin/qti
     class main
     user radio
     group radio net_raw oem_2950 usb net_admin
