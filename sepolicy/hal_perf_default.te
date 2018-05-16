@@ -2,3 +2,5 @@ allow hal_perf_default post_boot_prop:file { open read getattr };
 allow hal_perf_default freq_prop:property_service set;
 allow hal_perf_default init:unix_stream_socket connectto;
 allow hal_perf_default property_socket:sock_file write;
+allow hal_perf_default proc_kernel_sched:file rw_file_perms;
+set_prop(hal_perf_default, freq_prop)

@@ -5,3 +5,8 @@ allow hal_audio_default persist_file:file { getattr open read };
 allow hal_audio_default sysfs_greybus:dir search;
 allow hal_audio_default sysfs_greybus:file { getattr open read };
 allow hal_audio_default system_server:binder { call transfer };
+
+# communicate with perfd
+allow hal_audio perfd:unix_stream_socket connectto;
+allow hal_audio perfd_data_file:dir search;
+allow hal_audio perfd_data_file:sock_file write;

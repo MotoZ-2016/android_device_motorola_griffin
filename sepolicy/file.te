@@ -39,3 +39,9 @@ type fpc_socket, file_type, data_file_type;
 type sysfs_fpc, fs_type, sysfs_type;
 type debugfs_wlan, debugfs_type, fs_type;
 type sysfs_spi, fs_type, sysfs_type;
+
+# Power
+type perfd_data_file, file_type, data_file_type;
+type proc_irq, fs_type;
+type proc_kernel_sched, fs_type;
+type sysfs_power_management, sysfs_type, fs_type;
