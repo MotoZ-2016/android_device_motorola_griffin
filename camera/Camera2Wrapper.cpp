@@ -268,7 +268,13 @@ static void camera2_release_recording_frame(struct camera_device * device,
     if(!device)
         return;
 
+    android::VideoNativeHandleMetadata* md = (android::VideoNativeHandleMetadata*) opaque;
+    native_handle_t* nh = md->pHandle;
+
     VENDOR_CALL(device, release_recording_frame, opaque);
+
+    native_handle_close(nh);
+    native_handle_delete(nh);
 }
 
 static int camera2_auto_focus(struct camera_device * device)
