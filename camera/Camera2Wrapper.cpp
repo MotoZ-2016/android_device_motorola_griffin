@@ -59,48 +59,6 @@ static int check_vendor_module()
     return rv;
 }
 
-static char * camera2_fixup_getparams(int id, const char * settings)
-{
-    android::CameraParameters params;
-    params.unflatten(android::String8(settings));
-
-#ifdef LOG_PARAMETERS
-    ALOGV("%s: Original parameters:", __FUNCTION__);
-    params.dump();
-#endif
-
-    android::String8 strParams = params.flatten();
-    char *ret = strdup(strParams.string());
-
-#ifdef LOG_PARAMETERS
-    ALOGV("%s: Fixed parameters:", __FUNCTION__);
-    params.dump();
-#endif
-
-    return ret;
-}
-
-static char * camera2_fixup_setparams(int id __unused, const char * settings)
-{
-    android::CameraParameters params;
-    params.unflatten(android::String8(settings));
-
-#ifdef LOG_PARAMETERS
-    ALOGV("%s: Original parameters:", __FUNCTION__);
-    params.dump();
-#endif
-
-    android::String8 strParams = params.flatten();
-    char *ret = strdup(strParams.string());
-
-#ifdef LOG_PARAMETERS
-    ALOGV("%s: Fixed parameters:", __FUNCTION__);
-    params.dump();
-#endif
-
-    return ret;
-}
-
 /*******************************************************************
  * implementation of camera_device_ops functions
  *******************************************************************/
@@ -325,12 +283,7 @@ static int camera2_set_parameters(struct camera_device * device, const char *par
     if(!device)
         return -EINVAL;
 
-    char *tmp = NULL;
-    tmp = camera2_fixup_setparams(CAMERA_ID(device), params);
-
-    int ret = VENDOR_CALL(device, set_parameters, tmp);
-
-    return ret;
+    return VENDOR_CALL(device, set_parameters, params);
 }
 
 static char* camera2_get_parameters(struct camera_device * device)
@@ -340,13 +293,7 @@ static char* camera2_get_parameters(struct camera_device * device)
     if(!device)
         return NULL;
 
-    char* params = VENDOR_CALL(device, get_parameters);
-
-    char * tmp = camera2_fixup_getparams(CAMERA_ID(device), params);
-    VENDOR_CALL(device, put_parameters, params);
-    params = tmp;
-
-    return params;
+    return VENDOR_CALL(device, get_parameters);
 }
 
 static void camera2_put_parameters(struct camera_device *device, char *params)
