@@ -30,7 +30,7 @@
          hysteresis threshold. -->
     <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
-    
+
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
          The N entries of this array define N  1 zones as follows:
 
@@ -333,6 +333,11 @@
           turned off and the screen off animation has been performed. -->
     <bool name="config_dozeAfterScreenOffByDefault">true</bool>
 
+    <!-- Control whether the always on display mode is available. This should only be enabled on
+         devices where the display has be tuned to be power efficient in DOZE and/or DOZE_SUSPEND
+         states. -->
+    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+
     <!-- Power Management: Specifies whether to decouple the interactive state of the
          device from the display on/off state.
          When false, setInteractive(..., true) will be called before the display is turned on
@@ -386,16 +391,16 @@
     <!-- Enable overlay for all location components. -->
     <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
     <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
-    
+
     <!-- Controls the WiFi wakeup feature.
      0 = Not available.
      1 = Available.
      -->
     <integer translatable="false" name="config_wifi_wakeup_available">1</integer>
-    
+
     <!-- Enable Night display, which requires HWC 2.0. -->
     <bool name="config_nightDisplayAvailable">true</bool>
-    
+
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
      in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
