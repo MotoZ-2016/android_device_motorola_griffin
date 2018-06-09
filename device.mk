@@ -379,6 +379,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     textclassifier.smartselection.bundle1
 
+# Vendor security patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lineage.build.vendor_security_patch=2018-03-01
+
 # VNDK
 PRODUCT_PACKAGES += \
     vndk-sp \
