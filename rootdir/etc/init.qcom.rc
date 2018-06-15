@@ -1040,24 +1040,6 @@ on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
     # stop netmgrd
 
-on property:init.svc.surfaceflinger=stopped
-    stop ppd
-
-on property:init.svc.surfaceflinger=running
-    start ppd
-
-on property:init.svc.surfaceflinger=restarting
-    stop ppd
-
-on property:init.svc.zygote=stopped
-    stop ppd
-
-on property:init.svc.zygote=running
-    start ppd
-
-on property:init.svc.zygote=restarting
-    stop ppd
-
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth
 # but only if ro.data.large_tcp_window_size property is set.
 on property:ro.data.large_tcp_window_size=true
@@ -1194,11 +1176,10 @@ service adsprpcd /vendor/bin/adsprpcd
     group media
 
 service ppd /vendor/bin/mm-pp-dpps
-    class late_start
+    class hal
     user system
     group system graphics
     socket pps stream 0660 system system
-    disabled
 
 service energy-awareness /vendor/bin/energy-awareness
     class main
