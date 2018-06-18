@@ -1259,7 +1259,7 @@ lib64/libSampleExtAuthJNI.so
 
 # ModService
 -priv-app/ModFmwkProxyService/ModFmwkProxyService.apk
--priv-app/ModService/ModService.apk
+-priv-app/ModService/ModService.apk:priv-app/ModService/ModService.apk;PRESIGNED
 lib/libmodmanager_system.so
 lib64/libmodmanager_system.so
 vendor/lib/libmodmanager.so
@@ -1270,7 +1270,7 @@ lib/com.motorola.mod@1.0.so
 lib64/com.motorola.mod@1.0.so
 
 # Camera Mod
--app/MotCameraMod/MotCameraMod.apk
+-app/MotCameraMod/MotCameraMod.apk:app/MotCameraMod/MotCameraMod.apk;PRESIGNED
 vendor/bin/mods_camd
 vendor/lib/hw/libcamera_mods_legacy_hal.so
 lib/motorola.hardware.mods_camera.provider@2.4.so
@@ -1281,5 +1281,5 @@ vendor/lib/hw/motorola.hardware.mods_camera.provider@2.4-impl.so
 vendor/lib64/hw/motorola.hardware.mods_camera.provider@2.4-impl.so
 
 # Projector Mod
--priv-app/ProjectorApp/ProjectorApp.apk
+-priv-app/ProjectorApp/ProjectorApp.apk:priv-app/ProjectorApp/ProjectorApp.apk;PRESIGNED
 etc/permissions/privapp-permissions-com.motorola.projectormod.xml
