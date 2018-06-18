@@ -261,6 +261,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     ModPermsFix
 
+# ModService
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/whitelist_modservice.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/whitelist_modservice.xml
+
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
