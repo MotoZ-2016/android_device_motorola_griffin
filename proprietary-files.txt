@@ -1259,7 +1259,7 @@ lib64/libSampleExtAuthJNI.so
 
 # ModService
 -priv-app/ModFmwkProxyService/ModFmwkProxyService.apk
--priv-app/ModService/ModService.apk
+-priv-app/ModService/ModService.apk:priv-app/ModService/ModService.apk;PRESIGNED
 lib/libmodmanager_system.so
 lib64/libmodmanager_system.so
 vendor/lib/libmodmanager.so
