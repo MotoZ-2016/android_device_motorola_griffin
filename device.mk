@@ -298,7 +298,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service.marlin \
+    android.hardware.power@1.0-service.griffin \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@1.0-service
 
