@@ -54,10 +54,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := kryo
 
-# CPU
-ENABLE_CPUSETS := true
-ENABLE_SCHEDBOOST := true
-
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
@@ -80,7 +76,6 @@ endif
 
 # Power
 TARGET_HAS_NO_WIFI_STATS := true
-TARGET_USES_INTERACTION_BOOST := true
 
 # Display
 HAVE_ADRENO_SOURCE:= false
