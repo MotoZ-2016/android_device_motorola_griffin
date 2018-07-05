@@ -70,12 +70,13 @@ ro.bluetooth.sap=true
 ro.bluetooth.dun=true
 
 ## Camera
-camera.disable_zsl_mode=1
 persist.camera.HAL3.enabled=1
 persist.camera.debug.logfile=0
 persist.camera.gyro.disable=0
-persist.camera.preview.ubwc=0
-persist.camera.video.ubwc=0
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.motorola.camera2,com.motorola.motocit,org.lineageos.snap
+persist.camera.camera2=true
+persist.camera.expose.aux=1
+persist.camera.is_type=3
 persist.ts.postmakeup=false
 persist.ts.rtmakeup=false
 
