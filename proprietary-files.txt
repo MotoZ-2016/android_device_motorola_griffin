@@ -385,7 +385,7 @@ vendor/firmware/a540_gpmu.fw2
 vendor/firmware/leia_pfp_470.fw
 vendor/firmware/leia_pm4_470.fw
 
-# Modem 
+# Modem
 vendor/lib/libwms.so
 vendor/lib64/libwms.so
 
@@ -1200,7 +1200,6 @@ lib64/libwfduibcsink.so
 
 # Carrier apps
 -priv-app/ConnMO/ConnMO.apk
--priv-app/DCMO/DCMO.apk
 -priv-app/DMService/DMService.apk
 -priv-app/SprintDM/SprintDM.apk
 
