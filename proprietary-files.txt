@@ -596,7 +596,6 @@ vendor/lib64/libqti-util.so
 vendor/etc/thermal-engine.conf
 etc/thermal-engine-griffin.conf
 etc/thermal-engine-sheridan.conf
-etc/thermal-engine-sheridan-retcn.conf
 vendor/bin/thermal-engine
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
