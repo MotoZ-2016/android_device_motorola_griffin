@@ -1136,7 +1136,7 @@ service qseeproxydaemon /vendor/bin/qseeproxydaemon
 
 #start camera server as daemon
 service qcamerasvr /vendor/bin/mm-qcamera-daemon
-    class main
+    class late_start
     user camera
     group camera system inet input graphics
 
