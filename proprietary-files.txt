@@ -1034,7 +1034,7 @@ lib/libExtendedExtractor.so
 lib64/libExtendedExtractor.so
 
 # NFC firmware
-vendor/firmware/libpn548ad_fw.so
+vendor/firmware/libpn548ad_fw.so:vendor/lib/libpn548ad_fw.so
 
 # Postprocessing - from bardock-pro - OPM1.171019.019
 etc/permissions/com.qti.snapdragon.sdk.display.xml|0bff16d681e75f203c1e11ff33afba82490e49b3
