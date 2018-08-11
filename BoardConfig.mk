@@ -232,7 +232,6 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 
 # Properties
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
-TARGET_VENDOR_PROP += $(PLATFORM_PATH)/vendor.prop
 
 # Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
