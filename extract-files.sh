@@ -63,5 +63,7 @@ patchelf --replace-needed android.hardware.gnss@1.0.so android.hardware.gnss@1.0
 patchelf --replace-needed android.hardware.gnss@1.0.so android.hardware.gnss@1.0-v27.so $BLOB_ROOT/lib64/vendor.qti.gnss@1.0.so
 patchelf --add-needed libqsap_shim.so $BLOB_ROOT/vendor/lib64/libmdmcutback.so
 patchelf --add-needed libshim_ril.so $BLOB_ROOT/vendor/lib64/libmdmcutback.so
+patchelf --add-needed libgpu_mapper_shim.so $BLOB_ROOT/vendor/lib/libmot_gpu_mapper.so
+patchelf --add-needed libjustshoot_shim.so $BLOB_ROOT/lib/libjustshoot.so
 
 "$MY_DIR"/setup-makefiles.sh
