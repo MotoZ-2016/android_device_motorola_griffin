@@ -13,16 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-[AID_QTI_DIAG]
+[AID_VENDOR_QTI_DIAG]
 value:2901
 
-[AID_QCOM_DIAG]
+[AID_VENDOR_QCOM_DIAG]
 value:2950
 
-[AID_RFS]
+[AID_VENDOR_RFS]
 value:2951
 
-[AID_RFS_SHARED]
+[AID_VENDOR_RFS_SHARED]
 value:2952
 
 [vendor/bin/pm-service]
