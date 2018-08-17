@@ -699,7 +699,7 @@ vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_frame_algorithm.so
 vendor/lib/libmmcamera2_iface_modules.so
 vendor/lib/libmmcamera2_imglib_modules.so
-vendor/lib/libmmcamera2_isp_modules.so
+vendor/lib/libmmcamera2_isp_modules.so|46418b40014e79c7a3b84efed68f7b0389f63619
 vendor/lib/libmmcamera2_is.so
 vendor/lib/libmmcamera2_mct.so
 vendor/lib/libmmcamera2_pp_buf_mgr.so
