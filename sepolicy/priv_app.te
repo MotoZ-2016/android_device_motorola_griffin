@@ -13,3 +13,4 @@ allow priv_app camera_prop:file open;
 allow priv_app proc_interrupts:file { open read };
 allow priv_app qemu_hw_mainkeys_prop:file { getattr open };
 allow priv_app proc_modules:file { getattr open read };
+allow priv_app adsprpcd_file:filesystem getattr;
