@@ -1257,7 +1257,7 @@ lib64/libSampleExtAuthJNI.so
 #vendor/lib/soundfx/libvolumelistener.so
 
 # ModService
--priv-app/ModFmwkProxyService/ModFmwkProxyService.apk
+-priv-app/ModFmwkProxyService/ModFmwkProxyService.apk|36fdc66b39643433d2ffa46c986e300c6e6f7288
 -priv-app/ModService/ModService.apk:priv-app/ModService/ModService.apk;PRESIGNED
 lib/libmodmanager_system.so
 lib64/libmodmanager_system.so
