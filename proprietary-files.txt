@@ -129,7 +129,7 @@ etc/permissions/cneapiclient.xml
 etc/permissions/com.quicinc.cne.xml
 framework/cneapiclient.jar
 framework/com.quicinc.cne.jar
--priv-app/CNEService/CNEService.apk
+-priv-app/CNEService/CNEService.apk|69da7058ac27e0af3d498816bc04773c47b0ebfc
 etc/permissions/privapp-permissions-qti.xml
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
