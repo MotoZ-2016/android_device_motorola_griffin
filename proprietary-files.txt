@@ -736,7 +736,7 @@ vendor/lib/libqomx_jpegenc.so
 vendor/bin/hw/motorola.hardware.camera.provider@2.4-service
 vendor/etc/init/motorola.hardware.camera.provider@2.4-service_delayed.rc
 vendor/lib/hw/motorola.hardware.camera.provider@2.4-impl.so
-vendor/lib/motorola.hardware.camera.provider@2.4_vendor.so
+vendor/lib/motorola.hardware.camera.provider@2.4_vendor.so|f48d16e1e3f777a4fb0897ff2f667d98542b15df
 vendor/lib/motorola.hardware.camera.device@1.0_vendor.so
 vendor/lib64/hw/motorola.hardware.camera.provider@2.4-impl.so
 vendor/lib64/motorola.hardware.camera.device@1.0_vendor.so
