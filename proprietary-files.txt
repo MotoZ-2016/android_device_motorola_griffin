@@ -89,7 +89,7 @@ vendor/lib/libaudioalsa.so
 # Bluetooth
 vendor/bin/btnvtool
 vendor/bin/hci_qcomm_init
-vendor/bin/wcnss_filter
+vendor/bin/wcnss_filter|6a645ce261907b4287f69cce3a863ca1c11c821c
 vendor/lib64/libbtnv.so
 vendor/lib/libbtnv.so
 
