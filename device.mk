@@ -379,10 +379,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
-# Vendor security patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lineage.build.vendor_security_patch=2018-07-01
-
 # VNDK
 PRODUCT_PACKAGES += \
     vndk-sp \
