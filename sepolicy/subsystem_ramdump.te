@@ -1,3 +1,3 @@
-allow subsystem_ramdump storage_file:dir search;
-allow subsystem_ramdump system_data_file:dir { open read getattr };
-allow subsystem_ramdump device:dir read;
+allow vendor_subsystem_ramdump storage_file:dir search;
+allow vendor_subsystem_ramdump system_data_file:dir { open read getattr };
+allow vendor_subsystem_ramdump device:dir read;
