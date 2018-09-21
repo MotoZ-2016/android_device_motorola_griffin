@@ -54,10 +54,6 @@ on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
-    # Support legacy paths
-    symlink /sdcard /mnt/sdcard
-    symlink /sdcard /storage/sdcard0
-
     # Add for fpc fingerprints permission
     chmod 777 /dev/qseecom
     chmod 0664 /sys/bus/spi/devices/spi12.0/irq
