@@ -104,3 +104,7 @@
 # Health HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.health@2\.0-service\.griffin          u:object_r:hal_health_default_exec:s0
 /persist/battery(/.*)?  u:object_r:persist_battery_file:s0
+
+# Vibrator HAL
+/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service.griffin   u:object_r:hal_vibrator_default_exec:s0
+/sys/devices/virtual/timed_output/vibrator/vtg_default                            u:object_r:sysfs_vibrator:s0
