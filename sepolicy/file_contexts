@@ -109,6 +109,8 @@
 /(vendor|system/vendor)/bin/hw/motorola\.hardware\.mods_camera\.provider@2\.4-service                                u:object_r:hal_camera_default_exec:s0
 /sys/devices/soc/a0c000\.qcom,cci/a0c000\.qcom,cci:qcom,camera@2/media2(/.*)?                                        u:object_r:sysfs_camera:s0
 /sys/devices/soc/a0c000\.qcom,cci/a0c000\.qcom,cci:qcom,camera@1/media1(/.*)?                                        u:object_r:sysfs_camera:s0
+/vendor/lib/full/libbinder\.so                                                                                       u:object_r:system_file:s0
+/vendor/lib/full/libcutils\.so                                                                                       u:object_r:system_file:s0
 
 # Health HAL
 /(vendor|system/vendor)/bin/hw/motorola\.hardware\.health@1\.0-service		u:object_r:hal_health_default_exec:s0

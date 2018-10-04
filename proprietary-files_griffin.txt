@@ -179,6 +179,8 @@ vendor/lib64/libts_face_beautify_hal.so
 vendor/lib/libgralloc1.so
 vendor/lib/motcamera.device@1.0-impl.so
 vendor/lib64/motcamera.device@1.0-impl.so
+vendor/lib/full/libbinder.so|878062dea4925dd303ff026e07266f90fdb52c02
+vendor/lib/full/libcutils.so|80f6e21fc5aade324dbc53967f6d129f9846ef29
 
 # MOTO CAMERA
 vendor/lib/libois_rumba_s4.so
