@@ -34,7 +34,6 @@ on early-init
     chmod 0755 /sys/kernel/debug
     mkdir /firmware 0771 system system
     mkdir /bt_firmware 0771 system system
-    symlink /data/tombstones /tombstones
     mkdir /dsp 0771 media media
     mkdir /fsg 755 root root
 
