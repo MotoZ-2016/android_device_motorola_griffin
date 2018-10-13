@@ -123,7 +123,3 @@
 /sys/devices/soc/9300000\.qcom,lpass/subsys3(/.*)?            u:object_r:sysfs_soc_qcom:s0
 /sys/devices/soc/1c00000\.qcom,ssc/subsys4(/.*)?              u:object_r:sysfs_soc_qcom:s0
 /sys/devices/soc/2080000\.qcom,mss/subsys5(/.*)?              u:object_r:sysfs_soc_qcom:s0
-
-# Misc files on /vendor
-/vendor/usr/idc(/.*)?                                           u:object_r:idc_file:s0
-/vendor/usr/keylayout(/.*)?                                     u:object_r:keylayout_file:s0
