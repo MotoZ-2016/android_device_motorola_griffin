@@ -48,7 +48,3 @@ type debugfs_wlan, debugfs_type, fs_type;
 
 type sysfs_soc_qcom, fs_type, sysfs_type;
 type sysfs_camera, fs_type, sysfs_type;
-
-# /vendor
-type idc_file, file_type, vendor_file_type;
-type keylayout_file, file_type, vendor_file_type;
