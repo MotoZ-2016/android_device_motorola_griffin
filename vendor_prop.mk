@@ -154,6 +154,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vidc.enc.dcvs.extra-buff-count=2 \
     vendor.vidc.enc.disable.pq=true
 
+# HDR
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.display.hdr.config=/vendor/etc/hdr_tm_config.xml
+
 ## Mods
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.mod.platformsdkversion=205

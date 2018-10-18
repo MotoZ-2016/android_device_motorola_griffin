@@ -195,7 +195,11 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
-# health
+# HDR
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/hdr_tm_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/hdr_tm_config.xml
+
+# Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-service.griffin
 
