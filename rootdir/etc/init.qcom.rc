@@ -46,6 +46,11 @@ on init
     chown root system /sys/fs/cgroup/memory/bg/tasks
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
+    # Change ownership for for HBM feature
+    chown system system /sys/class/graphics/fb0/hbm
+    # Change ownership for for ACL feature
+    chown system system /sys/class/graphics/fb0/acl
+
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
