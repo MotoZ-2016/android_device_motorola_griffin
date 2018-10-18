@@ -81,11 +81,9 @@
          app, they can be remapped here. The format is
          "oldname:newname", one per entry. -->
     <string-array name="config_displayModeMappings" translatable="false">
-        <item>hal_srgb:sRGB</item>
-        <item>hal_adobe:Natural</item>
-        <item>hal_native:Standard</item>
-        <item>hal_warm_srgb:Reading</item>
-        <item>hal_warm_adobe:Cinema</item>
+        <item>hal_native:basic</item>
+        <item>hal_srgb:srgb</item>
+        <item>hal_adobe:adobe</item>
     </string-array>
 
     <!-- Should we filter any display modes which are unampped? -->
