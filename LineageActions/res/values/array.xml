@@ -17,11 +17,13 @@
 <resources>
     <string-array name="fp_keys_listArray">
         <item>Home Button</item>
+        <item>Back Button</item>
         <item>Power Button</item>
     </string-array>
 
     <string-array name="fp_keys_listValues">
         <item>102</item>
+        <item>158</item>
         <item>116</item>
     </string-array>
 </resources>
