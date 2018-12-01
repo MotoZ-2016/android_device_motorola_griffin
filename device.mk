@@ -367,6 +367,12 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc \
     wlan_carrier_bin.sh
 
+# RCS
+PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager \
+    PresencePolling \
+    RcsService
+
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.0 \
