@@ -60,4 +60,5 @@ on property:ro.hw.device=griffin
     setprop persist.audio.calfile5 "/vendor/etc/acdbdata/griffin/Headset_cal.acdb"
     setprop persist.audio.calfile6 "/vendor/etc/acdbdata/griffin/Speaker_cal.acdb"
 
-
+on property:sys.listeners.registered=*
+    setprop vendor.sys.keymaster.loaded ${sys.listeners.registered}
