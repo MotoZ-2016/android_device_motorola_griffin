@@ -1,0 +1,2 @@
+allow vendor_per_mgr sysfs_soc_qcom:dir r_dir_perms;
+allow vendor_per_mgr sysfs_soc_qcom:file rw_file_perms;

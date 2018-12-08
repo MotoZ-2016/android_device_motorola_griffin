@@ -26,3 +26,11 @@ allow rild vendor_file:file execute_no_trans;
 allow rild wifi_data_file:dir search;
 allow rild fsg_file:file { getattr open };
 allow rild fwk_sensor_hwservice:hwservice_manager find;
+allow rild proc:file { open read };
+
+allow rild rild_exec:file execute_no_trans;
+allow rild shell_exec:file { open read execute };
+
+allow rild mnt_vendor_file:file { getattr open read };
+allow rild mnt_vendor_file:dir search;
+allow rild vendor_data_file:sock_file write;

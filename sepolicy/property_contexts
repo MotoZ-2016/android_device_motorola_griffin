@@ -12,6 +12,14 @@ ro.mot.iccid               u:object_r:moto_init_prop:s0
 ro.mot.cust_md5            u:object_r:moto_init_prop:s0
 persist.data.front.        u:object_r:camera_prop:s0
 persist.data.rear.         u:object_r:camera_prop:s0
+camera.show_roi.cfg_bf         u:object_r:camera_prop:s0
+persist.camera.debug.logfile         u:object_r:camera_prop:s0
+persist.camera.daemon         u:object_r:camera_prop:s0
 
 # Perfd
 sys.post_boot.             u:object_r:post_boot_prop:s0
+
+sys.listeners.registered            u:object_r:vendor_tee_listener_prop:s0
+persist.net.doxlat  u:object_r:vendor_xlat_prop:s0
+ro.min_freq_0                 u:object_r:vendor_mpctl_prop:s0
+ro.min_freq_4                 u:object_r:vendor_mpctl_prop:s0

@@ -7,3 +7,9 @@ allow hal_bluetooth_default wcnss_filter:unix_stream_socket connectto;
 allow hal_bluetooth_default bluetooth_data_file:file write;
 allow hal_bluetooth_default bluetooth_data_file:dir { add_name write };
 allow hal_bluetooth_default bluetooth_data_file:file create;
+allow hal_bluetooth_default persist_bluetooth_file:dir rw_dir_perms;
+allow hal_bluetooth_default persist_bluetooth_file:file rw_file_perms;
+
+allow hal_bluetooth_default persist_file:dir r_dir_perms;
+allow hal_bluetooth_default persist_file:file rw_file_perms;
+allow hal_bluetooth_default mnt_vendor_file:dir search;

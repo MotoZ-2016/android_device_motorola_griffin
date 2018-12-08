@@ -8,5 +8,12 @@ allow hal_fingerprint_default sysfs_spi:file r_file_perms;
 
 allow hal_fingerprint_default sysfs:file write;
 
-allow hal_fingerprint_default fpc_data_file:dir { add_name write };
-allow hal_fingerprint_default fpc_data_file:sock_file create;
+allow hal_fingerprint_default fpc_data_file:dir { add_name remove_name write search };
+allow hal_fingerprint_default fpc_data_file:sock_file { create unlink };
+
+allow hal_fingerprint_default fpc_socket:sock_file unlink;
+
+allow hal_fingerprint_default fingerprintd_data_file:dir rw_dir_perms;
+allow hal_fingerprint_default fingerprintd_data_file:file create_file_perms;
+
+allow hal_fingerprint_default system_data_file:dir rw_file_perms;
