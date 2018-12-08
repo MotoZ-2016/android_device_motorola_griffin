@@ -25,7 +25,8 @@ allow rild unlabeled:dir { getattr open read };
 allow rild unlabeled:file { getattr open read };
 
 allow init socket_device:sock_file unlink;
-allow init sysfs:dir write;
+allow init sysfs:dir r_dir_perms;
+allow init sysfs:file setattr;
 
 allow init { domain -lmkd -crash_dump }:process noatsecure;
 allow init debugfs:dir mounton;
@@ -38,7 +39,7 @@ allow init hal_perf_hwservice:hwservice_manager find;
 allow init hidl_allocator_hwservice:hwservice_manager find;
 allow init hidl_base_hwservice:hwservice_manager add;
 allow init mm-qcamerad:unix_dgram_socket sendto;
-allow init sysfs_lowmemorykiller:dir write;
+#allow init sysfs_lowmemorykiller:dir write;
 allow init thermal-engine:unix_stream_socket connectto;
 allow init thermal_socket:sock_file write;
 allow init vendor_camera_data_file:sock_file write;
@@ -50,3 +51,11 @@ allow init ion_device:chr_file ioctl;
 allow init video_device:chr_file write;
 
 allow init vendor_file:file execute;
+
+allow init sysfs_scsi_devices_0000:file { setattr rw_file_perms relabelfrom };
+allow init sysfs_scsi_devices_0000:dir relabelfrom;
+
+allow init adsprpcd_file:filesystem { mount relabelfrom relabelto };
+allow init persist_file:filesystem { mount relabelfrom relabelto };
+
+allow init sysfs_dm:file rw_file_perms;

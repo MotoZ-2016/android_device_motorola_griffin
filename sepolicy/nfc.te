@@ -1,1 +1,3 @@
 allow nfc system_data_file:file open;
+allow nfc nfc_vendor_data_file:dir rw_dir_perms;
+allow nfc nfc_vendor_data_file:file create;

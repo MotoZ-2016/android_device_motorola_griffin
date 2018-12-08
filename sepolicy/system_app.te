@@ -2,3 +2,19 @@ allow system_app fingerprintd:binder call;
 allow system_app mods_service:service_manager { add find };
 allow system_app sysfs_homebutton:file rw_file_perms;
 allow system_app wificond:binder call;
+
+add_hwservice(system_app, hal_modmanager_hwservice);
+#add_hwservice(system_app, hal_atfwd_hwservice);
+
+allow system_app sysfs_greybus:dir { r_file_perms search };
+allow system_app sysfs_greybus:file { getattr rw_file_perms };
+
+allow system_app sysfs_greybus:lnk_file { read getattr };
+allow system_app gbfirmware_file:dir rw_dir_perms;
+allow system_app sysfs_batt_mods:dir { r_dir_perms search };
+
+allow system_app sysfs_rtc:dir { r_dir_perms search };
+
+allow system_app vendor_time_data_file:dir { r_dir_perms search };
+
+get_prop(system_app, vendor_camera_prop);

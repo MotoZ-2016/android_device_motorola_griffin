@@ -5,3 +5,5 @@ allow hal_audio_default persist_file:file { getattr open read };
 allow hal_audio_default sysfs_greybus:dir search;
 allow hal_audio_default sysfs_greybus:file { getattr open read };
 allow hal_audio_default system_server:binder { call transfer };
+
+allow hal_audio_default vendor_data_file:file rw_file_perms;

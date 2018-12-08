@@ -8,3 +8,5 @@ allow hal_sensors_default sysfs:dir { open read };
 allow hal_sensors_default sysfs:file { getattr read };
 allow hal_sensors_default system_data_file:file { getattr open read };
 allow hal_sensors_default self:netlink_kobject_uevent_socket bind;
+allow hal_sensors_default sensors_data_file:file { create rw_file_perms };
+allow hal_sensors_default sensors_data_file:dir rw_dir_perms;

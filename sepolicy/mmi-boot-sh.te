@@ -9,9 +9,11 @@ allow mmi-boot-sh persist_file:file { open read };
 allow mmi-boot-sh persist_file:dir search;
 allow mmi-boot-sh proc:file { write open read };
 allow mmi-boot-sh property_socket:sock_file write;
-allow mmi-boot-sh self:capability dac_override;
 allow mmi-boot-sh vendor_shell_exec:file { entrypoint getattr read };
 allow mmi-boot-sh system_prop:property_service set;
 allow mmi-boot-sh vendor_toolbox_exec:file { execute execute_no_trans getattr open read };
 allow mmi-boot-sh utags_block_device:blk_file { open read write };
 allow mmi-boot-sh moto_init_prop:property_service set;
+
+allow mmi-boot-sh proc_cmdline:file { open read };
+allow mmi-boot-sh mnt_vendor_file:file rw_file_perms;

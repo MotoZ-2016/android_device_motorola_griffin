@@ -1,2 +1,2 @@
 r_dir_file(untrusted_app, sysfs_usb_supply)
-get_prop(untrusted_app, camera_prop)
+get_prop(untrusted_app, vendor_camera_prop)

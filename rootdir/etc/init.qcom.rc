@@ -379,9 +379,6 @@ on fs
     # for android.hardware.health@2.0-service.griffin cycle count backup
     mkdir /persist/battery 0700 system system
 
-    # use /persist as phony PDS partition
-    symlink /persist /pds
-
     # wait /dev/block/bootdevice/by-name/hw
     start vendor.oem-hw-sh
 
@@ -463,7 +460,8 @@ on post-fs-data
     mkdir /persist/qc_senseid 0700 system system
     mkdir /data/misc/dts 0770 media audio
     mkdir /data/usf 0700 system system
-    mkdir /data/misc/tloc/ 0700 system drmrpc
+    mkdir /data/vendor/hbtp 0750 system system
+    mkdir /data/vendor/tloc 0700 system drmrpc
     mkdir /data/misc/qvop 0660 system system
     mkdir /data/misc/audio_pp 0771 media audio
 
@@ -691,6 +689,7 @@ on post-fs-data
 
     # Create greybus firmware folder
     mkdir /data/gbfirmware 0770 oem_5020 oem_5020
+    mkdir /data/vendor/gbfirmware 0770 oem_5020 oem_5020
 
     # Create bug2go folder
     mkdir /data/vendor/bug2go 0770 log log
@@ -876,7 +875,7 @@ service vendor.irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
 service vendor.rmt_storage /vendor/bin/rmt_storage
     class core
     user root
-    group root system wakelock
+    group wakelock system
 
 service vendor.tftp_server /vendor/bin/tftp_server
    class core
@@ -890,7 +889,7 @@ on property:vendor.wc_transport.start_hci=false
 
 service vendor.start_hci_filter /vendor/bin/wcnss_filter
     class late_start
-    user root
+    user bluetooth
     group bluetooth diag system wakelock log
     disabled
 
@@ -1077,7 +1076,7 @@ service vendor.thermal-engine /vendor/bin/thermal-engine
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
    socket thermal-send-rule stream 0660 system system
-   group root
+   group root system diag
    socket thermal-send-client stream 0666 system system
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
