@@ -19,6 +19,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # for specific
 $(call inherit-product, vendor/motorola/griffin/griffin-vendor.mk)
+USE_O_MOTO_AUDIOHAL := true
+$(call inherit-product-if-exists, vendor/motorola/mods/mods-vendor.mk)
 $(call inherit-product, device/motorola/griffin/device.mk)
 
 # Inherit some common CM stuff.
