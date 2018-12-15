@@ -130,7 +130,6 @@ etc/permissions/com.quicinc.cne.xml
 framework/cneapiclient.jar
 framework/com.quicinc.cne.jar
 -priv-app/CNEService/CNEService.apk|69da7058ac27e0af3d498816bc04773c47b0ebfc
-etc/permissions/privapp-permissions-qti.xml
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneqmiutils.so
@@ -290,7 +289,6 @@ vendor/bin/xtra-daemon|03b3d84fa0fb32ce2c43f887e513a26b79f20bbf
 vendor/bin/loc_launcher|2b6c3074ea0ca7add51cef34c225aeca0e61b611
 etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
 etc/permissions/com.qualcomm.location.xml|78b2c4d3f4d053f7d7b3e27a60a8d9e65ac583c3
-etc/permissions/privapp-permissions-com.qualcomm.location.xml|055fb40299c0a2340bb1b2c9be218a4d2c0f8c72
 etc/permissions/izat.xt.srv.xml|a0f460056f27b5495a4d6e959eecf0e429c42a57
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk|eb2af053e0bc12e924b6a3ca1b5e869f5c1a5af2
 framework/com.qti.location.sdk.jar|cb25606f1b8091b3fb2d134f3f1a4d8b24c94bb8
@@ -451,7 +449,6 @@ vendor/bin/ipacm-diag
 vendor/bin/netmgrd
 vendor/lib/libnetmgr.so
 -priv-app/atfwd/atfwd.apk
-etc/permissions/privapp-permissions-com.qualcomm.atfwd.xml
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
 vendor/etc/data/dsi_config.xml
