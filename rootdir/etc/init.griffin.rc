@@ -26,14 +26,14 @@
 #
 
 on init
-    setprop ro.hw.dualsim ${ro.boot.dualsim}
-    setprop ro.hw.device ${ro.boot.device}
-    setprop ro.hw.radio ${ro.boot.radio}
+    setprop ro.vendor.hw.dualsim ${ro.boot.dualsim}
+    setprop ro.vendor.hw.device ${ro.boot.device}
+    setprop ro.vendor.hw.radio ${ro.boot.radio}
 
-on property:ro.hw.dualsim=true
+on property:ro.vendor.hw.dualsim=true
     setprop persist.radio.multisim.config dsds
 
-on property:ro.hw.dualsim=false
+on property:ro.vendor.hw.dualsim=false
     setprop persist.radio.multisim.config ""
 
 on property:ro.boot.hardware.sku=XT1650-03
@@ -43,21 +43,21 @@ on property:ro.boot.hardware.sku=XT1650-05
     setprop ro.telephony.default_network "22,20"
 
 on property:ro.hw.device=sheridan
-    setprop persist.audio.calfile0 "/etc/acdbdata/sheridan/Bluetooth_cal.acdb"
-    setprop persist.audio.calfile1 "/etc/acdbdata/sheridan/General_cal.acdb"
-    setprop persist.audio.calfile2 "/etc/acdbdata/sheridan/Global_cal.acdb"
-    setprop persist.audio.calfile3 "/etc/acdbdata/sheridan/Handset_cal.acdb"
-    setprop persist.audio.calfile4 "/etc/acdbdata/sheridan/Hdmi_cal.acdb"
-    setprop persist.audio.calfile5 "/etc/acdbdata/sheridan/Headset_cal.acdb"
-    setprop persist.audio.calfile6 "/etc/acdbdata/sheridan/Speaker_cal.acdb"
+    setprop persist.audio.calfile0 "/vendor/etc/acdbdata/sheridan/Bluetooth_cal.acdb"
+    setprop persist.audio.calfile1 "/vendor/etc/acdbdata/sheridan/General_cal.acdb"
+    setprop persist.audio.calfile2 "/vendor/etc/acdbdata/sheridan/Global_cal.acdb"
+    setprop persist.audio.calfile3 "/vendor/etc/acdbdata/sheridan/Handset_cal.acdb"
+    setprop persist.audio.calfile4 "/vendor/etc/acdbdata/sheridan/Hdmi_cal.acdb"
+    setprop persist.audio.calfile5 "/vendor/etc/acdbdata/sheridan/Headset_cal.acdb"
+    setprop persist.audio.calfile6 "/vendor/etc/acdbdata/sheridan/Speaker_cal.acdb"
 
 on property:ro.hw.device=griffin
-    setprop persist.audio.calfile0 "/etc/acdbdata/griffin/Bluetooth_cal.acdb"
-    setprop persist.audio.calfile1 "/etc/acdbdata/griffin/General_cal.acdb"
-    setprop persist.audio.calfile2 "/etc/acdbdata/griffin/Global_cal.acdb"
-    setprop persist.audio.calfile3 "/etc/acdbdata/griffin/Handset_cal.acdb"
-    setprop persist.audio.calfile4 "/etc/acdbdata/griffin/Hdmi_cal.acdb"
-    setprop persist.audio.calfile5 "/etc/acdbdata/griffin/Headset_cal.acdb"
-    setprop persist.audio.calfile6 "/etc/acdbdata/griffin/Speaker_cal.acdb"
+    setprop persist.audio.calfile0 "/vendor/etc/acdbdata/griffin/Bluetooth_cal.acdb"
+    setprop persist.audio.calfile1 "/vendor/etc/acdbdata/griffin/General_cal.acdb"
+    setprop persist.audio.calfile2 "/vendor/etc/acdbdata/griffin/Global_cal.acdb"
+    setprop persist.audio.calfile3 "/vendor/etc/acdbdata/griffin/Handset_cal.acdb"
+    setprop persist.audio.calfile4 "/vendor/etc/acdbdata/griffin/Hdmi_cal.acdb"
+    setprop persist.audio.calfile5 "/vendor/etc/acdbdata/griffin/Headset_cal.acdb"
+    setprop persist.audio.calfile6 "/vendor/etc/acdbdata/griffin/Speaker_cal.acdb"
 
 

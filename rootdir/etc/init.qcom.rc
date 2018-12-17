@@ -32,10 +32,6 @@ import /vendor/etc/init/hw/init.griffin.rc
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
-    mkdir /firmware 0771 system system
-    mkdir /bt_firmware 0771 system system
-    mkdir /dsp 0771 media media
-    mkdir /fsg 755 root root
 
 on init
     # Create cgroup mount point for memory
@@ -49,9 +45,6 @@ on init
     chown system system /sys/class/graphics/fb0/hbm
     # Change ownership for for ACL feature
     chown system system /sys/class/graphics/fb0/acl
-
-    # Set permissions for persist partition
-    mkdir /persist 0771 system system
 
     # Add for fpc fingerprints permission
     chmod 777 /dev/qseecom
@@ -139,6 +132,11 @@ on boot
     chown bluetooth bluetooth /sys/module/hci_uart/parameters/ath_btwrite
     chown system system /sys/module/sco/parameters/disable_esco
     chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set
+    chown system system /sys/module/msm_core/parameters/polling_interval
+    chown system system /sys/module/msm_core/parameters/disabled
+    chown system system /sys/kernel/debug/msm_core/enable
+    chown system system /sys/kernel/debug/msm_core/ptable
+    chown system system /sys/kernel/boot_slpi/ssr
     chown system system /sys/module/radio_iris_transport/parameters/fmsmd_set
     chmod 0660 /sys/module/bluetooth_power/parameters/power
     chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
@@ -176,6 +174,7 @@ on boot
     mkdir /persist/secnvm 0770 system system
     mkdir /persist/rfs 0770 system system
     mkdir /persist/hlos_rfs 0770 system system
+    mkdir /mnt/vendor/persist/secnvm 0770 system system
 
     #Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
@@ -475,15 +474,23 @@ on post-fs-data
     mkdir /data/fpc_images/enroll 0770 system system
     mkdir /data/fpc 0770 system system
 
-    # Create directory for TZ Apps
-    mkdir /data/misc/qsee 0770 system system
+    # Create /data/vendor/tzstorage directory for SFS listener
+    mkdir /data/vendor/tzstorage 0770 system system
+
+    # Create directory for apps access via QTEEConnector
+    mkdir /data/vendor/qtee 0770 system system
 
     #Create folder for mm-qcamera-daemon
     mkdir /data/misc/camera 0770 camera camera
+    mkdir /data/vendor/camera 0770 camera camera
 
     # Create directory for tftp
     mkdir /data/vendor/tombstones 0771 system system
     mkdir /data/vendor/tombstones/rfs 0771 system system
+
+    mkdir /data/vendor/ramdump 0771 root system
+    mkdir /data/vendor/bluetooth 0770 bluetooth bluetooth
+    mkdir /data/vendor/ramdump/bluetooth 0770 bluetooth bluetooth
 
     mkdir /data/misc/ipa 0700 net_admin net_admin
 
@@ -507,40 +514,42 @@ on post-fs-data
     mkdir /data/vendor/ipa 0770 radio radio
     chmod 0770 /data/vendor/ipa
 
+    #Create QTI dir for logs
+    mkdir /data/vendor/dataqti 0770 radio radio
+    chmod 0770 /data/vendor/dataqti
+
     # Create the directories used by CnE subsystem
-    mkdir /data/connectivity 0771 system system
-    chown system system /data/connectivity
-
-    # Create the directories used by DPM subsystem
-    mkdir /data/dpm 0771 system system
-    chown system system /data/dpm
-
-    mkdir /data/dpm/nsrm 0771 system system
-    chown system system /data/dpm/nsrm
+    mkdir /data/vendor/connectivity 0771 radio radio
+    chown radio radio /data/vendor/connectivity
 
     # Create directory used by audio subsystem
     mkdir /data/vendor/misc/audio 0770 audio audio
+    mkdir /data/vendor/audio 0770 audio audio
 
     # Create directory for audio delta files
     mkdir /data/vendor/misc/audio/acdbdata 0770 media audio
     mkdir /data/vendor/misc/audio/acdbdata/delta 0770 media audio
 
-    # Create directory used by the DASH client
-    mkdir /data/misc/dash 0770 media audio
-
     # Create directory for radio
     mkdir /data/vendor/radio 0770 system radio
+
+    # Create directory for modem_config
+    mkdir /data/vendor/modem_config 0570 radio root
 
     # Create directory used by display clients
     mkdir /persist/display 0770 system graphics
 
     # Create vpp directory
-    mkdir /persist/vpp 0770 media media
+    mkdir /mnt/vendor/persist/vpp 0770 media media
+
+    # Create hvdcp_opti directory
+    mkdir /mnt/vendor/persist/hvdcp_opti 0770 root system
 
     # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
     # We chown/chmod /persist again so because mount is run as root + defaults
     chown system system /persist
     chmod 0771 /persist
+    chown system system /persist/WCNSS_qcom_wlan_nv.bin
     chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.3/polling
@@ -572,7 +581,7 @@ on post-fs-data
     chown system system /data/fota
 
     # Create /data/time folder for time-services
-    mkdir /data/time/ 0700 system system
+    mkdir /data/vendor/time/ 0700 system system
 
     mkdir /data/vendor/audio/ 0770 media audio
 
@@ -580,14 +589,8 @@ on post-fs-data
     mkdir /data/vendor/audio/acdbdata 0770 media audio
     mkdir /data/vendor/audio/acdbdata/delta 0770 media audio
 
-    setprop vold.post_fs_data_done 1
-
     #Create a folder for SRS to be able to create a usercfg file
     mkdir /data/data/media 0770 media media
-
-    #Create FM dir for patchdownloader
-    mkdir /data/misc/fm 0770 system system
-    chmod 0770 /data/misc/fm
 
     # RIDL data
     mkdir /data/misc/SelfHost/ 0710 system shell
@@ -607,15 +610,12 @@ on post-fs-data
     mkdir /data/vendor/nfc/param 0770 nfc nfc
 
     #Create IOP  deamon related dirs
-    mkdir /data/misc/iop 0770 root system
+    mkdir /data/vendor/iop 0700 root system
 
     # Create vpp directory
     mkdir /data/vendor/vpp 0770 media media
 
     # Mark the copy complete flag to not completed
-    write /data/misc/radio/copy_complete 0
-    chown radio radio /data/misc/radio/copy_complete
-    chmod 0660 /data/misc/radio/copy_complete
     write /data/vendor/radio/copy_complete 0
     chown radio radio /data/vendor/radio/copy_complete
     chmod 0660 /data/vendor/radio/copy_complete
@@ -632,9 +632,6 @@ on post-fs-data
     write /data/vendor/radio/db_check_done 0
     chown radio radio /data/vendor/radio/db_check_done
     chmod 0660 /data/vendor/radio/db_check_done
-
-    #setup folder for WLAN WAPI
-    chmod 0770 /data/wapi_certificate
 
     # FPC home button permissions
     chown system system /sys/homebutton/enable
@@ -686,10 +683,7 @@ on post-fs-data
     mkdir /data/system/dropbox-add 0730 system diag
 
     # Create directory for cutback
-    mkdir /data/misc/cutback 0770 radio wifi
-
-    # Create directory for fm_radio
-    mkdir /data/misc/fm_radio 0770 system system
+    mkdir /data/vendor/misc/cutback 0770 radio wifi
 
     #setup folder for WLAN WAPI
     mkdir /data/wapi_certificate 0750 system wifi
@@ -704,25 +698,8 @@ on post-fs-data
     # Setup folder for aplogd
     mkdir /data/vendor/aplogd 0750 log log
 
-    # Subsystem RAM-dumps
-    mkdir /data/ss-ram-dumps 0750 system log
-    mkdir /data/ss-ram-dumps/bp-dumps 0750 system log
-    mkdir /data/ss-ram-dumps/riva-dumps 0750 system log
-
-    # folder for Blueooth ramdump
-    mkdir /data/bt-ram-dumps 0750 bluetooth log
-
-    # SD card encryption metadata
-    mkdir /data/misc/sds 0750 root root
-
     # Required by FingerPrint Cards (FPC) via init so we dont need to give qseecomd or fingerprintd permissions to create them
     mkdir /data/.fps 0770 system system
-
-    #Folder for hardware properties
-    mkdir /data/hardware_revisions 0755 system system
-
-    #Create directory for adspd
-    mkdir /data/adspd 0770 audio diag
 
     # Setup folder for camera dump subsystem
     mkdir /data/camera_dump 0750 media media
@@ -730,11 +707,13 @@ on post-fs-data
     # Imager tuning data for camera subsystem
     mkdir /data/misc/imager 0770 camera camera
 
-    #setup folder for WLAN WAPI
-    chmod 0770 /data/wapi_certificate
-
     # Start Camera Mods Daemon
     start vendor.mods_camd
+
+    #Start move time data to /data/vendor once post-fs-data done
+    start vendor.move_time_data
+
+    setprop vold.post_fs_data_done 1
 
 service vendor.qcomsysd /vendor/bin/qcom-system-daemon
     class main
@@ -1123,4 +1102,11 @@ service vendor.energy-awareness /vendor/bin/energy-awareness
     class main
     user root
     group system
+    oneshot
+
+service vendor.move_time_data /system/bin/move_time_data.sh
+    class main
+    user system
+    group system
+    disabled
     oneshot

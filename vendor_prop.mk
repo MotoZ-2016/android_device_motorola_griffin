@@ -24,7 +24,7 @@
 # once we start upgrading so we can keep track of
 # things properly.
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.version.qcom=LA.UM.6.6.r1-04400-89xx.0
+    ro.vendor.build.version.qcom=LA.UM.7.6.r1-02500-89xx.0
 
 ## Audio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -98,30 +98,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ## CNE
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.cne.feature=1 \
-    persist.cne.logging.qxdm=3974 \
-    persist.cne.rat.wlan.chip.oem=WCN \
-    persist.dpm.feature=0 \
-    persist.sys.cnd.iwlan=1
+    persist.vendor.cne.feature=1 \
+    persist.vendor.cne.logging.qxdm=3974 \
+    persist.vendor.cne.rat.wlan.chip.oem=WCN \
+    persist.vendor.dpm.feature=0 \
+    persist.vendor.sys.cnd.iwlan=1
 
 ## CoreSight
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.coresight.config=stm-events
 
-## GPS
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.gps.qc_nlp_in_use=1 \
-    persist.loc.nlp_name=com.qualcomm.location \
-    persist.mot.gps.assisted=false \
-    persist.mot.gps.conf.from.sim=true \
-    persist.mot.gps.smart_battery=1 \
-    ro.gps.agps_provider=1
-
 ## Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.egl.hw=1 \
-    debug.sf.hw=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
+    debug.gralloc.enable_fb_ubwc=1 \
     vendor.display.disable_skip_validate=1 \
     sdm.debug.disable_skip_validate=1 \
     dev.pm.dyn_samplingrate=1 \
@@ -135,22 +125,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ## Media
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
-    media.stagefright.enable-aac=true \
-    media.stagefright.enable-fma2dp=true \
-    media.stagefright.enable-meta=true \
-    media.stagefright.enable-http=true \
-    media.stagefright.enable-player=true \
-    media.stagefright.enable-qcp=true \
-    media.stagefright.enable-record=true \
-    media.stagefright.enable-rtsp=true \
-    media.stagefright.enable-scan=true \
-    media.stagefright.log-uri="" \
     mm.enable.qcom_parser=1048575 \
-    mm.enable.sec.smoothstreaming=false \
+    vendor.mm.en.sec.smoothstreaming=false \
     mm.enable.smoothstreaming=false \
     mmp.enable.3g2=true \
-    av.offload.enable=false \
-    persist.mm.enable.prefetch=true \
     vidc.enc.dcvs.extra-buff-count=2 \
     vendor.vidc.enc.disable.pq=true
 
@@ -162,22 +140,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.mod.platformsdkversion=205
 
-## NFC
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.nfc.smartcard.config=SIM1,SIM2,eSE1
-
 ## Netmgr
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.use_data_netmgrd=true \
+    ro.vendor.use_data_netmgrd=true \
     persist.data.netmgrd.qos.enable=true \
-    persist.data.mode=concurrent
+    persist.vendor.data.mode=concurrent
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.gt_library=libqti-gt.so \
     ro.vendor.at_library=libqti-at.so \
-    ro.vendor.wl_library=libqti-wl.so \
-    sys.games.gt.prof=1 \
     ro.vendor.extension_library=libqti-perfd-client.so
 
 ## Play Store
@@ -194,12 +166,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ## IMS
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.ims.disableADBLogs=2 \
-    persist.ims.disableDebugLogs=0 \
-    persist.ims.disableQXDMLogs=0 \
-    persist.ims.disableIMSLogs=0 \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1 \
+    persist.vendor.ims.disableADBLogs=2 \
+    persist.vendor.ims.disableDebugLogs=0 \
+    persist.vendor.ims.disableQXDMLogs=0 \
+    persist.vendor.ims.disableIMSLogs=0 \
+    persist.vendor.ims.vt.enableadb=1 \
     persist.radio.NO_STAPA=1 \
     persist.radio.VT_HYBRID_ENABLE=1
 
@@ -221,6 +192,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sw_mbn_update=1 \
     persist.vendor.radio.jbims=1 \
+    persist.vendor.radio.sar_sensor=1 \
+    persist.vendor.radio.apm_sim_not_pwdn=1 \
+    persist.vendor.radio.msgtunnel.start=true \
+    persist.vendor.radio.apn_delay=5000 \
+    persist.vendor.radio.calls.on.ims=true \
+    persist.vendor.radio.domain.ps=0 \
+    persist.vendor.cne.rat.wlan.chip.oem=WCN \
     persist.radio.adb_log_on=0 \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.eons.enabled=false \
@@ -230,7 +208,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.calls.on.ims=true \
     persist.radio.domain.ps=0 \
     persist.radio.VT_ENABLE=1 \
-    persist.radio.VT_HYBRID_ENABLE=1 \
     persist.radio.ROTATION_ENABLE=1 \
     persist.radio.REVERSE_QMI=0 \
     persist.radio.RATE_ADAPT_ENABLE=1 \
@@ -251,8 +228,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.call_ring.multiple=false \
     ril.subscription.types=NV,RUIM \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+    vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     telephony.lteOnCdmaDevice=1 \
-    DEVICE_PROVISIONED=1
+    DEVICE_PROVISIONED=1 \
+    ro.vendor.build.vendorprefix=/vendor \
+    ro.build.vendorprefix=/vendor
 
 ## QTI Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -262,7 +242,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qti.sensors.sta_detect=false
 
 ## RmNet Data
-    PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.wda.enable=true \
     persist.data.df.dl_mode=5 \
     persist.data.df.ul_mode=5 \
@@ -275,11 +255,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rmnet.data.enable=true \
     persist.rmnet.mux=enabled
 
-## SSR
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.ssr.enable_ramdumps=1 \
-    persist.sys.ssr.restart_level=ALL_ENABLE
-
 ## Time Service
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true
@@ -288,17 +263,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so
 
-## Wifi Display
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0
-
 ## Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface=wlan0 \
-    wifi.fccutild.load.qcacld=true
-
-## XLAT
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.net.doxlat=true
-
+    wifi.interface=wlan0

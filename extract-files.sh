@@ -59,9 +59,16 @@ extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
 BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
+# Load wrapped shim
 patchelf --add-needed libqsap_shim.so $BLOB_ROOT/vendor/lib64/libmdmcutback.so
 patchelf --add-needed libshim_ril.so $BLOB_ROOT/vendor/lib64/libmdmcutback.so
-patchelf --add-needed libgpu_mapper_shim.so $BLOB_ROOT/vendor/lib/libmot_gpu_mapper.so
-patchelf --add-needed libjustshoot_shim.so $BLOB_ROOT/lib/libjustshoot.so
+
+# Correct qcrilhook library location
+QCRILHOOK="$BLOB_ROOT"/vendor/etc/permissions/qcrilhook.xml
+sed -i "s|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g" "$QCRILHOOK"
+
+# Correct QtiTelephonyServicelibrary location
+TELESERVICELIB="$BLOB_ROOT"/vendor/etc/permissions/telephonyservice.xml
+sed -i "s|/system/framework/QtiTelephonyServicelibrary.jar|/vendor/framework/QtiTelephonyServicelibrary.jar|g" "$TELESERVICELIB"
 
 "$MY_DIR"/setup-makefiles.sh

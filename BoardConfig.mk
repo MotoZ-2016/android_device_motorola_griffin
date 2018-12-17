@@ -110,7 +110,7 @@ TARGET_HAS_HDR_DISPLAY := true
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
 #BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff firmware_class.path=/vendor/firmware_mnt/image
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += cnsscore.pcie_link_down_panic=1
 BOARD_KERNEL_PAGESIZE := 4096
@@ -187,7 +187,7 @@ BOARD_USES_QC_TIME_SERVICES := true
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 
 # Root
-BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp firmware fsg persist
+BOARD_ROOT_EXTRA_FOLDERS := persist
 
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
@@ -247,7 +247,7 @@ TARGET_USES_MEDIA_EXTENSIONS := true
 TARGET_USE_SDCLANG := true
 
 # Vendor security patch level
-VENDOR_SECURITY_PATCH := 2018-07-01
+VENDOR_SECURITY_PATCH := 2018-11-01
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
