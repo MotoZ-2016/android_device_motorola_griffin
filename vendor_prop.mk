@@ -110,8 +110,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.enable_vds=1 \
     ro.hwui.texture_cache_flushrate=0.4 \
     ro.opengles.version=196609 \
-    debug.sf.recomputecrop=0 \
-    ro.sf.lcd_density=560
+    debug.sf.recomputecrop=0
 
 ## Media
 PRODUCT_PROPERTY_OVERRIDES += \
