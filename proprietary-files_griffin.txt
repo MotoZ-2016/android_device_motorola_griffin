@@ -55,12 +55,12 @@ vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
 
 # Fingerprint
-lib/lib_fpc_tac_shared.so
+lib/lib_fpc_tac_shared.so:vendor/lib/lib_fpc_tac_shared.so
 vendor/lib/hw/fingerprint.msm8996.so
-lib/libcom_fingerprints_service.so
-lib64/lib_fpc_tac_shared.so
+lib/libcom_fingerprints_service.so:vendor/lib/libcom_fingerprints_service.so
+lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so
 vendor/lib64/hw/fingerprint.msm8996.so
-lib64/libcom_fingerprints_service.so
+lib64/libcom_fingerprints_service.so:vendor/lib64/libcom_fingerprints_service.so
 
 # Gatekeepr
 -vendor/lib/hw/gatekeeper.msm8996.so
