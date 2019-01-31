@@ -60,6 +60,10 @@ extract "$MY_DIR"/proprietary-files_griffin.txt "$SRC" "$SECTION"
 BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
 # Load wrapped shim
-patchelf --add-needed libjustshoot_shim.so $BLOB_ROOT/lib/libjustshoot.so
+patchelf --add-needed libjustshoot_shim.so $BLOB_ROOT/vendor/lib/libjustshoot.so
+
+# Load camera configs from vendor
+CAMERA2_SENSOR_MODULES="$BLOB_ROOT"/vendor/lib/libmmcamera2_sensor_modules.so
+sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
 
 "$MY_DIR"/setup-makefiles.sh
