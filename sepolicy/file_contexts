@@ -119,7 +119,7 @@
 
 # Vibrator HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service\.griffin   u:object_r:hal_vibrator_default_exec:s0
-/sys/devices/virtual/timed_output/vibrator/vtg_default                             u:object_r:sysfs_vibrator:s0
+/sys/devices/virtual/timed_output/vibrator(/.*)?                                   u:object_r:sysfs_vibrator:s0
 /sys/devices/virtual/motosh/motosh_as/tabletop_mode                                u:object_r:sysfs_vibrator:s0
 
 # QCOM SOC
