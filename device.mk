@@ -363,7 +363,6 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libshim_ril \
     libjustshoot_shim \
     libqsap_shim
 

@@ -61,7 +61,6 @@ BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
 # Load wrapped shim
 patchelf --add-needed libqsap_shim.so $BLOB_ROOT/vendor/lib64/libmdmcutback.so
-patchelf --add-needed libshim_ril.so $BLOB_ROOT/vendor/lib64/libmdmcutback.so
 
 # Correct qcrilhook library location
 QCRILHOOK="$BLOB_ROOT"/vendor/etc/permissions/qcrilhook.xml
