@@ -71,4 +71,8 @@ sed -i "s|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g" "$Q
 TELESERVICELIB="$BLOB_ROOT"/vendor/etc/permissions/telephonyservice.xml
 sed -i "s|/system/framework/QtiTelephonyServicelibrary.jar|/vendor/framework/QtiTelephonyServicelibrary.jar|g" "$TELESERVICELIB"
 
+# Correct thermal config location
+THERENG="$BLOB_ROOT"/vendor/bin/thermal-engine
+sed -i "s|/system/etc/thermal|/vendor/etc/thermal|g" "$THERENG"
+
 "$MY_DIR"/setup-makefiles.sh
