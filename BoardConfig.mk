@@ -77,6 +77,7 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE    := squashfs
 BOARD_VENDORIMAGE_JOURNAL_SIZE        := 0
 BOARD_VENDORIMAGE_SQUASHFS_COMPRESSOR := lz4
 # BOARD_USERDATAIMAGE_PARTITION_SIZE := 0xD5B07B000
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 TARGET_EXFAT_DRIVER := exfat
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USES_MKE2FS := true
@@ -121,6 +122,7 @@ BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff firmware_class.path=/vendor/firmware_mnt/image
 #BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += cnsscore.pcie_link_down_panic=1
+BOARD_KERNEL_CMDLINE += skip_initramfs rootwait ro init=/init root=/dev/dm-0 dm=\"system none ro,0 1 android-verity /dev/sda15\"
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
