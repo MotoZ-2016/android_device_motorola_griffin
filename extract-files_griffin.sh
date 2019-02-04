@@ -66,4 +66,8 @@ patchelf --add-needed libjustshoot_shim.so $BLOB_ROOT/vendor/lib/libjustshoot.so
 CAMERA2_SENSOR_MODULES="$BLOB_ROOT"/vendor/lib/libmmcamera2_sensor_modules.so
 sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
 
+# Get rid of libandroid on camera blobs
+patchelf --remove-needed libandroid.so $BLOB_ROOT/vendor/lib/libmmcamera_vstab_module.so
+patchelf --remove-needed libandroid.so $BLOB_ROOT/vendor/lib/libmot_ois_data.so
+
 "$MY_DIR"/setup-makefiles.sh
