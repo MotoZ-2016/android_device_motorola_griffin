@@ -1,6 +1,5 @@
 allow cnd netmgrd:dir search;
 allow cnd netmgrd:file { open read };
-allow cnd system_wpa_socket:sock_file unlink;
 add_hwservice(cnd, hal_cne_hwservice)
 
 allow cnd sysfs:file { read open };

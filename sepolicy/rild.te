@@ -4,10 +4,8 @@ allow rild fsg_file:dir { getattr open read search };
 allow rild persist_file:dir { getattr open read search };
 allow rild persist_file:file { getattr read write open };
 allow rild radio_data_file:lnk_file read;
-allow rild radio_data_file:chr_file { create open read write };
 allow rild rmt_storage_prop:property_service set;
 allow rild sensors_device:chr_file { ioctl open read write };
-allow rild system_data_file:dir { write remove_name  add_name };
 allow rild system_server:binder { transfer call };
 allow rild system_server:unix_stream_socket { read getopt write };
 allow rmt_storage fsg_file:file { read open getattr };
@@ -16,20 +14,17 @@ allow rild unlabeled:lnk_file read;
 
 allow rild vendor_file:file { r_file_perms ioctl };
 allow rild hal_wifi_supplicant_default:unix_dgram_socket sendto;
-allow rild system_data_file:dir { open read };
 allow rild wpa_socket:sock_file write;
 allow rild fsg_file:lnk_file read;
 allow rild system_data_file:sock_file write;
-allow rild wifi_data_file:dir search;
 allow rild fsg_file:file read;
 allow rild vendor_file:file execute_no_trans;
-allow rild wifi_data_file:dir search;
 allow rild fsg_file:file { getattr open };
 allow rild fwk_sensor_hwservice:hwservice_manager find;
 allow rild proc:file { open read };
 
 allow rild rild_exec:file execute_no_trans;
-allow rild shell_exec:file { open read execute };
+allow rild shell_exec:file { open read };
 
 allow rild mnt_vendor_file:file { getattr open read };
 allow rild mnt_vendor_file:dir search;
