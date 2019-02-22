@@ -85,7 +85,7 @@ on early-boot
     # Motorola uses external sensorhub, do not boot the slpi
     # write /sys/kernel/boot_slpi/boot 1
     write /sys/module/subsystem_restart/parameters/disable_restart_work 0x0
-    write /proc/sys/kernel/poweroff_cmd "/system/bin/reboot -p"
+    # write /proc/sys/kernel/poweroff_cmd "/system/bin/reboot -p"
 
     # STML4 driver parameter permissions
     chown root oem_5004 /sys/module/motosh/parameters/irq_disable
