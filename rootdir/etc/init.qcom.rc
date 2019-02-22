@@ -398,8 +398,8 @@ on late-fs
     mount_all /vendor/etc/fstab.qcom --late
 
     # Hack for oreo camera blobs
-    mount none /vendor/lib/full/libbinder.so /system/lib/vndk-28/libbinder.so bind
-    mount none /vendor/lib/full/libcutils.so /system/lib/vndk-sp-28/libcutils.so bind
+    mount none /system/lib/libbinder.so /system/lib/vndk-28/libbinder.so bind
+    mount none /system/lib/libcutils.so /system/lib/vndk-sp-28/libcutils.so bind
 
 on post-fs
     mkdir /persist/camera 0755 oem_5004 oem_5004
