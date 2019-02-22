@@ -28,4 +28,5 @@ allow rild shell_exec:file { open read };
 
 allow rild mnt_vendor_file:file { getattr open read };
 allow rild mnt_vendor_file:dir search;
-allow rild vendor_data_file:sock_file write;
+allow rild vendor_data_file:sock_file { create unlink write };
+allow rild vendor_data_file:dir { write remove_name unlink add_name create };

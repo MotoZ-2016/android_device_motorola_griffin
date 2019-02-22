@@ -1,3 +1,4 @@
+typeattribute hal_sensors_default data_between_core_and_vendor_violators;
 allow hal_sensors_default self:netlink_kobject_uevent_socket read;
 allow hal_sensors_default sensors_device:chr_file ioctl;
 allow hal_sensors_default sysfs:file { open write };
@@ -7,3 +8,5 @@ allow hal_sensors_default sensors_device:chr_file { open read };
 allow hal_sensors_default sysfs:dir { open read };
 allow hal_sensors_default sysfs:file { getattr read };
 allow hal_sensors_default self:netlink_kobject_uevent_socket bind;
+allow hal_sensors_default sensors_data_file:file { getattr open write };
+allow hal_sensors_default sensors_data_file:dir { read search };
