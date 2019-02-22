@@ -1,0 +1,2 @@
+allow time_daemon sysfs_soc_qcom:dir { search open read };
+allow time_daemon sysfs_soc_qcom:file { open read };

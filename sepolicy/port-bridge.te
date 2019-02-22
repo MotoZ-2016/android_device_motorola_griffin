@@ -1,0 +1,2 @@
+allow port-bridge sysfs_soc_qcom:dir { search };
+allow port-bridge sysfs_soc_qcom:file { open read write };

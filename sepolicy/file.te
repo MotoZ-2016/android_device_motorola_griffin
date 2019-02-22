@@ -9,6 +9,7 @@ type sysfs_spi, fs_type, sysfs_type;
 type sysfs_scsi_devices_0000, sysfs_type, fs_type;
 type sysfs_scsi_devices_other, sysfs_type, fs_type;
 type sysfs_batt_health, fs_type, sysfs_type;
+type sysfs_wifi, sysfs_type, fs_type, mlstrustedobject;
 
 # Battery health
 type batt_health_data_file, file_type, data_file_type;
@@ -50,3 +51,7 @@ type debugfs_wlan, debugfs_type, fs_type;
 
 type sysfs_soc_qcom, fs_type, sysfs_type;
 type sysfs_camera, fs_type, sysfs_type;
+
+# /vendor
+type idc_file, file_type, vendor_file_type;
+type keylayout_file, file_type, vendor_file_type;

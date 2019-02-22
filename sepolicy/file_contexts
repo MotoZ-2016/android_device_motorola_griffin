@@ -8,6 +8,7 @@
 /(vendor|system/vendor)/bin/batt_health                  u:object_r:batt_health_exec:s0
 /(vendor|system/vendor)/bin/mods_camd                    u:object_r:mods_camd_exec:s0
 /(vendor|system/vendor)/bin/qmi_motext_hook              u:object_r:rild_exec:s0
+/(vendor|system/vendor)/bin/wlan_carrier_bin\.sh         u:object_r:init_wifi_exec:s0
 /system/bin/move_time_data\.sh                           u:object_r:move-time-data-sh_exec:s0
 
 # LineageActions
@@ -118,10 +119,14 @@
 
 # Vibrator HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service\.griffin   u:object_r:hal_vibrator_default_exec:s0
-/sys/devices/virtual/timed_output/vibrator/vtg_default                             u:object_r:sysfs_vibrator:s0
+/sys/devices/virtual/timed_output/vibrator(/.*)?                                   u:object_r:sysfs_vibrator:s0
 /sys/devices/virtual/motosh/motosh_as/tabletop_mode                                u:object_r:sysfs_vibrator:s0
 
 # QCOM SOC
 /sys/devices/soc/9300000\.qcom,lpass/subsys3(/.*)?            u:object_r:sysfs_soc_qcom:s0
 /sys/devices/soc/1c00000\.qcom,ssc/subsys4(/.*)?              u:object_r:sysfs_soc_qcom:s0
 /sys/devices/soc/2080000\.qcom,mss/subsys5(/.*)?              u:object_r:sysfs_soc_qcom:s0
+
+# Misc files on /vendor
+/vendor/usr/idc(/.*)?                                           u:object_r:idc_file:s0
+/vendor/usr/keylayout(/.*)?                                     u:object_r:keylayout_file:s0
