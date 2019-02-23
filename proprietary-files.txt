@@ -463,7 +463,7 @@ vendor/bin/netmgrd
 vendor/bin/port-bridge
 vendor/bin/qti
 vendor/bin/rmt_storage
-vendor/bin/tftp_server
+vendor/bin/tftp_server|05a9c0e0e691e534e703bded4a99083d25a26ebb
 vendor/bin/hw/qcrild
 vendor/etc/data/dsi_config.xml
 vendor/etc/data/netmgr_config.xml
