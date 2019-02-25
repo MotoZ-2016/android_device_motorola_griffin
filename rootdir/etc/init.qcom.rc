@@ -415,8 +415,6 @@ on post-fs
     mkdir /persist/bt 0755 oem_5004 bluetooth
     mkdir /persist/wmdrm 0775 oem_5003 oem_5003
 
-    chown oem_5004 oem_5004 /persist/factory/fti
-    chmod 0660 /persist/factory/fti
     chown oem_5004 oem_5004 /persist/factory/byte
     chmod 0660 /persist/factory/byte
     chmod 0660 /persist/wifi/wlan_mac.bin
