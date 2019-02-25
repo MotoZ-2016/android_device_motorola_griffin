@@ -379,9 +379,6 @@ on fs
     # for android.hardware.health@2.0-service.griffin cycle count backup
     mkdir /persist/battery 0700 system system
 
-    # wait /dev/block/bootdevice/by-name/hw
-    start vendor.oem-hw-sh
-
     # Start HW service manager early
     start hwservicemanager
 
@@ -785,12 +782,6 @@ service vendor.init_wifi /vendor/bin/wlan_carrier_bin.sh
     oneshot
     disabled
 
-service vendor.mmi-boot-sh /vendor/bin/init.mmi.boot.sh
-    class core
-    user root
-    group root radio
-    oneshot
-
 # translate to qcom property name in order to keep the consistent with
 # our legacy property
 on property:persist.sys.qc.sub.rdump.on=*
@@ -825,12 +816,6 @@ service vendor.mmi-laser-sh /vendor/bin/init.mmi.laser.sh
     user root vendor_mot_tcmd
     group root vendor_mot_tcmd
     oneshot
-
-service vendor.oem-hw-sh /vendor/bin/init.oem.hw.sh
-    class core
-    user root
-    oneshot
-    disabled
 
 service vendor.mods_camd /vendor/bin/mods_camd
     class late_start

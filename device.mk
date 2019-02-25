@@ -320,10 +320,8 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.mmi.boot.sh \
     init.mmi.laser.sh \
     init.mmi.usb.rc \
-    init.oem.hw.sh \
     init.qcom.rc \
     init.griffin.rc \
     init.qcom.power.rc \
