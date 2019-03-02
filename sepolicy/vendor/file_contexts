@@ -38,7 +38,7 @@
 /dev/motosh                                              u:object_r:sensors_device:s0
 /dev/motosh_as                                           u:object_r:sensors_device:s0
 /dev/motosh_ms                                           u:object_r:sensors_device:s0
-/data/misc/sensorhub(/.*)?                               u:object_r:sensors_data_file:s0
+/data/misc/sensorhub(/.*)?                               u:object_r:sensorhub_data_file:s0
 
 #FSG
 /dev/sdc4                                                u:object_r:firmware_file:s0
