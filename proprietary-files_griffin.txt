@@ -55,35 +55,25 @@ vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
 
 # Fingerprint
-lib/lib_fpc_tac_shared.so:vendor/lib/lib_fpc_tac_shared.so
-vendor/lib/hw/fingerprint.msm8996.so
-lib/libcom_fingerprints_service.so:vendor/lib/libcom_fingerprints_service.so
 lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so
 vendor/lib64/hw/fingerprint.msm8996.so
 lib64/libcom_fingerprints_service.so:vendor/lib64/libcom_fingerprints_service.so
 
 # Gatekeepr
--vendor/lib/hw/gatekeeper.msm8996.so
 -vendor/lib64/hw/gatekeeper.msm8996.so
 
 # Keystore
--vendor/lib/hw/keystore.msm8996.so
 -vendor/lib64/hw/keystore.msm8996.so
 
 # Keymaster
-vendor/lib/libkeymasterprovision.so
 vendor/lib64/libkeymasterprovision.so
 
 # Sensors
 vendor/bin/motosh
-vendor/lib/sensors.iio.so
-vendor/lib/sensors.msm8996.so
-vendor/lib/sensors.ssc.so
 vendor/lib64/hw/sensorhub.msm8996.so
 vendor/lib64/sensors.iio.so
 vendor/lib64/sensors.msm8996.so
 vendor/lib64/sensors.ssc.so
-vendor/lib/libsensorhub.so
 vendor/lib64/libsensorhub.so
 vendor/etc/firmware/sensorhubfw.bin
 lib/libiio.so:vendor/lib/libiio.so
@@ -94,13 +84,8 @@ vendor/lib64/libsensor_reg.so
 vendor/lib/libsensor_reg.so
 lib/lib_motsensorlistener.so:vendor/lib/lib_motsensorlistener.so
 vendor/bin/sensors.qcom
-vendor/lib/libsensorhubservice_jni.so
 vendor/lib64/libsensorhubservice_jni.so
-vendor/lib/sensor_calibrate.so
 vendor/lib64/sensor_calibrate.so
-
-# VFS (used init.oem.hw.sh)
-vendor/etc/vhw.xml
 
 # Thermal
 etc/thermal-engine-griffin.conf:vendor/etc/thermal-engine-griffin.conf
@@ -164,29 +149,19 @@ vendor/etc/init/motorola.hardware.camera.provider@2.4-service_delayed.rc
 vendor/lib/hw/motorola.hardware.camera.provider@2.4-impl.so
 vendor/lib/motorola.hardware.camera.provider@2.4_vendor.so|f48d16e1e3f777a4fb0897ff2f667d98542b15df
 vendor/lib/motorola.hardware.camera.device@1.0_vendor.so
-vendor/lib64/hw/motorola.hardware.camera.provider@2.4-impl.so
-vendor/lib64/motorola.hardware.camera.device@1.0_vendor.so
-vendor/lib64/motorola.hardware.camera.provider@2.4_vendor.so
-lib64/motorola.hardware.camera.device@1.0.so:vendor/lib64/motorola.hardware.camera.device@1.0.so
-lib64/motorola.hardware.camera.provider@2.4.so:vendor/lib64/motorola.hardware.camera.provider@2.4.so
 lib/motorola.hardware.camera.device@1.0.so:vendor/lib/motorola.hardware.camera.device@1.0.so
 lib/motorola.hardware.camera.provider@2.4.so:vendor/lib/motorola.hardware.camera.provider@2.4.so
 vendor/lib/libts_detected_face_hal.so
 vendor/lib/libts_face_beautify_hal.so
-vendor/lib64/libts_detected_face_hal.so
-vendor/lib64/libts_face_beautify_hal.so
 
 vendor/lib/libgralloc1.so
 vendor/lib/motcamera.device@1.0-impl.so
 vendor/lib64/motcamera.device@1.0-impl.so
-vendor/lib/vndk/libbinder.so|878062dea4925dd303ff026e07266f90fdb52c02
-vendor/lib/vndk-sp/libcutils.so|80f6e21fc5aade324dbc53967f6d129f9846ef29
 
 # MOTO CAMERA
 vendor/lib/libois_rumba_s4.so
 vendor/lib/libmmcamera_ov5693_eeprom.so
 vendor/lib/libmmcamera_sony_rumba_eeprom.so
-etc/camera/imx338_chromatix.xml:vendor/etc/camera/imx338_chromatix.xml
 etc/camera/mot_imx214_chromatix.xml:vendor/etc/camera/mot_imx214_chromatix.xml
 etc/camera/msm8996_mot_camera.xml:vendor/etc/camera/msm8996_mot_camera.xml
 etc/camera/ov5693_chromatix.xml:vendor/etc/camera/ov5693_chromatix.xml
@@ -198,7 +173,6 @@ vendor/lib/libflash_sky81298.so
 vendor/lib/libmotocalibration.so
 vendor/lib/libAisAdapterGlue.so
 vendor/lib/libmot_afd.so
-lib/libmot_lux_standardization.so:vendor/lib/libmot_lux_standardization.so
 lib/libcamerabgprocservice.so:vendor/lib/libcamerabgprocservice.so
 vendor/lib/libcamerabgproc-jni.so
 vendor/lib64/libcamerabgproc-jni.so
@@ -207,13 +181,10 @@ lib/libmotimager_utils.so:vendor/lib/libmotimager_utils.so
 vendor/lib/libmmcamera_vstab_module.so
 lib/libjustshoot.so:vendor/lib/libjustshoot.so
 lib/libAlAisWrap.so:vendor/lib/libAlAisWrap.so
-vendor/lib/libbson.so
-vendor/lib64/libbson.so
 vendor/lib/libAisAdapter.so
 lib/libjscore.so:vendor/lib/libjscore.so
 vendor/lib/libmot_ois_data.so
 lib/libadvalgcore.so:vendor/lib/libadvalgcore.so
-vendor/lib/libmot_gpu_mapper.so
 lib/libmorpho_image_stabilizer4.so:vendor/lib/libmorpho_image_stabilizer4.so
 lib/libmot-qc-fd-offline.so:vendor/lib/libmot-qc-fd-offline.so
 lib/libmpbase.so:vendor/lib/libmpbase.so
@@ -221,105 +192,50 @@ lib/libAlAisLib.so:vendor/lib/libAlAisLib.so
 lib/libarcsoft_beautyshot.so:vendor/lib/libarcsoft_beautyshot.so
 lib/libAlAisTune.so:vendor/lib/libAlAisTune.so
 vendor/lib/libzxingcpp.so
-vendor/lib/libmmcamera_imx338.so
 vendor/lib/libmmcamera_mot_imx214.so
 vendor/lib/libmmcamera_ov5693.so
 
 # Chromatix
-vendor/lib/libchromatix_mot_imx214_cpp_video.so
-vendor/lib/libchromatix_mot_imx214_hfr_120.so
-vendor/lib/libchromatix_imx338_postproc.so
+vendor/lib/libchromatix_mot_imx214_4k_ihdr_video_3A.so
+vendor/lib/libchromatix_mot_imx214_4k_video_3A.so
 vendor/lib/libchromatix_mot_imx214_common.so
-vendor/lib/libchromatix_ov5693_common.so
-vendor/lib/libchromatix_imx338_cpp_hfr_120.so
-vendor/lib/libchromatix_mot_imx214_cpp_snapshot.so
-vendor/lib/libchromatix_ov5693_cpp_hfr_120.so
-vendor/lib/libchromatix_mot_imx214_cpp_video_4k.so
-vendor/lib/libchromatix_ov5693_default_video.so
-vendor/lib/libchromatix_imx338_snapshot.so
-vendor/lib/libchromatix_imx338_cpp_ihdr_video.so
-vendor/lib/libchromatix_mot_imx214_default_4k_video.so
-vendor/lib/libchromatix_imx338_cpp_liveshot_ihdr.so
-vendor/lib/libchromatix_mot_imx214_zsl_preview_3A.so
-vendor/lib/libchromatix_imx338_default_video.so
-vendor/lib/libchromatix_imx338_ihdr_video_3a.so
-vendor/lib/libchromatix_imx338_cpp_snapshot.so
+vendor/lib/libchromatix_mot_imx214_cpp_hfr_120.so
+vendor/lib/libchromatix_mot_imx214_cpp_hfr_60.so
+vendor/lib/libchromatix_mot_imx214_cpp_liveshot.so
+vendor/lib/libchromatix_mot_imx214_cpp_liveshot_4k.so
 vendor/lib/libchromatix_mot_imx214_cpp_liveshot_4k_ihdr.so
-vendor/lib/libchromatix_imx338_4k_video_3a.so
-vendor/lib/libchromatix_imx338_cpp_video_4k.so
-vendor/lib/libchromatix_mot_imx214_default_ihdr_video_4k.so
-vendor/lib/libchromatix_ov5693_snapshot.so
-vendor/lib/libchromatix_ov5693_cpp_video.so
-vendor/lib/libchromatix_imx338_cpp_liveshot.so
-vendor/lib/libchromatix_ov5693_postproc.so
-vendor/lib/libchromatix_imx338_hfr_60_3a.so
-vendor/lib/libchromatix_mot_imx214_zsl_video_3A.so
-vendor/lib/libchromatix_mot_imx214_hfr_60_3A.so
+vendor/lib/libchromatix_mot_imx214_cpp_liveshot_ihdr.so
+vendor/lib/libchromatix_mot_imx214_cpp_snapshot.so
+vendor/lib/libchromatix_mot_imx214_cpp_video.so
+vendor/lib/libchromatix_mot_imx214_cpp_video_4k.so
 vendor/lib/libchromatix_mot_imx214_cpp_video_4k_ihdr.so
 vendor/lib/libchromatix_mot_imx214_cpp_video_ihdr.so
-vendor/lib/libchromatix_imx338_zsl_video_3a.so
-vendor/lib/libchromatix_ov5693_cpp_liveshot.so
-vendor/lib/libchromatix_mot_imx214_cpp_hfr_120.so
-vendor/lib/libchromatix_imx338_cpp_qtr_res_snapshot.so
-vendor/lib/libchromatix_ov5693_default_video_3a.so
-vendor/lib/libchromatix_imx338_4k_ihdr_video_3a.so
-vendor/lib/libchromatix_mot_imx214_cpp_liveshot_4k.so
-vendor/lib/libchromatix_imx338_hfr_120_3a.so
-vendor/lib/libchromatix_mot_imx214_cpp_liveshot_ihdr.so
-vendor/lib/libchromatix_imx338_zsl_preview_3a.so
-vendor/lib/libchromatix_mot_imx214_cpp_liveshot.so
-vendor/lib/libchromatix_mot_imx214_4k_video_3A.so
-vendor/lib/libchromatix_mot_imx214_hfr_120_3A.so
-vendor/lib/libchromatix_ov5693_hfr_120.so
-vendor/lib/libchromatix_imx338_cpp_hfr_60.so
-vendor/lib/libchromatix_mot_imx214_default_video.so
-vendor/lib/libchromatix_imx338_qtr_res_preview_3a.so
+vendor/lib/libchromatix_mot_imx214_default_4k_video.so
 vendor/lib/libchromatix_mot_imx214_default_ihdr_video.so
-vendor/lib/libchromatix_imx338_common.so
-vendor/lib/libchromatix_mot_imx214_cpp_hfr_60.so
-vendor/lib/libchromatix_ov5693_snapshot_3a.so
-vendor/lib/libchromatix_imx338_video_4k.so
-vendor/lib/libchromatix_imx338_default_ihdr_video.so
-vendor/lib/libchromatix_imx338_cpp_video.so
-vendor/lib/libchromatix_imx338_hfr_60.so
+vendor/lib/libchromatix_mot_imx214_default_ihdr_video_4k.so
+vendor/lib/libchromatix_mot_imx214_default_video.so
+vendor/lib/libchromatix_mot_imx214_hfr_120.so
+vendor/lib/libchromatix_mot_imx214_hfr_120_3A.so
 vendor/lib/libchromatix_mot_imx214_hfr_60.so
-vendor/lib/libchromatix_ov5693_hfr_120_3a.so
-vendor/lib/libchromatix_mot_imx214_snapshot.so
-vendor/lib/libchromatix_imx338_cpp_liveshot_4k_ihdr.so
-vendor/lib/libchromatix_imx338_hfr_120.so
-vendor/lib/libchromatix_imx338_cpp_ihdr_video_4k.so
+vendor/lib/libchromatix_mot_imx214_hfr_60_3A.so
 vendor/lib/libchromatix_mot_imx214_ihdr_video_3A.so
-vendor/lib/libchromatix_imx338_cpp_liveshot_4k.so
-vendor/lib/libchromatix_imx338_qtr_res_snapshot.so
-vendor/lib/libchromatix_mot_imx214_4k_ihdr_video_3A.so
-vendor/lib/libchromatix_ov5693_cpp_snapshot.so
-vendor/lib/libchromatix_imx338_ihdr_video_4k.so
 vendor/lib/libchromatix_mot_imx214_postproc.so
+vendor/lib/libchromatix_mot_imx214_snapshot.so
+vendor/lib/libchromatix_mot_imx214_zsl_preview_3A.so
+vendor/lib/libchromatix_mot_imx214_zsl_video_3A.so
 
-vendor/lib/libchromatix_ov16860_4k_ihdr_video_3a.so
-vendor/lib/libchromatix_ov16860_4k_video_3a.so
-vendor/lib/libchromatix_ov16860_common.so
-vendor/lib/libchromatix_ov16860_cpp_hfr_120.so
-vendor/lib/libchromatix_ov16860_cpp_ihdr_video_4k.so
-vendor/lib/libchromatix_ov16860_cpp_ihdr_video.so
-vendor/lib/libchromatix_ov16860_cpp_liveshot_4k_ihdr.so
-vendor/lib/libchromatix_ov16860_cpp_liveshot_4k.so
-vendor/lib/libchromatix_ov16860_cpp_liveshot_ihdr.so
-vendor/lib/libchromatix_ov16860_cpp_liveshot.so
-vendor/lib/libchromatix_ov16860_cpp_snapshot.so
-vendor/lib/libchromatix_ov16860_cpp_video_4k.so
-vendor/lib/libchromatix_ov16860_cpp_video.so
-vendor/lib/libchromatix_ov16860_default_ihdr_video.so
-vendor/lib/libchromatix_ov16860_default_video.so
-vendor/lib/libchromatix_ov16860_hfr_120_3a.so
-vendor/lib/libchromatix_ov16860_hfr_120.so
-vendor/lib/libchromatix_ov16860_ihdr_video_3a.so
-vendor/lib/libchromatix_ov16860_ihdr_video_4k.so
-vendor/lib/libchromatix_ov16860_postproc.so
-vendor/lib/libchromatix_ov16860_snapshot.so
-vendor/lib/libchromatix_ov16860_video_4k.so
-vendor/lib/libchromatix_ov16860_zsl_preview_3a.so
-vendor/lib/libchromatix_ov16860_zsl_video_3a.so
+vendor/lib/libchromatix_ov5693_common.so
+vendor/lib/libchromatix_ov5693_cpp_hfr_120.so
+vendor/lib/libchromatix_ov5693_cpp_liveshot.so
+vendor/lib/libchromatix_ov5693_cpp_snapshot.so
+vendor/lib/libchromatix_ov5693_cpp_video.so
+vendor/lib/libchromatix_ov5693_default_video.so
+vendor/lib/libchromatix_ov5693_default_video_3a.so
+vendor/lib/libchromatix_ov5693_hfr_120.so
+vendor/lib/libchromatix_ov5693_hfr_120_3a.so
+vendor/lib/libchromatix_ov5693_postproc.so
+vendor/lib/libchromatix_ov5693_snapshot.so
+vendor/lib/libchromatix_ov5693_snapshot_3a.so
 
 # Camera firmware
 etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
@@ -375,22 +291,12 @@ vendor/lib/libmmcamera_sw2d_lib.so
 vendor/lib/libmmcamera_trueportrait_lib.so
 vendor/lib/libmmcamera_ubifocus_lib.so
 vendor/lib/libmmcamera_paaf_lib.so
-vendor/lib64/libmmcamera2_frame_algorithm.so
-vendor/lib64/libmmcamera2_is.so
-vendor/lib64/libmmcamera2_stats_algorithm.so
-vendor/lib64/libmmcamera_dbg.so
-vendor/lib64/libmmcamera_tintless_algo.so
-vendor/lib64/libmmcamera_tintless_bg_pca_algo.so
 
 vendor/lib/libchromaflash.so
 vendor/lib/liboptizoom.so
 vendor/lib/libseemore.so
 lib/libtrueportrait.so:vendor/lib/libtrueportrait.so
 vendor/lib/libubifocus.so
-vendor/lib64/liboptizoom.so
-vendor/lib64/libseemore.so
-lib64/libtrueportrait.so:vendor/lib64/libtrueportrait.so
-vendor/lib64/libubifocus.so
 
 # NFC firmware
 vendor/firmware/libpn548ad_fw.so:vendor/lib/libpn548ad_fw.so
@@ -398,19 +304,7 @@ vendor/firmware/libpn548ad_fw.so:vendor/lib/libpn548ad_fw.so
 # Charge
 vendor/bin/charge_only_mode
 
-# VR
-lib/hw/vr.msm8996.so:vendor/lib/hw/vr.msm8996.so
-lib64/hw/vr.msm8996.so:vendor/lib64/hw/vr.msm8996.so
-
-# Flash memory
-etc/firmware/SAMSUNG-KLUBG4G1CE-B0B1-32G.fw:vendor/firmware/SAMSUNG-KLUBG4G1CE-B0B1-32G.fw
-etc/firmware/SAMSUNG-KLUCG4J1CB-B0B1-64G.fw:vendor/firmware/SAMSUNG-KLUCG4J1CB-B0B1-64G.fw
-
 # Touchscreen
-etc/firmware/synaptics-s3508sga-16082901-255c40-griffin.tdat:vendor/firmware/synaptics-s3508sga-16082901-255c40-griffin.tdat
-etc/firmware/synaptics-s3508sga-16090101-255c40-sheridan.tdat:vendor/firmware/synaptics-s3508sga-16090101-255c40-sheridan.tdat
-etc/firmware/synaptics-s3528g2-16030302-2308cb-griffin.tdat:vendor/firmware/synaptics-s3528g2-16030302-2308cb-griffin.tdat
-etc/firmware/synaptics-s3528so1-15121701-1e29b4-sheridan.tdat:vendor/firmware/synaptics-s3528so1-15121701-1e29b4-sheridan.tdat
 etc/firmware/upd-00000126-00001001-fed70128-fffe0001-02.tftf
 
 # Moto Permissions
@@ -489,11 +383,9 @@ lib64/com.motorola.mod@1.0.so:vendor/lib64/com.motorola.mod@1.0.so
 vendor/bin/mods_camd
 vendor/lib/hw/libcamera_mods_legacy_hal.so
 lib/motorola.hardware.mods_camera.provider@2.4.so:vendor/lib/motorola.hardware.mods_camera.provider@2.4.so
-lib64/motorola.hardware.mods_camera.provider@2.4.so:vendor/lib64/motorola.hardware.mods_camera.provider@2.4.so
 vendor/bin/hw/motorola.hardware.mods_camera.provider@2.4-service
 vendor/etc/init/motorola.hardware.mods_camera.provider@2.4-service.rc
 vendor/lib/hw/motorola.hardware.mods_camera.provider@2.4-impl.so
-vendor/lib64/hw/motorola.hardware.mods_camera.provider@2.4-impl.so
 
 # Projector Mod
 -priv-app/ProjectorApp/ProjectorApp.apk:priv-app/ProjectorApp/ProjectorApp.apk;PRESIGNED

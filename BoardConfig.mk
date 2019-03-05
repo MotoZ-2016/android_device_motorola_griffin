@@ -198,9 +198,6 @@ TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := persist
 
-# Keystore
-TARGET_PROVIDES_KEYMASTER := true
-
 # Render
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 USE_OPENGL_RENDERER := true
