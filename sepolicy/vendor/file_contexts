@@ -20,8 +20,7 @@
 /data/fpc/socket                                          u:object_r:fpc_socket:s0
 
 # Partitions
-/dev/block/platform/soc/624000\.ufshc/by-name/oem                           u:object_r:cache_block_device:s0
-/dev/block/platform/soc/624000\.ufshc/by-name/cache                         u:object_r:block_device:s0
+/dev/block/platform/soc/624000\.ufshc/by-name/oem                           u:object_r:block_device:s0
 /dev/block/platform/soc/624000\.ufshc/by-name/metadata                      u:object_r:metadata_block_device:s0
 /dev/block/platform/soc/624000\.ufshc/by-name/cid                           u:object_r:cid_block_device:s0
 /dev/block/platform/soc/624000\.ufshc/by-name/clogo                         u:object_r:clogo_block_device:s0
