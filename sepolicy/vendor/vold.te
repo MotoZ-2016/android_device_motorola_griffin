@@ -1,4 +1,4 @@
 allow vold system_block_device:blk_file getattr;
 allow vold sysfs_scsi_devices_0000:file rw_file_perms;
 allow vold sysfs_scsi_devices_other:file rw_file_perms;
-
+allow vold vendor_file:file { getattr read };
