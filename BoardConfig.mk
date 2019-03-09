@@ -59,6 +59,7 @@ ENABLE_CPUSETS := true
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_USES_METADATA_AS_FDE_KEY := true
 
 # Lineage hardware
 JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(PLATFORM_PATH)/lineagehw|**/*.java
