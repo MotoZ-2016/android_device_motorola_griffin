@@ -84,6 +84,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.ts.postmakeup=false \
     persist.ts.rtmakeup=false
 
+## Codec2 switch
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.media.codec2=2
+
 ## CNE
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1 \
