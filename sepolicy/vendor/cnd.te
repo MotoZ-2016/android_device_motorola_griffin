@@ -1,6 +1,5 @@
 allow cnd netmgrd:dir search;
 allow cnd netmgrd:file { open read };
-add_hwservice(cnd, hal_cne_hwservice)
 
 allow cnd sysfs:file { read open };
 allow cnd sysfs_soc_qcom:dir r_dir_perms;

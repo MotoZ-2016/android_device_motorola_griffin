@@ -3,6 +3,4 @@ motorola.hardware.mods_camera.provider::ICameraProvider                         
 motorola.hardware.health::IMotHealth                        u:object_r:hal_health_hwservice:s0
 vendor.nxp.nxpnfc::INxpNfc                                      u:object_r:nxpnfc_hwservice:s0
 vendor.nxp.nxpese::INxpEse                                      u:object_r:nxpese_hwservice:s0
-com.quicinc.cne.api::IApiService                                u:object_r:hal_cne_hwservice:s0
-com.quicinc.cne.server::IServer                                 u:object_r:hal_cne_hwservice:s0
 com.motorola.mod::IModManager                               u:object_r:hal_modmanager_hwservice:s0
