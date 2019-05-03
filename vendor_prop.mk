@@ -230,6 +230,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qti.sensors.pmd=false \
     ro.qti.sensors.sta_detect=false
 
+## SurfaceFlinger
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.protected_contents=true
+
 ## RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.wda.enable=true \
