@@ -206,9 +206,9 @@ BOARD_NFC_CHIPSET := pn544
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
+BOARD_VENDOR_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy/private
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy-mods/vendor
+BOARD_VENDOR_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy-mods/vendor
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(PLATFORM_PATH)/sepolicy-mods/private
 
 # Bluetooth
