@@ -90,6 +90,7 @@ vendor/lib64/sensor_calibrate.so
 # Thermal
 etc/thermal-engine-griffin.conf:vendor/etc/thermal-engine-griffin.conf
 etc/thermal-engine-sheridan.conf:vendor/etc/thermal-engine-sheridan.conf
+etc/thermal-engine-sheridan-retcn.conf:vendor/etc/thermal-engine-sheridan-retcn.conf
 
 # Display
 vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_g.xml|caf41edb56703651fabd8d9e9641b0603ef6fa2d
