@@ -79,6 +79,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.ts.postmakeup=false \
     persist.ts.rtmakeup=false
 
+# Charger
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.charger.enable_suspend=true
+
 # Codec2 switch
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.media.codec2=2

@@ -161,8 +161,7 @@ USE_XML_AUDIO_POLICY_CONF := 1
 TARGET_USES_QCOM_MM_AUDIO := true
 
 # Charger
-BOARD_CHARGER_ENABLE_SUSPEND := true
-BOARD_CHARGER_DISABLE_INIT_BLANK := true
+WITH_LINEAGE_CHARGER := false
 
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
