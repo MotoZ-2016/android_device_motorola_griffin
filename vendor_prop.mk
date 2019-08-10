@@ -64,9 +64,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.playback.mch.downsample=0 \
     persist.vendor.audio.fluence.mode=none \
     persist.vendor.audio.endcall.delay=250 \
-    ro.config.vc_call_vol_steps=8 \
-    persist.vendor.audio.fluence.voicecomm=true \
-    ro.config.media_vol_steps=25
+    persist.vendor.audio.fluence.voicecomm=true
 
 ## Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
