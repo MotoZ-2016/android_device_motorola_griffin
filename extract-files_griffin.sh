@@ -74,6 +74,26 @@ function blob_fixup() {
     vendor/lib/libmmcamera_vstab_module.so | vendor/lib/libmot_ois_data.so)
         patchelf --remove-needed libandroid.so "${2}"
         ;;
+
+    vendor/lib/lib_mottof.so | vendor/lib/libmmcamera_vstab_module.so | vendor/lib/libmot_gpu_mapper.so | vendor/lib/libjscore.so)
+        sed -i "s/libgui/libPui/" "${2}"
+        ;;
+
+    vendor/lib/libcamerabgprocservice.so)
+        patchelf --remove-needed libcamera_client.so "${2}"
+        ;;
+
+    vendor/lib/libcamerabgproc-jni.so)
+        patchelf --remove-needed libandroid_runtime.so "${2}"
+        patchelf --remove-needed libandroidfw.so "${2}"
+        patchelf --remove-needed libmedia.so "${2}"
+        patchelf --remove-needed libnativehelper.so "${2}"
+        patchelf --add-needed libjni_shim.so "${2}"
+        ;;
+
+    vendor/lib/libjustshoot.so | vendor/lib/libjscore.so)
+        patchelf --remove-needed libstagefright.so "${2}"
+        ;;
     esac
 }
 

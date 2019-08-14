@@ -357,6 +357,7 @@ PRODUCT_COPY_FILES += \
 # Shims
 PRODUCT_PACKAGES += \
     libjustshoot_shim \
+    libjni_shim \
     libqsap_shim
 
 # TextClassifier smart selection model files

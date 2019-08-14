@@ -382,11 +382,11 @@ lib64/com.motorola.mod@1.0.so:vendor/lib64/com.motorola.mod@1.0.so
 # Camera Mod
 -app/MotCameraMod/MotCameraMod.apk:app/MotCameraMod/MotCameraMod.apk;PRESIGNED
 vendor/bin/mods_camd
-vendor/lib/hw/libcamera_mods_legacy_hal.so
-lib/motorola.hardware.mods_camera.provider@2.4.so:vendor/lib/motorola.hardware.mods_camera.provider@2.4.so
-vendor/bin/hw/motorola.hardware.mods_camera.provider@2.4-service
-vendor/etc/init/motorola.hardware.mods_camera.provider@2.4-service.rc
-vendor/lib/hw/motorola.hardware.mods_camera.provider@2.4-impl.so
+#vendor/lib/hw/libcamera_mods_legacy_hal.so
+#lib/motorola.hardware.mods_camera.provider@2.4.so:vendor/lib/motorola.hardware.mods_camera.provider@2.4.so
+#vendor/bin/hw/motorola.hardware.mods_camera.provider@2.4-service
+#vendor/etc/init/motorola.hardware.mods_camera.provider@2.4-service.rc
+#vendor/lib/hw/motorola.hardware.mods_camera.provider@2.4-impl.so
 
 # Projector Mod
 -priv-app/ProjectorApp/ProjectorApp.apk:priv-app/ProjectorApp/ProjectorApp.apk;PRESIGNED

@@ -39,9 +39,7 @@ vendor/lib/libbtnv.so
 
 # Cam from P
 vendor/lib/libmot_gpu_mapper.so
-vendor/lib/libgui_vendor.so|2289516454cceae50bb3963f9255bc113a24b508
-vendor/lib/vndk/libbinder.so|878062dea4925dd303ff026e07266f90fdb52c02
-vendor/lib/vndk-sp/libcutils.so|80f6e21fc5aade324dbc53967f6d129f9846ef29
+vendor/lib/libPui.so|2289516454cceae50bb3963f9255bc113a24b508
 
 # CNE
 etc/permissions/cneapiclient.xml
