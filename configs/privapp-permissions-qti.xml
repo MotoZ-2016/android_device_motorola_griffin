@@ -70,4 +70,19 @@ It allows additional grants on top of privapp-permissions-platform.xml
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
         <permission name="android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME"/>
     </privapp-permissions>
+
+    <privapp-permissions package="com.android.omadm.service">
+        <permission name="android.permission.LOCAL_MAC_ADDRESS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.android.sdm.plugins.sprintdm">
+        <permission name="android.permission.CHANGE_CONFIGURATION"/>
+        <permission name="android.permission.CONNECTIVITY_INTERNAL"/>
+        <permission name="android.permission.MASTER_CLEAR"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.SHUTDOWN"/>
+        <permission name="android.permission.WRITE_APN_SETTINGS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
 </permissions>
