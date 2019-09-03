@@ -249,10 +249,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so
 
-# VNDK
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vndk.version=28
-
 ## Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
