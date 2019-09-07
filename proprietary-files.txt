@@ -45,7 +45,6 @@ vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Cam from P
 vendor/lib/libmot_gpu_mapper.so
-vendor/lib/libPui.so|2289516454cceae50bb3963f9255bc113a24b508
 
 # CNE
 etc/permissions/cneapiclient.xml

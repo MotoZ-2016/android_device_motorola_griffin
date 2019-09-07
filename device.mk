@@ -67,6 +67,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     Snap \
     libbson.vendor \
+    libwui \
     camera.device@3.2-impl:32 \
     android.hardware.camera.provider@2.4-impl:32
 
