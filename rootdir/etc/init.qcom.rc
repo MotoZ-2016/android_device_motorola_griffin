@@ -813,8 +813,8 @@ service vendor.hw_revs /vendor/bin/hardware_revisions.sh
 
 service vendor.mmi-laser-sh /vendor/bin/init.mmi.laser.sh
     class core
-    user root vendor_mot_tcmd
-    group root vendor_mot_tcmd
+    user root
+    group root
     oneshot
 
 service vendor.mods_camd /vendor/bin/mods_camd
