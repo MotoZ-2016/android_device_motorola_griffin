@@ -353,6 +353,7 @@ PRODUCT_COPY_FILES += \
 # Shims
 PRODUCT_PACKAGES += \
     libjustshoot_shim \
+    libgpu_mapper_shim \
     libjni_shim \
     libqsap_shim
 
