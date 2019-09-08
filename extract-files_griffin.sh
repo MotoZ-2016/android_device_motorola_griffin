@@ -102,6 +102,10 @@ function blob_fixup() {
     vendor/lib/libmot_gpu_mapper.so)
         patchelf --add-needed libgpu_mapper_shim.so "${2}"
         ;;
+
+    vendor/lib/hw/camera.msm8996.so)
+        sed -i "s|service.bootanim.exit|service.bootanim.hold|g" "${2}"
+        ;;
     esac
 }
 
