@@ -145,19 +145,11 @@ vendor/lib/libmmqjpegdma.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqomx_jpegenc.so
-vendor/bin/hw/motorola.hardware.camera.provider@2.4-service
-vendor/etc/init/motorola.hardware.camera.provider@2.4-service_delayed.rc
-vendor/lib/hw/motorola.hardware.camera.provider@2.4-impl.so
-vendor/lib/motorola.hardware.camera.provider@2.4_vendor.so|f48d16e1e3f777a4fb0897ff2f667d98542b15df
-vendor/lib/motorola.hardware.camera.device@1.0_vendor.so
 lib/motorola.hardware.camera.device@1.0.so:vendor/lib/motorola.hardware.camera.device@1.0.so
-lib/motorola.hardware.camera.provider@2.4.so:vendor/lib/motorola.hardware.camera.provider@2.4.so
 vendor/lib/libts_detected_face_hal.so
 vendor/lib/libts_face_beautify_hal.so
-
 vendor/lib/libgralloc1.so
-vendor/lib/motcamera.device@1.0-impl.so
-vendor/lib64/motcamera.device@1.0-impl.so
+vendor/lib/camera.device@1.0-impl.so|13a93ca1a2e58e813f32f0c6348f6c1ad7937454
 
 # MOTO CAMERA
 vendor/lib/libois_rumba_s4.so
