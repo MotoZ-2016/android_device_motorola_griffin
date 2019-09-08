@@ -18,6 +18,10 @@
 /data/fpc(/.*)?                                           u:object_r:fpc_data_file:s0
 /data/fpc/socket                                          u:object_r:fpc_socket:s0
 
+# Firmware
+/firmware                                                     u:object_r:firmware_file:s0
+/bt_firmware                                                  u:object_r:bt_firmware_file:s0
+
 # Partitions
 /dev/block/platform/soc/624000\.ufshc/by-name/oem                           u:object_r:block_device:s0
 /dev/block/platform/soc/624000\.ufshc/by-name/metadata                      u:object_r:metadata_block_device:s0
