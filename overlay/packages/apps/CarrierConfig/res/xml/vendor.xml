@@ -4,6 +4,7 @@
         <boolean name="world_phone_bool" value="true" />
         <boolean name="show_cdma_choices_bool" value="true" />
 		<boolean name="show_apn_setting_cdma_bool" value="true" />
+        <boolean name="support_enhanced_call_blocking_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="293" mnc="41">
        <boolean name="carrier_wfc_ims_available_bool" value="true" />
