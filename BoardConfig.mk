@@ -196,7 +196,8 @@ BOARD_USES_QC_TIME_SERVICES := true
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 
 # Root
-BOARD_ROOT_EXTRA_FOLDERS := persist
+BOARD_ROOT_EXTRA_SYMLINKS := \
+    /mnt/vendor/persist:/persist
 
 # Render
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so

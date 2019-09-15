@@ -19,7 +19,6 @@
 /dev/block/bootdevice/by-name/modem       	/vendor/firmware_mnt    ext4    ro,nosuid,nodev,context=u:object_r:firmware_file:s0                            wait
 /dev/block/bootdevice/by-name/bluetooth    /vendor/bt_firmware     ext4    ro,nosuid,nodev,context=u:object_r:bt_firmware_file:s0                         wait
 /dev/block/bootdevice/by-name/fsg          /vendor/fsg             ext4    ro,nosuid,nodev,context=u:object_r:fsg_file:s0                                 wait
-/mnt/vendor/persist                        /persist                none    bind                                                                           wait
 
 /devices/soc/74a4900.sdhci/mmc_host*       auto                    auto    nosuid,nodev                                                                   wait,voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/*/xhci-hcd.*.auto/usb*            auto                    auto    defaults                                                                       voldmanaged=usb:auto
