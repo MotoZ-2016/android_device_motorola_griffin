@@ -38,7 +38,9 @@
 #include "LocationClientApi.h"
 
 #define CLIENT_DIAG_GNSS_SV_MAX            (176)
-#define LOG_CLIENT_DIAG_MSG_VERSION        (1)
+#define LOG_CLIENT_LOCATION_DIAG_MSG_VERSION        (1)
+#define LOG_CLIENT_SV_REPORT_DIAG_MSG_VERSION       (2)
+
 namespace location_client
 {
 
@@ -97,8 +99,7 @@ typedef enum
     CLIENT_DIAG_GNSS_LOC_SV_SYSTEM_GALILEO                = 2,
     /** SBAS satellite. */
     CLIENT_DIAG_GNSS_LOC_SV_SYSTEM_SBAS                   = 3,
-    /** COMPASS satellite. */
-    CLIENT_DIAG_GNSS_LOC_SV_SYSTEM_COMPASS                = 4,
+    //Leave 4 blank for backward compatibility.
     /** GLONASS satellite. */
     CLIENT_DIAG_GNSS_LOC_SV_SYSTEM_GLONASS                = 5,
     /** BDS satellite. */
@@ -266,7 +267,7 @@ typedef enum {
     /** GALILEO E5A RF Band */
     CLIENT_DIAG_GNSS_SIGNAL_GALILEO_E5A         = (1<<7),
     /** GALILEO E5B RF Band */
-    CLIENT_DIAG_GNSS_SIGNAL_GALILIEO_E5B        = (1<<8),
+    CLIENT_DIAG_GNSS_SIGNAL_GALILEO_E5B         = (1<<8),
     /** BEIDOU B1 RF Band */
     CLIENT_DIAG_GNSS_SIGNAL_BEIDOU_B1           = (1<<9),
     /** BEIDOU B2 RF Band */
@@ -280,7 +281,19 @@ typedef enum {
     /** QZSS L5 RF Band */
     CLIENT_DIAG_GNSS_SIGNAL_QZSS_L5             = (1<<14),
     /** SBAS L1 RF Band */
-    CLIENT_DIAG_GNSS_SIGNAL_SBAS_L1             = (1<<15)
+    CLIENT_DIAG_GNSS_SIGNAL_SBAS_L1             = (1<<15),
+    /** BEIDOU B1I RF Band */
+    CLIENT_DIAG_GNSS_SIGNAL_BEIDOU_B1I          = (1<<16),
+    /** BEIDOU B1C RF Band */
+    CLIENT_DIAG_GNSS_SIGNAL_BEIDOU_B1C          = (1<<17),
+    /** BEIDOU B2I RF Band */
+    CLIENT_DIAG_GNSS_SIGNAL_BEIDOU_B2I          = (1<<18),
+    /** BEIDOU B2AI RF Band */
+    CLIENT_DIAG_GNSS_SIGNAL_BEIDOU_B2AI         = (1<<19),
+    /** NAVIC L5 RF Band */
+    CLIENT_DIAG_GNSS_SIGNAL_NAVIC_L5            = (1<<20),
+    /** BEIDOU B2AQ RF Band */
+    CLIENT_DIAG_GNSS_SIGNAL_BEIDOU_B2AQ         = (1<<21)
 } clientDiagGnssSignalTypeBits;
 
 typedef PACKED struct PACKED_POST {
@@ -313,6 +326,7 @@ typedef enum {
     CLIENT_DIAG_GNSS_SV_OPTIONS_HAS_EPHEMER_BIT = (1<<0),
     CLIENT_DIAG_GNSS_SV_OPTIONS_HAS_ALMANAC_BIT = (1<<1),
     CLIENT_DIAG_GNSS_SV_OPTIONS_USED_IN_FIX_BIT = (1<<2),
+    CLIENT_DIAG_GNSS_SV_OPTIONS_HAS_CARRIER_FREQUENCY_BIT = (1<<3)
 } clientDiagGnssSvOptionsBits;
 
 typedef PACKED struct PACKED_POST {
@@ -328,6 +342,10 @@ typedef PACKED struct PACKED_POST {
     float azimuth;
     /** Bitwise OR of GnssSvOptionsBits */
     clientDiagGnssSvOptionsMask gnssSvOptionsMask;
+    /** carrier frequency of the signal tracked */
+    float carrierFrequencyHz;
+    /** Specifies GNSS signal type */
+    clientDiagGnssSignalTypeMask gnssSignalTypeMask;
 } clientDiagGnssSv;
 
 typedef uint16_t clientDiagLocationTechnologyMask;
@@ -417,6 +435,10 @@ typedef enum {
     CLIENT_DIAG_GNSS_LOCATION_INFO_CALIBRATION_CONFIDENCE_PERCENT_BIT = (1<<25),
     /** valid calibrationStatus */
     CLIENT_DIAG_GNSS_LOCATION_INFO_CALIBRATION_STATUS_BIT           = (1<<26),
+    /** valid output engine type */
+    CLIENT_DIAG_GNSS_LOCATION_INFO_OUTPUT_ENG_TYPE_BIT              = (1<<27),
+    /** valid output engine mask */
+    CLIENT_DIAG_GNSS_LOCATION_INFO_OUTPUT_ENG_MASK_BIT              = (1<<28),
 } clientDiagGnssLocationInfoFlagBits;
 
 typedef enum {
@@ -466,6 +488,24 @@ typedef enum {
     CLIENT_DIAG_LOCATION_POS_TECH_HYBRID_BIT                   = (1<<7),
     CLIENT_DIAG_LOCATION_POS_TECH_PPE_BIT                      = (1<<8)
 } clientDiagGnssLocationPosTechBits;
+
+typedef enum {
+    /** This is the propagated/aggregated reports from all engines
+        running on the system (e.g.: DR/SPE/PPE). */
+    CLIENT_DIAG_LOC_OUTPUT_ENGINE_FUSED = 0,
+    /** This fix is the unmodified fix from modem GNSS engine */
+    CLIENT_DIAG_LOC_OUTPUT_ENGINE_SPE   = 1,
+    /** This is the unmodified fix from PPP/RTK correction engine */
+    CLIENT_DIAG_LOC_OUTPUT_ENGINE_PPE   = 2,
+    CLIENT_DIAG_LOC_OUTPUT_ENGINE_COUNT,
+} clientDiagLocOutputEngineType;
+
+typedef uint32_t clientDiagPositioningEngineMask;
+typedef enum {
+    CLIENT_DIAG_STANDARD_POSITIONING_ENGINE = (1 << 0),
+    CLIENT_DIAG_DEAD_RECKONING_ENGINE       = (1 << 1),
+    CLIENT_DIAG_PRECISE_POSITIONING_ENGINE  = (1 << 2)
+} clientDiagPositioningEngineBits;
 
 typedef PACKED struct PACKED_POST {
     /** Used by Logging Module
@@ -565,6 +605,15 @@ typedef PACKED struct PACKED_POST {
      *  created and filled with the info at location client api
      *  layer */
     uint64_t bootTimestampNs;
+    /** location engine type. When the fix. when the type is set to
+        LOC_ENGINE_SRC_FUSED, the fix is the propagated/aggregated
+        reports from all engines running on the system (e.g.:
+        DR/SPE/PPE). To check which location engine contributes to
+        the fused output, check for locOutputEngMask. */
+    clientDiagLocOutputEngineType locOutputEngType;
+    /** when loc output eng type is set to fused, this field
+        indicates the set of engines contribute to the fix. */
+    clientDiagPositioningEngineMask locOutputEngMask;
 } clientDiagGnssLocationStructType;
 
 typedef PACKED struct PACKED_POST {

@@ -47,19 +47,6 @@
 using namespace std;
 using namespace loc_util;
 
-/** @fn
-    @brief
-    Structure of all client callbacks
-*/
-struct ClientCallbacks {
-    location_client::CapabilitiesCb capabilitycb;
-    location_client::ResponseCb responsecb;
-    location_client::LocationCb locationcb;
-    location_client::GnssReportCbs gnssreportcbs;
-    // used for rare system event
-    location_client::LocationSystemInfoCb systemInfoCb;
-};
-
 #ifndef FEATURE_EXTERNAL_AP
 typedef LocDiagIface* (getLocDiagIface_t)();
 #endif
@@ -76,6 +63,9 @@ static void translateDiagSystemTime(clientDiagGnssSystemTime& out,
         const GnssSystemTime& in);
 static clientDiagGnssLocationSvUsedInPosition parseDiagLocationSvUsedInPosition(
         const GnssLocationSvUsedInPosition &halSv);
+static void translateDiagGnssSignalType(clientDiagGnssSignalTypeMask& out, GnssSignalTypeMask in);
+static clientDiagGnss_LocSvSystemEnumType parseDiagGnssConstellation(
+        Gnss_LocSvSystemEnumType gnssConstellation);
 static void translateDiagGnssMeasUsageInfo(clientDiagGnssMeasUsageInfo& out,
         const GnssMeasUsageInfo& in);
 void populateClientDiagLocation(clientDiagGnssLocationStructType* diagGnssLocPtr,
@@ -84,6 +74,17 @@ static void translateDiagGnssSv(clientDiagGnssSv& out, const GnssSv& in);
 void populateClientDiagGnssSv(clientDiagGnssSvStructType* diagGnssSvPtr,
         std::vector<GnssSv>& gnssSvs);
 #endif // FEATURE_EXTERNAL_AP
+
+enum ReportCbEnumType {
+    REPORT_CB_TYPE_NONE   = 0,
+    /** cb for GNSS info, including location, sv info, nmea and
+     *  etc */
+    REPORT_CB_GNSS_INFO   = 1,
+    /** cb for GNSS info, including location, sv info, nmea and
+     *  etc and also for location of other engines running in the
+     *  system */
+    REPORT_CB_ENGINE_INFO = 2,
+};
 
 typedef std::function<void(
     uint32_t response
@@ -152,11 +153,14 @@ public:
 
     // other interface
     void updateNetworkAvailability(bool available);
-    void updateCallbackFunctions(const ClientCallbacks&);
+    void updateCallbackFunctions(const ClientCallbacks&,
+                                 ReportCbEnumType reportCbType = REPORT_CB_TYPE_NONE);
     void getGnssEnergyConsumed(GnssEnergyConsumedCb gnssEnergyConsumedCallback,
                                ResponseCb responseCallback);
     void updateLocationSystemInfoListener(LocationSystemInfoCb locSystemInfoCallback,
                                           ResponseCb responseCallback);
+    void diagLogGnssLocation(const GnssLocation &gnssLocation);
+    inline LocationCapabilitiesMask getCapabilities() {return mCapsMask;}
 
     bool checkGeofenceMap(size_t count, uint32_t* ids);
     void addGeofenceMap(uint32_t id, Geofence& geofence);
@@ -190,26 +194,34 @@ private:
     char                       mSocketName[MAX_SOCKET_PATHNAME_LENGTH];
     // for client on a different processor, 0 is invalid
     uint32_t                   mInstanceId;
+    LocationCallbacksMask      mCallbacksMask;
+    LocationOptions            mLocationOptions;
+    BatchingOptions            mBatchingOptions;
+    LocationCapabilitiesMask   mCapsMask;
 
     // callbacks
     CapabilitiesCb          mCapabilitiesCb;
     ResponseCb              mResponseCb;
     CollectiveResponseCb    mCollectiveResCb;
     LocationCb              mLocationCb;
-    GnssReportCbs           mGnssReportCbs;
     BatchingCb              mBatchingCb;
     GeofenceBreachCb        mGfBreachCb;
     PingTestCb              mPingTestCb;
 
-    LocationCallbacksMask   mCallbacksMask;
-    LocationOptions         mLocationOptions;
-    BatchingOptions         mBatchingOptions;
+    // location callbacks
+    GnssLocationCb          mGnssLocationCb;
+    EngineLocationsCb       mEngLocationsCb;
 
-    GnssEnergyConsumedCb       mGnssEnergyConsumedInfoCb;
-    ResponseCb                 mGnssEnergyConsumedResponseCb;
+    // other GNSS related callback
+    GnssSvCb                mGnssSvCb;
+    GnssNmeaCb              mGnssNmeaCb;
+    GnssDataCb              mGnssDataCb;
 
-    LocationSystemInfoCb       mLocationSysInfoCb;
-    ResponseCb                 mLocationSysInfoResponseCb;
+    GnssEnergyConsumedCb    mGnssEnergyConsumedInfoCb;
+    ResponseCb              mGnssEnergyConsumedResponseCb;
+
+    LocationSystemInfoCb    mLocationSysInfoCb;
+    ResponseCb              mLocationSysInfoResponseCb;
 
     MsgTask*                   mMsgTask;
 
