@@ -206,6 +206,7 @@ PRODUCT_COPY_FILES += \
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common \
+    ims_ext_common.xml \
     telephony-ext
 
 PRODUCT_BOOT_JARS += \
@@ -299,7 +300,8 @@ PRODUCT_COPY_FILES += \
 # Qualcomm broadcast whitelist
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml \
-    $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml
+    $(LOCAL_PATH)/configs/privapp-permissions-carrier.xml:system/etc/permissions/privapp-permissions-carrier.xml \
+    $(LOCAL_PATH)/configs/telephony_product_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/telephony_product_privapp-permissions-qti.xml
 
 # QMI
 PRODUCT_PACKAGES += \
@@ -331,6 +333,10 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.0 \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
     librmnetctl \
     libxml2 \
     libprotobuf-cpp-full \

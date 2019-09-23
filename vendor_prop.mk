@@ -56,6 +56,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.hw.aac.encoder=false \
     vendor.audio.use.sw.alac.decoder=true \
     vendor.audio.use.sw.ape.decoder=true \
+    vendor.audio.snd_card.open.retries=50 \
     vendor.audio.flac.sw.decoder.24bit=true \
     persist.vendor.bt.enable.splita2dp=false \
     persist.vendor.audio.speaker.prot.enable=true \
@@ -68,6 +69,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ## Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.bluetooth.wipower=false \
     vendor.qcom.bluetooth.soc=rome
 
 ## Camera
@@ -180,6 +182,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.jbims=1 \
     persist.vendor.radio.sar_sensor=1 \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
+    persist.vendor.radio.procedure_bytes=SKIP \
+    persist.vendor.radio.aosp_usr_pref_sel=true \
+    persist.vendor.radio.flexmap_type=none \
     persist.vendor.radio.msgtunnel.start=true \
     persist.vendor.radio.apn_delay=5000 \
     persist.vendor.radio.calls.on.ims=true \
@@ -212,6 +217,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.qc.sub.rdump.on=1 \
     persist.sys.qc.sub.rdump.max=0 \
     ro.telephony.call_ring.multiple=false \
+    ro.telephony.iwlan_operation_mode=legacy \
     ril.subscription.types=NV,RUIM \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \

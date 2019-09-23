@@ -258,7 +258,7 @@ TARGET_USES_MEDIA_EXTENSIONS := true
 TARGET_USE_SDCLANG := true
 
 # Vendor security patch level
-VENDOR_SECURITY_PATCH := 2018-11-01
+VENDOR_SECURITY_PATCH := 2019-10-05
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
