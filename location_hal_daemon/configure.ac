@@ -7,7 +7,7 @@ AC_PREREQ(2.61)
 # Initialize the location-hal-daemon package version 1.0.0
 AC_INIT([location-hal-daemon],1.0.0)
 # Does not strictly follow GNU Coding standards
-AM_INIT_AUTOMAKE([foreign])
+AM_INIT_AUTOMAKE([foreign subdir-objects])
 # Disables auto rebuilding of configure, Makefile.ins
 AM_MAINTAINER_MODE
 # Verifies the --srcdir is correct by checking for the path
@@ -63,6 +63,18 @@ AC_ARG_WITH([systemd],
          [systemd enable, building LE systems which has systemd]))
 
 AM_CONDITIONAL(USE_SYSTEMD, test "x${with_systemd}" = "xyes")
+
+AC_ARG_WITH([auto_feature],
+    AC_HELP_STRING([--with-auto_feature=@<:@dir@:>@],
+        [Using Automotive feature]),
+    [],
+    with_auto_feature=no)
+
+if test "x$with_auto_feature" != "xno"; then
+    CPPFLAGS="${CPPFLAGS} -DFEATURE_AUTOMOTIVE"
+fi
+
+AM_CONDITIONAL(USE_FEATURE_AUTOMOTIVE, test "x${with_auto_feature}" = "xyes")
 
 AC_ARG_WITH([glib],
       AC_HELP_STRING([--with-glib],
