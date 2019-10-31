@@ -111,4 +111,4 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
 extract "${MY_DIR}/proprietary-files_griffin.txt" "${SRC}" \
         "${KANG}" --section "${SECTION}"
 
-source "${MY_DIR}/setup-makefiles.sh"
+"${MY_DIR}/setup-makefiles.sh"
