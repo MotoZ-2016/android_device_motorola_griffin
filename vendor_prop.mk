@@ -224,6 +224,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     telephony.lteOnCdmaDevice=1 \
     DEVICE_PROVISIONED=1 \
+    ro.telephony.iwlan_operation_mode=legacy \
     ro.vendor.build.vendorprefix=/vendor \
     ro.build.vendorprefix=/vendor
 

@@ -78,6 +78,12 @@ function blob_fixup() {
     vendor/bin/thermal-engine)
         sed -i "s|/system/etc/thermal|/vendor/etc/thermal|g" "${2}"
         ;;
+
+    # Fix xml version
+    product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml | product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
+        sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
+        ;;
+
     esac
 }
 
