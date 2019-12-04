@@ -973,11 +973,6 @@ service vendor.thermal-engine /vendor/bin/thermal-engine
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
 
-service vendor.time_daemon /vendor/bin/time_daemon
-    class main
-    user root
-    group root
-
 service vendor.adsprpcd /vendor/bin/adsprpcd
     class main
     user media
