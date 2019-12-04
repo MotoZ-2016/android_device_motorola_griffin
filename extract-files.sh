@@ -67,14 +67,6 @@ function blob_fixup() {
         patchelf --add-needed libqsap_shim.so "${2}"
         ;;
 
-    vendor/etc/permissions/qcrilhook.xml)
-        sed -i "s|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g" "${2}"
-        ;;
-
-    vendor/etc/permissions/telephonyservice.xml)
-        sed -i "s|/system/framework/QtiTelephonyServicelibrary.jar|/vendor/framework/QtiTelephonyServicelibrary.jar|g" "${2}"
-        ;;
-
     vendor/bin/thermal-engine)
         sed -i "s|/system/etc/thermal|/vendor/etc/thermal|g" "${2}"
         ;;
