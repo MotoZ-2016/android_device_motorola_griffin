@@ -156,6 +156,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ## IMS
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1 \
+    persist.vendor.ims.dropset_feature=0 \
     persist.vendor.ims.disableADBLogs=2 \
     persist.vendor.ims.disableDebugLogs=0 \
     persist.vendor.ims.disableQXDMLogs=0 \
@@ -166,9 +170,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ## RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1 \
-    persist.dbg.wfc_avail_ovr=1 \
     persist.vendor.radio.no_wait_for_card=1 \
     persist.vendor.radio.dfr_mode_set=1 \
     persist.vendor.radio.relay_oprt_change=1 \
