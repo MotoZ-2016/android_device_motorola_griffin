@@ -432,6 +432,6 @@
     <bool name="config_dynamic_bind_ims">true</bool>
 
     <!-- True if the firmware supports Wi-Fi link probing -->
-    <bool name="config_wifi_link_probing_supported">true</bool>
+    <bool name="config_wifi_link_probing_supported">false</bool>
 
 </resources>
