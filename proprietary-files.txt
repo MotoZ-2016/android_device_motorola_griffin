@@ -346,6 +346,10 @@ vendor/lib64/libOmxWmaDec.so
 etc/permissions/com.motorola.moto.xml:vendor/etc/permissions/com.motorola.moto.xml
 etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
 
+# Offmode charging
+vendor/bin/charge_only_mode
+vendor/bin/hvdcp_opti
+
 # Perf
 product/lib/vendor.qti.hardware.perf@1.0.so
 product/lib/vendor.qti.hardware.perf@2.0.so
