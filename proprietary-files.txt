@@ -553,7 +553,6 @@ vendor/etc/thermal-engine.conf
 -vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 -vendor/lib64/libtime_genoff.so
-bin/move_time_data.sh
 
 # Wi-Fi
 vendor/bin/cnss-daemon
