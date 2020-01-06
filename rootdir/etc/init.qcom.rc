@@ -709,9 +709,6 @@ on post-fs-data
     # Start Camera Mods Daemon
     start vendor.mods_camd
 
-    #Start move time data to /data/vendor once post-fs-data done
-    start vendor.move_time_data
-
     setprop vold.post_fs_data_done 1
 
 service vendor.qcomsysd /vendor/bin/qcom-system-daemon
@@ -994,11 +991,4 @@ service vendor.energy-awareness /vendor/bin/energy-awareness
     class main
     user root
     group system
-    oneshot
-
-service vendor.move_time_data /system/bin/move_time_data.sh
-    class main
-    user system
-    group system
-    disabled
     oneshot

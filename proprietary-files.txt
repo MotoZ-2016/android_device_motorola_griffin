@@ -689,7 +689,6 @@ vendor/etc/thermal-engine.conf
 vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
 -vendor/lib64/libtime_genoff.so
-bin/move_time_data.sh
 
 # Wi-Fi
 vendor/bin/cnss-daemon
