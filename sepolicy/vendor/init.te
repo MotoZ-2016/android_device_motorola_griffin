@@ -1,7 +1,6 @@
 allow init audio_device:chr_file { write ioctl };
 allow init input_device:chr_file ioctl;
 allow init sensors_device:chr_file { write ioctl };
-allow init tee_device:chr_file { write ioctl };
 
 allow init servicemanager:binder { transfer call };
 allow init system_server:binder { transfer call };
@@ -28,7 +27,7 @@ allow init socket_device:sock_file unlink;
 allow init sysfs:dir r_dir_perms;
 allow init sysfs:file setattr;
 
-allow init { domain -lmkd -crash_dump }:process noatsecure;
+allow init { domain -lmkd -crash_dump -llkd }:process noatsecure;
 allow init debugfs:dir mounton;
 
 allow init gpu_device:chr_file { ioctl write };
@@ -36,7 +35,6 @@ allow init hal_graphics_composer_default:binder call;
 allow init hal_graphics_mapper_hwservice:hwservice_manager find;
 allow init hal_perf_default:binder call;
 allow init hal_perf_hwservice:hwservice_manager find;
-allow init hidl_allocator_hwservice:hwservice_manager find;
 allow init hidl_base_hwservice:hwservice_manager add;
 allow init mm-qcamerad:unix_dgram_socket sendto;
 #allow init sysfs_lowmemorykiller:dir write;

@@ -16,5 +16,3 @@ allow platform_app gbfirmware_file:file create_file_perms;
 allow platform_app sysfs_usb_supply:dir search;
 
 allow platform_app system_app_data_file:dir { getattr r_dir_perms };
-allow platform_app sysfs_batteryinfo:dir r_dir_perms;
-allow platform_app sysfs_batteryinfo:file rw_file_perms;
