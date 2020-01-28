@@ -1,7 +1,6 @@
 # Binaries
 /(vendor|system/vendor)/bin/motosh                       u:object_r:sensor_hub_exec:s0
 /(vendor|system/vendor)/bin/init\.mmi\.laser\.sh         u:object_r:mmi-laser-sh_exec:s0
-/(vendor|system/vendor)/bin/adspd                        u:object_r:adspd_exec:s0
 /(vendor|system/vendor)/bin/charge_only_mode             u:object_r:charge_only_exec:s0
 /(vendor|system/vendor)/bin/batt_health                  u:object_r:batt_health_exec:s0
 /(vendor|system/vendor)/bin/mods_camd                    u:object_r:mods_camd_exec:s0
@@ -85,9 +84,6 @@
 /sys/devices/virtual/video4linux/video([0-9])+/uevent             u:object_r:sysfs_greybus:s0
 /sys/devices/virtual/video4linux/video([0-9])+/open_mode          u:object_r:sysfs_v4l2_openmode:s0
 /sys/module/qpnp_smbcharger_mmi(/.*)?                             u:object_r:sysfs_batt_mods:s0
-
-# adspd
-/data/adspd(/.*)?                                                 u:object_r:adspd_file:s0
 
 # Light HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service.griffin                                     u:object_r:hal_light_default_exec:s0

@@ -35,9 +35,6 @@ type sysfs_mods_camd, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_v4l2_openmode, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_batt_mods, fs_type, sysfs_type, mlstrustedobject;
 
-# adspd
-type adspd_file, file_type, data_file_type, core_data_file_type;
-
 type chr_file, file_type, data_file_type;
 type fpc_data_file, file_type, data_file_type, core_data_file_type;
 type fps_data_file, file_type, data_file_type, core_data_file_type;
