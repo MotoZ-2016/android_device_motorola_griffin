@@ -76,6 +76,10 @@ function blob_fixup() {
         sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
         ;;
 
+    vendor/lib/libmot_gpu_mapper.so)
+        sed -i "s/libgui/libwui/" "${2}"
+        ;;
+
     esac
 }
 

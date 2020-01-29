@@ -75,7 +75,7 @@ function blob_fixup() {
         patchelf --remove-needed libandroid.so "${2}"
         ;;
 
-    vendor/lib/lib_mottof.so | vendor/lib/libmmcamera_vstab_module.so | vendor/lib/libmot_gpu_mapper.so | vendor/lib/libjscore.so)
+    vendor/lib/lib_mottof.so | vendor/lib/libmmcamera_vstab_module.so | vendor/lib/libjscore.so)
         sed -i "s/libgui/libwui/" "${2}"
         ;;
 
@@ -97,10 +97,6 @@ function blob_fixup() {
 
     vendor/lib64/hw/gatekeeper.msm8996.so | vendor/lib64/hw/keystore.msm8996.so | vendor/lib64/lib_fpc_tac_shared.so | vendor/lib64/libSecureUILib.so)
         sed -i "s|/firmware/image|/vendor/f/image|g" "${2}"
-        ;;
-
-    vendor/lib/libmot_gpu_mapper.so)
-        patchelf --add-needed libgpu_mapper_shim.so "${2}"
         ;;
 
     vendor/lib/hw/camera.msm8996.so)
