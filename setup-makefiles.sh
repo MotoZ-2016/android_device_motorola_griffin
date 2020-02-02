@@ -44,10 +44,6 @@ write_headers
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
-write_makefiles "${MY_DIR}/proprietary-files_griffin.txt" true
-
-cat << EOF >> "$ANDROIDMK"
-EOF
 
 # Finish
 write_footers

@@ -78,6 +78,50 @@ function blob_fixup() {
     vendor/bin/thermal-engine)
         sed -i "s|/system/etc/thermal|/vendor/etc/thermal|g" "${2}"
         ;;
+
+    vendor/lib/libjustshoot.so)
+         patchelf --add-needed libjustshoot_shim.so "${2}"
+         ;;
+
+    vendor/lib/libmmcamera2_sensor_modules.so)
+        sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "${2}"
+        ;;
+
+    vendor/lib/libmmcamera_vstab_module.so | vendor/lib/libmot_ois_data.so)
+        patchelf --remove-needed libandroid.so "${2}"
+        ;;
+
+    vendor/lib/lib_mottof.so | vendor/lib/libmmcamera_vstab_module.so | vendor/lib/libmot_gpu_mapper.so | vendor/lib/libjscore.so)
+        sed -i "s/libgui/libwui/" "${2}"
+        ;;
+
+    vendor/lib/libcamerabgprocservice.so)
+        patchelf --remove-needed libcamera_client.so "${2}"
+        ;;
+
+    vendor/lib/libcamerabgproc-jni.so)
+        patchelf --remove-needed libandroid_runtime.so "${2}"
+        patchelf --remove-needed libandroidfw.so "${2}"
+        patchelf --remove-needed libmedia.so "${2}"
+        patchelf --remove-needed libnativehelper.so "${2}"
+        patchelf --add-needed libjni_shim.so "${2}"
+        ;;
+
+    vendor/lib/libjustshoot.so | vendor/lib/libjscore.so)
+        patchelf --remove-needed libstagefright.so "${2}"
+        ;;
+
+    vendor/lib64/hw/gatekeeper.msm8996.so | vendor/lib64/hw/keystore.msm8996.so | vendor/lib64/lib_fpc_tac_shared.so | vendor/lib64/libSecureUILib.so)
+        sed -i "s|/firmware/image|/vendor/f/image|g" "${2}"
+        ;;
+
+    vendor/lib/libmot_gpu_mapper.so)
+        patchelf --add-needed libgpu_mapper_shim.so "${2}"
+        ;;
+
+    vendor/lib/hw/camera.msm8996.so)
+        sed -i "s|service.bootanim.exit|service.bootanim.hold|g" "${2}"
+        ;;
     esac
 }
 
