@@ -1,11 +1,11 @@
-# configure.ac -- Autoconf script for gps loc-net-iface
+# configure.ac -- Autoconf script for gps location-hal-daemon
 #
 # Process this file with autoconf to produce a configure script
 
 # Requires autoconf tool later than 2.61
 AC_PREREQ(2.61)
-# Initialize the gps lbs-core package version 1.0.0
-AC_INIT([loc-net-iface],1.0.0)
+# Initialize the location-hal-daemon package version 1.0.0
+AC_INIT([location-hal-daemon],1.0.0)
 # Does not strictly follow GNU Coding standards
 AM_INIT_AUTOMAKE([foreign subdir-objects])
 # Disables auto rebuilding of configure, Makefile.ins
@@ -29,57 +29,52 @@ AC_PROG_MAKE_SET
 PKG_PROG_PKG_CONFIG
 
 # Checks for libraries.
-PKG_CHECK_MODULES([GPSUTILS], [gps-utils])
-AC_SUBST([GPSUTILS_CFLAGS])
-AC_SUBST([GPSUTILS_LIBS])
-
 PKG_CHECK_MODULES([LOCCORE], [loc-core])
 AC_SUBST([LOCCORE_CFLAGS])
 AC_SUBST([LOCCORE_LIBS])
+
+PKG_CHECK_MODULES([LOCATIONAPI], [location-api])
+AC_SUBST([LOCATIONAPI_CFLAGS])
+AC_SUBST([LOCATIONAPI_LIBS])
 
 PKG_CHECK_MODULES([LOCHAL], [loc-hal])
 AC_SUBST([LOCHAL_CFLAGS])
 AC_SUBST([LOCHAL_LIBS])
 
-PKG_CHECK_MODULES([QMIF], [qmi-framework])
-AC_SUBST([QMIF_CFLAGS])
-AC_SUBST([QMIF_LIBS])
+PKG_CHECK_MODULES([GPSUTILS], [gps-utils])
+AC_SUBST([GPSUTILS_CFLAGS])
+AC_SUBST([GPSUTILS_LIBS])
 
-PKG_CHECK_MODULES([DATA], [data])
-AC_SUBST([DATA_CFLAGS])
-AC_SUBST([DATA_LIBS])
+AC_ARG_ENABLE(target,
+    [AS_HELP_STRING([--enable-target=TARGET], [Specify the target product to build])],
+    [TARGET=$enableval],
+    [TARGET=none]
+)
 
-PKG_CHECK_MODULES([QMI], [qmi])
-AC_SUBST([QMI_CFLAGS])
-AC_SUBST([QMI_LIBS])
+AM_CONDITIONAL(POWERMANAGER_ENABLED, [test "x$TARGET" = "xmdm9607"])
+AM_COND_IF(POWERMANAGER_ENABLED, [
+    PKG_CHECK_MODULES([PM], [powermanager])
+    AC_SUBST([PM_CFLAGS])
+    AC_SUBST([PM_LIBS])
+])
 
-PKG_CHECK_MODULES([DSUTILS], [dsutils])
-AC_SUBST([DSUTILS_CFLAGS])
-AC_SUBST([DSUTILS_LIBS])
+AC_ARG_WITH([systemd],
+      AC_HELP_STRING([--with-systemd],
+         [systemd enable, building LE systems which has systemd]))
 
-PKG_CHECK_MODULES([DATAITEMS], [data-items])
-AC_SUBST([DATAITEMS_CFLAGS])
-AC_SUBST([DATAITEMS_LIBS])
+AM_CONDITIONAL(USE_SYSTEMD, test "x${with_systemd}" = "xyes")
 
-AC_ARG_WITH([core_includes],
-      AC_HELP_STRING([--with-core-includes=@<:@dir@:>@],
-         [Specify the location of the core headers]),
-      [core_incdir=$withval],
-      with_core_includes=no)
+AC_ARG_WITH([auto_feature],
+    AC_HELP_STRING([--with-auto_feature=@<:@dir@:>@],
+        [Using Automotive feature]),
+    [],
+    with_auto_feature=no)
 
-if test "x$with_core_includes" != "xno"; then
-   CPPFLAGS="${CPPFLAGS} -I${core_incdir}"
+if test "x$with_auto_feature" != "xno"; then
+    CPPFLAGS="${CPPFLAGS} -DFEATURE_AUTOMOTIVE"
 fi
 
-AC_ARG_WITH([locpla_includes],
-      AC_HELP_STRING([--with-locpla-includes=@<:@dir@:>@],
-         [specify the path to locpla-includes in loc-pla_git.bb]),
-      [locpla_incdir=$withval],
-      with_locpla_includes=no)
-
-if test "x$with_locpla_includes" != "xno"; then
-   AC_SUBST(LOCPLA_CFLAGS, "-I${locpla_incdir}")
-fi
+AM_CONDITIONAL(USE_FEATURE_AUTOMOTIVE, test "x${with_auto_feature}" = "xyes")
 
 AC_ARG_WITH([glib],
       AC_HELP_STRING([--with-glib],
@@ -100,9 +95,19 @@ fi
 
 AM_CONDITIONAL(USE_GLIB, test "x${with_glib}" = "xyes")
 
+AC_ARG_WITH([core_includes],
+      AC_HELP_STRING([--with-core-includes=@<:@dir@:>@],
+         [Specify the location of the core headers]),
+      [core_incdir=$withval],
+      with_core_includes=no)
+
+if (test "x$with_core_includes" != "xno"); then
+   CPPFLAGS="${CPPFLAGS} -I${core_incdir}"
+fi
+
 AC_CONFIG_FILES([ \
         Makefile \
-        loc-net-iface.pc
+        location-hal-daemon.pc
         ])
 
 AC_OUTPUT
