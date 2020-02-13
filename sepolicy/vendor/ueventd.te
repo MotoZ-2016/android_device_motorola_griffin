@@ -1,4 +1,3 @@
-allow ueventd adspd_file:dir search;
 allow ueventd device:chr_file { relabelfrom relabelto };
 allow ueventd gbfirmware_file:dir search;
 allow ueventd gbfirmware_file:file { getattr open read };
