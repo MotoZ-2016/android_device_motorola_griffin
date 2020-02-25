@@ -303,6 +303,8 @@ etc/permissions/com.motorola.cameraone.xml:vendor/etc/permissions/com.motorola.c
 etc/permissions/com.motorola.hw.sensorhub.xml:vendor/etc/permissions/com.motorola.hw.sensorhub.xml
 etc/permissions/com.motorola.mod.protocols.xml
 etc/permissions/com.motorola.mod.xml|db2815f8b5d1fa0bf973d4814f65557cf3ece6b3
+etc/permissions/com.motorola.moto.xml:vendor/etc/permissions/com.motorola.moto.xml
+etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
 
 # Carrier apps
 -priv-app/DMService/DMService.apk

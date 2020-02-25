@@ -342,10 +342,6 @@ vendor/lib64/libOmxG711Dec.so
 vendor/lib64/libOmxQcelp13Dec.so
 vendor/lib64/libOmxWmaDec.so
 
-# Moto Permissions
-etc/permissions/com.motorola.moto.xml:vendor/etc/permissions/com.motorola.moto.xml
-etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
-
 # Offmode charging
 vendor/bin/charge_only_mode
 vendor/bin/hvdcp_opti
