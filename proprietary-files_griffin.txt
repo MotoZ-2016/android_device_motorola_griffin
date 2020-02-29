@@ -298,11 +298,8 @@ vendor/firmware/libpn548ad_fw.so:vendor/lib/libpn548ad_fw.so
 etc/firmware/upd-00000126-00001001-fed70128-fffe0001-02.tftf
 
 # Moto Permissions
-etc/permissions/com.motorola.aov.xml:vendor/etc/permissions/com.motorola.aov.xml
 etc/permissions/com.motorola.cameraone.xml:vendor/etc/permissions/com.motorola.cameraone.xml
 etc/permissions/com.motorola.hw.sensorhub.xml:vendor/etc/permissions/com.motorola.hw.sensorhub.xml
-etc/permissions/com.motorola.mod.protocols.xml
-etc/permissions/com.motorola.mod.xml|db2815f8b5d1fa0bf973d4814f65557cf3ece6b3
 etc/permissions/com.motorola.moto.xml:vendor/etc/permissions/com.motorola.moto.xml
 etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
 
@@ -358,27 +355,31 @@ etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola
 #vendor/lib/soundfx/libvisualizer.so
 #vendor/lib/soundfx/libvolumelistener.so
 
-# ModService
--priv-app/ModFmwkProxyService/ModFmwkProxyService.apk|36fdc66b39643433d2ffa46c986e300c6e6f7288
--priv-app/ModService/ModService.apk:priv-app/ModService/ModService.apk;PRESIGNED
-lib/libmodmanager_system.so
-lib64/libmodmanager_system.so
-vendor/lib/libmodmanager.so
-vendor/lib64/libmodmanager.so
-lib64/libmodhw.so
-etc/permissions/privapp-permissions-com.motorola.modservice.xml
-lib/com.motorola.mod@1.0.so:vendor/lib/com.motorola.mod@1.0.so
-lib64/com.motorola.mod@1.0.so:vendor/lib64/com.motorola.mod@1.0.so
+# ModService - from nash
+-priv-app/ModFmwkProxyService/ModFmwkProxyService.apk|52c72bfeae28e2a0b1e96b4336bc6c01ee95bdea
+etc/permissions/com.motorola.aov.xml|e62f765d60a7e39f4a33437f5626ecf0e77c1dba
+etc/permissions/com.motorola.mod.protocols.xml|b814c7ee7776ba13777b56f88d12e1d68c2dc3b8
+etc/permissions/com.motorola.mod.xml|b25e55275b7ecc5f4d46db52c6148fe7c75ff60b
+etc/permissions/com.motorola.mod_config.xml|193c8bdab28ed651bbd2ff6cbacd57ad0934961e
+etc/permissions/com.motorola.mod_v2.xml|5b536af6105ff2cda72a1d33a31215999394d0c3
+etc/permissions/com.motorola.moto.permissions.xml|1f7953432feb6134e4eed8bad299ce67a447f6c7
+etc/permissions/privapp-permissions-com.motorola.modservice.xml|528b4759169d0648a0dae441a271affc4dc4351f
+etc/permissions/privapp-permissions-com.motorola.projectormod.xml|5ef185b5a4a8043f7546d3ba486707f10a0ffaf9
+lib64/libmodhw.so|7a5c97253905bb90d826abefb2980e14e87f9f25
+lib64/libvibratorhw.so|c358640a3b091678746d6ab2e4eb47cb6684ef44
+lib64/motorola.hardware.vibrator@1.0.so|a9d40f79af80341abda2ca2ca49928d3accac321
+-priv-app/ModService/ModService.apk:priv-app/ModService/ModService.apk;PRESIGNED|8c6e5a3a6eeb89fcaf881db294f60f1ace676082
+-priv-app/ProjectorApp/ProjectorApp.apk:priv-app/ProjectorApp/ProjectorApp.apk;PRESIGNED|280c58c91a7676d610405c633f4ddd781eb55039
+vendor/bin/mods_camd|b711e12e4afdeaac580806f95d04a12883dd87ec
+vendor/lib/libmodmanager.so|f56eaad6f8b559e5ffd6fc7cb8b68e35168ba49a
+vendor/lib64/libmodmanager.so|9224156461e38ae56b8d314070c3b2453cfcce39
+vendor/lib64/com.motorola.mod@1.0_vendor.so|b8ec76e3c30f29c1f96fdc83b6d3ccced5b9f790
+vendor/lib/com.motorola.mod@1.0_vendor.so|984e87a974dcc187d8a46f3addf2865b42d1ce23
 
 # Camera Mod
--app/MotCameraMod/MotCameraMod.apk:app/MotCameraMod/MotCameraMod.apk;PRESIGNED
-vendor/bin/mods_camd
+#-app/MotCameraMod/MotCameraMod.apk:app/MotCameraMod/MotCameraMod.apk;PRESIGNED
 #vendor/lib/hw/libcamera_mods_legacy_hal.so
 #lib/motorola.hardware.mods_camera.provider@2.4.so:vendor/lib/motorola.hardware.mods_camera.provider@2.4.so
 #vendor/bin/hw/motorola.hardware.mods_camera.provider@2.4-service
 #vendor/etc/init/motorola.hardware.mods_camera.provider@2.4-service.rc
 #vendor/lib/hw/motorola.hardware.mods_camera.provider@2.4-impl.so
-
-# Projector Mod
--priv-app/ProjectorApp/ProjectorApp.apk:priv-app/ProjectorApp/ProjectorApp.apk;PRESIGNED
-etc/permissions/privapp-permissions-com.motorola.projectormod.xml
