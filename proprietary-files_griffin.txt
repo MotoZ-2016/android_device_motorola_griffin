@@ -294,6 +294,9 @@ vendor/lib/libubifocus.so
 # NFC firmware
 vendor/firmware/libpn548ad_fw.so:vendor/lib/libpn548ad_fw.so
 
+# Charge
+vendor/bin/charge_only_mode
+
 # Touchscreen
 etc/firmware/upd-00000126-00001001-fed70128-fffe0001-02.tftf
 

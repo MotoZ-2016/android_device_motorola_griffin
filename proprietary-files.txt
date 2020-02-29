@@ -342,10 +342,6 @@ vendor/lib64/libOmxG711Dec.so
 vendor/lib64/libOmxQcelp13Dec.so
 vendor/lib64/libOmxWmaDec.so
 
-# Offmode charging
-vendor/bin/charge_only_mode
-vendor/bin/hvdcp_opti
-
 # Perf
 product/lib/vendor.qti.hardware.perf@1.0.so
 product/lib/vendor.qti.hardware.perf@2.0.so
