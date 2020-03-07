@@ -15,10 +15,10 @@
 #
 
 #
-# Moto Z
+# props for Moto Z
 #
 
-## QCOM BUILD
+# QCOM BUILD
 # This is the build that came with the device
 # keeping this here and incrementing it as needed
 # once we start upgrading so we can keep track of
@@ -26,7 +26,7 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.version.qcom=LA.UM.7.6.r1-02500-89xx.0
 
-## Audio
+# Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     audio.deep_buffer.media=true \
     audio.offload.video=false \
@@ -66,43 +66,38 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.endcall.delay=250 \
     persist.vendor.audio.fluence.voicecomm=true
 
-## Bluetooth
+# Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=rome
 
-## Camera
+# Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=1 \
     persist.camera.debug.logfile=0 \
     persist.camera.gyro.disable=0 \
-    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.motorola.camera2,com.motorola.motocit,org.lineageos.snap \
     persist.camera.camera2=true \
-    persist.camera.expose.aux=1 \
-    persist.camera.is_type=3 \
     persist.ts.postmakeup=false \
     persist.ts.rtmakeup=false
 
-## Codec2 switch
+# Codec2 switch
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.media.codec2=2
 
-## Color Mode
+# Color Mode
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.enable_default_color_mode=1
 
-## CNE
+# CNE
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.cne.feature=1 \
     persist.vendor.cne.logging.qxdm=3974 \
     persist.vendor.cne.rat.wlan.chip.oem=WCN \
-    persist.vendor.dpm.feature=0 \
     persist.vendor.sys.cnd.iwlan=1
 
-## CoreSight
+# CoreSight
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.coresight.config=stm-events
 
-## Graphics
+# Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.gralloc.enable_fb_ubwc=1 \
     debug.gralloc.enable_fb_ubwc=1 \
@@ -116,7 +111,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196609 \
     debug.sf.recomputecrop=0
 
-## Media
+# Media
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
     mm.enable.qcom_parser=1048575 \
@@ -130,11 +125,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.hdr.config=/vendor/etc/hdr_tm_config.xml
 
-## Mods
+# Mods
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.mod.platformsdkversion=205
 
-## Netmgr
+# Netmgr
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.use_data_netmgrd=true \
     persist.data.netmgrd.qos.enable=true \
@@ -152,7 +147,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.at_library=libqti-at.so \
     ro.vendor.extension_library=libqti-perfd-client.so
 
-## Play Store
+# Play Store
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-motorola \
     ro.com.google.clientidbase.am=android-motorola \
@@ -160,11 +155,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase.ms=android-motorola \
     ro.com.google.clientidbase.yt=android-motorola
 
-## QCOM
-PRODUCT_PROPERTY_OVERRIDES += \
-    drm.service.enabled=true
-
-## IMS
+# IMS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
@@ -174,11 +165,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ims.disableDebugLogs=0 \
     persist.vendor.ims.disableQXDMLogs=0 \
     persist.vendor.ims.disableIMSLogs=0 \
-    persist.vendor.ims.vt.enableadb=1 \
-    persist.radio.NO_STAPA=1 \
-    persist.radio.VT_HYBRID_ENABLE=1
+    persist.vendor.ims.vt.enableadb=1
 
-## RIL
+# RIL
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.no_wait_for_card=1 \
     persist.vendor.radio.dfr_mode_set=1 \
@@ -211,45 +200,36 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.apn_delay=5000 \
     persist.radio.calls.on.ims=true \
     persist.radio.domain.ps=0 \
-    persist.radio.VT_ENABLE=1 \
-    persist.radio.ROTATION_ENABLE=1 \
-    persist.radio.REVERSE_QMI=0 \
-    persist.radio.RATE_ADAPT_ENABLE=1 \
-    persist.radio.VT_USE_MDM_TIME=0 \
     persist.data.qmi.adb_logmask=0 \
     persist.vendor.radio.procedure_bytes=SKIP \
     persist.vendor.radio.aosp_usr_pref_sel=true \
     persist.vendor.radio.flexmap_type=none \
     persist.net.doxlat=true \
-    persist.rild.nitz_plmn="" \
-    persist.rild.nitz_long_ons_0="" \
-    persist.rild.nitz_long_ons_1="" \
-    persist.rild.nitz_long_ons_2="" \
-    persist.rild.nitz_long_ons_3="" \
-    persist.rild.nitz_short_ons_0="" \
-    persist.rild.nitz_short_ons_1="" \
-    persist.rild.nitz_short_ons_2="" \
-    persist.rild.nitz_short_ons_3=""  \
     persist.sys.qc.sub.rdump.on=1 \
     persist.sys.qc.sub.rdump.max=0 \
     ro.telephony.call_ring.multiple=false \
     ril.subscription.types=NV,RUIM \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
-    telephony.lteOnCdmaDevice=1 \
-    DEVICE_PROVISIONED=1 \
     ro.telephony.iwlan_operation_mode=legacy \
     ro.vendor.build.vendorprefix=/vendor \
     ro.build.vendorprefix=/vendor
 
-## QTI Sensors
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.vendor.cne.feature=1 \
+    persist.vendor.dpm.feature=0 \
+    DEVICE_PROVISIONED=1 \
+    ril.subscription.types=NV,RUIM \
+    telephony.lteOnCdmaDevice=1
+
+# QTI Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qti.sensors.dev_ori=false \
     ro.qti.sensors.mot_detect=false \
     ro.qti.sensors.pmd=false \
     ro.qti.sensors.sta_detect=false
 
-## SurfaceFlinger
+# SurfaceFlinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
     ro.surface_flinger.max_virtual_display_dimension=4096 \
@@ -265,28 +245,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000
 
-## RmNet Data
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.wda.enable=true \
-    persist.data.df.dl_mode=5 \
-    persist.data.df.ul_mode=5 \
-    persist.data.df.agg.dl_pkt=10 \
-    persist.data.df.agg.dl_size=4096 \
-    persist.data.df.mux_count=8 \
-    persist.data.df.iwlan_mux=9 \
-    persist.data.df.dev_name=rmnet_usb0 \
-    persist.data.iwlan.enable=true \
-    persist.rmnet.data.enable=true \
-    persist.rmnet.mux=enabled
-
-## Time Service
+# Time daemon
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true
 
-## Vendor Extension
+# Vendor Extension
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so
 
-## Wifi
+# Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
