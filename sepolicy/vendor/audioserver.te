@@ -1,4 +1,2 @@
 allow audioserver rootfs:lnk_file getattr;
 allow audioserver socket_device:sock_file write;
-allow audioserver sysfs_greybus:dir r_dir_perms;
-allow audioserver sysfs_greybus:file rw_file_perms;

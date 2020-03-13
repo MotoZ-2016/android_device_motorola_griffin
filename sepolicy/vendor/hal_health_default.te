@@ -11,8 +11,6 @@ allow hal_health_default kmsg_device:chr_file { open write };
 allow hal_health_default sysfs_batteryinfo:file rw_file_perms;
 
 allow hal_health_default self:binder call;
-allow hal_health_default sysfs_greybus:dir search;
-allow hal_health_default sysfs_greybus:file rw_file_perms;
 allow hal_health_default sysfs:file { getattr read open };
 allow hal_health_default mnt_vendor_file:file { getattr open read };
 allow hal_health_default mnt_vendor_file:dir search;

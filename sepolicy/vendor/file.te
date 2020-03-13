@@ -8,11 +8,9 @@ type sysfs_fpc, fs_type, sysfs_type;
 type sysfs_spi, fs_type, sysfs_type;
 type sysfs_scsi_devices_0000, sysfs_type, fs_type;
 type sysfs_scsi_devices_other, sysfs_type, fs_type;
-type sysfs_batt_health, fs_type, sysfs_type;
 type sysfs_wifi, sysfs_type, fs_type, mlstrustedobject;
 
 # Battery health
-type batt_health_data_file, file_type, data_file_type;
 type persist_battery_file, file_type;
 
 # hw_revs
@@ -26,14 +24,6 @@ type cutback_data_file, file_type, data_file_type;
 
 # CMHW
 type vibeamp_sysfs, fs_type, sysfs_type;
-
-# Greybus
-type sysfs_greybus, fs_type, sysfs_type, mlstrustedobject;
-type sysfs_greybus_media, fs_type, sysfs_type, mlstrustedobject;
-type gbfirmware_file, file_type, data_file_type, core_data_file_type, mlstrustedobject;
-type sysfs_mods_camd, fs_type, sysfs_type, mlstrustedobject;
-type sysfs_v4l2_openmode, fs_type, sysfs_type, mlstrustedobject;
-type sysfs_batt_mods, fs_type, sysfs_type, mlstrustedobject;
 
 type chr_file, file_type, data_file_type;
 type fpc_data_file, file_type, data_file_type, core_data_file_type;

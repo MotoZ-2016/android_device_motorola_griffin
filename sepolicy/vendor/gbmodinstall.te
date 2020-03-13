@@ -1,8 +1,0 @@
-type gbmodinstall, domain;
-type gbmodinstall_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(gbmodinstall)
-
-allow gbmodinstall vendor_shell_exec:file rx_file_perms;
-
-# Logs to /dev/kmsg
-allow gbmodinstall kmsg_device:chr_file w_file_perms;
