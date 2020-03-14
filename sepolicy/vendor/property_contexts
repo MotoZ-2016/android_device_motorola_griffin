@@ -18,6 +18,9 @@ persist.camera.daemon         u:object_r:camera_prop:s0
 # Perfd
 sys.post_boot.             u:object_r:post_boot_prop:s0
 
+# Radio
+vendor.ril.             u:object_r:vendor_radio_prop:s0
+
 sys.listeners.registered            u:object_r:vendor_tee_listener_prop:s0
 persist.net.doxlat  u:object_r:vendor_xlat_prop:s0
 ro.min_freq_0                 u:object_r:vendor_mpctl_prop:s0
