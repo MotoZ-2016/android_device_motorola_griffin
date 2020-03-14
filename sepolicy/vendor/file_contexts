@@ -71,8 +71,3 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service\.griffin   u:object_r:hal_vibrator_default_exec:s0
 /sys/devices/virtual/timed_output/vibrator(/.*)?                                   u:object_r:sysfs_vibrator:s0
 /sys/devices/virtual/motosh/motosh_as/tabletop_mode                                u:object_r:sysfs_vibrator:s0
-
-# QCOM SOC
-/sys/devices/soc/9300000\.qcom,lpass/subsys3(/.*)?            u:object_r:sysfs_soc_qcom:s0
-/sys/devices/soc/1c00000\.qcom,ssc/subsys4(/.*)?              u:object_r:sysfs_soc_qcom:s0
-/sys/devices/soc/2080000\.qcom,mss/subsys5(/.*)?              u:object_r:sysfs_soc_qcom:s0

@@ -2,5 +2,3 @@ allow ims persist_file:dir rw_dir_perms;
 allow ims persist_file:file create_file_perms;
 allow ims self:socket create_socket_perms;
 allow ims diag_device:chr_file rw_file_perms;
-allow ims sysfs_soc_qcom:file { open read };
-allow ims sysfs_soc_qcom:dir search;

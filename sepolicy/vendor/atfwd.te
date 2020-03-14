@@ -1,3 +1,1 @@
 allow atfwd sysfs:file { read open };
-allow atfwd sysfs_soc_qcom:dir r_dir_perms;
-allow atfwd sysfs_soc_qcom:file rw_file_perms;

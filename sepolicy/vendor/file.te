@@ -36,5 +36,4 @@ type sensorhub_data_file, file_type, data_file_type, core_data_file_type;
 type debugfs_ufs, debugfs_type, fs_type;
 type debugfs_wlan, debugfs_type, fs_type;
 
-type sysfs_soc_qcom, fs_type, sysfs_type;
 type sysfs_camera, fs_type, sysfs_type;

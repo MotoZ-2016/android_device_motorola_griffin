@@ -2,5 +2,3 @@ allow cnd netmgrd:dir search;
 allow cnd netmgrd:file { open read };
 
 allow cnd sysfs:file { read open };
-allow cnd sysfs_soc_qcom:dir r_dir_perms;
-allow cnd sysfs_soc_qcom:file rw_file_perms;

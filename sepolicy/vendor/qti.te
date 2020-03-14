@@ -1,2 +1,0 @@
-allow qti sysfs_soc_qcom:dir search;
-allow qti sysfs_soc_qcom:file { open read write };
