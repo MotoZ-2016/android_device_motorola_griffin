@@ -399,6 +399,7 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
+    libcutils_shim \
     libjustshoot_shim \
     libjni_shim \
     libqsap_shim
