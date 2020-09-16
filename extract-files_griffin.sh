@@ -102,6 +102,11 @@ function blob_fixup() {
         vendor/lib/hw/camera.msm8996.so)
             sed -i "s|service.bootanim.exit|service.bootanim.hold|g" "${2}"
             ;;
+
+        # memset shim
+        vendor/bin/charge_only_mode)
+            "${PATCHELF}" --add-needed "libmemset_shim.so" "${2}"
+            ;;
     esac
 }
 

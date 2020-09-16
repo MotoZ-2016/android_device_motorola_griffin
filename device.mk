@@ -399,6 +399,7 @@ PRODUCT_PACKAGES += \
     libcutils_shim \
     libjustshoot_shim \
     libjni_shim \
+    libmemset_shim \
     libqsap_shim
 
 # Soong
