@@ -261,8 +261,6 @@ on boot
     # NFC
     chmod 0666 /dev/pn544
     chown nfc nfc /dev/pn544
-    chmod 0666 /dev/p61
-    chown spi spi /dev/p61
 
     start vendor.rmt_storage
     # access permission for secure touch
@@ -951,9 +949,6 @@ service vendor.thermal-engine /vendor/bin/thermal-engine
    socket thermal-recv-passive-client stream 0666 system system
    socket thermal-send-rule stream 0660 system system
    group root system diag
-   socket thermal-send-client stream 0666 system system
-   socket thermal-recv-client stream 0660 system system
-   socket thermal-recv-passive-client stream 0666 system system
 
 service time_daemon /vendor/bin/time_daemon
     class main
