@@ -10,6 +10,9 @@
 /sys/homebutton/enable_wakeup                             u:object_r:sysfs_homebutton:s0
 /sys/homebutton/key                                       u:object_r:sysfs_homebutton:s0
 
+# Persist
+/persist(/*)?                                             u:object_r:mnt_vendor_file:s0
+
 # Fingerprint
 /data/\.fps(/.*)?                                          u:object_r:fingerprintd_data_file:s0
 /data/fpc(/.*)?                                           u:object_r:fpc_data_file:s0
