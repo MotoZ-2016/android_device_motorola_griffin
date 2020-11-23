@@ -438,12 +438,6 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor \
     vndk_package
 
-# VR
-PRODUCT_PACKAGES += \
-    vr.msm8996 \
-    android.hardware.vr@1.0-impl:64 \
-    android.hardware.vr@1.0-service
-
 # WiFi HAL
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service
