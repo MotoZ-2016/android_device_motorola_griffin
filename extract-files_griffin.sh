@@ -25,9 +25,9 @@ VENDOR=motorola
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-LINEAGE_ROOT="${MY_DIR}"/../../..
+ANDROID_ROOT="${MY_DIR}"/../../..
 
-HELPER="${LINEAGE_ROOT}/vendor/lineage/build/tools/extract_utils.sh"
+HELPER="${ANDROID_ROOT}/vendor/lineage/build/tools/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1
@@ -37,21 +37,21 @@ source "${HELPER}"
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
 
-while [ "${#}" -gt 0 ]; do
-    case "${1}" in
-        -n | --no-cleanup )
-            CLEAN_VENDOR=false
-            ;;
-        -k | --kang )
-                KANG="--kang"
-                ;;
-        -s | --section )
-                SECTION="${2}"; shift
-                CLEAN_VENDOR=false
-                ;;
-        * )
-                SRC="${1}"
-                ;;
+SECTION=
+KANG=
+
+while [ "$1" != "" ]; do
+    case "$1" in
+        -n | --no-cleanup )     CLEAN_VENDOR=false
+                                ;;
+        -k | --kang)            KANG="--kang"
+                                ;;
+        -s | --section )        shift
+                                SECTION="$1"
+                                CLEAN_VENDOR=false
+                                ;;
+        * )                     SRC="$1"
+                                ;;
     esac
     shift
 done
@@ -63,50 +63,50 @@ fi
 function blob_fixup() {
     case "${1}" in
 
-    vendor/lib/libjustshoot.so)
-         patchelf --add-needed libjustshoot_shim.so "${2}"
-         ;;
+        vendor/lib/libjustshoot.so)
+            "${PATCHELF}" --add-needed libjustshoot_shim.so "${2}"
+            ;;
 
-    vendor/lib/libmmcamera2_sensor_modules.so)
-        sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "${2}"
-        ;;
+        vendor/lib/libmmcamera2_sensor_modules.so)
+            sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "${2}"
+            ;;
 
-    vendor/lib/libmmcamera_vstab_module.so | vendor/lib/libmot_ois_data.so)
-        patchelf --remove-needed libandroid.so "${2}"
-        ;;
+        vendor/lib/libmmcamera_vstab_module.so | vendor/lib/libmot_ois_data.so)
+            "${PATCHELF}" --remove-needed libandroid.so "${2}"
+            ;;
 
-    vendor/lib/lib_mottof.so | vendor/lib/libmmcamera_vstab_module.so | vendor/lib/libjscore.so)
-        sed -i "s/libgui/libwui/" "${2}"
-        ;;
+        vendor/lib/lib_mottof.so | vendor/lib/libmmcamera_vstab_module.so | vendor/lib/libjscore.so)
+            sed -i "s/libgui/libwui/" "${2}"
+            ;;
 
-    vendor/lib/libcamerabgprocservice.so)
-        patchelf --remove-needed libcamera_client.so "${2}"
-        ;;
+        vendor/lib/libcamerabgprocservice.so)
+            "${PATCHELF}" --remove-needed libcamera_client.so "${2}"
+            ;;
 
-    vendor/lib/libcamerabgproc-jni.so)
-        patchelf --remove-needed libandroid_runtime.so "${2}"
-        patchelf --remove-needed libandroidfw.so "${2}"
-        patchelf --remove-needed libmedia.so "${2}"
-        patchelf --remove-needed libnativehelper.so "${2}"
-        patchelf --add-needed libjni_shim.so "${2}"
-        ;;
+        vendor/lib/libcamerabgproc-jni.so)
+            "${PATCHELF}" --remove-needed libandroid_runtime.so "${2}"
+            "${PATCHELF}" --remove-needed libandroidfw.so "${2}"
+            "${PATCHELF}" --remove-needed libmedia.so "${2}"
+            "${PATCHELF}" --remove-needed libnativehelper.so "${2}"
+            "${PATCHELF}" --add-needed libjni_shim.so "${2}"
+            ;;
 
-    vendor/lib/libjustshoot.so | vendor/lib/libjscore.so)
-        patchelf --remove-needed libstagefright.so "${2}"
-        ;;
+        vendor/lib/libjustshoot.so | vendor/lib/libjscore.so)
+            "${PATCHELF}" --remove-needed libstagefright.so "${2}"
+            ;;
 
-    vendor/lib64/hw/gatekeeper.msm8996.so | vendor/lib64/hw/keystore.msm8996.so | vendor/lib64/lib_fpc_tac_shared.so | vendor/lib64/libSecureUILib.so)
-        sed -i "s|/firmware/image|/vendor/f/image|g" "${2}"
-        ;;
+        vendor/lib64/hw/gatekeeper.msm8996.so | vendor/lib64/hw/keystore.msm8996.so | vendor/lib64/lib_fpc_tac_shared.so | vendor/lib64/libSecureUILib.so)
+            sed -i "s|/firmware/image|/vendor/f/image|g" "${2}"
+            ;;
 
-    vendor/lib/hw/camera.msm8996.so)
-        sed -i "s|service.bootanim.exit|service.bootanim.hold|g" "${2}"
-        ;;
+        vendor/lib/hw/camera.msm8996.so)
+            sed -i "s|service.bootanim.exit|service.bootanim.hold|g" "${2}"
+            ;;
     esac
 }
 
 # Initialize the helper
-setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
+setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
 extract "${MY_DIR}/proprietary-files_griffin.txt" "${SRC}" \
         "${KANG}" --section "${SECTION}"
