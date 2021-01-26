@@ -162,6 +162,11 @@ on property:init.svc.recovery=running
 on property:sys.boot_completed=1
     trigger enable-low-power
 
+on late-fs-charger
+    class_start early_hal
+    wait_for_prop hwservicemanager.ready true
+    mount_all /vendor/etc/fstab.qcom --late
+
 on charger
     setprop persist.sys.usb.config charging
     write /sys/devices/system/cpu/cpu2/online 0
@@ -175,6 +180,7 @@ on charger
     trigger early-fs
     trigger fs
     trigger post-fs
+    trigger late-fs-charger
     trigger post-fs-data
     trigger moto-charger
     class_stop main
