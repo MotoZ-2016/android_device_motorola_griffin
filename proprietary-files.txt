@@ -658,7 +658,7 @@ vendor/lib64/libthermalioctl.so
 vendor/etc/thermal-engine.conf
 
 # Time services
--vendor/app/TimeService/TimeService.apk;:timeservice_app_cert-legacy-um
+-vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
 -vendor/lib64/libtime_genoff.so
