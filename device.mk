@@ -322,10 +322,7 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
-    vendor.qti.hardware.perf@2.0.vendor \
-    thermal.msm8996 \
-    android.hardware.thermal@1.0-impl:64 \
-    android.hardware.thermal@1.0-service
+    vendor.qti.hardware.perf@2.0.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
@@ -417,6 +414,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
+
+# Thermal
+PRODUCT_PACKAGES += \
+    thermal.msm8996 \
+    android.hardware.thermal@1.0-impl:64 \
+    android.hardware.thermal@1.0-service
 
 # Trust HAL
 PRODUCT_PACKAGES += \
